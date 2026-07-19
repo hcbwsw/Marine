@@ -1,0 +1,38 @@
+/* ============ 首页特殊样式 ============ */
+
+/* 首页隐藏顶部横幅 */
+.content main > p:first-of-type::before {
+    display: none;
+}
+
+/* 首页标题 */
+#船舶新能源动力系统知识库 {
+    font-size: 2.5em;
+    text-align: center;
+    border: none;
+    background: linear-gradient(135deg, #1a3a5c, #0d7377);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 1em;
+}
+
+/* 首页描述 */
+main > blockquote:first-of-type {
+    text-align: center;
+    font-size: 1.15em;
+    border: none;
+    background: none;
+    color: #5a6c7d;
+    padding: 0;
+}
+
+/* 表格卡片化 */
+main table {
+    margin: 2em auto;
+    max-width: 700px;
+}
+
+/* 列表项间距 */
+main ul {
+    margin: 1em 0;
+}

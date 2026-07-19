@@ -2,7 +2,6 @@
 title = "船舶新能源动力系统知识库"
 description = "从规范到实操的工程知识库"
 language = "zh"
-multilingual = false
 src = "src"
 
 [output.html]
@@ -10,6 +9,8 @@ default-theme = "light"
 preferred-dark-theme = "navy"
 git-repository-url = ""
 edit-url-template = ""
+additional-css = ["theme/css/general.css", "theme/css/index.css"]
+no-section-label = false
 
 [output.html.search]
 enable = true
