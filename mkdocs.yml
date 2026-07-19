@@ -130,6 +130,7 @@ nav:
       - 推进功率: part7-resources/calculators/propulsion-power.md
       - 续航里程: part7-resources/calculators/range-calc.md
       - 效率分析: part7-resources/calculators/efficiency.md
+      - 冷却系统: part7-resources/calculators/cooling-system.md
     - 附录B 工具链: part7-resources/appendix-toolchain.md
     - 附录C 案例库:
       - part7-resources/cases/index.md
