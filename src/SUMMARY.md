@@ -5,10 +5,12 @@
 - [如何使用](./how-to-use.md)
 
 # 第一部分：基础认知
+- [第一部分导读](./part1-basics/intro.md)
 - [第1章 船舶动力系统概述与发展](./part1-basics/ch01-overview.md)
 - [第2章 新能源动力系统分类与选型](./part1-basics/ch02-classification.md)
 
 # 第二部分：核心子系统
+- [第二部分导读](./part2-subsystems/intro.md)
 - [第3章 船用电池系统](./part2-subsystems/ch03-battery-basics.md)
   - [3.2 电池选型与配置](./part2-subsystems/ch03-battery-selection.md)
   - [3.3 电池管理系统（BMS）](./part2-subsystems/ch03-battery-bms.md)
@@ -25,6 +27,7 @@
 - [第6章 冷却与热管理系统](./part2-subsystems/ch06-cooling.md)
 
 # 第三部分：系统设计方法
+- [第三部分导读](./part3-design/intro.md)
 - [第7章 总体研发框架](./part3-design/ch07-framework.md)
 - [第8章 利益相关者与需求工程](./part3-design/ch08-requirements.md)
 - [第9章 系统架构设计方法](./part3-design/ch09-architecture.md)
@@ -34,6 +37,7 @@
 - [第13章 功能安全工程](./part3-design/ch13-functional-safety.md)
 
 # 第四部分：规范与合规
+- [第四部分导读](./part4-compliance/intro.md)
 - [第14章 CCS 规范](./part4-compliance/ch15-ccs.md)
 - [第15章 DNV 规范](./part4-compliance/ch16-dnv.md)
 - [第16章 IEC 标准](./part4-compliance/ch17-iec.md)
@@ -42,6 +46,7 @@
 - [第19章 新能源电推特有技术问题](./part4-compliance/ch20-special-issues.md)
 
 # 第五部分：验证与落地
+- [第五部分导读](./part5-validation/intro.md)
 - [第20章 验证与确认体系（V&V）](./part5-validation/ch21-vv.md)
 - [第21章 稳定运行相图与降级走廊](./part5-validation/ch22-stability.md)
 - [第22章 故障诊断与故障排除](./part5-validation/ch23-diagnosis.md)
@@ -49,6 +54,7 @@
 - [第24章 90天落地执行路线](./part5-validation/ch25-90day.md)
 
 # 第六部分：专项深化
+- [第六部分导读](./part6-advanced/intro.md)
 - [第25章 混合动力推进系统](./part6-advanced/ch26-hybrid.md)
 - [第26章 商业化与产品化](./part6-advanced/ch27-commercialization.md)
 - [第27章 新能源技术与动力装置创新](./part6-advanced/ch28-innovation.md)
@@ -56,6 +62,7 @@
 - [第29章 手册总结与最终建议](./part6-advanced/ch30-conclusion.md)
 
 # 第七部分：工具与资源（附录）
+- [第七部分导读](./part7-resources/intro.md)
 - [附录A 交互计算工具](./part7-resources/calculators/index.md)
   - [电池容量计算](./part7-resources/calculators/battery-capacity.md)
   - [推进功率估算](./part7-resources/calculators/propulsion-power.md)
