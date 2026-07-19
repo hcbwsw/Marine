@@ -1,0 +1,11 @@
+# mdBook build output
+book/
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
