@@ -1,0 +1,68 @@
+/* 自定义样式 - 保持简洁，Material 已经很完善 */
+
+:root {
+  --md-primary-fg-color: #0d7377;
+  --md-accent-fg-color: #ff6b35;
+}
+
+/* 中文正文字体优化 */
+.md-typeset {
+  font-size: 0.85rem;
+  line-height: 1.9;
+}
+
+/* 表格样式微调 */
+.md-typeset table:not([class]) {
+  font-size: 0.78rem;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: #0d7377;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* 代码块 */
+.md-typeset code {
+  font-size: 0.8em;
+}
+
+/* 引用块 */
+.md-typeset blockquote {
+  border-left: 4px solid #ff6b35;
+  background: rgba(255, 107, 53, 0.05);
+  padding: 0.8rem 1.2rem;
+  border-radius: 0 6px 6px 0;
+}
+
+/* 计算器容器适配 Material 主题 */
+.calc-container {
+  background: var(--md-code-bg-color, #f5f5f5);
+  border: 1px solid var(--md-default-fg-color--lightest, #e0e0e0);
+}
+
+[data-md-color-scheme="slate"] .calc-container {
+  background: var(--md-code-bg-color, #2e303e);
+}
+
+.calc-field input, .calc-field select {
+  background: var(--md-default-bg-color, #fff);
+  color: var(--md-default-fg-color, #333);
+  border: 1.5px solid var(--md-default-fg-color--lightest, #ccc);
+}
+
+[data-md-color-scheme="slate"] .calc-field input,
+[data-md-color-scheme="slate"] .calc-field select {
+  background: var(--md-default-bg-color, #1a1a2e);
+  color: var(--md-default-fg-color, #e0e0e0);
+}
+
+.calc-result-card {
+  background: var(--md-default-bg-color, #fff);
+  border: 1px solid var(--md-default-fg-color--lightest, #e0e0e0);
+}
+
+[data-md-color-scheme="slate"] .calc-result-card {
+  background: var(--md-default-bg-color, #1a1a2e);
+  border-color: var(--md-default-fg-color--lightest, #444);
+}

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>系统工程 V模型架构图 (防遮挡精修版)</title>
+    <style>
+        :root {
+            --primary-bg: #f8f9fa;
+            --left-color: #2980b9;    /* 分解层：专业蓝 */
+            --right-color: #27ae60;   /* 验证层：通过绿 */
+            --bottom-color: #e67e22;  /* 执行层：动能橙 */
+            --line-color: #bdc3c7;
+            --time-color: #34495e;
+            --text-main: #2c3e50;
+            --text-muted: #7f8c8d;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            margin: 0;
+        }
+
+        .container {
+            width: 1100px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 40px 50px 80px 50px;
+            position: relative;
+        }
+
+        /* 标题区域 */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 28px;
+            color: var(--text-main);
+        }
+
+        .header p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 15px;
+            background: #f1f2f6;
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            border-left: 4px solid var(--left-color);
+        }
+
+        /* 时间轴 */
+        .timeline-top {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px; 
+            padding: 0 40px;
+            color: var(--time-color);
+            font-weight: bold;
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+        
+        .timeline-line {
+            flex-grow: 1;
+            height: 4px;
+            background: linear-gradient(to right, var(--left-color), var(--right-color));
+            position: relative;
+            margin: 0 20px;
+            border-radius: 2px;
+        }
+        
+        .timeline-line::after {
+            content: '';
+            position: absolute;
+            right: -5px;
+            top: -6px;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 16px solid var(--right-color);
+        }
+
+        /* V 模型布局体系 */
+        .v-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0;
+            position: relative;
+        }
+
+        .row-1 { width: 100%; margin: 0 auto 12px; }
+        .row-2 { width: 80%; margin: 0 auto 12px; }
+        .row-3 { width: 60%; margin: 0 auto 12px; }
+        .row-4 { width: 35%; margin: 0 auto; justify-content: center;}
+
+        /* 卡片通用样式 */
+        .box {
+            width: 260px;
+            padding: 15px 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            position: relative;
+            z-index: 2; /* 确保卡片在最上层 */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        /* 左侧需求卡片 */
+        .box-left {
+            border-top: 4px solid var(--left-color);
+            border-left: 1px solid #f1f2f6;
+            border-right: 1px solid #f1f2f6;
+            border-bottom: 1px solid #f1f2f6;
+        }
+        .box-left h3 { color: var(--left-color); }
+
+        /* 右侧测试卡片 */
+        .box-right {
+            border-top: 4px solid var(--right-color);
+            border-left: 1px solid #f1f2f6;
+            border-right: 1px solid #f1f2f6;
+            border-bottom: 1px solid #f1f2f6;
+        }
+        .box-right h3 { color: var(--right-color); }
+
+        /* 底部设计卡片 */
+        .box-bottom {
+            border-top: 4px solid var(--bottom-color);
+            width: 100%;
+            text-align: center;
+            border-left: 1px solid #f1f2f6;
+            border-right: 1px solid #f1f2f6;
+            border-bottom: 1px solid #f1f2f6;
+        }
+        .box-bottom h3 { color: var(--bottom-color); }
+
+        .box h3 {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+            font-weight: 600;
+            border-bottom: 1px solid #f9f9f9;
+            padding-bottom: 8px;
+        }
+        .box ul {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 13px;
+            color: #555;
+        }
+        .box ul li { margin-bottom: 4px; }
+
+        /* 横向验证虚线 */
+        .connector {
+            flex-grow: 1;
+            height: 2px;
+            border-bottom: 2px dashed var(--line-color);
+            position: relative;
+            margin: 0 20px;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .connector::after {
+            content: '▶';
+            position: absolute;
+            right: -6px;
+            top: -10px;
+            color: var(--line-color);
+            font-size: 16px;
+        }
+
+        .connector span {
+            background: #fff;
+            padding: 4px 12px;
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: bold;
+            border: 1px solid #f1f2f6;
+            border-radius: 12px;
+            transform: translateY(1px); 
+        }
+
+        /* --------------------------------------------------- */
+        /* 箭头单独成行：蓝箭头一条斜线，绿箭头一条斜线，同行蓝绿对齐 */
+        /* --------------------------------------------------- */
+        
+        .arrow-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 48px;
+            margin-bottom: 12px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* 每行箭头左右对称：蓝在左、绿在右，通过 flex 占比控制斜线位置 */
+        .arrow-row .arrow-cell {
+            display: flex;
+            align-items: center;
+            height: 48px;
+        }
+        .arrow-row .arrow-cell-left { justify-content: flex-end; }
+        .arrow-row .arrow-cell-right { justify-content: flex-start; }
+        /* 第1行：蓝/绿距边最近 */
+        .arrow-row-1 .arrow-cell-left  { flex: 0 0 18%; }
+        .arrow-row-1 .arrow-cell-right { flex: 0 0 18%; }
+        /* 第2行：向中间收 */
+        .arrow-row-2 .arrow-cell-left  { flex: 0 0 32%; }
+        .arrow-row-2 .arrow-cell-right { flex: 0 0 32%; }
+        /* 第3行：最靠近中心 */
+        .arrow-row-3 .arrow-cell-left  { flex: 0 0 46%; }
+        .arrow-row-3 .arrow-cell-right { flex: 0 0 46%; }
+
+        /* 蓝箭头：统一斜度，斜向下指中心 */
+        .arrow-blue {
+            width: 3px;
+            height: 40px;
+            background: var(--left-color);
+            transform: rotate(-36deg);
+            transform-origin: top center;
+            border-radius: 2px;
+            position: relative;
+        }
+        .arrow-blue::after {
+            content: '▼';
+            position: absolute;
+            bottom: -10px;
+            left: -6px;
+            color: var(--left-color);
+            font-size: 14px;
+        }
+
+        /* 绿箭头：统一斜度，斜向上指中心 */
+        .arrow-green {
+            width: 3px;
+            height: 40px;
+            background: var(--right-color);
+            transform: rotate(36deg);
+            transform-origin: bottom center;
+            border-radius: 2px;
+            position: relative;
+        }
+        .arrow-green::after {
+            content: '▲';
+            position: absolute;
+            top: -10px;
+            left: -6px;
+            color: var(--right-color);
+            font-size: 14px;
+        }
+
+        /* 验证方法标签 */
+        .tags {
+            margin-top: 12px;
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .tag {
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .tag-A { background: #e8f4f8; color: #2980b9; border: 1px solid #d4eaf2;}
+        .tag-S { background: #fcf3cf; color: #f39c12; border: 1px solid #f9e79f;}
+        .tag-I { background: #f4ecf7; color: #8e44ad; border: 1px solid #e8daef;}
+        .tag-T { background: #eafaf1; color: #27ae60; border: 1px solid #d5f5e3;}
+
+        /* 底部图例 */
+        .legend {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+        .legend-item { display: flex; align-items: center; font-size: 12px; color: #666; font-weight: 500;}
+        .legend-item span { margin-right: 6px; }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <div class="header">
+        <h1>系统工程 V 模型：从需求到验证</h1>
+        <p>核心法则：设计时就要定义验证方法，左侧分解，右侧整合，依时间轴严谨推进</p>
+    </div>
+
+    <!-- 项目时间轴 -->
+    <div class="timeline-top">
+        <span>项目阶段推进 (Project Lifecycle)</span>
+        <div class="timeline-line"></div>
+        <span>系统交付 (Delivery)</span>
+    </div>
+
+    <!-- 第 1 层：系统级 -->
+    <div class="v-row row-1">
+        <div class="box box-left">
+            <h3>L1：系统需求 (System Req)</h3>
+            <ul>
+                <li><b>规模：</b> 115条系统级需求</li>
+                <li><b>目标：</b> 航速、整船噪声、续航</li>
+                <li><b>输入：</b> 船东/客户顶层文件</li>
+            </ul>
+        </div>
+        <div class="connector">
+            <span style="color: #8e44ad; border-color: #8e44ad;">设计确认 (Validation) - 做出了正确的产品吗？</span>
+        </div>
+        <div class="box box-right">
+            <h3>SAT：系统验收试验</h3>
+            <ul>
+                <li>实船航行试验 (Sea Trial)</li>
+                <li>整船性能/噪声/续航验证</li>
+                <li>最终客户交付签字</li>
+            </ul>
+            <div class="tags">
+                <span class="tag tag-T">[T] 试验</span>
+                <span class="tag tag-I">[I] 检查</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 箭头行 1：蓝斜对齐 / 绿斜对齐 / 同行左右对齐 -->
+    <div class="arrow-row arrow-row-1">
+        <div class="arrow-cell arrow-cell-left"><div class="arrow-blue"></div></div>
+        <div class="arrow-cell arrow-cell-right"><div class="arrow-green"></div></div>
+    </div>
+
+    <!-- 第 2 层：子系统级 -->
+    <div class="v-row row-2">
+        <div class="box box-left">
+            <h3>L2：子系统需求 (Sub-System)</h3>
+            <ul>
+                <li><b>规模：</b> 90条子系统需求</li>
+                <li><b>目标：</b> 冷却系统散热、传动匹配</li>
+                <li><b>拆解：</b> 分配至各专业研发部</li>
+            </ul>
+        </div>
+        <div class="connector">
+            <span>设计验证 (Verification) - 把产品做正确了吗？</span>
+        </div>
+        <div class="box box-right">
+            <h3>SIT：子系统集成测试</h3>
+            <ul>
+                <li>动力子系统台架联合运行</li>
+                <li>热平衡 / 扭矩分配 / 热保护</li>
+                <li>系统边界接口联调</li>
+            </ul>
+            <div class="tags">
+                <span class="tag tag-T">[T] 试验</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 箭头行 2 -->
+    <div class="arrow-row arrow-row-2">
+        <div class="arrow-cell arrow-cell-left"><div class="arrow-blue"></div></div>
+        <div class="arrow-cell arrow-cell-right"><div class="arrow-green"></div></div>
+    </div>
+
+    <!-- 第 3 层：组件级 -->
+    <div class="v-row row-3">
+        <div class="box box-left">
+            <h3>L3：组件需求 (Component)</h3>
+            <ul>
+                <li><b>规模：</b> 100条组件需求</li>
+                <li><b>目标：</b> 泵流量、电机功率、阀门耐压</li>
+                <li><b>输出：</b> 零部件图纸/BOM</li>
+            </ul>
+        </div>
+        <div class="connector">
+            <span>设计验证 (Verification)</span>
+        </div>
+        <div class="box box-right">
+            <h3>FAT：组件功能试验</h3>
+            <ul>
+                <li>单体设备台架性能测试</li>
+                <li>振动/噪声/可靠性测试</li>
+                <li>供应商出厂验收</li>
+            </ul>
+            <div class="tags">
+                <span class="tag tag-T">[T] 试验</span>
+                <span class="tag tag-I">[I] 检查</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 箭头行 3 -->
+    <div class="arrow-row arrow-row-3">
+        <div class="arrow-cell arrow-cell-left"><div class="arrow-blue"></div></div>
+        <div class="arrow-cell arrow-cell-right"><div class="arrow-green"></div></div>
+    </div>
+
+    <!-- 第 4 层：执行层 (位于 V 字最底部) -->
+    <div class="v-row row-4">
+        <div class="box box-bottom">
+            <h3>详细设计与物理实现</h3>
+            <ul style="text-align: left;">
+                <li>冷却计算书 (热能平衡)</li>
+                <li>扭振分析 (Campbell图) / 轴系校中</li>
+                <li>热学仿真 (AMESim / PINN)</li>
+                <li>控制逻辑开发 / 硬件加工制造</li>
+            </ul>
+            <div class="tags" style="justify-content: center;">
+                <span class="tag tag-A">[A] 理论分析</span>
+                <span class="tag tag-S">[S] 软件仿真</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 图例 -->
+    <div class="legend">
+        <div class="legend-item"><span class="tag tag-A">A</span> Analysis (公式计算/理论分析)</div>
+        <div class="legend-item"><span class="tag tag-S">S</span> Simulation (CAE/AI仿真预测)</div>
+        <div class="legend-item"><span class="tag tag-I">I</span> Inspection (图纸审查/尺寸测量)</div>
+        <div class="legend-item"><span class="tag tag-T">T</span> Test (台架试验/实船试航)</div>
+    </div>
+
+</div>
+
+</body>
+</html>

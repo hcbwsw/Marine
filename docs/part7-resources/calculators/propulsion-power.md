@@ -1,0 +1,270 @@
+# 推进功率估算
+
+## 交互计算器
+
+<div class="calc-container">
+  <div class="calc-title">⚡ 推进功率计算器</div>
+  <div class="calc-grid">
+    <div class="calc-field">
+      <label>船长 L (m)</label>
+      <input type="number" id="pp-length" value="25" min="1" step="0.5">
+    </div>
+    <div class="calc-field">
+      <label>船宽 B (m)</label>
+      <input type="number" id="pp-beam" value="5.5" min="0.5" step="0.1">
+    </div>
+    <div class="calc-field">
+      <label>吃水 T (m)</label>
+      <input type="number" id="pp-draft" value="1.2" min="0.1" step="0.1">
+    </div>
+    <div class="calc-field">
+      <label>排水量 Δ (t)</label>
+      <input type="number" id="pp-disp" value="95" min="1" step="1">
+    </div>
+    <div class="calc-field">
+      <label>设计航速 (km/h)</label>
+      <input type="number" id="pp-speed" value="12" min="1" step="0.5">
+    </div>
+    <div class="calc-field">
+      <label>湿表面积 S (m²)</label>
+      <input type="number" id="pp-wsa" value="120" min="1" step="5">
+    </div>
+    <div class="calc-field">
+      <label>剩余阻力系数 C_R (×10⁻³)</label>
+      <input type="number" id="pp-cr" value="0.8" min="0.1" max="3" step="0.1">
+    </div>
+    <div class="calc-field">
+      <label>附体阻力 (%)</label>
+      <input type="number" id="pp-appendage" value="5" min="0" max="15" step="1">
+    </div>
+    <div class="calc-field">
+      <label>螺旋桨效率 η_P</label>
+      <input type="number" id="pp-etap" value="0.62" min="0.45" max="0.75" step="0.01">
+    </div>
+    <div class="calc-field">
+      <label>传动效率 η_S</label>
+      <input type="number" id="pp-etas" value="0.97" min="0.90" max="1.0" step="0.01">
+    </div>
+    <div class="calc-field">
+      <label>电机效率 η_M</label>
+      <input type="number" id="pp-etam" value="0.94" min="0.85" max="0.98" step="0.01">
+    </div>
+    <div class="calc-field">
+      <label>逆变器效率 η_I</label>
+      <input type="number" id="pp-etai" value="0.97" min="0.90" max="0.99" step="0.01">
+    </div>
+  </div>
+  <button class="calc-btn" onclick="calcPower()">计 算</button>
+  <div class="calc-results">
+    <div class="calc-result-card">
+      <div class="calc-result-label">摩擦阻力</div>
+      <div class="calc-result-value" id="pp-rf">—</div>
+    </div>
+    <div class="calc-result-card">
+      <div class="calc-result-label">总阻力</div>
+      <div class="calc-result-value" id="pp-rt">—</div>
+    </div>
+    <div class="calc-result-card">
+      <div class="calc-result-label">有效功率 P_E</div>
+      <div class="calc-result-value" id="pp-pe">—</div>
+    </div>
+    <div class="calc-result-card primary">
+      <div class="calc-result-label">电机需求功率</div>
+      <div class="calc-result-value" id="pp-pm">—</div>
+    </div>
+  </div>
+  <div class="calc-note">
+    💡 采用 ITTC 1957 摩擦阻力公式 + 经验剩余阻力系数法。海水密度取 1025 kg/m³，淡水取 1000 kg/m³。
+  </div>
+</div>
+
+<script>
+function calcPower() {
+  const L = MarineCalc.getVal('pp-length');
+  const B = MarineCalc.getVal('pp-beam');
+  const T = MarineCalc.getVal('pp-draft');
+  const disp = MarineCalc.getVal('pp-disp');
+  const V_kmh = MarineCalc.getVal('pp-speed');
+  const S = MarineCalc.getVal('pp-wsa');
+  const Cr = MarineCalc.getVal('pp-cr') / 1000;
+  const appPct = MarineCalc.getVal('pp-appendage') / 100;
+  const etaP = MarineCalc.getVal('pp-etap');
+  const etaS = MarineCalc.getVal('pp-etas');
+  const etaM = MarineCalc.getVal('pp-etam');
+  const etaI = MarineCalc.getVal('pp-etai');
+
+  const V = V_kmh / 3.6; // m/s
+  const rho = 1000; // 淡水
+  const nu = 1.0e-6; // 运动粘度
+
+  // 雷诺数
+  const Rn = V * L / nu;
+  // ITTC 1957 摩擦阻力系数
+  const Cf = 0.075 / Math.pow(Math.log10(Rn) - 2, 2);
+  // 摩擦阻力 (N)
+  const Rf = 0.5 * rho * V * V * S * Cf;
+  // 剩余阻力 (N)
+  const Rr = 0.5 * rho * V * V * S * Cr;
+  // 总阻力 (N)，含附体
+  const Rt = (Rf + Rr) * (1 + appPct);
+  // 有效功率 (kW)
+  const Pe = Rt * V / 1000;
+  // 电机功率 (kW)
+  const etaTotal = etaP * etaS * etaM * etaI;
+  const Pm = Pe / etaTotal;
+
+  MarineCalc.setResult('pp-rf', MarineCalc.fmt(Rf/1000, 2), 'kN');
+  MarineCalc.setResult('pp-rt', MarineCalc.fmt(Rt/1000, 2), 'kN', true);
+  MarineCalc.setResult('pp-pe', MarineCalc.fmt(Pe, 1), 'kW');
+  MarineCalc.setResult('pp-pm', MarineCalc.fmt(Pm, 1), 'kW', true);
+}
+calcPower();
+</script>
+
+## 1. 估算方法概述
+
+船舶推进功率估算有三个层次：
+
+| 方法 | 精度 | 阶段 | 工作量 |
+|------|------|------|--------|
+| 经验公式法 | ±20-30% | 初步设计 | 低 |
+| 阻力-效率法 | ±10-15% | 方案设计 | 中 |
+| 模型试验+CFD | ±5% | 详细设计 | 高 |
+
+## 2. 阻力-效率法（推荐）
+
+### 2.1 基本公式
+
+$$P_E = R_T \times V$$
+
+$$P_D = \frac{P_E}{\eta_P \times \eta_R}$$
+
+$$P_S = \frac{P_D}{\eta_S}$$
+
+$$P_M = \frac{P_S}{\eta_G \times \eta_I \times \eta_M}$$
+
+其中：
+- P_E：有效功率（kW）= 阻力 × 航速
+- P_D：螺旋桨收到功率（kW）
+- P_S：轴功率（kW）
+- P_M：电机输出功率（kW）
+- R_T：总阻力（kN）
+- V：航速（m/s）
+- η_P：螺旋桨敞水效率（0.55-0.70）
+- η_R：相对旋转效率（0.98-1.02）
+- η_S：轴系效率（0.95-0.98）
+- η_G：齿轮箱效率（0.95-0.98，直驱为 1.0）
+- η_I：逆变器效率（0.95-0.98）
+- η_M：电机效率（0.92-0.96）
+
+### 2.2 总阻力估算
+
+$$R_T = R_F + R_R + R_A$$
+
+- R_F：摩擦阻力
+- R_R：剩余阻力（兴波+粘压）
+- R_A：附体阻力
+
+**摩擦阻力（ITTC 1957）：**
+
+$$R_F = \frac{1}{2} \rho V^2 S \times C_F$$
+
+$$C_F = \frac{0.075}{(\log_{10} R_n - 2)^2}$$
+
+其中：
+- ρ：水密度（淡水 1000 kg/m³，海水 1025 kg/m³）
+- V：航速（m/s）
+- S：湿表面积（m²）
+- C_F：摩擦阻力系数
+- R_n：雷诺数 = V×L/ν（ν 为运动粘度，淡水约 1.0×10⁻⁶）
+
+**湿表面积估算（Holtrop 经验公式）：**
+
+$$S = c_1 \times L \times (2T + B) \times \sqrt{C_M}$$
+
+其中 c₁ ≈ 1.0-1.1，取决于船型。
+
+**剩余阻力估算：** 需参考母型船数据或系列试验图谱（如 Series 60、BSRA 系列）。
+
+### 2.3 经验公式法（初步估算）
+
+** Admiralty 系数法：**
+
+$$P_E = \frac{\Delta^{2/3} \times V^3}{C_A}$$
+
+其中：
+- Δ：排水量（吨）
+- V：航速（节）
+- C_A：Admiralty 系数（内河客船 300-500，货船 400-600）
+
+## 3. 计算示例
+
+### 3.1 案例：内河电动客船
+
+**船舶参数：**
+- 总长 L = 25 m
+- 型宽 B = 5.5 m
+- 吃水 T = 1.2 m
+- 排水量 Δ = 95 t
+- 设计航速 V = 12 km/h = 3.33 m/s = 6.48 kn
+- 湿表面积 S ≈ 120 m²（估算）
+
+**步骤 1：摩擦阻力**
+
+雷诺数：$R_n = \frac{3.33 \times 25}{1.0 \times 10^{-6}} = 8.33 \times 10^7$
+
+$$C_F = \frac{0.075}{(\log_{10}(8.33 \times 10^7) - 2)^2} = \frac{0.075}{(7.92 - 2)^2} = \frac{0.075}{35.05} = 0.00214$$
+
+$$R_F = \frac{1}{2} \times 1000 \times 3.33^2 \times 120 \times 0.00214 = 1.42 \text{ kN}$$
+
+**步骤 2：剩余阻力**
+
+参考母型船，剩余阻力系数取 C_R = 0.0008：
+
+$$R_R = \frac{1}{2} \times 1000 \times 3.33^2 \times 120 \times 0.0008 = 5.32 \text{ kN}$$
+
+**步骤 3：总阻力**
+
+附体阻力取 5%：
+
+$$R_T = (R_F + R_R) \times 1.05 = (1.42 + 5.32) \times 1.05 = 7.08 \text{ kN}$$
+
+**步骤 4：有效功率**
+
+$$P_E = R_T \times V = 7.08 \times 3.33 = 23.6 \text{ kW}$$
+
+**步骤 5：电机功率**
+
+取 η_P = 0.62, η_R = 1.0, η_S = 0.97, η_G = 1.0（直驱）, η_I = 0.97, η_M = 0.94：
+
+$$P_M = \frac{23.6}{0.62 \times 1.0 \times 0.97 \times 1.0 \times 0.97 \times 0.94} = \frac{23.6}{0.548} = 43.1 \text{ kW}$$
+
+考虑 15% 海况裕度：
+
+$$P_{M,design} = 43.1 \times 1.15 = 49.6 \text{ kW}$$
+
+**选型建议：** 选用 2 × 30 kW 永磁同步电机（双机双桨），总功率 60 kW，留有余量。
+
+## 4. 各环节效率参考值
+
+### 4.1 串联效率链
+
+```
+电池(0.95) → 逆变器(0.97) → 电机(0.94) → 齿轮箱(0.97) → 螺旋桨(0.62)
+```
+
+**总效率** = 0.95 × 0.97 × 0.94 × 0.97 × 0.62 = **0.52**
+
+💡 这意味着电池放出 100 kWh 的能量，最终转化为船舶动能的只有约 52 kWh。
+
+### 4.2 效率优化重点
+
+| 环节 | 当前范围 | 优化方向 |
+|------|----------|----------|
+| 螺旋桨 | 0.55-0.70 | 优化桨叶设计、大直径低转速 |
+| 电机 | 0.92-0.96 | 永磁电机、优化绕组 |
+| 逆变器 | 0.95-0.98 | SiC 功率器件、优化调制策略 |
+| 齿轮箱 | 0.95-0.98 | 直驱消除齿轮箱损耗 |
+| 电池 | 0.92-0.98 | 优化内阻、温控 |
+
+📌 **最大提升空间在螺旋桨效率**——这也是为什么低转速大直径螺旋桨在电推进中被广泛应用。

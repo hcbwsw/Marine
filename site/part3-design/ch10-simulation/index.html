@@ -1,0 +1,5711 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="从基础认知到工程落地的完整知识手册">
+      
+      
+      
+      
+        <link rel="prev" href="../ch09-architecture/">
+      
+      
+        <link rel="next" href="../ch11-interfaces/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>第10章 协同仿真 - 船舶新能源动力系统工程手册</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans SC";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#10" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="船舶新能源动力系统工程手册" class="md-header__button md-logo" aria-label="船舶新能源动力系统工程手册" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            船舶新能源动力系统工程手册
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第10章 协同仿真
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../how-to-use/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  使用指南
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../part1-basics/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第一部分 基础认知
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../part2-subsystems/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第二部分 核心子系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第三部分 系统设计方法
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../part4-compliance/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第四部分 规范与合规
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../part5-validation/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第五部分 验证与落地
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../part6-advanced/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第六部分 专项深化
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../part7-resources/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第七部分 工具与资源
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="船舶新能源动力系统工程手册" class="md-nav__button md-logo" aria-label="船舶新能源动力系统工程手册" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    船舶新能源动力系统工程手册
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    使用指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一部分 基础认知
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第一部分 基础认知
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part1-basics/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一部分导读：基础认知
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part1-basics/ch01-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第1章 概述与发展
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part1-basics/ch02-classification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第2章 分类与选型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二部分 核心子系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第二部分 核心子系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二部分导读：核心子系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第3章 船用电池系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第3章 船用电池系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch03-battery-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.1 电池技术基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch03-battery-selection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.2 电池选型与配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch03-battery-bms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.3 电池管理系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch03-battery-safety/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.4 电池安全与防护
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第4章 电推进系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第4章 电推进系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch04-propulsion-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.1 电推进概述
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch04-thrusters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.2 推进器选型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch04-motors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.3 推进电机匹配
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch04-transmission/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.4 传动系统设计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch04-transmission-detail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.5 传动专项准则
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第5章 能量管理与控制
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第5章 能量管理与控制
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch05-ems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.1 能量管理系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch05-range/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.2 续航里程估算
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch05-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.3 能耗优化策略
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch05-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.4 控制专项准则
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch06-cooling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第6章 冷却与热管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三部分 系统设计方法
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第三部分 系统设计方法
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三部分导读：系统设计方法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch07-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第7章 总体研发框架
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch08-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第8章 需求工程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch09-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第9章 架构设计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第10章 协同仿真
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第10章 协同仿真
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 仿真体系总体架构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1 仿真体系总体架构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#711" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.1 为什么需要多物理域协同仿真
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#712" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.2 三层仿真架构总览
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#713" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.3 各层仿真输入输出规范
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-l3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 L3 系统级协同仿真模型
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2 L3 系统级协同仿真模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#721-simulink" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.1 完整模型架构（Simulink框架）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#722" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.2 模块一：任务剖面模块
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#723-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.3 模块二：电机电磁-热耦合模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#724-amesimsimulink" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.4 模块三：冷却回路热网络模型（AMESim/Simulink）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#725" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.5 模块四：轴系扭振简化模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#726-foc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.6 模块五：FOC控制器模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#727" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.7 模块六：降额与故障管理模块
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-l2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 L2 子系统级精细仿真
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3 L2 子系统级精细仿真">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#731-amesim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.1 冷却管网水力仿真（AMESim）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#732-simpackansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.2 扭振详细仿真（Simpack/ANSYS）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#733-maxwell-2d3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.3 电磁场仿真（Maxwell 2D/3D）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#74-l1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 L1 组件级高保真仿真
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.4 L1 组件级高保真仿真">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#741-cfd-fluentstar-ccm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4.1 换热器 CFD 仿真（Fluent/Star-CCM+）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#742-cfdopenfoamstar-ccm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4.2 螺旋桨水动力 CFD（OpenFOAM/Star-CCM+）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#75-hil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5 HIL（硬件在环）仿真平台
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.5 HIL（硬件在环）仿真平台">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#751-hil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5.1 HIL 平台架构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#752-hil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5.2 HIL 测试用例矩阵（完整版）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#753" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5.3 故障注入测试方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#76" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.6 仿真与试验相关性标定
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.6 仿真与试验相关性标定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#761" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.6.1 标定流程（三步法）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#762-2000kw" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.6.2 标定结果示例（内河船 2000kW 电机）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#77-vcrm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.7 仿真验证报告与VCRM的关联（自动化关闭证据）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.7 仿真验证报告与VCRM的关联（自动化关闭证据）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#771" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.7.1 问题描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#772" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.7.2 仿真报告的标准化结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#773" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.7.3 仿真验证结果对照表（模板）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#774-vcrms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.7.4 VCRM中S类条目的自动关闭规则
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#775-vcrm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.7.5 三类仿真报告的VCRM对接模式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.7.5 三类仿真报告的VCRM对接模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#l3simulinkamesim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L3系统级仿真报告（Simulink+AMESim联仿）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L2子系统级精细仿真（专项计算）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HIL实时仿真报告（控制软件验证）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#776-vcrm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.7.6 仿真报告的版本管理与VCRM同步
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#777" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.7.7 检查清单
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#78" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.8 仿真数据管理与版本控制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.8 仿真数据管理与版本控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#781" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.8.1 仿真模型版本管理规范
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#782" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.8.2 仿真置信度评估矩阵（新增）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#79" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.9 典型工程案例
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.9 典型工程案例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#791" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.9.1 内河客船案例：仿真发现换热器选型错误
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#792" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.9.2 海船案例：扭振仿真避免轴系共振
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#710" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.10 仿真体系建设路线图
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.10 仿真体系建设路线图">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#7101" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.10.1 分阶段建设计划（适合新入行企业）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7102-cmm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.10.2 仿真能力成熟度评估（CMM）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#711_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.11 本章检查单
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch11-interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第11章 接口管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch12-rams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第12章 RAMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch13-functional-safety/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第13章 功能安全
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第四部分 规范与合规
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第四部分 规范与合规
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第四部分导读：规范与合规
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/ch15-ccs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第14章 CCS规范
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/ch16-dnv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第15章 DNV规范
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/ch17-iec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第16章 IEC标准
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/ch18-compliance-mapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第17章 合规映射
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/ch19-inland-vs-sea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第18章 内河vs海船
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/ch20-special-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第19章 特有问题
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第五部分 验证与落地
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第五部分 验证与落地
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part5-validation/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第五部分导读：验证与落地
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part5-validation/ch21-vv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第20章 V&V体系
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part5-validation/ch22-stability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第21章 稳定运行
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part5-validation/ch23-diagnosis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第22章 故障诊断
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part5-validation/ch24-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第23章 测试体系
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part5-validation/ch25-90day/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第24章 90天路线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第六部分 专项深化
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第六部分 专项深化
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part6-advanced/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第六部分导读：专项深化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part6-advanced/ch26-hybrid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第25章 混合动力
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part6-advanced/ch27-commercialization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第26章 商业化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part6-advanced/ch28-innovation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第27章 技术创新
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part6-advanced/ch29-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第28章 技术路线图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part6-advanced/ch30-conclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第29章 总结建议
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第七部分 工具与资源
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第七部分 工具与资源
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第七部分导读：工具与资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../part7-resources/calculators/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录A 计算工具
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    附录A 计算工具
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/calculators/battery-capacity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    电池容量
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/calculators/propulsion-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    推进功率
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/calculators/range-calc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    续航里程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/calculators/efficiency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    效率分析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/appendix-toolchain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录B 工具链
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../part7-resources/cases/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录C 案例库
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9_4" id="__nav_9_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    附录C 案例库
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/cases/inland-passenger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    内河电动客船
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/cases/harbor-vessel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    港口工作船
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/cases/hybrid-ocean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    远洋混合动力
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_5" id="__nav_9_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录D 参考资料
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    附录D 参考资料
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/references/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    术语表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/references/standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    规范清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/references/books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    参考书目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/references/links/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    常用链接
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/appendix-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录E 规范笔记
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 仿真体系总体架构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1 仿真体系总体架构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#711" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.1 为什么需要多物理域协同仿真
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#712" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.2 三层仿真架构总览
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#713" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.3 各层仿真输入输出规范
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-l3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 L3 系统级协同仿真模型
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2 L3 系统级协同仿真模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#721-simulink" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.1 完整模型架构（Simulink框架）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#722" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.2 模块一：任务剖面模块
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#723-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.3 模块二：电机电磁-热耦合模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#724-amesimsimulink" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.4 模块三：冷却回路热网络模型（AMESim/Simulink）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#725" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.5 模块四：轴系扭振简化模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#726-foc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.6 模块五：FOC控制器模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#727" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.7 模块六：降额与故障管理模块
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-l2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 L2 子系统级精细仿真
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3 L2 子系统级精细仿真">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#731-amesim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.1 冷却管网水力仿真（AMESim）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#732-simpackansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.2 扭振详细仿真（Simpack/ANSYS）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#733-maxwell-2d3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.3 电磁场仿真（Maxwell 2D/3D）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#74-l1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 L1 组件级高保真仿真
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.4 L1 组件级高保真仿真">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#741-cfd-fluentstar-ccm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4.1 换热器 CFD 仿真（Fluent/Star-CCM+）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#742-cfdopenfoamstar-ccm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4.2 螺旋桨水动力 CFD（OpenFOAM/Star-CCM+）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#75-hil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5 HIL（硬件在环）仿真平台
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.5 HIL（硬件在环）仿真平台">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#751-hil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5.1 HIL 平台架构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#752-hil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5.2 HIL 测试用例矩阵（完整版）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#753" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5.3 故障注入测试方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#76" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.6 仿真与试验相关性标定
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.6 仿真与试验相关性标定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#761" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.6.1 标定流程（三步法）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#762-2000kw" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.6.2 标定结果示例（内河船 2000kW 电机）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#77-vcrm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.7 仿真验证报告与VCRM的关联（自动化关闭证据）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.7 仿真验证报告与VCRM的关联（自动化关闭证据）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#771" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.7.1 问题描述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#772" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.7.2 仿真报告的标准化结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#773" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.7.3 仿真验证结果对照表（模板）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#774-vcrms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.7.4 VCRM中S类条目的自动关闭规则
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#775-vcrm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.7.5 三类仿真报告的VCRM对接模式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.7.5 三类仿真报告的VCRM对接模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#l3simulinkamesim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L3系统级仿真报告（Simulink+AMESim联仿）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L2子系统级精细仿真（专项计算）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HIL实时仿真报告（控制软件验证）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#776-vcrm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.7.6 仿真报告的版本管理与VCRM同步
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#777" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.7.7 检查清单
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#78" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.8 仿真数据管理与版本控制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.8 仿真数据管理与版本控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#781" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.8.1 仿真模型版本管理规范
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#782" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.8.2 仿真置信度评估矩阵（新增）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#79" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.9 典型工程案例
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.9 典型工程案例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#791" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.9.1 内河客船案例：仿真发现换热器选型错误
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#792" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.9.2 海船案例：扭振仿真避免轴系共振
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#710" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.10 仿真体系建设路线图
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.10 仿真体系建设路线图">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#7101" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.10.1 分阶段建设计划（适合新入行企业）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7102-cmm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.10.2 仿真能力成熟度评估（CMM）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#711_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.11 本章检查单
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="10">第10章 多物理域协同仿真体系<a class="headerlink" href="#10" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>适用范围：内河船 + 海船电驱动系统
+覆盖工具：MATLAB/Simulink、AMESim、ANSYS、Maxwell、Fluent、HIL平台
+内河/海船各50%覆盖</p>
+</blockquote>
+<hr />
+<h2 id="71">7.1 仿真体系总体架构<a class="headerlink" href="#71" title="Permanent link">&para;</a></h2>
+<h3 id="711">7.1.1 为什么需要多物理域协同仿真<a class="headerlink" href="#711" title="Permanent link">&para;</a></h3>
+<p>船用电驱动系统是典型的<strong>多物理域强耦合系统</strong>，各域之间存在双向耦合：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>电磁域 ←──────────────────────────────────────► 热域
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  铜耗/铁耗 → 热源                               温升 → 绕组电阻升高（铜耗增大）
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  电流纹波 → 附加损耗                             磁钢温升 → 退磁风险（PMSM）
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>热域 ←──────────────────────────────────────► 冷却域
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  热源分布 → 冷却需求                             冷却液温度/流量 → 热边界条件
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  温升分布 → 热应力                               泵功耗 → 额外热源
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>机械域 ←──────────────────────────────────────► 控制域
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  轴系固有频率 → 控制带宽上限                      速度环带宽 → 扭振激励风险
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  扭振幅值 → 编码器信号噪声                        电流纹波 → 转矩波动 → 扭振激励
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>电磁域 ←──────────────────────────────────────► 机械域
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>  转矩波动（谐波）→ 轴系激励                       转速波动 → d/q轴电流耦合
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>  齿槽转矩 → 低速振动                             负载突变 → 电流冲击
+</code></pre></div>
+<p><strong>如果各域单独仿真，将漏掉以下关键耦合效应：</strong></p>
+<table>
+<thead>
+<tr>
+<th>漏掉的耦合</th>
+<th>典型后果</th>
+<th>工程损失</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>热-电磁耦合</td>
+<td>绕组电阻随温升增大8~15%，铜耗估算偏低</td>
+<td>换热器选小→过热降额</td>
+</tr>
+<tr>
+<td>控制-机械耦合</td>
+<td>速度环带宽设置过高，激励轴系共振</td>
+<td>联轴器损坏、振动超标</td>
+</tr>
+<tr>
+<td>冷却-热耦合</td>
+<td>冷却响应滞后未考虑，热保护触发过频</td>
+<td>推力损失、乘客投诉</td>
+</tr>
+<tr>
+<td>电磁-机械耦合</td>
+<td>谐波转矩激励未纳入扭振分析</td>
+<td>轴系疲劳失效提前</td>
+</tr>
+</tbody>
+</table>
+<h3 id="712">7.1.2 三层仿真架构总览<a class="headerlink" href="#712" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>┌─────────────────────────────────────────────────────────────────┐
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>│  L3：系统级协同仿真（快速，分钟级，精度±5%）                     │
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>│  工具：MATLAB/Simulink + Simscape / AMESim 联合仿真              │
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>│  用途：参数权衡、任务剖面验证、控制策略开发、降额律设计           │
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>├─────────────────────────────────────────────────────────────────┤
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>│  L2：子系统级精细仿真（中速，小时级，精度±2%）                   │
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>│  冷却：AMESim / Flowmaster（管网水力+热网络）                    │
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>│  传动：ANSYS Mechanical / Simpack（扭振+校中）                   │
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>│  电机：Maxwell / Flux（电磁场详细模型）                          │
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>│  控制：Simulink + 嵌入式代码生成（快速控制原型）                 │
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>├─────────────────────────────────────────────────────────────────┤
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>│  L1：组件级高保真仿真（慢速，天级，精度±1%）                     │
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>│  换热器：Fluent / Star-CCM+（CFD 三维流热耦合）                  │
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>│  轴系：ANSYS Mechanical（疲劳寿命/应力集中）                     │
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>│  螺旋桨：OpenFOAM / Star-CCM+（水动力CFD）                      │
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>└─────────────────────────────────────────────────────────────────┘
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>数据流向：
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>  L1 → L2：高保真结果作为精确参数（换热系数、Kt/Kq曲线）
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>  L2 → L3：子系统简化模型参数（热阻、刚度、传递函数）
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>  L3 ← → HIL：控制器代码在实时环境中验证
+</code></pre></div>
+<h3 id="713">7.1.3 各层仿真输入输出规范<a class="headerlink" href="#713" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>仿真层</th>
+<th>主要输入</th>
+<th>主要输出</th>
+<th>精度要求</th>
+<th>验收准则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L3 系统级</td>
+<td>任务剖面、控制参数、子系统简化模型</td>
+<td>温升曲线、转速响应、推力、能耗</td>
+<td>±5°C / ±2%转速</td>
+<td>与台架试验对比误差≤5%</td>
+</tr>
+<tr>
+<td>L2 子系统</td>
+<td>几何参数、材料属性、边界条件</td>
+<td>流量分布、固有频率、损耗分离</td>
+<td>±2°C / ±1Hz</td>
+<td>与样机测试误差≤3%</td>
+</tr>
+<tr>
+<td>L1 组件</td>
+<td>详细几何、流体参数、工况</td>
+<td>局部温度场、应力场、流场</td>
+<td>±1°C / ±0.5%</td>
+<td>与实验室测量误差≤2%</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="72-l3">7.2 L3 系统级协同仿真模型<a class="headerlink" href="#72-l3" title="Permanent link">&para;</a></h2>
+<h3 id="721-simulink">7.2.1 完整模型架构（Simulink框架）<a class="headerlink" href="#721-simulink" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>┌─────────────────────────────────────────────────────────────────┐
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>│                    L3 系统级仿真模型                             │
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>│                                                                 │
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>│  ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐  │
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>│  │ 任务剖面  │───►│ 推进管理  │───►│ FOC控制  │───►│ 电机模型  │  │
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>│  │ 模块     │    │ 模块(PMS)│    │ 模块     │    │ (电磁+热)│  │
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>│  └──────────┘    └──────────┘    └──────────┘    └──┬───┬──┘  │
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>│                       │                  ▲           │   │      │
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>│                       │降额指令           │速度反馈    │   │      │
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>│                       │                  │           │热源│推力  │
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>│                  ┌────▼─────┐    ┌───────┴──┐   ┌──▼──┐│      │
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>│                  │ 热保护&amp;  │    │ 轴系扭振  │   │冷却 ││      │
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>│                  │ 降额管理 │    │ 模型     │   │模型 ││      │
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>│                  └──────────┘    └──────────┘   └─────┘│      │
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>│                                                         │      │
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>│                                                    ┌────▼────┐  │
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>│                                                    │螺旋桨负 │  │
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>│                                                    │载模型   │  │
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>│                                                    └─────────┘  │
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>└─────────────────────────────────────────────────────────────────┘
+</code></pre></div>
+<h3 id="722">7.2.2 模块一：任务剖面模块<a class="headerlink" href="#722" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c">% 任务剖面定义（内河客船示例）</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c">% 五工况循环，总时长 5.5h/航次</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nb">profile</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">struct</span><span class="p">();</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nb">profile</span><span class="p">.</span><span class="n">segments</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c">%  工况名称      功率比   持续时间(s)  海温(°C)  备注</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="s">&#39;靠泊等待&#39;</span><span class="p">,</span><span class="w">    </span><span class="mf">0.05</span><span class="p">,</span><span class="w">    </span><span class="mi">1800</span><span class="p">,</span><span class="w">        </span><span class="mi">30</span><span class="p">,</span><span class="w">      </span><span class="s">&#39;发动机怠速&#39;</span><span class="p">;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="s">&#39;低速出港&#39;</span><span class="p">,</span><span class="w">    </span><span class="mf">0.30</span><span class="p">,</span><span class="w">    </span><span class="mi">1200</span><span class="p">,</span><span class="w">        </span><span class="mi">30</span><span class="p">,</span><span class="w">      </span><span class="s">&#39;进出港限速&#39;</span><span class="p">;</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="s">&#39;经济航速巡航&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.75</span><span class="p">,</span><span class="w">   </span><span class="mi">14400</span><span class="p">,</span><span class="w">       </span><span class="mi">35</span><span class="p">,</span><span class="w">      </span><span class="s">&#39;主要工况&#39;</span><span class="p">;</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="s">&#39;最大航速冲刺&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.00</span><span class="p">,</span><span class="w">    </span><span class="mi">1800</span><span class="p">,</span><span class="w">       </span><span class="mi">35</span><span class="p">,</span><span class="w">      </span><span class="s">&#39;赶点补时&#39;</span><span class="p">;</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span><span class="s">&#39;倒车靠泊&#39;</span><span class="p">,</span><span class="w">    </span><span class="mf">0.85</span><span class="p">,</span><span class="w">     </span><span class="mi">300</span><span class="p">,</span><span class="w">        </span><span class="mi">35</span><span class="p">,</span><span class="w">      </span><span class="s">&#39;靠码头&#39;</span><span class="p">;</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="p">};</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="c">% 任务剖面向等效工况转换</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="n">P_eq</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sqrt</span><span class="p">(</span><span class="nb">sum</span><span class="p">([</span><span class="n">P_i</span><span class="o">.^</span><span class="mi">2</span><span class="w"> </span><span class="o">.*</span><span class="w"> </span><span class="n">t_i</span><span class="p">])</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nb">sum</span><span class="p">(</span><span class="n">t_i</span><span class="p">));</span><span class="w">  </span><span class="c">% 热等效功率</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="c">% 用于换热器选型基准（非峰值功率！）</span>
+</code></pre></div>
+<p><strong>海船任务剖面示例（远洋货船）：</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>工况段          功率占比    时长占比    海温范围    说明
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>─────────────────────────────────────────────────────────
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>港内操纵         15%         5%        20~30°C    拖轮协助、低速
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>出/进港          35%        10%        20~30°C    狭水道、限速
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>大洋巡航         80%        70%        5~35°C     主要工况，变海温
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>恶劣天气减速     50%        10%        5~35°C     波高&gt;5m限速
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>应急全速          100%       5%        最高设计值  追赶班期/避险
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>加权等效功率：P_eq = √(0.15²×0.05 + 0.35²×0.10 + 0.80²×0.70
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>                     + 0.50²×0.10 + 1.00²×0.05) × P_rated
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>           ≈ 0.756 × P_rated
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>→ 换热器应按 75.6% 额定功率选型（加30%裕度），而非100%
+</code></pre></div>
+<h3 id="723-">7.2.3 模块二：电机电磁-热耦合模型<a class="headerlink" href="#723-" title="Permanent link">&para;</a></h3>
+<p><strong>Cauer 集总参数热网络（六节点）：</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>热源分布：
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>  Q_cu(t) = 3 × I_rms²(t) × R₀ × [1 + α(T_winding - 20°C)]
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>            ↑ 注意：电阻随温度变化，需迭代求解！
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>  Q_fe    ≈ K_h×f×B_m^α×V_core + K_e×f²×B_m²×V_core（近似恒定）
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>  Q_mech  = k_mech × n^1.5（风摩耗，随转速变化）
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>六节点 Cauer 热网络：
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>  Q_cu → [R_cu-slot] → T_winding
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>            ↓
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>         C_winding × dT_winding/dt = Q_cu - (T_winding-T_slot)/R_cu-slot
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>  Q_fe → [R_fe-yoke] → T_core
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>            ↓
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>         C_core × dT_core/dt = Q_fe - (T_core-T_yoke)/R_fe-yoke
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>  T_slot → [R_slot-yoke] → T_yoke → [R_yoke-jacket] → T_jacket
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>            ↓                          ↓
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>         C_slot × dT_slot/dt        C_yoke × dT_yoke/dt
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>  T_jacket → [R_jacket-fluid] → T_fluid_in
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>  T_fluid_out = T_fluid_in + Q_total/(ṁ × Cp)
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>各热阻参数估算（2000kW电机典型值）：
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>  R_cu-slot   = 0.05 K/W  （绕组导热脂填充的槽绝缘）
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>  R_slot-yoke = 0.03 K/W  （槽楔+铁芯接触）
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>  R_yoke-jacket = 0.02 K/W（铁芯-冷却套接触，含接触热阻）
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>  R_jacket-fluid = 0.01 K/W（冷却套-冷却液对流，取决于流速）
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>  对流热阻计算：R_conv = 1/(h × A_cooling)
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>  h = Nu × λ_fluid / D_h  （Nu = 0.023 Re^0.8 Pr^0.4，Dittus-Boelter）
+</code></pre></div>
+<p><strong>迭代求解流程（热-电磁耦合）：</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>初始化：T_winding = T_ambient = 25°C
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>循环迭代（时间步长 Δt = 0.1s）：
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>  Step 1：根据 T_winding 计算 R_phase(T) = R_20°C × [1+0.00393×(T-20)]
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>  Step 2：由 FOC 输出 I_dq 计算 Q_cu(t) = 3×I_rms²×R_phase(T)
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>  Step 3：求解热网络 ODE，得到新的 T_winding, T_core, T_jacket...
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>  Step 4：更新 Q_cu（铜耗随温升增大约8~12%），回到Step 1
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>  Step 5：检查收敛：|T_new - T_old| &lt; 0.1°C → 收敛，否则继续
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>⚠️ 不迭代的后果：100°C温升时铜耗低估约5%，换热器面积偏小，
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>   实际运行中冷却不足，过热降额频发。
+</code></pre></div>
+<h3 id="724-amesimsimulink">7.2.4 模块三：冷却回路热网络模型（AMESim/Simulink）<a class="headerlink" href="#724-amesimsimulink" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>状态方程（一维热网络）：
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>内循环（乙二醇水溶液，50%质量分数）：
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>  Cp = 3500 J/(kg·K)，ρ = 1060 kg/m³
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>  质量流量：ṁ_inner = f(n_pump, ΔP_system)  ← 泵曲线查表
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>  热平衡（电机冷却套）：
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>  T_out_motor = T_in_motor + Q_motor / (ṁ_inner × Cp)
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>  换热器换热量：
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>  Q_hx = ε × C_min × (T_hot_in - T_cold_in)
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>  ε = 1 - exp[-NTU×(1-C_r)] / [1 - C_r×exp(-NTU×(1-C_r))]
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>  NTU = UA / C_min
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>  外循环（海水）：
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>  T_sea_out = T_sea_in + Q_hx / (ṁ_outer × Cp_sea)
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>动态仿真关键参数（2000kW系统示例）：
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>  内循环流量：40~80 L/min（随泵速变化）
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>  换热器NTU：3.5（清洁状态），2.4（30%污堵）
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>  热容C_motor：85 kJ/K（集总参数）
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>  时间常数τ：τ = C_motor × R_th_total ≈ 85000 × 0.04 ≈ 3400s ≈ 57min
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>→ 电机热时间常数约57分钟！
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>  意味着：短时过载（&lt;10min）不会立即超温，
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>          但持续过载必然超温，且冷却响应有显著滞后。
+</code></pre></div>
+<h3 id="725">7.2.5 模块四：轴系扭振简化模型<a class="headerlink" href="#725" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>集总参数扭振模型（三质量体系统）：
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>  [J1]─k1─[J2]─k2─[J3]
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>  电机   联轴器  螺旋桨
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>状态空间方程：
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>  θ̈1 = (T_em - k1(θ1-θ2)) / J1
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>  θ̈2 = (k1(θ1-θ2) - k2(θ2-θ3)) / J2
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>  θ̈3 = (k2(θ2-θ3) - T_prop) / J3
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>固有频率（二自由度近似）：
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>  ω_n1² = k1(J1+J2)/(J1×J2)
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>  ω_n2² = k2(J2+J3)/(J2×J3)
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>典型参数（内河推船 500kW）：
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>  J_motor  = 8.5 kg·m²（厂家提供）
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>  J_prop   = 45 kg·m²（CFD估算）
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>  k_coupling = 2.5×10⁵ N·m/rad（橡胶联轴器）
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>  ω_n1 = √(2.5×10⁵ × (8.5+45)/(8.5×45)) = 89 rad/s → f_n1 = 14.2 Hz
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>  禁速区：n_critical = f_n1×60/Z = 14.2×60/4 = 213 rpm（4叶桨）
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>  禁速区范围：191~234 rpm（±10%）
+</code></pre></div>
+<h3 id="726-foc">7.2.6 模块五：FOC控制器模型<a class="headerlink" href="#726-foc" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c">% FOC 控制器 Simulink 模型关键参数</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c">% 电流环（内环）PI 参数</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">Kp_id</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Ld</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Ts</span><span class="p">);</span><span class="w">   </span><span class="c">% d轴电流环比例增益</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">Ki_id</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Rs</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Ts</span><span class="p">);</span><span class="w">   </span><span class="c">% d轴电流环积分增益</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="n">Kp_iq</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Lq</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Ts</span><span class="p">);</span><span class="w">   </span><span class="c">% q轴电流环比例增益</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="n">Ki_iq</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Rs</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Ts</span><span class="p">);</span><span class="w">   </span><span class="c">% q轴电流环积分增益</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="c">% 电流环带宽验证</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="n">BW_current</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">Ts</span><span class="p">);</span><span class="w">  </span><span class="c">% 约为 1/(5×采样周期)，目标200~500Hz</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="c">% 速度环（外环）PI 参数</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="c">% 关键约束：速度环带宽 &lt; 轴系固有频率 / 3</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="n">BW_speed_max</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">f_n1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w">    </span><span class="c">% 例：14.2Hz/3 = 4.7Hz</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="n">Kp_speed</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">BW_speed</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">J_total</span><span class="p">;</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="n">Ki_speed</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Kp_speed</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">BW_speed</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">  </span><span class="c">% 积分时间常数10倍于带宽</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="c">% 扭振陷波滤波器（如需更高速度环带宽）</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="c">% 中心频率 = 轴系固有频率，Q值5~10</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="n">wn</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">f_n1</span><span class="p">;</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="n">zeta_notch</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.05</span><span class="p">;</span><span class="w">  </span><span class="c">% 陷波深度</span>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="c">% 速度给定斜率限制（禁速区穿越）</span>
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="n">rate_limit_normal</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">      </span><span class="c">% rpm/s（正常加速）</span>
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="n">rate_limit_critical</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span><span class="w">    </span><span class="c">% rpm/s（穿越禁速区时强制加速）</span>
+</code></pre></div>
+<h3 id="727">7.2.7 模块六：降额与故障管理模块<a class="headerlink" href="#727" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>降额逻辑状态机（Simulink Stateflow 实现）：
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>状态0：正常运行
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>  条件：T_winding ≤ 130°C AND Q_coolant ≥ Q_min AND 无故障
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>  输出：P_allow = P_rated（100%）
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>状态1：热预警
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>  进入条件：T_winding &gt; 130°C 持续5s
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>  退出条件：T_winding &lt; 125°C 持续60s → 状态0
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>  输出：P_allow = P_rated，泵升至100%转速，告警
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>状态2：热降额
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>  进入条件：T_winding &gt; 155°C 持续10s
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>  退出条件：T_winding &lt; 145°C 持续120s → 状态1
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>  输出：P_allow = P_rated × (170-T_winding)/(170-155)
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>        （线性降额，170°C时降至0）
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>状态3：冷却降级
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>  进入条件：冷却流量 &lt; 60% 额定（主泵故障，备泵运行）
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>  输出：P_allow = 0.80 × P_rated
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>状态4：紧急停机
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>  进入条件：T_winding &gt; 175°C OR 过流 &gt; 1.5×额定
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>  输出：P_allow = 0，驱动使能关断，保留冷却泵
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>前馈优化（新增）：
+<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>  P_pred_loss = P_cmd × (1 - η_motor(n, T))
+<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>  Q_pump_pred = f(P_pred_loss)  ← 根据预测损耗提前调节泵速
+<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a>  效果：热响应滞后从60s→5s，降额频率降低约80%
+</code></pre></div>
+<hr />
+<h2 id="73-l2">7.3 L2 子系统级精细仿真<a class="headerlink" href="#73-l2" title="Permanent link">&para;</a></h2>
+<h3 id="731-amesim">7.3.1 冷却管网水力仿真（AMESim）<a class="headerlink" href="#731-amesim" title="Permanent link">&para;</a></h3>
+<p><strong>管网建模要素：</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>元素类型        参数需求                    数据来源
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>──────────────────────────────────────────────────────
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>泵              Q-H特性曲线（3~5条等速线）    厂家性能曲线
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>管路            长度、内径、粗糙度、弯头数   设计图纸
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>换热器          ε-NTU特性、压降特性          厂家数据或L1仿真
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>阀门            Cv系数、开度-流量关系        厂家数据
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>冷却套          流道尺寸、表面积             电机详细图纸
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>膨胀水箱        体积、充气压力              设计规格
+</code></pre></div>
+<p><strong>内河船管网仿真工况矩阵（必须覆盖全部工况）：</strong></p>
+<table>
+<thead>
+<tr>
+<th>工况</th>
+<th>主泵状态</th>
+<th>备泵状态</th>
+<th>外循环状态</th>
+<th>海温</th>
+<th>验证目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正常额定</td>
+<td>100%</td>
+<td>待机</td>
+<td>100%</td>
+<td>35°C</td>
+<td>温升≤80K</td>
+</tr>
+<tr>
+<td>正常经济</td>
+<td>75%</td>
+<td>待机</td>
+<td>75%</td>
+<td>35°C</td>
+<td>效率最优点</td>
+</tr>
+<tr>
+<td>主泵故障</td>
+<td>0%</td>
+<td>100%</td>
+<td>100%</td>
+<td>35°C</td>
+<td>降额后温升≤80K</td>
+</tr>
+<tr>
+<td>换热器30%污堵</td>
+<td>100%</td>
+<td>待机</td>
+<td>100%</td>
+<td>35°C</td>
+<td>温升≤90K（允许降额）</td>
+</tr>
+<tr>
+<td>冬季低温</td>
+<td>50%</td>
+<td>待机</td>
+<td>50%</td>
+<td>5°C</td>
+<td>最低温度≥5°C（防冻）</td>
+</tr>
+<tr>
+<td>怠速靠泊</td>
+<td>30%</td>
+<td>待机</td>
+<td>30%</td>
+<td>30°C</td>
+<td>泵不汽蚀</td>
+</tr>
+</tbody>
+</table>
+<p><strong>典型仿真结果分析（内河船 2000kW）：</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>正常额定工况（T_sea=35°C，P=100%额定）：
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>  内循环流量：72 L/min（设计值80 L/min，工作点偏移8%）
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>  泵工作压差：65 kPa（设计扬程7.5m）
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>  换热器效率ε：0.87（清洁）
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>  电机入口温度：43°C（目标≤45°C）✅
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>  绕组温升：76K（目标≤80K）✅
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>  泵效率：74%（目标≥70%）✅
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>主泵故障，备泵运行：
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>  内循环流量：58 L/min（降至73%）
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>  系统自动降额至82%功率
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>  绕组温升：79K（仍满足≤80K）✅
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>  → 降级运行能力验证通过
+</code></pre></div>
+<h3 id="732-simpackansys">7.3.2 扭振详细仿真（Simpack/ANSYS）<a class="headerlink" href="#732-simpackansys" title="Permanent link">&para;</a></h3>
+<p><strong>扭振分析完整流程：</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Step 1：轴系几何建模
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>  - 电机转子：转动惯量J（厂家提供或用CAD计算）
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>  - 各轴段：GIp/L（G=80GPa，Ip=πd⁴/32，L=轴段长度）
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>  - 联轴器：等效扭转刚度k_c（厂家提供，含温度修正）
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>  - 螺旋桨：J_prop（CFD估算，加附加水质量效应）
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>Step 2：附加水质量效应（海船螺旋桨必须考虑）
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>  J_prop_wet = J_prop_dry × (1 + k_added_mass)
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>  k_added_mass ≈ 0.20~0.25（4叶桨经验值）
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>  → 水中固有频率比空气中低约10%！
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>  ⚠️ 反例：某项目用干态固有频率设计禁速区，
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>     实际螺旋桨入水后固有频率降低11%，
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>     禁速区设置偏高，实际共振点在&quot;安全区&quot;内，
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>     海试发现强烈振动后紧急修改控制参数。
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>Step 3：激励谐波分析
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>  电机电磁激励（PMSM）：
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>    主要激励阶次：6k（k=1,2,3...）→ 6倍频为最主要
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>    幅值：T_6th ≈ 5%×T_rated（典型值，需电磁仿真确认）
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>  螺旋桨水动力激励：
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>    激励阶次：Z（叶片数）和 Z的整数倍
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a>    幅值：与螺旋桨不均匀来流有关（伴流场）
+<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>    海船：伴流不均匀度高 → 激励幅值大
+<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a>    内河：水浅、流速均匀 → 激励幅值相对小
+<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a>
+<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a>Step 4：Campbell图绘制
+<a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a>  横轴：转速（rpm），纵轴：频率（Hz）
+<a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a>  固有频率线：水平线（f_n1, f_n2...）
+<a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a>  激励线：斜线（f = order × n/60）
+<a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a>  交叉点 ± 10% 转速范围 = 禁速区
+<a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a>
+<a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a>Step 5：强迫振动响应计算
+<a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a>  τ_dynamic = T_excitation × Q_factor（共振放大因子）
+<a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a>  Q ≈ 1/(2ζ)（ζ=阻尼比，典型0.02~0.05）
+<a id="__codelineno-13-36" name="__codelineno-13-36" href="#__codelineno-13-36"></a>  τ_total = τ_static + τ_dynamic ≤ τ_allowable / 1.5（安全系数）
+</code></pre></div>
+<p><strong>海船扭振案例（4000kW渡船）：</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>初始设计：
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>  联轴器刚度：5×10⁵ N·m/rad（过高）
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>  一阶固有频率：f_n1 = 18.5 Hz
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>  4叶桨交叉点：n = 18.5×60/4 = 277.5 rpm
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>  额定转速：280 rpm → 共振点就在额定转速附近！
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>解决方案：
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>  Option A：更换软联轴器（刚度降至2×10⁵ N·m/rad）
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>    f_n1降至11.8Hz，共振点=177rpm（低于最低运行转速）✅
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>  Option B：增加飞轮（增大J_motor）
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>    增重200kg，成本高，不推荐
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>  Option C：设置禁速区（250~305rpm）
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>    需要快速穿越该区域，操纵不便，不推荐
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>选择Option A，更换联轴器后验证：
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>  Campbell图无禁区交叉（额定转速280rpm以上）✅
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>  强迫振动响应计算：τ_dynamic/τ_static = 0.08（8%，可接受）✅
+</code></pre></div>
+<h3 id="733-maxwell-2d3d">7.3.3 电磁场仿真（Maxwell 2D/3D）<a class="headerlink" href="#733-maxwell-2d3d" title="Permanent link">&para;</a></h3>
+<p><strong>主要仿真任务：</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>任务1：损耗精确计算（用于热网络参数标定）
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>  铜耗：Q_cu = 3×I²×R（含集肤效应修正，高频时铜耗增大20~50%）
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>  铁耗：分离为磁滞损耗+涡流损耗+附加损耗
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>  输出：损耗密度分布图 → 热网络各节点热源修正
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>任务2：退磁风险评估（PMSM海船电机）
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>  工况：温度150°C + 三倍额定电流（堵转工况）
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>  验证：磁钢最低磁密度 &gt; 不可逆退磁磁密度（Bd）
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>  结论：如存在退磁风险，必须限制堵转电流或降低磁钢工作温度
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>任务3：谐波转矩分析（扭振激励输入）
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>  输出：各次谐波转矩幅值（T_6th, T_12th...）
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>  作为扭振强迫振动响应计算的激励输入
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>任务4：齿槽转矩（低速运行特性）
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>  内河船低速进出港（30rpm以下）时，齿槽转矩引起转速波动
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>  目标：齿槽转矩 ≤ 1% T_rated（采用分数槽绕组可降低）
+</code></pre></div>
+<hr />
+<h2 id="74-l1">7.4 L1 组件级高保真仿真<a class="headerlink" href="#74-l1" title="Permanent link">&para;</a></h2>
+<h3 id="741-cfd-fluentstar-ccm">7.4.1 换热器 CFD 仿真（Fluent/Star-CCM+）<a class="headerlink" href="#741-cfd-fluentstar-ccm" title="Permanent link">&para;</a></h3>
+<p><strong>板式换热器 CFD 建模要点：</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>计算域：
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>  - 单流道（利用周期对称性简化）或完整换热器
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>  - 网格：六面体结构网格，边界层y+≈1（高精度壁面处理）
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>  - 网格数量：单流道约 50~200 万，完整换热器约 1000 万
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>边界条件：
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>  内侧（乙二醇）：入口温度65°C，流量按单流道均分
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>  外侧（海水）：入口温度35°C，流量按单流道均分
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>  壁面：无滑移，流-固耦合导热
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>湍流模型：
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>  Re &lt; 2300（层流）：层流模型
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>  Re &gt; 4000（湍流）：Realizable k-ε 或 SST k-ω
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>  过渡区：γ-Reθ 转捩模型
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>输出结果用途：
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>  换热系数 h → 修正 L3 热网络中 R_jacket-fluid
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>  压降 ΔP   → 修正 L2 管网水力模型中换热器阻力
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>  温度均匀性 → 识别流量分布不均导致的局部过热
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a>
+<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a>典型结果（海水型板式换热器，80kW换热量）：
+<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>  换热系数：h_inner=4800 W/(m²K)，h_outer=6200 W/(m²K)
+<a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a>  总传热系数：U = 1800 W/(m²K)
+<a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a>  压降（内侧）：22 kPa，压降（外侧）：18 kPa
+<a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a>  换热面积需求：A = Q/(U×ΔT_lm) = 80000/(1800×22) = 2.02 m²
+<a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a>  选型：A=2.6 m²（含30%污堵裕度）
+</code></pre></div>
+<h3 id="742-cfdopenfoamstar-ccm">7.4.2 螺旋桨水动力 CFD（OpenFOAM/Star-CCM+）<a class="headerlink" href="#742-cfdopenfoamstar-ccm" title="Permanent link">&para;</a></h3>
+<p><strong>仿真目的与方法：</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>目的1：获取精确的Kt、Kq曲线（替代系列桨插值）
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>  重要性：设计点偏离系列桨范围时（如浅吃水/大盘面比），
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>          系列桨误差可达15%，CFD误差&lt;3%
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>目的2：非均匀来流下的螺旋桨激励力（海船伴流场）
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>  重要性：扭振激励的主要来源，均匀来流假设误差很大
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>仿真方法：
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>  稳态（BEP特性）：旋转参考系，多工况扫描J=0.2~0.8
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>  非定常（激振力）：滑移网格，时间步对应1°~2°转角
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>  伴流场：先用无螺旋桨模型算船体伴流，再耦合螺旋桨
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>内河船简化策略：
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>  浅水效应修正：kt_shallow = Kt × f(h/D)（h=水深，D=桨径）
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>  浅水时Kt增大约5~15%（h/D&lt;2时显著）
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>  → 内河浅水区螺旋桨推力预测必须加浅水修正！
+</code></pre></div>
+<hr />
+<h2 id="75-hil">7.5 HIL（硬件在环）仿真平台<a class="headerlink" href="#75-hil" title="Permanent link">&para;</a></h2>
+<h3 id="751-hil">7.5.1 HIL 平台架构<a class="headerlink" href="#751-hil" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>┌─────────────────────────────────────────────────────────────┐
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>│                     HIL 平台架构                             │
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>│                                                             │
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>│  ┌──────────────┐          ┌──────────────────────────────┐ │
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>│  │  实物控制器  │          │     实时仿真机（dSPACE/      │ │
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>│  │  （被测件）  │          │     Speedgoat/NI PXI）       │ │
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>│  │              │          │                              │ │
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>│  │  推进控制器  │◄────────►│  电机模型（电磁+热）         │ │
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>│  │  (PDC)      │  I/O信号 │  冷却系统模型                │ │
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>│  │  变频器控制板│          │  轴系扭振模型                │ │
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>│  │  热保护逻辑  │          │  螺旋桨负载模型              │ │
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>│  └──────────────┘          │  故障注入模块                │ │
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>│         │                  └──────────────────────────────┘ │
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>│         │ CAN/EtherCAT                      │               │
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>│  ┌──────▼──────┐                    ┌───────▼──────┐        │
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>│  │  监控与数据  │                    │  故障注入    │        │
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>│  │  采集系统   │                    │  控制台      │        │
+<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a>│  │  (LabVIEW)  │                    │              │        │
+<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>│  └─────────────┘                    └──────────────┘        │
+<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a>└─────────────────────────────────────────────────────────────┘
+<a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a>
+<a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a>关键指标：
+<a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a>  实时步长：100μs~1ms（电流环）；10ms（热模型）
+<a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a>  I/O延迟：&lt;100μs
+<a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a>  模型精度：与台架试验对比误差&lt;3%
+</code></pre></div>
+<h3 id="752-hil">7.5.2 HIL 测试用例矩阵（完整版）<a class="headerlink" href="#752-hil" title="Permanent link">&para;</a></h3>
+<p><strong>必须完成的最小 HIL 测试用例集（共20个）：</strong></p>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>测试用例</th>
+<th>被测功能</th>
+<th>验收准则</th>
+<th>内河/海船</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HIL-01</td>
+<td>额定工况稳态运行</td>
+<td>控制精度</td>
+<td>转速稳态误差≤0.5%</td>
+<td>两者</td>
+</tr>
+<tr>
+<td>HIL-02</td>
+<td>10%转速阶跃响应</td>
+<td>速度环带宽</td>
+<td>调节时间≤设计值，超调≤5%</td>
+<td>两者</td>
+</tr>
+<tr>
+<td>HIL-03</td>
+<td>负载突变（75%→100%）</td>
+<td>抗扰性</td>
+<td>转速跌落≤3%，恢复时间≤2s</td>
+<td>两者</td>
+</tr>
+<tr>
+<td>HIL-04</td>
+<td>禁速区穿越</td>
+<td>禁速区控制</td>
+<td>穿越时间≤4s，无停留</td>
+<td>两者</td>
+</tr>
+<tr>
+<td>HIL-05</td>
+<td>倒车工况</td>
+<td>四象限运行</td>
+<td>转向平滑，无冲击（dT/dt≤限值）</td>
+<td>两者</td>
+</tr>
+<tr>
+<td>HIL-06</td>
+<td>热保护Level 1</td>
+<td>预警逻辑</td>
+<td>130°C告警，泵升速，不降额</td>
+<td>两者</td>
+</tr>
+<tr>
+<td>HIL-07</td>
+<td>热保护Level 2</td>
+<td>降额逻辑</td>
+<td>155°C开始线性降额，公式正确</td>
+<td>两者</td>
+</tr>
+<tr>
+<td>HIL-08</td>
+<td>热保护Level 3</td>
+<td>停机逻辑</td>
+<td>175°C停机≤0.5s，冷却泵保留</td>
+<td>两者</td>
+</tr>
+<tr>
+<td>HIL-09</td>
+<td>温度传感器单路失效</td>
+<td>传感器容错</td>
+<td>切换至备用路，触发告警</td>
+<td>两者</td>
+</tr>
+<tr>
+<td>HIL-10</td>
+<td>温度传感器双路失效</td>
+<td>失效安全</td>
+<td>触发降额至60%，不停机</td>
+<td>两者</td>
+</tr>
+<tr>
+<td>HIL-11</td>
+<td>内循环泵故障切换</td>
+<td>冗余切换</td>
+<td>5s内切换至备泵，告警</td>
+<td>两者</td>
+</tr>
+<tr>
+<td>HIL-12</td>
+<td>冷却流量低于60%</td>
+<td>冷却降级</td>
+<td>自动降额至80%，告警</td>
+<td>两者</td>
+</tr>
+<tr>
+<td>HIL-13</td>
+<td>通信总线中断</td>
+<td>通信容错</td>
+<td>10s内检测，切至本地安全模式</td>
+<td>两者</td>
+</tr>
+<tr>
+<td>HIL-14</td>
+<td>控制电源失电再恢复</td>
+<td>上电逻辑</td>
+<td>自检通过后平滑恢复，无冲击</td>
+<td>两者</td>
+</tr>
+<tr>
+<td>HIL-15</td>
+<td>编码器信号丢失</td>
+<td>编码器容错</td>
+<td>切至无传感器控制或安全停机</td>
+<td>两者</td>
+</tr>
+<tr>
+<td>HIL-16</td>
+<td>全航次任务剖面仿真</td>
+<td>综合性能</td>
+<td>温升满足要求，能耗符合预测</td>
+<td>内河</td>
+</tr>
+<tr>
+<td>HIL-17</td>
+<td>大洋航行变海温</td>
+<td>变工况适应</td>
+<td>5~35°C海温下全程满足KPI</td>
+<td>海船</td>
+</tr>
+<tr>
+<td>HIL-18</td>
+<td>恶劣天气减速</td>
+<td>快速功率变化</td>
+<td>功率50%→80%阶跃，稳定过渡</td>
+<td>海船</td>
+</tr>
+<tr>
+<td>HIL-19</td>
+<td>E-STOP紧急停止</td>
+<td>安全功能</td>
+<td>0.5s内停止输出，硬线验证</td>
+<td>两者</td>
+</tr>
+<tr>
+<td>HIL-20</td>
+<td>多故障组合（泵故障+传感器故障）</td>
+<td>组合故障</td>
+<td>进入预定降级状态，不崩溃</td>
+<td>两者</td>
+</tr>
+</tbody>
+</table>
+<h3 id="753">7.5.3 故障注入测试方法<a class="headerlink" href="#753" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>故障注入方式：
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>  硬件故障注入：通过继电器断开传感器信号线（模拟断路）
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>  软件故障注入：实时仿真机发送异常信号值（模拟漂移/卡死）
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>  网络故障注入：通过网络故障模拟器制造丢包/延迟
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>典型故障注入脚本（HIL-10示例）：
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>t=0s：系统正常额定运行（100%功率，转速稳定）
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>t=10s：注入温度传感器A断路故障（信号=0或开路）
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>        → 验证：系统检测到A路断路，切换至B路，触发告警
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>t=30s：注入温度传感器B断路故障（双路均失效）
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>        → 验证：系统在3s内检测到双路失效，
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>                自动降额至60%功率（失效安全）
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>                故障代码正确，HMI显示正确告警
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>t=60s：恢复传感器A信号正常
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>        → 验证：系统识别A路恢复，但保持当前状态，
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>                等待人工确认后才能提升功率（防误操作）
+<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>
+<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>验收准则：
+<a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a>  ① 双路失效检测时间 ≤ 3s ✅
+<a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a>  ② 降额至60%的过渡时间 ≤ 5s（无冲击）✅
+<a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a>  ③ 故障代码：0x2031（温度传感器双路失效）✅
+<a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a>  ④ HMI显示：&quot;温度监测失效，推力降级运行，请联系维修&quot; ✅
+<a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a>  ⑤ 功率稳定在60%额定，无振荡 ✅
+</code></pre></div>
+<hr />
+<h2 id="76">7.6 仿真与试验相关性标定<a class="headerlink" href="#76" title="Permanent link">&para;</a></h2>
+<h3 id="761">7.6.1 标定流程（三步法）<a class="headerlink" href="#761" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>Step 1：台架试验采集基准数据
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>  试验工况矩阵（至少覆盖以下组合）：
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>  负载点：30% / 50% / 75% / 100% 额定功率
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>  冷却流量：最小/额定/最大流量
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>  环境温度：15°C / 25°C / 35°C（模拟不同海温）
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>  测量量：
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>  - 绕组温升（每相，PT100）
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>  - 冷却套进出口温差
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>  - 损耗（输入功率-输出功率，精度0.1%）
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>  - 各点压差和流量
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>  - 振动加速度（轴承座）
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>
+<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>Step 2：模型参数辨识
+<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>  热网络参数辨识：
+<a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>    R_winding_slot：由绕组-铁芯温差 ÷ 铜耗估算
+<a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a>    R_yoke_jacket ：由铁芯-冷却套温差 ÷ 铁耗估算
+<a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a>    C_thermal    ：由温升时间常数 τ = R×C 拟合
+<a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a>
+<a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a>  优化方法：最小二乘法拟合仿真曲线到试验数据
+<a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a>  目标函数：min Σ(T_sim_i - T_test_i)²
+<a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a>
+<a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a>Step 3：标定验证（独立验证工况）
+<a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a>  选取与标定工况不同的3个验证工况
+<a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a>  验收准则：
+<a id="__codelineno-20-27" name="__codelineno-20-27" href="#__codelineno-20-27"></a>    温升预测误差 ≤ ±5°C（L3模型）
+<a id="__codelineno-20-28" name="__codelineno-20-28" href="#__codelineno-20-28"></a>    损耗预测误差 ≤ ±2%（L2模型）
+<a id="__codelineno-20-29" name="__codelineno-20-29" href="#__codelineno-20-29"></a>    固有频率预测误差 ≤ ±5%（扭振模型）
+</code></pre></div>
+<h3 id="762-2000kw">7.6.2 标定结果示例（内河船 2000kW 电机）<a class="headerlink" href="#762-2000kw" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>标定前 vs 标定后（100%额定负载，T_sea=35°C）：
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>参数          试验实测值    标定前仿真   误差    标定后仿真   误差
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>────────────────────────────────────────────────────────────────
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>绕组温升       76.3K        82.1K       +7.6%   75.8K       -0.7% ✅
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>冷却套出口温度  63.7°C       67.2°C      +5.5%   63.9°C      +0.3% ✅
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>总损耗         82.4kW       78.1kW      -5.2%   82.8kW      +0.5% ✅
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>内循环流量     71.3 L/min   74.0 L/min  +3.8%   71.8 L/min  +0.7% ✅
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>标定关键修正项：
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>  R_yoke_jacket：初值0.025 K/W → 标定值0.031 K/W（接触热阻比预期大24%）
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>  原因：铁芯与冷却套之间的装配间隙导热硅脂填充不均匀
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>   → 工艺改进：规定硅脂涂布规程，确保均匀接触
+</code></pre></div>
+<hr />
+<h2 id="77-vcrm">7.7 仿真验证报告与VCRM的关联（自动化关闭证据）<a class="headerlink" href="#77-vcrm" title="Permanent link">&para;</a></h2>
+<h3 id="771">7.7.1 问题描述<a class="headerlink" href="#771" title="Permanent link">&para;</a></h3>
+<p>当前状态：
+- 第10章生成多份仿真报告（HIL报告、Simulink报告、AMESim报告）
+- 第20章VCRM中有"S类"验证条目（仿真验证）
+- 但两者<strong>没有显式的对应关系</strong>，工程师需要手工查找</p>
+<p>结果：
+- VCRM中的S类条目难以自动关闭（无法追溯到具体仿真报告）
+- 验证完成度难以统计（不知道哪个仿真报告对应哪条需求）
+- 风险：重复仿真或遗漏验证</p>
+<p><strong>本节建立</strong>：
+仿真报告 ←→ VCRM条目 的<strong>双向追踪表</strong>，使验证链路清晰可追溯</p>
+<h3 id="772">7.7.2 仿真报告的标准化结构<a class="headerlink" href="#772" title="Permanent link">&para;</a></h3>
+<p>所有仿真报告应包含以下标准章节（与VCRM对接）：</p>
+<p><strong>表 7.7-1：仿真报告标准结构</strong></p>
+<table>
+<thead>
+<tr>
+<th>报告章节</th>
+<th>内容</th>
+<th>VCRM对接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Executive Summary</strong></td>
+<td>一句话说清"验证了什么"，列出关闭的VCRM编号</td>
+<td>REQ-COOL-001, REQ-CTRL-003,...</td>
+</tr>
+<tr>
+<td><strong>Model Description</strong></td>
+<td>模型范围、精度、参数来源</td>
+<td>关联第4/5/6章设计文件</td>
+</tr>
+<tr>
+<td><strong>Verification Results</strong></td>
+<td>逐个工况的验证结果，每个结果关联1个VCRM编号</td>
+<td>表7.7-2（结果对照表）</td>
+</tr>
+<tr>
+<td><strong>Limitations</strong></td>
+<td>本报告<strong>不能</strong>验证的VCRM条目及原因</td>
+<td>后续需其他验证方法</td>
+</tr>
+<tr>
+<td><strong>Conclusions</strong></td>
+<td>总体结论：VCRM S类条目关闭率XX%</td>
+<td>后续行动</td>
+</tr>
+</tbody>
+</table>
+<h3 id="773">7.7.3 仿真验证结果对照表（模板）<a class="headerlink" href="#773" title="Permanent link">&para;</a></h3>
+<p><strong>表 7.7-2：HIL验证场景与VCRM的对应关系示例</strong></p>
+<table>
+<thead>
+<tr>
+<th>仿真工况</th>
+<th>验证内容</th>
+<th>VCRM编号</th>
+<th>验证标准</th>
+<th>结果</th>
+<th>证据位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HC-01：正常启停</td>
+<td>启动延迟≤3s</td>
+<td>REQ-CTRL-001</td>
+<td>≤3s</td>
+<td>✅PASS</td>
+<td>HIL报告§3.1.2</td>
+</tr>
+<tr>
+<td>HC-03：稳速巡航</td>
+<td>温度稳定±2°C</td>
+<td>REQ-COOL-001</td>
+<td>±2°C</td>
+<td>✅PASS</td>
+<td>AMESim报告Fig.4</td>
+</tr>
+<tr>
+<td>HC-03：稳速巡航</td>
+<td>功率精度±3%</td>
+<td>REQ-PERF-001</td>
+<td>±3%</td>
+<td>✅PASS</td>
+<td>Simulink报告Tab.5</td>
+</tr>
+<tr>
+<td>HC-06：温度传感器故障</td>
+<td>故障检测时间≤3s</td>
+<td>REQ-CTRL-050</td>
+<td>≤3s</td>
+<td>✅PASS</td>
+<td>HIL报告§4.2.1</td>
+</tr>
+<tr>
+<td>HC-10：E-STOP响应</td>
+<td>推力→0响应时间≤100ms</td>
+<td>REQ-SAFE-001</td>
+<td>≤100ms</td>
+<td>✅PASS</td>
+<td>HIL报告§5.1</td>
+</tr>
+<tr>
+<td><strong>统计</strong></td>
+<td><strong>HIL场景覆盖</strong></td>
+<td><strong>VCRM S类</strong></td>
+<td><strong>关闭率</strong></td>
+<td><strong>85%</strong></td>
+<td><strong>待FAT补充15%</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="774-vcrms">7.7.4 VCRM中S类条目的自动关闭规则<a class="headerlink" href="#774-vcrms" title="Permanent link">&para;</a></h3>
+<p><strong>原则</strong>：仿真验证结果直接关闭VCRM</p>
+<p><strong>实施方式</strong>：</p>
+<p>在VCRM（第20章10.2节表）中新增"证据文件"列，格式统一为：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>[报告类型]-[报告编号]-[章节号]
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>例如：HIL-001-3.1.2（表示&quot;HIL报告001号第3.1.2节&quot;）
+</code></pre></div></p>
+<p><strong>VCRM关闭流程</strong>：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>Day 70: HIL验证完成
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>  ↓
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>生成HIL报告 v1.0
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>  ├─ Executive Summary列出关闭的VCRM编号（≥30条S类）
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>  ├─ 表7.7-2中填写对应关系
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>  └─ 版本号同时更新为&quot;v1.0&quot;
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>  ↓
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>Day 75: VCRM更新
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>  执行：对表7.7-2中所有&quot;✅PASS&quot;的行，
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>       在VCRM中定位对应的VCRM编号
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>       状态改为：✅CLOSED（关闭）
+<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a>       证据链接到：&quot;HIL-001-§3.1.2&quot;
+<a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a>  ↓
+<a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a>Day 76: 统计
+<a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a>  VCRM自动计算：S类关闭率 = CLOSED条目数 / 总S类条目数
+<a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a>  例如：85/100 = 85%
+<a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a>  ↓
+<a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a>Day 85: SIT验证再次关闭
+<a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a>  SIT报告补充关闭：剩余15条S类条目
+<a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a>  VCRM S类总关闭率 = 100%
+</code></pre></div>
+<h3 id="775-vcrm">7.7.5 三类仿真报告的VCRM对接模式<a class="headerlink" href="#775-vcrm" title="Permanent link">&para;</a></h3>
+<h4 id="l3simulinkamesim">L3系统级仿真报告（Simulink+AMESim联仿）<a class="headerlink" href="#l3simulinkamesim" title="Permanent link">&para;</a></h4>
+<p><strong>验证对象</strong>：系统级性能（热平衡、功率、响应时间）</p>
+<p><strong>VCRM对接</strong>：
+- 覆盖REQ-PERF-xxx、REQ-COOL-xxx、REQ-CTRL-001~005等<strong>基础功能需求</strong>
+- 预计关闭VCRM S类条目：≥20条
+- 报告名称：<code>SYSTEM-SIM-v1.0.pdf</code> (日期：第7周)</p>
+<p><strong>报告Executive Summary示例</strong>：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>本报告通过联合仿真验证了以下需求：
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>✅ REQ-PERF-001: 推进功率 [Simulink输出数据]
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>✅ REQ-COOL-001: 冷却温度范围 [AMESim热模型]
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>✅ REQ-CTRL-001: 启动延迟 [Simulink FOC控制]
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>...
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>总计：23条VCRM S类需求已CLOSED
+</code></pre></div></p>
+<h4 id="l2">L2子系统级精细仿真（专项计算）<a class="headerlink" href="#l2" title="Permanent link">&para;</a></h4>
+<p><strong>验证对象</strong>：子系统特殊功能（扭振、EMC、热失控）</p>
+<p><strong>VCRM对接</strong>：
+- 覆盖REQ-SHAFT-xxx（扭振）、REQ-EMC-xxx、REQ-BAT-xxx（热失控）等<strong>专项需求</strong>
+- 预计关闭VCRM S类条目：≥15条
+- 报告名称：<code>TORSION-SIM-v1.0.pdf</code>、<code>EMC-SIM-v1.0.pdf</code>、<code>THERMAL-RUNAWAY-SIM-v1.0.pdf</code></p>
+<p><strong>VCRM对接表示例</strong>：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>| 需求编号 | 验证方法 | 仿真报告 | 证据位置 |
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>|---------|---------|---------|---------|
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>| REQ-SHAFT-001 | 分析+仿真 | TORSION-SIM-v1.0 | Fig.2 (Campbell图) |
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>| REQ-EMC-001 | 仿真 | EMC-SIM-v1.0 | §3.1 (谐波含量) |
+</code></pre></div></p>
+<h4 id="hil">HIL实时仿真报告（控制软件验证）<a class="headerlink" href="#hil" title="Permanent link">&para;</a></h4>
+<p><strong>验证对象</strong>：控制逻辑、故障处理、实时性能</p>
+<p><strong>VCRM对接</strong>：
+- 覆盖REQ-CTRL-xxx、REQ-SAFE-xxx（安全功能）、REQ-DIAG-xxx（诊断）
+- 预计关闭VCRM S类条目：≥40条（最多）
+- 报告名称：<code>HIL-001-v1.0.pdf</code> (日期：第9周)</p>
+<p><strong>报告结构</strong>：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>HIL测试报告 v1.0
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>├─ Executive Summary
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>│  └─ 关闭VCRM条目：HC-01[REQ-CTRL-001,002]...HC-18[REQ-999]
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>│     总计：42条VCRM S类条目CLOSED
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>│
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>├─ 测试场景HC-01~HC-18详细结果
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>│  └─ 每个场景后跟&quot;VCRM对应表&quot;
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>│
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>├─ 故障注入(FI-01~FI-10)结果
+<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>│  └─ 故障注入FI-05响应时间&lt;100ms → REQ-SAFE-001 ✅PASS
+<a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a>│
+<a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>└─ VCRM关闭总表
+<a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a>   └─ 汇总所有42条PASS条目，标注证据位置
+</code></pre></div></p>
+<h3 id="776-vcrm">7.7.6 仿真报告的版本管理与VCRM同步<a class="headerlink" href="#776-vcrm" title="Permanent link">&para;</a></h3>
+<p><strong>时间节点</strong>：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>Day 50: Simulink模型v1.0完成
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>  ↓ 生成系统仿真报告 SYSTEM-SIM-v1.0
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>  ↓ VCRM更新：20条S类条目 CLOSED
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>  ↓ VCRM关闭率(S类) = 20/85 = 23%
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>Day 60: AMESim模型v1.0完成
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>  ↓ 生成热仿真报告 THERMAL-SIM-v1.0
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a>  ↓ VCRM更新：额外8条S类条目 CLOSED
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>  ↓ VCRM关闭率(S类) = 28/85 = 33%
+<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>
+<a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a>Day 70: HIL v1.0验证完成
+<a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a>  ↓ 生成HIL报告 HIL-001-v1.0
+<a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a>  ↓ VCRM更新：42条S类条目 CLOSED
+<a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a>  ↓ VCRM关闭率(S类) = 70/85 = 82%
+<a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a>
+<a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a>Day 85: SIT台架验证完成
+<a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a>  ↓ 补充关闭：15条S类条目
+<a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a>  ↓ VCRM关闭率(S类) = 85/85 = 100% ✅
+</code></pre></div>
+<h3 id="777">7.7.7 检查清单<a class="headerlink" href="#777" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>□ 所有仿真报告都有&quot;Executive Summary&quot;章节
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>□ Executive Summary中明确列出关闭的VCRM编号
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>□ 所有仿真结果表(如7.7-2)中都有VCRM编号关联
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>□ VCRM中S类条目都能追踪到对应的仿真报告
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>□ 仿真报告版本号与VCRM更新时间保持同步
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>□ 无&quot;孤立的VCRM条目&quot;（S类仍为Open且无仿真证据）
+</code></pre></div>
+<hr />
+<h2 id="78">7.8 仿真数据管理与版本控制<a class="headerlink" href="#78" title="Permanent link">&para;</a></h2>
+<h3 id="781">7.8.1 仿真模型版本管理规范<a class="headerlink" href="#781" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>版本命名规则：
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>  [项目代号]-[子系统]-[版本号]-[日期]
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>  例：SHIP2024-COOL-v2.3-20241115.slx
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>版本控制要求：
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>  工具：Git（结合 Git-LFS 处理大型仿真文件）
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>  分支策略：
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>    main分支：已验证、与试验对标通过的基准模型
+<a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a>    dev分支：开发中的参数优化
+<a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a>    feature分支：新功能或新架构探索
+<a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a>
+<a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a>  每次提交必须包含：
+<a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a>    ① 修改说明（修改了什么参数/结构，为什么修改）
+<a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a>    ② 关联的需求ID或FMEA条目ID
+<a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a>    ③ 验证状态（未验证/部分验证/已完全验证）
+<a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a>
+<a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a>仿真报告归档要求：
+<a id="__codelineno-29-18" name="__codelineno-29-18" href="#__codelineno-29-18"></a>  每个重要仿真节点生成正式报告，包含：
+<a id="__codelineno-29-19" name="__codelineno-29-19" href="#__codelineno-29-19"></a>  ① 仿真目的和输入条件
+<a id="__codelineno-29-20" name="__codelineno-29-20" href="#__codelineno-29-20"></a>  ② 关键结果（图表+数值）
+<a id="__codelineno-29-21" name="__codelineno-29-21" href="#__codelineno-29-21"></a>  ③ 与设计要求的对比
+<a id="__codelineno-29-22" name="__codelineno-29-22" href="#__codelineno-29-22"></a>  ④ 结论和设计建议
+<a id="__codelineno-29-23" name="__codelineno-29-23" href="#__codelineno-29-23"></a>  ⑤ 模型版本号和仿真日期
+</code></pre></div>
+<h3 id="782">7.8.2 仿真置信度评估矩阵（新增）<a class="headerlink" href="#782" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>仿真类型</th>
+<th>模型验证状态</th>
+<th>置信度</th>
+<th>允许用途</th>
+<th>不允许用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L3系统级（未标定）</td>
+<td>无试验对标</td>
+<td>低（60%）</td>
+<td>概念阶段权衡</td>
+<td>最终设计决策</td>
+</tr>
+<tr>
+<td>L3系统级（已标定）</td>
+<td>误差&lt;5%</td>
+<td>高（90%）</td>
+<td>设计验证、控制开发</td>
+<td>免试验替代</td>
+</tr>
+<tr>
+<td>L2子系统（已验证）</td>
+<td>误差&lt;3%</td>
+<td>高（92%）</td>
+<td>参数选型、FMEA支撑</td>
+<td>完全替代台架</td>
+</tr>
+<tr>
+<td>L1组件CFD（已验证）</td>
+<td>误差&lt;2%</td>
+<td>高（95%）</td>
+<td>精确参数提取</td>
+<td>样机鉴定</td>
+</tr>
+<tr>
+<td>HIL（控制器实物）</td>
+<td>软件在环</td>
+<td>中（85%）</td>
+<td>控制逻辑验证</td>
+<td>机械故障验证</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="79">7.9 典型工程案例<a class="headerlink" href="#79" title="Permanent link">&para;</a></h2>
+<h3 id="791">7.9.1 内河客船案例：仿真发现换热器选型错误<a class="headerlink" href="#791" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>背景：某内河电推客船，2×1000kW双轴推进，设计阶段仅进行热计算，
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>      未做动态仿真，换热器按单一额定工况选型。
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>问题发现（仿真阶段）：
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>  仿真工况：靠泊→出港→巡航→最大速度完整任务剖面动态仿真
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>  发现1：靠泊低功率（5%额定）阶段，冷却液温度降至28°C，
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>         换热器出力不足（偏低），泵工作点严重偏离高效区
+<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a>         泵效率：42%（设计值78%）→ 泵长期欠载运行，寿命降低
+<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a>
+<a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a>  发现2：从靠泊→最大功率（5min内功率从5%到100%），
+<a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a>         热响应滞后约8分钟，绕组温升峰值92K（超过F级80K！）
+<a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a>         静态仿真显示最终稳态78K（看似安全），
+<a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a>         但动态仿真暴露了瞬态峰值超标问题。
+<a id="__codelineno-30-15" name="__codelineno-30-15" href="#__codelineno-30-15"></a>
+<a id="__codelineno-30-16" name="__codelineno-30-16" href="#__codelineno-30-16"></a>解决方案：
+<a id="__codelineno-30-17" name="__codelineno-30-17" href="#__codelineno-30-17"></a>  ① 换热器缩小15%面积（按等效任务剖面功率选型）
+<a id="__codelineno-30-18" name="__codelineno-30-18" href="#__codelineno-30-18"></a>  ② 泵变频调速（根据功率指令调节泵速）
+<a id="__codelineno-30-19" name="__codelineno-30-19" href="#__codelineno-30-19"></a>  ③ 前馈控制：功率指令发出同时预调泵速，热响应从8min→2min
+<a id="__codelineno-30-20" name="__codelineno-30-20" href="#__codelineno-30-20"></a>
+<a id="__codelineno-30-21" name="__codelineno-30-21" href="#__codelineno-30-21"></a>成本分析：
+<a id="__codelineno-30-22" name="__codelineno-30-22" href="#__codelineno-30-22"></a>  仿真发现时：增加变频泵控制器约3万元，换热器优化节省1.5万元
+<a id="__codelineno-30-23" name="__codelineno-30-23" href="#__codelineno-30-23"></a>  台架试验发现：需重新选型换热器+重新安装，约15万元+延期1个月
+<a id="__codelineno-30-24" name="__codelineno-30-24" href="#__codelineno-30-24"></a>  海试发现：返厂修改，约80万元+延期3个月
+<a id="__codelineno-30-25" name="__codelineno-30-25" href="#__codelineno-30-25"></a>  → 仿真阶段发现节省约78万元工程损失
+</code></pre></div>
+<h3 id="792">7.9.2 海船案例：扭振仿真避免轴系共振<a class="headerlink" href="#792" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>背景：某4000kW海船电推，设计转速280rpm，4叶桨。
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>      项目方认为&quot;参考同类船型不做扭振分析&quot;。
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>仿真分析（要求补做）：
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>  一阶固有频率（考虑附加水质量）：f_n1 = 19.2 Hz
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>  4叶桨激励频率：f_exc = 4×280/60 = 18.7 Hz ≈ f_n1！
+<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>  → 额定转速附近存在严重共振风险！
+<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>
+<a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>如果不做仿真直接投产：
+<a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a>  预计结果：强烈轴系振动，联轴器橡胶元件1~2个月撕裂，
+<a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a>            振动超过船级社限值，无法通过海试
+<a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a>
+<a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a>解决方案（仿真后提前处理）：
+<a id="__codelineno-31-14" name="__codelineno-31-14" href="#__codelineno-31-14"></a>  联轴器刚度降低35%→ f_n1=15.1Hz，共振点降至227rpm
+<a id="__codelineno-31-15" name="__codelineno-31-15" href="#__codelineno-31-15"></a>  电控增加225~232rpm禁速区（穿越时间&lt;3s）
+<a id="__codelineno-31-16" name="__codelineno-31-16" href="#__codelineno-31-16"></a>
+<a id="__codelineno-31-17" name="__codelineno-31-17" href="#__codelineno-31-17"></a>节省成本：
+<a id="__codelineno-31-18" name="__codelineno-31-18" href="#__codelineno-31-18"></a>  设计变更（联轴器重选）：约2万元，提前2周处理
+<a id="__codelineno-31-19" name="__codelineno-31-19" href="#__codelineno-31-19"></a>  vs 投产后返工：整套轴系拆解+重装+海试，约200万元+延期2个月
+</code></pre></div>
+<hr />
+<h2 id="710">7.10 仿真体系建设路线图<a class="headerlink" href="#710" title="Permanent link">&para;</a></h2>
+<h3 id="7101">7.10.1 分阶段建设计划（适合新入行企业）<a class="headerlink" href="#7101" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>阶段一（0~6个月）：基础能力建设
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>  工具：Simulink + Simscape（已有许可证优先）
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>  建立：电机简化热模型（三节点）
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>  建立：冷却回路稳态计算模型
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>  目标：能够完成稳态热设计计算，替代手工Excel计算
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>  人员：1名仿真工程师，培训周期3个月
+<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>
+<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>阶段二（6~18个月）：动态仿真能力
+<a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a>  工具：AMESim（管网水力）+ Simpack（扭振）
+<a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a>  建立：冷却系统动态仿真模型（已与台架试验标定）
+<a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a>  建立：轴系扭振完整分析能力
+<a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a>  建立：L3系统级协同仿真模型（热+控+机械）
+<a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a>  目标：能够支撑完整的动态设计验证
+<a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a>  人员：2名仿真工程师
+<a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a>
+<a id="__codelineno-32-16" name="__codelineno-32-16" href="#__codelineno-32-16"></a>阶段三（18~36个月）：HIL与高保真仿真
+<a id="__codelineno-32-17" name="__codelineno-32-17" href="#__codelineno-32-17"></a>  工具：dSPACE/Speedgoat HIL平台 + Fluent（CFD）
+<a id="__codelineno-32-18" name="__codelineno-32-18" href="#__codelineno-32-18"></a>  建立：HIL平台（实物控制器+虚拟对象）
+<a id="__codelineno-32-19" name="__codelineno-32-19" href="#__codelineno-32-19"></a>  建立：换热器CFD仿真能力（组件验证）
+<a id="__codelineno-32-20" name="__codelineno-32-20" href="#__codelineno-32-20"></a>  建立：完整的仿真-试验相关性标定体系
+<a id="__codelineno-32-21" name="__codelineno-32-21" href="#__codelineno-32-21"></a>  目标：能够大幅减少台架试验轮次（缩短30%开发周期）
+<a id="__codelineno-32-22" name="__codelineno-32-22" href="#__codelineno-32-22"></a>  人员：3~4名仿真工程师，1名HIL工程师
+</code></pre></div>
+<h3 id="7102-cmm">7.10.2 仿真能力成熟度评估（CMM）<a class="headerlink" href="#7102-cmm" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>成熟度级别</th>
+<th>描述</th>
+<th>典型能力</th>
+<th>目标周期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Level 1（初始）</td>
+<td>靠人工Excel，无仿真</td>
+<td>手工稳态热计算</td>
+<td>现状</td>
+</tr>
+<tr>
+<td>Level 2（受管理）</td>
+<td>有仿真工具，非系统化</td>
+<td>单域仿真，未与试验对标</td>
+<td>6个月</td>
+</tr>
+<tr>
+<td>Level 3（已定义）</td>
+<td>有标准仿真流程，已标定</td>
+<td>多域协同仿真，流程规范</td>
+<td>18个月</td>
+</tr>
+<tr>
+<td>Level 4（量化管理）</td>
+<td>仿真结果可预测，有置信度</td>
+<td>HIL验证，仿真替代部分试验</td>
+<td>36个月</td>
+</tr>
+<tr>
+<td>Level 5（优化）</td>
+<td>仿真驱动设计，持续改进</td>
+<td>实时仿真、数字孪生</td>
+<td>5年</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="711_1">7.11 本章检查单<a class="headerlink" href="#711_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>仿真体系建设检查单（CDR阶段必须完成）：
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>L3 系统级仿真：
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>□ 任务剖面模型建立，覆盖全部工况段（≥5个工况）
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>□ 电机热网络模型建立（至少4节点）
+<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a>□ 冷却回路动态模型建立（含泵曲线、换热器ε-NTU）
+<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a>□ FOC控制器模型建立（含热保护降额逻辑）
+<a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a>□ 轴系扭振简化模型建立（至少3质量体）
+<a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a>□ L3模型与台架试验对标完成，误差≤5°C / ≤2%转速
+<a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a>
+<a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a>L2 子系统仿真：
+<a id="__codelineno-33-12" name="__codelineno-33-12" href="#__codelineno-33-12"></a>□ 冷却管网水力仿真完成（全部工况矩阵覆盖）
+<a id="__codelineno-33-13" name="__codelineno-33-13" href="#__codelineno-33-13"></a>□ 扭振详细分析完成，Campbell图无禁区交叉
+<a id="__codelineno-33-14" name="__codelineno-33-14" href="#__codelineno-33-14"></a>□ 电磁场仿真完成（损耗分离+谐波转矩）
+<a id="__codelineno-33-15" name="__codelineno-33-15" href="#__codelineno-33-15"></a>□ 退磁风险评估完成（PMSM电机）
+<a id="__codelineno-33-16" name="__codelineno-33-16" href="#__codelineno-33-16"></a>
+<a id="__codelineno-33-17" name="__codelineno-33-17" href="#__codelineno-33-17"></a>HIL 验证：
+<a id="__codelineno-33-18" name="__codelineno-33-18" href="#__codelineno-33-18"></a>□ HIL 平台搭建完成（实时步长≤1ms）
+<a id="__codelineno-33-19" name="__codelineno-33-19" href="#__codelineno-33-19"></a>□ 20个必须测试用例全部执行完毕
+<a id="__codelineno-33-20" name="__codelineno-33-20" href="#__codelineno-33-20"></a>□ 所有不合格项关闭并回归测试通过
+<a id="__codelineno-33-21" name="__codelineno-33-21" href="#__codelineno-33-21"></a>□ 故障注入10个场景全部通过验收准则
+<a id="__codelineno-33-22" name="__codelineno-33-22" href="#__codelineno-33-22"></a>
+<a id="__codelineno-33-23" name="__codelineno-33-23" href="#__codelineno-33-23"></a>文档归档：
+<a id="__codelineno-33-24" name="__codelineno-33-24" href="#__codelineno-33-24"></a>□ 各层仿真报告完成归档（版本号、日期、结论）
+<a id="__codelineno-33-25" name="__codelineno-33-25" href="#__codelineno-33-25"></a>□ 仿真模型版本与设计版本对应关系记录
+<a id="__codelineno-33-26" name="__codelineno-33-26" href="#__codelineno-33-26"></a>□ 标定报告完成（含标定前后对比）
+<a id="__codelineno-33-27" name="__codelineno-33-27" href="#__codelineno-33-27"></a>□ HIL测试报告完成（含所有测试用例结果）
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.action.view"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/calc-common.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
