@@ -1,5 +1,104 @@
 # 电池容量计算
 
+## 交互计算器
+
+<div class="calc-container">
+  <div class="calc-title">🔋 电池容量计算器</div>
+  <div class="calc-grid">
+    <div class="calc-field">
+      <label>平均航行功率 (kW)</label>
+      <input type="number" id="bc-power" value="80" min="0" step="1">
+    </div>
+    <div class="calc-field">
+      <label>每日运行时间 (h)</label>
+      <input type="number" id="bc-hours" value="6" min="0" step="0.5">
+    </div>
+    <div class="calc-field">
+      <label>系统电压 (V)</label>
+      <select id="bc-voltage">
+        <option value="48">48 V</option>
+        <option value="96">96 V</option>
+        <option value="311">311 V</option>
+        <option value="600" selected>600 V</option>
+        <option value="690">690 V</option>
+      </select>
+    </div>
+    <div class="calc-field">
+      <label>放电深度 DOD</label>
+      <input type="number" id="bc-dod" value="0.8" min="0.5" max="0.95" step="0.05">
+    </div>
+    <div class="calc-field">
+      <label>放电效率 η</label>
+      <input type="number" id="bc-eff" value="0.95" min="0.85" max="0.99" step="0.01">
+    </div>
+    <div class="calc-field">
+      <label>冗余系数 K</label>
+      <input type="number" id="bc-redundancy" value="1.15" min="1.0" max="1.5" step="0.05">
+    </div>
+    <div class="calc-field">
+      <label>辅机用电占比 (%)</label>
+      <input type="number" id="bc-aux" value="10" min="0" max="30" step="1">
+    </div>
+    <div class="calc-field">
+      <label>温度修正系数</label>
+      <select id="bc-temp">
+        <option value="0.70">-10°C (0.70)</option>
+        <option value="0.80">0°C (0.80)</option>
+        <option value="0.90">10°C (0.90)</option>
+        <option value="1.00" selected>25°C (1.00)</option>
+        <option value="0.95">40°C (0.95)</option>
+      </select>
+    </div>
+  </div>
+  <button class="calc-btn" onclick="calcBattery()">计 算</button>
+  <div class="calc-results">
+    <div class="calc-result-card">
+      <div class="calc-result-label">日能量需求</div>
+      <div class="calc-result-value" id="bc-energy">—</div>
+    </div>
+    <div class="calc-result-card primary">
+      <div class="calc-result-label">所需电池容量</div>
+      <div class="calc-result-value" id="bc-capacity">—</div>
+    </div>
+    <div class="calc-result-card">
+      <div class="calc-result-label">电池组总能量</div>
+      <div class="calc-result-value" id="bc-total">—</div>
+    </div>
+    <div class="calc-result-card">
+      <div class="calc-result-label">可用能量</div>
+      <div class="calc-result-value" id="bc-usable">—</div>
+    </div>
+  </div>
+  <div class="calc-note">
+    💡 计算公式：C = E / (V × DOD × η) × K，已包含辅机用电和温度修正。
+  </div>
+</div>
+
+<script>
+function calcBattery() {
+  const P = MarineCalc.getVal('bc-power');
+  const T = MarineCalc.getVal('bc-hours');
+  const V = MarineCalc.getVal('bc-voltage');
+  const DOD = MarineCalc.getVal('bc-dod');
+  const eff = MarineCalc.getVal('bc-eff');
+  const K = MarineCalc.getVal('bc-redundancy');
+  const aux = MarineCalc.getVal('bc-aux') / 100;
+  const temp = MarineCalc.getVal('bc-temp');
+
+  const E_daily = P * T * (1 + aux);
+  const E_adj = E_daily / temp;
+  const C = (E_adj * 1000) / (V * DOD * eff) * K;
+  const E_total = V * C / 1000;
+  const E_usable = E_total * DOD * eff * temp;
+
+  MarineCalc.setResult('bc-energy', MarineCalc.fmt(E_daily, 1), 'kWh', true);
+  MarineCalc.setResult('bc-capacity', MarineCalc.fmt(C, 0), 'Ah', true);
+  MarineCalc.setResult('bc-total', MarineCalc.fmt(E_total, 1), 'kWh');
+  MarineCalc.setResult('bc-usable', MarineCalc.fmt(E_usable, 1), 'kWh');
+}
+calcBattery();
+</script>
+
 ## 1. 基本公式
 
 ### 1.1 能量法（最常用）

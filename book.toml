@@ -10,6 +10,7 @@ preferred-dark-theme = "navy"
 git-repository-url = ""
 edit-url-template = ""
 additional-css = ["theme/css/general.css", "theme/css/index.css"]
+additional-js = ["theme/calc-common.js"]
 no-section-label = false
 
 [output.html.search]

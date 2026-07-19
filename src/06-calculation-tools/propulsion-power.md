@@ -1,5 +1,126 @@
 # 推进功率估算
 
+## 交互计算器
+
+<div class="calc-container">
+  <div class="calc-title">⚡ 推进功率计算器</div>
+  <div class="calc-grid">
+    <div class="calc-field">
+      <label>船长 L (m)</label>
+      <input type="number" id="pp-length" value="25" min="1" step="0.5">
+    </div>
+    <div class="calc-field">
+      <label>船宽 B (m)</label>
+      <input type="number" id="pp-beam" value="5.5" min="0.5" step="0.1">
+    </div>
+    <div class="calc-field">
+      <label>吃水 T (m)</label>
+      <input type="number" id="pp-draft" value="1.2" min="0.1" step="0.1">
+    </div>
+    <div class="calc-field">
+      <label>排水量 Δ (t)</label>
+      <input type="number" id="pp-disp" value="95" min="1" step="1">
+    </div>
+    <div class="calc-field">
+      <label>设计航速 (km/h)</label>
+      <input type="number" id="pp-speed" value="12" min="1" step="0.5">
+    </div>
+    <div class="calc-field">
+      <label>湿表面积 S (m²)</label>
+      <input type="number" id="pp-wsa" value="120" min="1" step="5">
+    </div>
+    <div class="calc-field">
+      <label>剩余阻力系数 C_R (×10⁻³)</label>
+      <input type="number" id="pp-cr" value="0.8" min="0.1" max="3" step="0.1">
+    </div>
+    <div class="calc-field">
+      <label>附体阻力 (%)</label>
+      <input type="number" id="pp-appendage" value="5" min="0" max="15" step="1">
+    </div>
+    <div class="calc-field">
+      <label>螺旋桨效率 η_P</label>
+      <input type="number" id="pp-etap" value="0.62" min="0.45" max="0.75" step="0.01">
+    </div>
+    <div class="calc-field">
+      <label>传动效率 η_S</label>
+      <input type="number" id="pp-etas" value="0.97" min="0.90" max="1.0" step="0.01">
+    </div>
+    <div class="calc-field">
+      <label>电机效率 η_M</label>
+      <input type="number" id="pp-etam" value="0.94" min="0.85" max="0.98" step="0.01">
+    </div>
+    <div class="calc-field">
+      <label>逆变器效率 η_I</label>
+      <input type="number" id="pp-etai" value="0.97" min="0.90" max="0.99" step="0.01">
+    </div>
+  </div>
+  <button class="calc-btn" onclick="calcPower()">计 算</button>
+  <div class="calc-results">
+    <div class="calc-result-card">
+      <div class="calc-result-label">摩擦阻力</div>
+      <div class="calc-result-value" id="pp-rf">—</div>
+    </div>
+    <div class="calc-result-card">
+      <div class="calc-result-label">总阻力</div>
+      <div class="calc-result-value" id="pp-rt">—</div>
+    </div>
+    <div class="calc-result-card">
+      <div class="calc-result-label">有效功率 P_E</div>
+      <div class="calc-result-value" id="pp-pe">—</div>
+    </div>
+    <div class="calc-result-card primary">
+      <div class="calc-result-label">电机需求功率</div>
+      <div class="calc-result-value" id="pp-pm">—</div>
+    </div>
+  </div>
+  <div class="calc-note">
+    💡 采用 ITTC 1957 摩擦阻力公式 + 经验剩余阻力系数法。海水密度取 1025 kg/m³，淡水取 1000 kg/m³。
+  </div>
+</div>
+
+<script>
+function calcPower() {
+  const L = MarineCalc.getVal('pp-length');
+  const B = MarineCalc.getVal('pp-beam');
+  const T = MarineCalc.getVal('pp-draft');
+  const disp = MarineCalc.getVal('pp-disp');
+  const V_kmh = MarineCalc.getVal('pp-speed');
+  const S = MarineCalc.getVal('pp-wsa');
+  const Cr = MarineCalc.getVal('pp-cr') / 1000;
+  const appPct = MarineCalc.getVal('pp-appendage') / 100;
+  const etaP = MarineCalc.getVal('pp-etap');
+  const etaS = MarineCalc.getVal('pp-etas');
+  const etaM = MarineCalc.getVal('pp-etam');
+  const etaI = MarineCalc.getVal('pp-etai');
+
+  const V = V_kmh / 3.6; // m/s
+  const rho = 1000; // 淡水
+  const nu = 1.0e-6; // 运动粘度
+
+  // 雷诺数
+  const Rn = V * L / nu;
+  // ITTC 1957 摩擦阻力系数
+  const Cf = 0.075 / Math.pow(Math.log10(Rn) - 2, 2);
+  // 摩擦阻力 (N)
+  const Rf = 0.5 * rho * V * V * S * Cf;
+  // 剩余阻力 (N)
+  const Rr = 0.5 * rho * V * V * S * Cr;
+  // 总阻力 (N)，含附体
+  const Rt = (Rf + Rr) * (1 + appPct);
+  // 有效功率 (kW)
+  const Pe = Rt * V / 1000;
+  // 电机功率 (kW)
+  const etaTotal = etaP * etaS * etaM * etaI;
+  const Pm = Pe / etaTotal;
+
+  MarineCalc.setResult('pp-rf', MarineCalc.fmt(Rf/1000, 2), 'kN');
+  MarineCalc.setResult('pp-rt', MarineCalc.fmt(Rt/1000, 2), 'kN', true);
+  MarineCalc.setResult('pp-pe', MarineCalc.fmt(Pe, 1), 'kW');
+  MarineCalc.setResult('pp-pm', MarineCalc.fmt(Pm, 1), 'kW', true);
+}
+calcPower();
+</script>
+
 ## 1. 估算方法概述
 
 船舶推进功率估算有三个层次：

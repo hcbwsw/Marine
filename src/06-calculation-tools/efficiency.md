@@ -1,5 +1,110 @@
 # 系统效率分析
 
+## 交互计算器
+
+<div class="calc-container">
+  <div class="calc-title">⚙️ 系统效率链计算器</div>
+  <div class="calc-grid">
+    <div class="calc-field">
+      <label>电池放电效率</label>
+      <input type="number" id="ef-bat" value="0.95" min="0.85" max="0.99" step="0.01">
+    </div>
+    <div class="calc-field">
+      <label>线缆效率</label>
+      <input type="number" id="ef-cable" value="0.99" min="0.95" max="1.0" step="0.005">
+    </div>
+    <div class="calc-field">
+      <label>逆变器效率</label>
+      <input type="number" id="ef-inv" value="0.97" min="0.90" max="0.99" step="0.01">
+    </div>
+    <div class="calc-field">
+      <label>电机效率</label>
+      <input type="number" id="ef-motor" value="0.94" min="0.85" max="0.98" step="0.01">
+    </div>
+    <div class="calc-field">
+      <label>齿轮箱效率</label>
+      <input type="number" id="ef-gear" value="0.97" min="0.90" max="1.0" step="0.01">
+    </div>
+    <div class="calc-field">
+      <label>螺旋桨效率</label>
+      <input type="number" id="ef-prop" value="0.62" min="0.45" max="0.75" step="0.01">
+    </div>
+    <div class="calc-field">
+      <label>电池输出能量 (kWh)</label>
+      <input type="number" id="ef-input" value="100" min="1" step="10">
+    </div>
+  </div>
+  <button class="calc-btn" onclick="calcEfficiency()">计 算</button>
+  <div class="calc-results">
+    <div class="calc-result-card primary">
+      <div class="calc-result-label">系统总效率</div>
+      <div class="calc-result-value" id="ef-total">—</div>
+    </div>
+    <div class="calc-result-card">
+      <div class="calc-result-label">有效输出能量</div>
+      <div class="calc-result-value" id="ef-output">—</div>
+    </div>
+    <div class="calc-result-card">
+      <div class="calc-result-label">总损耗能量</div>
+      <div class="calc-result-value" id="ef-loss">—</div>
+    </div>
+    <div class="calc-result-card">
+      <div class="calc-result-label">最大损耗环节</div>
+      <div class="calc-result-value" id="ef-worst" style="font-size:1.1em">—</div>
+    </div>
+  </div>
+  <table class="calc-table">
+    <thead>
+      <tr><th>环节</th><th>效率</th><th>输入 (kWh)</th><th>输出 (kWh)</th><th>损耗 (kWh)</th></tr>
+    </thead>
+    <tbody id="ef-tbody"></tbody>
+  </table>
+  <div class="calc-note">
+    💡 能量沿链路逐级递减，表格展示每个环节的能量流和损耗分布。螺旋桨通常是最大损耗环节。
+  </div>
+</div>
+
+<script>
+function calcEfficiency() {
+  const stages = [
+    { name: '电池放电', eff: MarineCalc.getVal('ef-bat') },
+    { name: '线缆传输', eff: MarineCalc.getVal('ef-cable') },
+    { name: '逆变器', eff: MarineCalc.getVal('ef-inv') },
+    { name: '推进电机', eff: MarineCalc.getVal('ef-motor') },
+    { name: '齿轮箱', eff: MarineCalc.getVal('ef-gear') },
+    { name: '螺旋桨', eff: MarineCalc.getVal('ef-prop') }
+  ];
+  const E_in = MarineCalc.getVal('ef-input');
+
+  let energy = E_in;
+  let totalEff = 1.0;
+  let worstStage = null;
+  let worstLoss = 0;
+  const tbody = document.getElementById('ef-tbody');
+  tbody.innerHTML = '';
+
+  stages.forEach(s => {
+    const input = energy;
+    const output = energy * s.eff;
+    const loss = input - output;
+    totalEff *= s.eff;
+    if (s.eff < 1.0 && (1 - s.eff) > worstLoss) {
+      worstLoss = 1 - s.eff;
+      worstStage = s.name;
+    }
+    const row = tbody.insertRow();
+    row.innerHTML = `<td>${s.name}</td><td>${(s.eff*100).toFixed(1)}%</td><td>${MarineCalc.fmt(input,1)}</td><td>${MarineCalc.fmt(output,1)}</td><td style="color:#e74c3c">${MarineCalc.fmt(loss,1)}</td>`;
+    energy = output;
+  });
+
+  MarineCalc.setResult('ef-total', (totalEff*100).toFixed(1), '%', true);
+  MarineCalc.setResult('ef-output', MarineCalc.fmt(energy, 1), 'kWh');
+  MarineCalc.setResult('ef-loss', MarineCalc.fmt(E_in - energy, 1), 'kWh');
+  MarineCalc.setResult('ef-worst', worstStage || '—');
+}
+calcEfficiency();
+</script>
+
 ## 1. 全链路效率
 
 ### 1.1 能量流动路径

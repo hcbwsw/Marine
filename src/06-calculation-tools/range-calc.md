@@ -1,5 +1,106 @@
 # 续航里程计算
 
+## 交互计算器
+
+<div class="calc-container">
+  <div class="calc-title">🧭 续航里程计算器</div>
+  <div class="calc-grid">
+    <div class="calc-field">
+      <label>电池总能量 (kWh)</label>
+      <input type="number" id="rc-energy" value="960" min="1" step="10">
+    </div>
+    <div class="calc-field">
+      <label>放电深度 DOD</label>
+      <input type="number" id="rc-dod" value="0.8" min="0.5" max="0.95" step="0.05">
+    </div>
+    <div class="calc-field">
+      <label>电池健康度 SOH</label>
+      <input type="number" id="rc-soh" value="0.95" min="0.7" max="1.0" step="0.01">
+    </div>
+    <div class="calc-field">
+      <label>航速 (km/h)</label>
+      <input type="number" id="rc-speed" value="12" min="1" step="0.5">
+    </div>
+    <div class="calc-field">
+      <label>平均功率 (kW)</label>
+      <input type="number" id="rc-power" value="50" min="1" step="1">
+    </div>
+    <div class="calc-field">
+      <label>系统总效率 η</label>
+      <input type="number" id="rc-eff" value="0.52" min="0.35" max="0.70" step="0.01">
+    </div>
+    <div class="calc-field">
+      <label>安全裕度 (%)</label>
+      <input type="number" id="rc-margin" value="10" min="0" max="30" step="5">
+    </div>
+  </div>
+  <button class="calc-btn" onclick="calcRange()">计 算</button>
+  <div class="calc-results">
+    <div class="calc-result-card">
+      <div class="calc-result-label">可用能量</div>
+      <div class="calc-result-value" id="rc-usable">—</div>
+    </div>
+    <div class="calc-result-card">
+      <div class="calc-result-label">续航时间</div>
+      <div class="calc-result-value" id="rc-time">—</div>
+    </div>
+    <div class="calc-result-card primary">
+      <div class="calc-result-label">续航里程</div>
+      <div class="calc-result-value" id="rc-range">—</div>
+    </div>
+    <div class="calc-result-card">
+      <div class="calc-result-label">安全续航</div>
+      <div class="calc-result-value" id="rc-safe">—</div>
+    </div>
+  </div>
+  <table class="calc-table" id="rc-table">
+    <thead>
+      <tr><th>航速 (km/h)</th><th>功率 (kW)</th><th>续航时间 (h)</th><th>续航里程 (km)</th></tr>
+    </thead>
+    <tbody id="rc-tbody"></tbody>
+  </table>
+  <div class="calc-note">
+    💡 下方表格基于 P ∝ V³ 关系，展示不同航速下的续航变化。降速可显著增加续航。
+  </div>
+</div>
+
+<script>
+function calcRange() {
+  const E = MarineCalc.getVal('rc-energy');
+  const DOD = MarineCalc.getVal('rc-dod');
+  const SOH = MarineCalc.getVal('rc-soh');
+  const V = MarineCalc.getVal('rc-speed');
+  const P = MarineCalc.getVal('rc-power');
+  const eff = MarineCalc.getVal('rc-eff');
+  const margin = MarineCalc.getVal('rc-margin') / 100;
+
+  const E_usable = E * DOD * SOH;
+  const T = E_usable / P;
+  const R = T * V;
+  const R_safe = R * (1 - margin);
+
+  MarineCalc.setResult('rc-usable', MarineCalc.fmt(E_usable, 1), 'kWh');
+  MarineCalc.setResult('rc-time', MarineCalc.fmt(T, 1), 'h');
+  MarineCalc.setResult('rc-range', MarineCalc.fmt(R, 0), 'km', true);
+  MarineCalc.setResult('rc-safe', MarineCalc.fmt(R_safe, 0), 'km');
+
+  // 生成航速-续航表（基于 P ∝ V³）
+  const tbody = document.getElementById('rc-tbody');
+  tbody.innerHTML = '';
+  const speeds = [8, 10, 12, 14, 16];
+  const k = P / Math.pow(V, 3); // 功率系数
+  speeds.forEach(v => {
+    const p = k * Math.pow(v, 3);
+    const t = E_usable / p;
+    const r = t * v;
+    const row = tbody.insertRow();
+    row.innerHTML = `<td>${v}</td><td>${MarineCalc.fmt(p,1)}</td><td>${MarineCalc.fmt(t,1)}</td><td>${MarineCalc.fmt(r,0)}</td>`;
+    if (Math.abs(v - V) < 0.1) row.style.fontWeight = '700';
+  });
+}
+calcRange();
+</script>
+
 ## 1. 基本公式
 
 $$R = \frac{E_{usable} \times \eta_{total}}{P_{avg}} \times v$$
