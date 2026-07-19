@@ -63,17 +63,17 @@
 ## 本地运行
 
 ```bash
-# 安装 mdBook
-brew install mdbook
+# 安装 MkDocs Material
+pip3 install mkdocs-material jieba
 
 # 进入项目目录
 cd marine-energy-kb
 
 # 本地预览（自动开浏览器）
-mdbook serve --open
+mkdocs serve
 
 # 局域网访问（手机也能看）
-mdbook serve --hostname 0.0.0.0 --port 3000
+mkdocs serve -a 0.0.0.0:3000
 ```
 
 ## 持续更新

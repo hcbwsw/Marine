@@ -49,5 +49,5 @@
 ## 技术框架
 
 - 文档格式：Markdown
-- 构建工具：mdBook
+- 构建工具：MkDocs + Material 主题
 - 交互计算：HTML + JavaScript（附录A）
