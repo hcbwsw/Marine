@@ -66,3 +66,267 @@
   background: var(--md-default-bg-color, #1a1a2e);
   border-color: var(--md-default-fg-color--lightest, #444);
 }
+
+/* ========== 新增交互效果样式 ========== */
+
+/* Mermaid 图表容器 */
+.mermaid {
+  background: var(--md-default-bg-color, #fff);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  text-align: center;
+  overflow-x: auto;
+}
+
+[data-md-color-scheme="slate"] .mermaid {
+  background: var(--md-code-bg-color, #2e303e);
+}
+
+/* 步骤指示器 */
+.step-indicator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0;
+  padding: 0 1rem;
+  position: relative;
+}
+
+.step-indicator::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--md-default-fg-color--lightest, #e0e0e0);
+  z-index: 0;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--md-default-fg-color--lightest, #e0e0e0);
+  color: var(--md-default-fg-color, #666);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.step.completed .step-number {
+  background: #4CAF50;
+  color: white;
+}
+
+.step.active .step-number {
+  background: var(--md-primary-fg-color, #0d7377);
+  color: white;
+  box-shadow: 0 0 0 4px rgba(13, 115, 119, 0.2);
+}
+
+.step-title {
+  font-size: 0.75rem;
+  color: var(--md-default-fg-color, #666);
+  text-align: center;
+  font-weight: 500;
+}
+
+.step.active .step-title {
+  color: var(--md-primary-fg-color, #0d7377);
+  font-weight: 600;
+}
+
+/* 悬浮提示 Tooltip */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted var(--md-primary-fg-color, #0d7377);
+  cursor: help;
+  color: var(--md-primary-fg-color, #0d7377);
+  font-weight: 500;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: var(--md-default-fg-color, #333);
+  color: var(--md-default-bg-color, #fff);
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 12px;
+  position: absolute;
+  z-index: 1000;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -100px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--md-default-fg-color, #333) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* 计算器样式优化 */
+.calculator {
+  background: var(--md-code-bg-color, #f5f5f5);
+  border: 1px solid var(--md-default-fg-color--lightest, #e0e0e0);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+[data-md-color-scheme="slate"] .calculator {
+  background: var(--md-code-bg-color, #2e303e);
+}
+
+.calculator label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--md-default-fg-color, #333);
+}
+
+.calculator input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1.5px solid var(--md-default-fg-color--lightest, #ccc);
+  border-radius: 4px;
+  background: var(--md-default-bg-color, #fff);
+  color: var(--md-default-fg-color, #333);
+  font-size: 0.9rem;
+}
+
+.calculator button {
+  background: var(--md-primary-fg-color, #0d7377);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.calculator button:hover {
+  background: var(--md-accent-fg-color, #ff6b35);
+}
+
+.calculator .result {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: var(--md-default-bg-color, #fff);
+  border-radius: 4px;
+  border-left: 4px solid var(--md-primary-fg-color, #0d7377);
+}
+
+[data-md-color-scheme="slate"] .calculator .result {
+  background: var(--md-code-bg-color, #1a1a2e);
+}
+
+/* 标签页样式优化 */
+.tabbed-labels {
+  border-bottom: 2px solid var(--md-default-fg-color--lightest, #e0e0e0);
+}
+
+.tabbed-labels > label {
+  color: var(--md-default-fg-color, #666);
+  font-weight: 500;
+  padding: 0.8rem 1.2rem;
+  transition: color 0.3s;
+}
+
+.tabbed-labels > label:hover {
+  color: var(--md-primary-fg-color, #0d7377);
+}
+
+.tabbed-set > input:checked + label {
+  color: var(--md-primary-fg-color, #0d7377);
+  border-bottom: 2px solid var(--md-primary-fg-color, #0d7377);
+}
+
+/* 折叠面板样式优化 */
+.md-typeset details {
+  border: 1px solid var(--md-default-fg-color--lightest, #e0e0e0);
+  border-radius: 8px;
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
+.md-typeset details summary {
+  background: var(--md-code-bg-color, #f5f5f5);
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.md-typeset details summary:hover {
+  background: var(--md-default-fg-color--lightest, #e0e0e0);
+}
+
+.md-typeset details[open] summary {
+  border-bottom: 1px solid var(--md-default-fg-color--lightest, #e0e0e0);
+}
+
+.md-typeset details > *:not(summary) {
+  padding: 1rem 1.5rem;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+  .step-indicator {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .step-indicator::before {
+    display: none;
+  }
+  
+  .step {
+    flex-direction: row;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  .step-number {
+    margin-bottom: 0;
+  }
+  
+  .tooltip .tooltiptext {
+    width: 150px;
+    margin-left: -75px;
+  }
+}
