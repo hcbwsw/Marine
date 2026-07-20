@@ -2000,6 +2000,8 @@
       
         
       
+        
+      
     
     
     
@@ -2082,6 +2084,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../part4-compliance/ch14-classification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第14章 入级与检验概述
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../part4-compliance/ch15-ccs/" class="md-nav__link">
         
   
@@ -2089,7 +2119,7 @@
   <span class="md-ellipsis">
     
   
-    第14章 CCS规范
+    第15章 CCS规范
   
 
     
@@ -2117,7 +2147,7 @@
   <span class="md-ellipsis">
     
   
-    第15章 DNV规范
+    第16章 DNV规范
   
 
     
@@ -2145,7 +2175,7 @@
   <span class="md-ellipsis">
     
   
-    第16章 IEC标准
+    第17章 IEC标准
   
 
     
@@ -2173,7 +2203,7 @@
   <span class="md-ellipsis">
     
   
-    第17章 合规映射
+    第18章 合规映射
   
 
     
@@ -2201,7 +2231,7 @@
   <span class="md-ellipsis">
     
   
-    第18章 内河vs海船
+    第19章 内河vs海船
   
 
     
@@ -2229,7 +2259,7 @@
   <span class="md-ellipsis">
     
   
-    第19章 特有问题
+    第20章 特有问题
   
 
     
@@ -2360,7 +2390,7 @@
   <span class="md-ellipsis">
     
   
-    第20章 V&amp;V体系
+    第21章 V&amp;V体系
   
 
     
@@ -2388,7 +2418,7 @@
   <span class="md-ellipsis">
     
   
-    第21章 稳定运行
+    第22章 稳定运行
   
 
     
@@ -2416,7 +2446,7 @@
   <span class="md-ellipsis">
     
   
-    第22章 故障诊断
+    第23章 故障诊断
   
 
     
@@ -2444,7 +2474,7 @@
   <span class="md-ellipsis">
     
   
-    第23章 测试体系
+    第24章 测试体系
   
 
     
@@ -2472,7 +2502,7 @@
   <span class="md-ellipsis">
     
   
-    第24章 90天路线
+    第25章 90天路线
   
 
     
@@ -2603,7 +2633,7 @@
   <span class="md-ellipsis">
     
   
-    第25章 混合动力
+    第26章 混合动力
   
 
     
@@ -2631,7 +2661,7 @@
   <span class="md-ellipsis">
     
   
-    第26章 商业化
+    第27章 商业化
   
 
     
@@ -2659,7 +2689,7 @@
   <span class="md-ellipsis">
     
   
-    第27章 技术创新
+    第28章 技术创新
   
 
     
@@ -2687,7 +2717,7 @@
   <span class="md-ellipsis">
     
   
-    第28章 技术路线图
+    第29章 技术路线图
   
 
     
@@ -2715,7 +2745,7 @@
   <span class="md-ellipsis">
     
   
-    第29章 总结建议
+    第30章 总结建议
   
 
     
@@ -3783,147 +3813,158 @@
 <hr>
 <h2 id="31-mbse">3.1 MBSE 五视图体系<a class="headerlink" href="#31-mbse" title="Permanent link">¶</a></h2>
 <h3 id="_1">视图一：需求图<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[REQ] 船用电驱系统
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  ├── [REQ-001] 推力性能：额定推力 ≥ XX kN @设计航速
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  ├── [REQ-002] 效率：推进效率 ≥ 92%（额定工况）
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  ├── [REQ-003] 热管理：绕组温升 ≤ 80K（F级，连续运行）
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  ├── [REQ-004] 可用性：A ≥ 99.5%（年统计）
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  ├── [REQ-005] 噪声：机舱噪声 ≤ 85dB(A)（测量距离1m）
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  ├── [REQ-006] 安全：单一故障不导致推力完全丧失
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  └── [REQ-007] 合规：满足 CCS/DNV 适用章节，通过船级社审图
-</code></pre></div>
+<pre class="mermaid"><code>flowchart TB
+    REQ["[REQ] 船用电驱系统"]
+    REQ --&gt; REQ001["REQ-001 推力性能：额定推力 ≥ XX kN @设计航速"]
+    REQ --&gt; REQ002["REQ-002 效率：推进效率 ≥ 92%（额定工况）"]
+    REQ --&gt; REQ003["REQ-003 热管理：绕组温升 ≤ 80K（F级，连续运行）"]
+    REQ --&gt; REQ004["REQ-004 可用性：A ≥ 99.5%（年统计）"]
+    REQ --&gt; REQ005["REQ-005 噪声：机舱噪声 ≤ 85dB(A)（1m处）"]
+    REQ --&gt; REQ006["REQ-006 安全：单一故障不导致推力完全丧失"]
+    REQ --&gt; REQ007["REQ-007 合规：满足 CCS/DNV 适用章节"]</code></pre>
 <h3 id="_2">视图二：功能架构<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>F0：产生满足任务需求的推力
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  ├── F1：将电能转化为旋转机械能    → 传动子系统（电机）
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  ├── F2：将旋转机械能转化为推力    → 螺旋桨
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  ├── F3：维持系统热平衡            → 冷却子系统
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  ├── F4：精确控制转速/转矩         → 控制子系统（FOC）
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  ├── F5：传递轴向推力至船体        → 推力轴承+船体推力块
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  ├── F6：监测系统健康状态          → 传感器组+控制器
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  └── F7：故障保护与降级运行        → 控制逻辑+冗余设计
-</code></pre></div>
+<pre class="mermaid"><code>flowchart TB
+    F0["F0：产生满足任务需求的推力"]
+    F0 --&gt; F1["F1：电能→旋转机械能&lt;br/&gt;传动子系统（电机）"]
+    F0 --&gt; F2["F2：旋转机械能→推力&lt;br/&gt;螺旋桨"]
+    F0 --&gt; F3["F3：维持系统热平衡&lt;br/&gt;冷却子系统"]
+    F0 --&gt; F4["F4：精确控制转速/转矩&lt;br/&gt;控制子系统（FOC）"]
+    F0 --&gt; F5["F5：传递轴向推力至船体&lt;br/&gt;推力轴承+船体推力块"]
+    F0 --&gt; F6["F6：监测系统健康状态&lt;br/&gt;传感器组+控制器"]
+    F0 --&gt; F7["F7：故障保护与降级运行&lt;br/&gt;控制逻辑+冗余设计"]</code></pre>
 <p><strong>功能分配准则（每个功能必须有且仅有一个主责子系统）：</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>F1（电能→机械能）：主责=传动子系统，支持=控制子系统（FOC指令）
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>F3（热平衡）：主责=冷却子系统，触发=控制子系统（泵调速）
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>F4（转速控制）：主责=控制子系统，被控=传动子系统
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>F7（故障保护）：主责=控制子系统，执行=三个子系统协同
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>⚠️ 若某功能"主责不清"（两个子系统都认为对方负责）
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>   → 该功能在系统集成时极可能出现遗漏（典型集成故障根因）
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>F1（电能→机械能）：主责=传动子系统，支持=控制子系统（FOC指令）
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>F3（热平衡）：主责=冷却子系统，触发=控制子系统（泵调速）
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>F4（转速控制）：主责=控制子系统，被控=传动子系统
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>F7（故障保护）：主责=控制子系统，执行=三个子系统协同
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>⚠️ 若某功能"主责不清"（两个子系统都认为对方负责）
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>   → 该功能在系统集成时极可能出现遗漏（典型集成故障根因）
 </code></pre></div>
 <h3 id="ibd">视图三：逻辑架构（IBD 内部块图）<a class="headerlink" href="#ibd" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>┌────────────────────────────────────────────────────────┐
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>│                   船用电驱动系统                        │
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>│  ┌──────────┐        ┌──────────┐        ┌──────────┐  │
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>│  │ 冷却子系统│◄──热──►│ 传动子系统│◄──力──►│ 控制子系统│  │
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>│  │          │        │          │        │          │  │
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>│  │ 换热系统  │ 冷却液  │ 电机     │ 编码器  │ 控制器   │  │
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>│  │ 内循环泵  │←流量→  │ 联轴器   │←温度→  │ 线束     │  │
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>│  │ 外循环泵  │ 温度    │ 推力轴承 │ FOC指令 │ 传感器组 │  │
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>│  │ 膨胀水箱  │        │ 轴       │→状态→  │ HMI      │  │
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>│  │ 辅件     │◄──控──►│ 螺旋桨   │        │ 通信总线  │  │
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>│  └──────────┘        └──────────┘        └──────────┘  │
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>└────────────────────────────────────────────────────────┘
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>  外部接口：岸电/储能 | 海水进出 | 船体推力块 | 船舶网络
-</code></pre></div>
+<pre class="mermaid"><code>flowchart LR
+    subgraph 船用电驱动系统
+        subgraph 冷却子系统
+            换热系统
+            内循环泵
+            外循环泵
+            膨胀水箱
+            辅件
+        end
+        subgraph 传动子系统
+            电机
+            联轴器
+            推力轴承
+            轴
+            螺旋桨
+        end
+        subgraph 控制子系统
+            控制器
+            线束
+            传感器组
+            HMI
+            通信总线
+        end
+        冷却子系统 &lt;-."热/冷却液/流量/温度".-&gt; 传动子系统
+        传动子系统 &lt;-."力/编码器/温度/FOC指令/状态".-&gt; 控制子系统
+        冷却子系统 &lt;-."控".-&gt; 控制子系统
+    end
+    岸电[岸电/储能] --- 船用电驱动系统
+    海水[海水进出] --- 船用电驱动系统
+    推力块[船体推力块] --- 船用电驱动系统
+    船舶网络[船舶网络] --- 船用电驱动系统</code></pre>
 <h3 id="_3">视图四：行为视图（热保护状态机）<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>[正常运行] T_winding ≤ 130°C
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>      │ T &gt; 130°C（持续5s）
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>      ▼
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>[一级热警告] 泵升速至100%，记录告警
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>      │ T &gt; 155°C（持续10s）              │ T &lt; 125°C（持续60s）→ [正常运行]
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>      ▼
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>[二级降额运行] P = P_rated×(170-T)/(170-155)
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>      │ T &gt; 175°C                         │ T &lt; 145°C（持续120s）→ [一级热警告]
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>      ▼
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>[紧急停机] 切断驱动，保留冷却泵散热，需人工复位
-</code></pre></div>
+<pre class="mermaid"><code>stateDiagram-v2
+    [*] --&gt; 正常运行
+    正常运行: T_winding ≤ 130°C
+    正常运行 --&gt; 一级热警告: T &gt; 130°C 持续5s
+    一级热警告: 泵升速至100%，记录告警
+    一级热警告 --&gt; 正常运行: T &lt; 125°C 持续60s
+    一级热警告 --&gt; 二级降额运行: T &gt; 155°C 持续10s
+    二级降额运行: P = P_rated×(170-T)/(170-155)
+    二级降额运行 --&gt; 一级热警告: T &lt; 145°C 持续120s
+    二级降额运行 --&gt; 紧急停机: T &gt; 175°C
+    紧急停机: 切断驱动，保留冷却泵散热\n需人工复位</code></pre>
 <p><strong>完整系统状态机（含冷却故障并发状态）：</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>                    ┌─────────────────┐
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>                    │   正常运行       │
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>                    │  T&lt;130°C        │
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>                    │  流量&gt;70%额定   │
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>                    └────────┬────────┘
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>              ┌──────────────┼──────────────┐
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>              ▼              ▼              ▼
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        [热预警]        [冷却降级]      [传感器异常]
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>        T&gt;130°C        流量&lt;70%额定    传感器信号失效
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>        泵全速          自动降额至80%   切换冗余/估算
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>              │              │              │
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>              └──────────────┼──────────────┘
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>                             ▼
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>                      [降额运行]
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>                      P=40~80%额定
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>                             │ 条件继续恶化
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>                             ▼
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>                      [紧急停机]
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>                      T&gt;175°C 或 流量&lt;30%额定
-<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>                      需人工复位
-</code></pre></div>
+<pre class="mermaid"><code>stateDiagram-v2
+    [*] --&gt; 正常运行
+    正常运行: T&lt;130°C, 流量&gt;70%额定
+    正常运行 --&gt; 热预警: T&gt;130°C
+    正常运行 --&gt; 冷却降级: 流量&lt;70%额定
+    正常运行 --&gt; 传感器异常: 传感器信号失效
+    热预警: 泵全速
+    冷却降级: 自动降额至80%
+    传感器异常: 切换冗余/估算
+    热预警 --&gt; 降额运行
+    冷却降级 --&gt; 降额运行
+    传感器异常 --&gt; 降额运行
+    降额运行: P=40~80%额定
+    降额运行 --&gt; 紧急停机: 条件继续恶化
+    紧急停机: T&gt;175°C 或 流量&lt;30%额定\n需人工复位</code></pre>
 <h3 id="_4">视图五：参数视图（关键参数约束关系）<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>约束1：热功率平衡
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  P_cooling ≥ P_loss_total × 1.3（30%裕度）
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>  P_loss = 3I²R + K_h×f×B²×V_core + K_e×f²×B²×V_core + P_mech
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>约束2：泵工作点约束
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>  Q_pump(H) 与 Q_system(H) 的交点即为工作点
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>  工作点须在泵效率曲线 η_pump ≥ 70% 区间内
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>  📐 验证方法：绘制泵Q-H曲线与系统阻力曲线，确认工作点位置
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>约束3：轴系临界转速约束
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>  n_critical(正) ≥ 1.2 × n_max
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>  n_critical(逆) ≤ 0.8 × n_min
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>  📐 验证方法：扭振分析报告 + Campbell图（船级社审查项）
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>约束4：控制环带宽约束
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>  f_current ≥ 10 × f_torsion（电流环带宽远高于扭振频率）
-<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>  f_speed ≤ f_torsion / 3（速度环带宽低于扭振频率1/3）
-<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>  📐 验证方法：FOC参数整定报告 + 台架扭振验证
-<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>
-<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>约束5：RAMS可用性约束
-<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>  A = MTBF / (MTBF + MTTR) ≥ 99.5%
-<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>  由各子系统 MTBF 串并联计算决定
-<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>  📐 验证方法：RAMS分析报告（见第12章）
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>约束1：热功率平衡
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  P_cooling ≥ P_loss_total × 1.3（30%裕度）
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  P_loss = 3I²R + K_h×f×B²×V_core + K_e×f²×B²×V_core + P_mech
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>约束2：泵工作点约束
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  Q_pump(H) 与 Q_system(H) 的交点即为工作点
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  工作点须在泵效率曲线 η_pump ≥ 70% 区间内
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  📐 验证方法：绘制泵Q-H曲线与系统阻力曲线，确认工作点位置
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>约束3：轴系临界转速约束
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>  n_critical(正) ≥ 1.2 × n_max
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>  n_critical(逆) ≤ 0.8 × n_min
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>  📐 验证方法：扭振分析报告 + Campbell图（船级社审查项）
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>约束4：控制环带宽约束
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>  f_current ≥ 10 × f_torsion（电流环带宽远高于扭振频率）
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>  f_speed ≤ f_torsion / 3（速度环带宽低于扭振频率1/3）
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>  📐 验证方法：FOC参数整定报告 + 台架扭振验证
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>约束5：RAMS可用性约束
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>  A = MTBF / (MTBF + MTTR) ≥ 99.5%
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>  由各子系统 MTBF 串并联计算决定
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>  📐 验证方法：RAMS分析报告（见第12章）
 </code></pre></div>
 <hr>
 <h2 id="32">3.2 公理化设计耦合诊断与解耦方案<a class="headerlink" href="#32" title="Permanent link">¶</a></h2>
 <p><strong>完整设计矩阵：</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>{FR1}   [X 0 0 0 0] {DP1}   电机功率×螺旋桨匹配
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>{FR2} = [x X 0 0 0] {DP2}   FOC带宽+编码器分辨率
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>{FR3}   [X 0 X 0 0] {DP3}   换热面积+冷却流量
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>{FR4}   [x 0 0 X 0] {DP4}   推力轴承额定载荷
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>{FR5}   [x x x x X] {DP5}   冗余策略
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>矩阵为下三角形 → 解耦设计（Decoupled Design），可接受
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>（若为全矩阵 → 耦合设计，需要重新架构）
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>{FR1}   [X 0 0 0 0] {DP1}   电机功率×螺旋桨匹配
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>{FR2} = [x X 0 0 0] {DP2}   FOC带宽+编码器分辨率
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>{FR3}   [X 0 X 0 0] {DP3}   换热面积+冷却流量
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>{FR4}   [x 0 0 X 0] {DP4}   推力轴承额定载荷
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>{FR5}   [x x x x X] {DP5}   冗余策略
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>矩阵为下三角形 → 解耦设计（Decoupled Design），可接受
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>（若为全矩阵 → 耦合设计，需要重新架构）
 </code></pre></div>
 <blockquote>
 <p>⚠️ <strong>FR3 与 DP1 存在强耦合</strong>（电机损耗直接决定热源强度），冷却系统必须与传动系统协同设计，不可独立迭代。这是最常被忽视的系统级耦合！</p>
 </blockquote>
 <p><strong>FR3 与 DP1 强耦合的解耦方案：</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>问题根源：电机功率越高 → 铜耗越大 → 热源越强 → 冷却要求越高
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>          这是物理耦合，无法消除，只能管理
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>解耦策略：
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>  ✅ 选项A（推荐）：前馈解耦
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>     Q_pred = P_cmd × (1 - η_motor)  ← 根据功率指令预测热源
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>     提前调节泵速，热响应滞后从 ~60s 降至 ~5s
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>     实现：控制器读取功率指令 → 计算预期损耗 → 前馈调节泵转速
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>  ✅ 选项B：参数化冷却能力
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>     按功率档位预设冷却液流量（如30%/60%/100%三档）
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>     优点：控制简单；缺点：非连续有跳变（可能影响温控平稳性）
-<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>
-<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>  ✅ 选项C（保底）：降额律截止
-<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>     承认耦合，靠降额律在边界处保护
-<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>     必须配合选项A或B，不能单独使用
-<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>
-<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>推荐组合：A（前馈主动预控）+ C（降额律保底）
-<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
-<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>⚠️ 仅使用选项C的风险：
-<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>   热响应滞后 → 绕组温度已超限 → 降额 → 热负荷降低 →
-<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>   温度恢复 → 功率恢复 → 温度再超限 → 周期性振荡（"热振荡"）
-<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>   典型表现：功率输出周期性波动，船速不稳定，乘客投诉
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>问题根源：电机功率越高 → 铜耗越大 → 热源越强 → 冷却要求越高
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>          这是物理耦合，无法消除，只能管理
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>解耦策略：
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  ✅ 选项A（推荐）：前馈解耦
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>     Q_pred = P_cmd × (1 - η_motor)  ← 根据功率指令预测热源
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>     提前调节泵速，热响应滞后从 ~60s 降至 ~5s
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>     实现：控制器读取功率指令 → 计算预期损耗 → 前馈调节泵转速
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>  ✅ 选项B：参数化冷却能力
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>     按功率档位预设冷却液流量（如30%/60%/100%三档）
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>     优点：控制简单；缺点：非连续有跳变（可能影响温控平稳性）
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>  ✅ 选项C（保底）：降额律截止
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>     承认耦合，靠降额律在边界处保护
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>     必须配合选项A或B，不能单独使用
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>推荐组合：A（前馈主动预控）+ C（降额律保底）
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>⚠️ 仅使用选项C的风险：
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>   热响应滞后 → 绕组温度已超限 → 降额 → 热负荷降低 →
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>   温度恢复 → 功率恢复 → 温度再超限 → 周期性振荡（"热振荡"）
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>   典型表现：功率输出周期性波动，船速不稳定，乘客投诉
 </code></pre></div>
 <hr>
 <h2 id="33-trade-study">3.3 架构权衡研究（Trade Study）<a class="headerlink" href="#33-trade-study" title="Permanent link">¶</a></h2>
@@ -4103,18 +4144,18 @@
 <p><strong>结论：固定航线首选定距桨+变频直驱。复杂工况（港作拖轮、多档位频繁切换）可考虑CPP。</strong></p>
 </blockquote>
 <h3 id="trade-study">Trade Study 使用注意事项<a class="headerlink" href="#trade-study" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Trade Study 执行规范：
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>  ① 评估维度和权重必须在权衡开始前由团队协商确定，不得事后修改
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>  ② 所有方案的评分由独立评审人完成（避免主观倾向）
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>  ③ Trade Study 结论必须记录在设计决策记录（DDR）中
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>  ④ 评分为1~5分：5=最优，1=最差（相对评分）
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>❌ 常见错误：
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>   权重选择暗含对某方案的偏好 → 结论失去公信力
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>   评分在知道结论后反向填写 → 完全无效的Trade Study
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>✅ 正确做法：
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>   先定评估维度和权重（PDR前）→ 盲打分 → 计算结果 → 归档DDR
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Trade Study 执行规范：
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  ① 评估维度和权重必须在权衡开始前由团队协商确定，不得事后修改
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>  ② 所有方案的评分由独立评审人完成（避免主观倾向）
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>  ③ Trade Study 结论必须记录在设计决策记录（DDR）中
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>  ④ 评分为1~5分：5=最优，1=最差（相对评分）
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>❌ 常见错误：
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>   权重选择暗含对某方案的偏好 → 结论失去公信力
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>   评分在知道结论后反向填写 → 完全无效的Trade Study
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>✅ 正确做法：
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>   先定评估维度和权重（PDR前）→ 盲打分 → 计算结果 → 归档DDR
 </code></pre></div>
 <hr>
 <h2 id="34-n2">3.4 N² 接口矩阵（系统架构完整接口定义）<a class="headerlink" href="#34-n2" title="Permanent link">¶</a></h2>
@@ -4165,50 +4206,50 @@
 </tbody>
 </table>
 <p><strong>N² 矩阵使用规则：</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>① N²矩阵每个非空格=一份ICD（接口控制文件）
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>   上表共有 ~12个非空接口 → 需编写12份ICD
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>② 每份ICD必须有双方（提供方+接收方）的责任工程师签字
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>   ICD Rev.A（架构阶段草稿） → ICD Rev.B（CDR时冻结）
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>③ N²矩阵是动态文件：
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>   每次发现新接口 → 更新N²矩阵 → 新增ICD
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>   接口变更 → ECR/ECO流程 → 更新对应ICD
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>④ 集成问题80%源于接口未定义或定义不清楚
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>   N²矩阵完整 = 集成风险可控的第一步
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>① N²矩阵每个非空格=一份ICD（接口控制文件）
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>   上表共有 ~12个非空接口 → 需编写12份ICD
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>② 每份ICD必须有双方（提供方+接收方）的责任工程师签字
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>   ICD Rev.A（架构阶段草稿） → ICD Rev.B（CDR时冻结）
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>③ N²矩阵是动态文件：
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>   每次发现新接口 → 更新N²矩阵 → 新增ICD
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>   接口变更 → ECR/ECO流程 → 更新对应ICD
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>④ 集成问题80%源于接口未定义或定义不清楚
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>   N²矩阵完整 = 集成风险可控的第一步
 </code></pre></div>
 <hr>
 <h2 id="35">3.5 冗余架构设计策略<a class="headerlink" href="#35" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>船用电推系统冗余需求（REQ-006：单一故障不导致推力完全丧失）：
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>系统级冗余实现方式（选其一或组合）：
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>方案A：双轴推进
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>  两套独立电驱系统（各含独立冷却+传动+控制）
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>  单轴故障 → 剩余单轴维持50%~70%推力
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>  适用：对称双轴船（大多数商船）
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>  成本：最高（两套完整系统）
-<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
-<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>方案B：单轴+侧推器应急
-<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>  主推进单轴 + 应急侧推器
-<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>  主轴故障 → 侧推维持操纵性（推力有限）
-<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>  适用：空间受限的单轴船、渡船
-<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>
-<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>方案C：N+1 冗余（组件级）
-<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>  单轴推进 + 关键组件备份（双泵/双控制器/双编码器）
-<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>  组件故障 → 降级运行（降额后单组件维持）
-<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>  适用：内河船（风险等级较低）
-<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>  成本：最低
-<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>
-<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>方案D：功能降级策略
-<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>  推进功率按P1/P2/P3三档设计（100%/70%/40%）
-<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>  故障后降至下一档运行，完全停机为最后手段
-<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>  与方案A/B/C结合使用
-<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>
-<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>⚠️ 冗余的代价：重量/体积/成本增加
-<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a>   正确做法：用RAMS分析确认冗余效果量化收益 vs 代价
-<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a>   而非"感觉要冗余"的主观判断
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>船用电推系统冗余需求（REQ-006：单一故障不导致推力完全丧失）：
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>系统级冗余实现方式（选其一或组合）：
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>方案A：双轴推进
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>  两套独立电驱系统（各含独立冷却+传动+控制）
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>  单轴故障 → 剩余单轴维持50%~70%推力
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>  适用：对称双轴船（大多数商船）
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>  成本：最高（两套完整系统）
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>方案B：单轴+侧推器应急
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>  主推进单轴 + 应急侧推器
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>  主轴故障 → 侧推维持操纵性（推力有限）
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>  适用：空间受限的单轴船、渡船
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>方案C：N+1 冗余（组件级）
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>  单轴推进 + 关键组件备份（双泵/双控制器/双编码器）
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>  组件故障 → 降级运行（降额后单组件维持）
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>  适用：内河船（风险等级较低）
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>  成本：最低
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>方案D：功能降级策略
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>  推进功率按P1/P2/P3三档设计（100%/70%/40%）
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>  故障后降至下一档运行，完全停机为最后手段
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>  与方案A/B/C结合使用
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>⚠️ 冗余的代价：重量/体积/成本增加
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>   正确做法：用RAMS分析确认冗余效果量化收益 vs 代价
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>   而非"感觉要冗余"的主观判断
 </code></pre></div>
 <hr>
 <h2 id="36">3.6 本章小结与关键输出物<a class="headerlink" href="#36" title="Permanent link">¶</a></h2>
@@ -4232,13 +4273,13 @@
 </li>
 </ol>
 <p><strong>关键输出物：</strong>
-</p><div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>□ MBSE五视图文件（含状态机图和参数约束表）
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>□ 公理化设计矩阵（FR/DP对应关系，耦合分析）
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>□ 三份Trade Study报告（冷却拓扑/直驱减速器/FPP-CPP）
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>□ N²接口矩阵（完整版，所有接口识别完整）
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>□ 12份ICD Rev.A（架构阶段草稿，双方责任工程师确认）
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>□ 设计决策记录DDR（所有架构决策，含被否决方案及理由）
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>□ CDR强制检查单（15条全绿）
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>□ MBSE五视图文件（含状态机图和参数约束表）
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>□ 公理化设计矩阵（FR/DP对应关系，耦合分析）
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>□ 三份Trade Study报告（冷却拓扑/直驱减速器/FPP-CPP）
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>□ N²接口矩阵（完整版，所有接口识别完整）
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>□ 12份ICD Rev.A（架构阶段草稿，双方责任工程师确认）
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>□ 设计决策记录DDR（所有架构决策，含被否决方案及理由）
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>□ CDR强制检查单（15条全绿）
 </code></pre></div><p></p>
 <hr>
 <h2 id="37-4-6">3.7 架构下达物清单（输入给第4-6章设计）<a class="headerlink" href="#37-4-6" title="Permanent link">¶</a></h2>
@@ -4376,40 +4417,33 @@
 </tbody>
 </table>
 <h3 id="373">3.7.3 参数交付流程与时间关键路径<a class="headerlink" href="#373" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Day 35: 系统架构冻结(第9章3.6节完成) ✓
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>        │
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>        ↓
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>Day 36: 本清单定稿与签字
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>        │
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>        ├─→ P1-P8, P10 向CH4/5/6交付
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>        ├─→ P9由CH8确认(来自FMEA)
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>        └─→ P11由CH5扭振分析确认
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>        │
-<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>        ↓
-<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>Day 38: 各子系统启动详细设计
-<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>        ├─→ CH4冷却: 换热器选型(用P2/P3)、泵选型(用P7)
-<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>        ├─→ CH5传动: 轴系校中(用P4/P11)、扭振分析最终版(用P11)
-<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>        └─→ CH6控制: FOC参数定义(用P1/P4)、热保护参数(用P9)
-<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>        │
-<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>        ↓
-<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>Day 55: 详细设计完成(M2里程碑)
-<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>        └─→ 所有参数的设计实现已定案
-</code></pre></div>
+<pre class="mermaid"><code>flowchart TB
+    D35["Day 35: 系统架构冻结 ✓"] --&gt; D36["Day 36: 本清单定稿与签字"]
+    D36 --&gt; D36a["P1-P8, P10 向CH4/5/6交付"]
+    D36 --&gt; D36b["P9由CH8确认（来自FMEA）"]
+    D36 --&gt; D36c["P11由CH5扭振分析确认"]
+    D36a --&gt; D38["Day 38: 各子系统启动详细设计"]
+    D36b --&gt; D38
+    D36c --&gt; D38
+    D38 --&gt; D38a["CH4冷却: 换热器选型(P2/P3)、泵选型(P7)"]
+    D38 --&gt; D38b["CH5传动: 轴系校中(P4/P11)、扭振分析(P11)"]
+    D38 --&gt; D38c["CH6控制: FOC参数(P1/P4)、热保护(P9)"]
+    D38a --&gt; D55["Day 55: 详细设计完成（M2里程碑）"]
+    D38b --&gt; D55
+    D38c --&gt; D55</code></pre>
 <h3 id="374">3.7.4 参数间依赖关系说明<a class="headerlink" href="#374" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>参数依赖关系图：
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>  P1(功率) ──→ 影响 ──→ P7(流量)
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>         ↓                  ↓
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>         └─→ P9(热保护温度) ← P2/P3(冷却液温度)
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>  P4(转速) ──→ 影响 ──→ P11(禁速区)
-<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>         ↓                  ↓
-<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>         └─→ P8(采样周期必须小于转速周期)
-<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>
-<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>  P5(环境温度) → 决定 → P2/P3的选择标准(内河vs海船)
-<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
-<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>重点：这些参数不可独立改变，修改一个参数可能连锁影响其他参数。
-</code></pre></div>
+<pre class="mermaid"><code>flowchart TB
+    P1["P1 功率"] --&gt; P7["P7 流量"]
+    P1 --&gt; P9["P9 热保护温度"]
+    P2["P2 冷却液进口温度"] --&gt; P9
+    P3["P3 冷却液出口温度"] --&gt; P9
+    P4["P4 转速"] --&gt; P11["P11 禁速区"]
+    P4 --&gt; P8["P8 采样周期"]
+    P5["P5 环境温度"] --&gt; P2
+    P5 --&gt; P3</code></pre>
+<blockquote>
+<p><strong>重点</strong>：这些参数不可独立改变，修改一个参数可能连锁影响其他参数。</p>
+</blockquote>
 <h3 id="375">3.7.5 参数来源与风险<a class="headerlink" href="#375" title="Permanent link">¶</a></h3>
 <table>
 <thead>
@@ -4448,13 +4482,13 @@
 </tbody>
 </table>
 <h3 id="376">3.7.6 检查清单（签字前确认）<a class="headerlink" href="#376" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>□ 11个参数都有明确的数值(不留空)
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>□ 每个参数都能追溯到上游来源(表中"来源"列)
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>□ 参数值与合同/规范一致(无冲突)
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>□ 参数值与Trade Study结果对应(可解释)
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>□ 承收方确认能用这些参数启动详细设计
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>□ 系统架构师、项目经理签字确认
-<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>□ 所有参数已编号进VCRM(REQ-xxx)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>□ 11个参数都有明确的数值(不留空)
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>□ 每个参数都能追溯到上游来源(表中"来源"列)
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>□ 参数值与合同/规范一致(无冲突)
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>□ 参数值与Trade Study结果对应(可解释)
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>□ 承收方确认能用这些参数启动详细设计
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>□ 系统架构师、项目经理签字确认
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>□ 所有参数已编号进VCRM(REQ-xxx)
 </code></pre></div>
 
 

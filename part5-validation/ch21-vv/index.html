@@ -22,7 +22,7 @@
     
     
       
-        <title>第20章 V&amp;V体系 - 船舶新能源动力系统工程手册</title>
+        <title>第21章 V&amp;V体系 - 船舶新能源动力系统工程手册</title>
       
     
     
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              第20章 V&amp;V体系
+              第21章 V&amp;V体系
             
           </span>
         </div>
@@ -1690,6 +1690,8 @@
       
         
       
+        
+      
     
     
     
@@ -1772,6 +1774,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../part4-compliance/ch14-classification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第14章 入级与检验概述
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../part4-compliance/ch15-ccs/" class="md-nav__link">
         
   
@@ -1779,7 +1809,7 @@
   <span class="md-ellipsis">
     
   
-    第14章 CCS规范
+    第15章 CCS规范
   
 
     
@@ -1807,7 +1837,7 @@
   <span class="md-ellipsis">
     
   
-    第15章 DNV规范
+    第16章 DNV规范
   
 
     
@@ -1835,7 +1865,7 @@
   <span class="md-ellipsis">
     
   
-    第16章 IEC标准
+    第17章 IEC标准
   
 
     
@@ -1863,7 +1893,7 @@
   <span class="md-ellipsis">
     
   
-    第17章 合规映射
+    第18章 合规映射
   
 
     
@@ -1891,7 +1921,7 @@
   <span class="md-ellipsis">
     
   
-    第18章 内河vs海船
+    第19章 内河vs海船
   
 
     
@@ -1919,7 +1949,7 @@
   <span class="md-ellipsis">
     
   
-    第19章 特有问题
+    第20章 特有问题
   
 
     
@@ -2062,7 +2092,7 @@
   <span class="md-ellipsis">
     
   
-    第20章 V&amp;V体系
+    第21章 V&amp;V体系
   
 
     
@@ -2080,7 +2110,7 @@
   <span class="md-ellipsis">
     
   
-    第20章 V&amp;V体系
+    第21章 V&amp;V体系
   
 
     
@@ -2428,7 +2458,7 @@
   <span class="md-ellipsis">
     
   
-    第21章 稳定运行
+    第22章 稳定运行
   
 
     
@@ -2456,7 +2486,7 @@
   <span class="md-ellipsis">
     
   
-    第22章 故障诊断
+    第23章 故障诊断
   
 
     
@@ -2484,7 +2514,7 @@
   <span class="md-ellipsis">
     
   
-    第23章 测试体系
+    第24章 测试体系
   
 
     
@@ -2512,7 +2542,7 @@
   <span class="md-ellipsis">
     
   
-    第24章 90天路线
+    第25章 90天路线
   
 
     
@@ -2643,7 +2673,7 @@
   <span class="md-ellipsis">
     
   
-    第25章 混合动力
+    第26章 混合动力
   
 
     
@@ -2671,7 +2701,7 @@
   <span class="md-ellipsis">
     
   
-    第26章 商业化
+    第27章 商业化
   
 
     
@@ -2699,7 +2729,7 @@
   <span class="md-ellipsis">
     
   
-    第27章 技术创新
+    第28章 技术创新
   
 
     
@@ -2727,7 +2757,7 @@
   <span class="md-ellipsis">
     
   
-    第28章 技术路线图
+    第29章 技术路线图
   
 
     
@@ -2755,7 +2785,7 @@
   <span class="md-ellipsis">
     
   
-    第29章 总结建议
+    第30章 总结建议
   
 
     
@@ -4555,36 +4585,16 @@ V&amp;V（Verification &amp; Validation）体系回答两个问题：</p>
 </tbody>
 </table>
 <h3 id="1486">14.8.6 完整案例：某需求的验证路径<a class="headerlink" href="#1486" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>需求编号: REQ-045
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>需求文本: "冷却液进口温度在35°C海水温度下不超过45°C"
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>验证路径:
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>  HIL (Day 50-60)
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    HC-03: 稳速巡航工况，模拟T_sea=35°C
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    验证: Simulink仿真显示T_in=43°C ✓
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    证据: HIL报告-HC-03结果截图
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>  FAT (Day 100)
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>    FAT-15: 冷却系统工厂试验
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>    条件: 100%功率, T_sea=35°C, 换热器新品
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>    验证: 实测T_in=42°C ✓
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>    证据: FAT-15试验报告§3.2
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
-<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>  SIT (Day 140)
-<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>    SIT-03: 热平衡集成验证
-<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>    条件: 系统集成台架, T_sea模拟器设35°C
-<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>    验证: 72h连续运行,最大T_in=44°C ✓
-<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>    证据: SIT-03报告,曲线图表
-<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>
-<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>  SAT (Day 180)
-<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>    SAT-05: 整船航速特性试验
-<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>    条件: 实海试验, 实际T_sea=32°C(夏季港口)
-<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>    验证: 各航速下T_in均在安全范围 ✓
-<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>    证据: SAT-05海试报告, CCS见证签字
-<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>
-<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>  VCRM最终状态: ✅ CLOSED (所有验证证据齐全)
-</code></pre></div>
+<pre class="mermaid"><code>flowchart LR
+    HIL["HIL (Day 50-60)&lt;br/&gt;HC-03: 稳速巡航, T_sea=35°C&lt;br/&gt;仿真T_in=43°C ✓&lt;br/&gt;证据: HIL报告-HC-03截图"]
+    FAT["FAT (Day 100)&lt;br/&gt;FAT-15: 冷却系统工厂试验&lt;br/&gt;100%功率, T_sea=35°C&lt;br/&gt;实测T_in=42°C ✓&lt;br/&gt;证据: FAT-15报告§3.2"]
+    SIT["SIT (Day 140)&lt;br/&gt;SIT-03: 热平衡集成验证&lt;br/&gt;72h连续运行, T_in=44°C ✓&lt;br/&gt;证据: SIT-03报告"]
+    SAT["SAT (Day 180)&lt;br/&gt;SAT-05: 整船航速特性试验&lt;br/&gt;实海试验, T_sea=32°C&lt;br/&gt;各航速T_in安全 ✓&lt;br/&gt;证据: SAT-05海试报告, CCS签字"]
+    DONE["VCRM最终状态&lt;br/&gt;✅ CLOSED"]
+
+    HIL --&gt; FAT --&gt; SIT --&gt; SAT --&gt; DONE</code></pre>
+<p><strong>需求编号:</strong> REQ-045<br>
+<strong>需求文本:</strong> "冷却液进口温度在35°C海水温度下不超过45°C"</p>
 <h3 id="1487">14.8.7 映射矩阵自动化检查<a class="headerlink" href="#1487" title="Permanent link">¶</a></h3>
 <p><strong>表 14.8-5: VCRM映射完整性矩阵(部分示例)</strong></p>
 <table>
@@ -4634,66 +4644,66 @@ V&amp;V（Verification &amp; Validation）体系回答两个问题：</p>
 </tbody>
 </table>
 <p><strong>统计</strong>:
-</p><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>总需求数: 115
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>  · HIL覆盖: 85条 (74%)
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>  · FAT覆盖: 110条 (96%)
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>  · SIT覆盖: 95条 (83%)
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>  · SAT覆盖: 60条 (52%)  ← SAT仅覆盖关键系统指标
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>完整验证路径(至少经过2个阶段): 115条 ✅
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>未覆盖项(仅仓库检查): 0条 ✅
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>总需求数: 115
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>  · HIL覆盖: 85条 (74%)
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>  · FAT覆盖: 110条 (96%)
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>  · SIT覆盖: 95条 (83%)
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>  · SAT覆盖: 60条 (52%)  ← SAT仅覆盖关键系统指标
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>完整验证路径(至少经过2个阶段): 115条 ✅
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>未覆盖项(仅仓库检查): 0条 ✅
 </code></pre></div><p></p>
 <h3 id="1488">14.8.8 检查清单<a class="headerlink" href="#1488" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>映射矩阵完整性检查:
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>  □ 115条需求都在VCRM中有对应行
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>  □ 每条需求都至少有一个验证方法(A/S/I/T)
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>  □ 所有"T"类(试验)需求都有对应的FAT/SIT/SAT项目号
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>  □ 所有"S"类(仿真)需求都有对应的HIL场景号
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>  □ 关键安全需求都有SAT海试验证
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>  □ 证据文件指向清晰(如"FAT-15报告§3.2"而非"FAT报告")
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>验证链路完整性检查:
-<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>  □ 没有需求在HIL后直接跳到SAT(中间须经过FAT/SIT)
-<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>  □ 没有需求仅在分析层(A)验证,而无物理验证
-<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>  □ 所有&gt;RPN 200的FMEA条目都有对应的故障注入测试场景
-<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>
-<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>VCRM关闭率跟踪:
-<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>  □ Day 60前: ≥30% CLOSED
-<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>  □ Day 90前: ≥60% CLOSED
-<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>  □ SAT前: =100% CLOSED
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>映射矩阵完整性检查:
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>  □ 115条需求都在VCRM中有对应行
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>  □ 每条需求都至少有一个验证方法(A/S/I/T)
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>  □ 所有"T"类(试验)需求都有对应的FAT/SIT/SAT项目号
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>  □ 所有"S"类(仿真)需求都有对应的HIL场景号
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>  □ 关键安全需求都有SAT海试验证
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>  □ 证据文件指向清晰(如"FAT-15报告§3.2"而非"FAT报告")
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>验证链路完整性检查:
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>  □ 没有需求在HIL后直接跳到SAT(中间须经过FAT/SIT)
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>  □ 没有需求仅在分析层(A)验证,而无物理验证
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>  □ 所有&gt;RPN 200的FMEA条目都有对应的故障注入测试场景
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>VCRM关闭率跟踪:
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>  □ Day 60前: ≥30% CLOSED
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>  □ Day 90前: ≥60% CLOSED
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>  □ SAT前: =100% CLOSED
 </code></pre></div>
 <hr>
 <h2 id="147">14.7 本章小结与关键输出物<a class="headerlink" href="#147" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>V&amp;V体系核心要点（五条）：
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>  ① VCRM是V&amp;V体系的骨架
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>     每条需求一行，不漏项，关闭率=100%才能交船
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>     典型系统约115条需求，建立之初即须完整，不可事后补充
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>  ② 验证方法四类，试验最贵但不可替代
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>     安全关键功能（热失控/急停/放电）必须实物试验
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>     日常性能指标可组合使用分析+仿真+试验（降低成本）
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
-<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>  ③ HIL是控制软件验证的主战场
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>     18个场景覆盖基础功能/热管理保护/故障注入/新能源特有
-<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>     HIL通过是SIT台架试验的前提条件（减少实物试验风险）
-<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>
-<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>  ④ FAT是质量门控的第一关
-<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>     组件FAT不通过，不允许进入集成阶段
-<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>     电机/变频器/电池/冷却系统各有最小FAT项目清单
-<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>
-<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>  ⑤ 航行试验须船级社监督员在场
-<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>     试验报告提交船级社存档，是最终入级/结构证书的关键依据
-<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>     试验条件（水温/排水量）须记录，影响结果评判
-<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>
-<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>关键输出物：
-<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>  □ VCRM（全生命周期维护，M6前关闭率=100%）
-<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>  □ 各组件FAT报告（T+8月前完成）
-<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a>  □ HIL验证报告（18场景全覆盖，T+10月前完成）
-<a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>  □ 台架试验报告（SIT，T+11月前完成）
-<a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a>  □ 航行试验报告（SAT，T+13月前完成，船级社存档）
-<a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a>  □ 型式试验证书（产品定型后，第三方出具）
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>V&amp;V体系核心要点（五条）：
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>  ① VCRM是V&amp;V体系的骨架
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>     每条需求一行，不漏项，关闭率=100%才能交船
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>     典型系统约115条需求，建立之初即须完整，不可事后补充
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>  ② 验证方法四类，试验最贵但不可替代
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>     安全关键功能（热失控/急停/放电）必须实物试验
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>     日常性能指标可组合使用分析+仿真+试验（降低成本）
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>  ③ HIL是控制软件验证的主战场
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>     18个场景覆盖基础功能/热管理保护/故障注入/新能源特有
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>     HIL通过是SIT台架试验的前提条件（减少实物试验风险）
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>  ④ FAT是质量门控的第一关
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>     组件FAT不通过，不允许进入集成阶段
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>     电机/变频器/电池/冷却系统各有最小FAT项目清单
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>  ⑤ 航行试验须船级社监督员在场
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>     试验报告提交船级社存档，是最终入级/结构证书的关键依据
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>     试验条件（水温/排水量）须记录，影响结果评判
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>关键输出物：
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>  □ VCRM（全生命周期维护，M6前关闭率=100%）
+<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>  □ 各组件FAT报告（T+8月前完成）
+<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>  □ HIL验证报告（18场景全覆盖，T+10月前完成）
+<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>  □ 台架试验报告（SIT，T+11月前完成）
+<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a>  □ 航行试验报告（SAT，T+13月前完成，船级社存档）
+<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a>  □ 型式试验证书（产品定型后，第三方出具）
 </code></pre></div>
 <hr>
 
