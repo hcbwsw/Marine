@@ -1,0 +1,5215 @@
+<!DOCTYPE html><html lang="zh" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="从基础认知到工程落地的完整知识手册">
+      
+      
+      
+      
+        <link rel="prev" href="../ch21-vv/">
+      
+      
+        <link rel="next" href="../ch23-diagnosis/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>第21章 稳定运行 - 船舶新能源动力系统工程手册</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Noto Sans SC";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#21" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="船舶新能源动力系统工程手册" class="md-header__button md-logo" aria-label="船舶新能源动力系统工程手册" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            船舶新能源动力系统工程手册
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第21章 稳定运行
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange" aria-label="切换到深色模式" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="deep-orange" aria-label="切换到浅色模式" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard="" data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../how-to-use/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  使用指南
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../part1-basics/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第一部分 基础认知
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../part2-subsystems/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第二部分 核心子系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../part3-design/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第三部分 系统设计方法
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../part4-compliance/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第四部分 规范与合规
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第五部分 验证与落地
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../part6-advanced/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第六部分 专项深化
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../part7-resources/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第七部分 工具与资源
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="船舶新能源动力系统工程手册" class="md-nav__button md-logo" aria-label="船舶新能源动力系统工程手册" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    船舶新能源动力系统工程手册
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    使用指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一部分 基础认知
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第一部分 基础认知
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part1-basics/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一部分导读：基础认知
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part1-basics/ch01-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第1章 概述与发展
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part1-basics/ch02-classification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第2章 分类与选型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二部分 核心子系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第二部分 核心子系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二部分导读：核心子系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2">
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第3章 船用电池系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第3章 船用电池系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch03-battery-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.1 电池技术基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch03-battery-selection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.2 电池选型与配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch03-battery-bms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.3 电池管理系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch03-battery-safety/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.4 电池安全与防护
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3">
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第4章 电推进系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第4章 电推进系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch04-propulsion-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.1 电推进概述
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch04-thrusters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.2 推进器选型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch04-motors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.3 推进电机匹配
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch04-transmission/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.4 传动系统设计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch04-transmission-detail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.5 传动专项准则
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第5章 能量管理与控制
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第5章 能量管理与控制
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch05-ems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.1 能量管理系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch05-range/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.2 续航里程估算
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch05-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.3 能耗优化策略
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch05-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.4 控制专项准则
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch06-cooling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第6章 冷却与热管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三部分 系统设计方法
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第三部分 系统设计方法
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part3-design/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三部分导读：系统设计方法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part3-design/ch07-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第7章 总体研发框架
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part3-design/ch08-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第8章 需求工程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part3-design/ch09-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第9章 架构设计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part3-design/ch10-simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第10章 协同仿真
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part3-design/ch11-interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第11章 接口管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part3-design/ch12-rams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第12章 RAMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part3-design/ch13-functional-safety/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第13章 功能安全
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第四部分 规范与合规
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第四部分 规范与合规
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第四部分导读：规范与合规
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/ch15-ccs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第14章 CCS规范
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/ch16-dnv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第15章 DNV规范
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/ch17-iec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第16章 IEC标准
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/ch18-compliance-mapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第17章 合规映射
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/ch19-inland-vs-sea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第18章 内河vs海船
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/ch20-special-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第19章 特有问题
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第五部分 验证与落地
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第五部分 验证与落地
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第五部分导读：验证与落地
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch21-vv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第20章 V&amp;V体系
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第21章 稳定运行
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第21章 稳定运行
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#101" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 稳定运行相图——概念与构建
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.1 稳定运行相图——概念与构建">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1011" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.1 为什么需要相图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1012" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.2 相图坐标系定义（完整版）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1013" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.3 相图分区边界的物理推导
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#102" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 降额律参数化公式（完整推导版）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.2 降额律参数化公式（完整推导版）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1021" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.1 多因子降额模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.2 降额律的工程实现
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.3 降额因子标定流程
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#103" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 降级走廊——完整设计
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.3 降级走廊——完整设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1031" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.1 降级走廊的概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1032" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.2 降级走廊关键阈值表（完整版）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1033" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.3 降级走廊状态机
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1034-hmi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.4 驾驶台 HMI 显示规范
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#104" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 典型工况相图轨迹分析
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.4 典型工况相图轨迹分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1041" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4.1 正常夏季航行工况
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1042" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4.2 降额律验证方法与台架标定
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.4.2 降额律验证方法与台架标定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#10421" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4.2.1 为什么需要验证降额律?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10422" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4.2.2 验证方法的四个阶段
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10423" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4.2.3 降额律标定参数的更新规则
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10424" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4.2.4 标定试验矩阵与工时估算
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10425" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4.2.5 标定结果的文档化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10426-m3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4.2.6 检查清单：M3前降额律标定应完成
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1043" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4.3 换热器堵塞突发工况
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1044" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4.4 极端多重故障叠加工况
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#105" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5 相图标定与验证
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.5 相图标定与验证">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1051" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5.1 台架标定流程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1052-sit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5.2 相图验证（SIT 阶段）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#106" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.6 相图在运维中的应用
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.6 相图在运维中的应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1061" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.6.1 预防性维护决策
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1062" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.6.2 能效优化应用
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#107" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.7 本章小结与关键输出物
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.7 本章小结与关键输出物">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1071" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.7.1 核心要点回顾
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1072" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.7.2 关键输出物清单
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1073" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.7.3 与其他章节的关联索引
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch23-diagnosis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第22章 故障诊断
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch24-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第23章 测试体系
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch25-90day/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第24章 90天路线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8">
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第六部分 专项深化
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第六部分 专项深化
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part6-advanced/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第六部分导读：专项深化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part6-advanced/ch26-hybrid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第25章 混合动力
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part6-advanced/ch27-commercialization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第26章 商业化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part6-advanced/ch28-innovation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第27章 技术创新
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part6-advanced/ch29-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第28章 技术路线图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part6-advanced/ch30-conclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第29章 总结建议
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9">
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第七部分 工具与资源
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第七部分 工具与资源
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第七部分导读：工具与资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_2">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../part7-resources/calculators/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录A 计算工具
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    附录A 计算工具
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/calculators/battery-capacity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    电池容量
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/calculators/propulsion-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    推进功率
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/calculators/range-calc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    续航里程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/calculators/efficiency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    效率分析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/calculators/cooling-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    冷却系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/appendix-toolchain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录B 工具链
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_4">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../part7-resources/cases/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录C 案例库
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9_4" id="__nav_9_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    附录C 案例库
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/cases/inland-passenger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    内河电动客船
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/cases/harbor-vessel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    港口工作船
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/cases/hybrid-ocean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    远洋混合动力
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_5">
+        
+          
+          <label class="md-nav__link" for="__nav_9_5" id="__nav_9_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录D 参考资料
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    附录D 参考资料
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/references/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    术语表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/references/standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    规范清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/references/books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    参考书目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/references/links/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    常用链接
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/appendix-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录E 规范笔记
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#101" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 稳定运行相图——概念与构建
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.1 稳定运行相图——概念与构建">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1011" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.1 为什么需要相图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1012" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.2 相图坐标系定义（完整版）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1013" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.3 相图分区边界的物理推导
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#102" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 降额律参数化公式（完整推导版）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.2 降额律参数化公式（完整推导版）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1021" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.1 多因子降额模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1022" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.2 降额律的工程实现
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.3 降额因子标定流程
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#103" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 降级走廊——完整设计
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.3 降级走廊——完整设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1031" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.1 降级走廊的概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1032" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.2 降级走廊关键阈值表（完整版）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1033" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.3 降级走廊状态机
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1034-hmi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.4 驾驶台 HMI 显示规范
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#104" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 典型工况相图轨迹分析
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.4 典型工况相图轨迹分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1041" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4.1 正常夏季航行工况
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1042" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4.2 降额律验证方法与台架标定
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.4.2 降额律验证方法与台架标定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#10421" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4.2.1 为什么需要验证降额律?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10422" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4.2.2 验证方法的四个阶段
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10423" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4.2.3 降额律标定参数的更新规则
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10424" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4.2.4 标定试验矩阵与工时估算
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10425" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4.2.5 标定结果的文档化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10426-m3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4.2.6 检查清单：M3前降额律标定应完成
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1043" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4.3 换热器堵塞突发工况
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1044" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4.4 极端多重故障叠加工况
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#105" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5 相图标定与验证
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.5 相图标定与验证">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1051" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5.1 台架标定流程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1052-sit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5.2 相图验证（SIT 阶段）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#106" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.6 相图在运维中的应用
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.6 相图在运维中的应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1061" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.6.1 预防性维护决策
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1062" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.6.2 能效优化应用
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#107" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.7 本章小结与关键输出物
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.7 本章小结与关键输出物">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1071" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.7.1 核心要点回顾
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1072" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.7.2 关键输出物清单
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1073" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.7.3 与其他章节的关联索引
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="21">第21章 稳定运行相图与降级走廊<a class="headerlink" href="#21" title="Permanent link">¶</a></h1>
+<blockquote>
+<p><strong>本章导读</strong>
+稳定运行相图是船用电推系统"能力边界的可视化地图"——
+它回答一个核心工程问题：<strong>在任意外部环境条件和系统健康状态下，
+系统当前最多能输出多少功率，且保证安全不停机？</strong></p>
+<p>降级走廊则是相图的动态执行机制——
+当系统从绿区漂移向红区时，控制器沿"走廊"有序退出，
+而不是突然崩溃停机。</p>
+<p>本章从相图构建原理出发，给出完整的降额律公式推导、
+阈值整定方法、控制实现要点、标定流程和典型案例，
+是第5章热保护逻辑（6.3节）和第11章接口管理（ICD-CD-001）的
+工程落地细化。</p>
+</blockquote>
+<hr>
+<h2 id="101">10.1 稳定运行相图——概念与构建<a class="headerlink" href="#101" title="Permanent link">¶</a></h2>
+<h3 id="1011">10.1.1 为什么需要相图<a class="headerlink" href="#1011" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>传统做法（单变量保护）的局限性：
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  仅监测绕组温度T_winding，超过阈值就停机
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  问题：
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  ① 单一变量无法反映多因素耦合：
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>     同样T_winding = 140°C，
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>     原因A：海水温度突然升高（可通过降额继续运行）
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>     原因B：冷却液流量突降（须立即降额+检查）
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>     原因C：系统已处于热平衡（可稳定在此温度运行）
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>     → 三种情况处置方式完全不同，单变量无法区分
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>  ② 保守设计造成浪费：
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>     为应对最恶劣工况（T_sea=35°C+换热器污堵50%），
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>     将额定功率降至保守值，导致正常工况大量性能浪费
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>  ③ 无法给运维人员提供直观指导：
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>     运维人员不知道"当前系统还能承受多少负荷"
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>相图的价值：
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>  ① 多维可视化：同时展示温度、压损、功率三个维度
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>  ② 预测性：根据当前工况点位置预判趋势（向红区漂移的速度）
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>  ③ 主动性：在到达红区之前，沿降级走廊有序退出，而非被动停机
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>  ④ 可解释性：驾驶台HMI直观显示当前工况点，运维人员一眼判断状态
+</code></pre></div>
+<h3 id="1012">10.1.2 相图坐标系定义（完整版）<a class="headerlink" href="#1012" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>主相图（二维投影，控制台显示用）：
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  X轴：外回路压损增量 Δp_ext（%）
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    定义：当前外回路压降 vs 初始清洁状态压降的增幅百分比
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    计算：Δp_ext = (p_current - p_baseline) / p_baseline × 100%
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    物理含义：换热器/滤器污堵程度的间接表征
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    测量：压差传感器（安装于换热器两端），分辨率 ≤ 0.5kPa
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    范围：0%（全新清洁）~ 100%（严重污堵，接近阻塞）
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>  Y轴：海水温度 T_sea（°C）
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    定义：外循环换热器海水侧入口温度
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    测量：PT100传感器（安装于海水进管），精度 ±0.5°C
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    范围：-5°C（北方冬季极值）~ 40°C（热带极端海况）
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    设计基准：35°C（CCS/DNV 通常取值）
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>  Z轴（颜色填充）：系统可输出功率 P_available（%额定）
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    定义：在当前（T_sea, Δp_ext）条件下，
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>          系统可稳定连续输出的最大功率，不触发热保护
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    计算：由降额律公式实时计算（见10.2节）
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    颜色编码：
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>      ■ 深绿（P ≥ 95%）：正常满功率运行区
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>      ■ 浅绿（P = 80~95%）：轻度受限，可接受
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>      ■ 黄色（P = 60~80%）：中度受限，需关注冷却系统
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>      ■ 橙色（P = 40~60%）：重度受限，降额运行，尽快维护
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>      ■ 红色（P &lt; 40%）：禁止运行区，强制停机保护
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>  辅助显示元素：
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>    ★ 当前工况点（实心圆点，实时更新）
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>    → 趋势箭头（过去10min的漂移方向和速度）
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>    ── 等功率线（P=100%/80%/60%/40%的等值线轮廓）
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>    ▲ 历史最高温度点（本次航行记录）
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>    虚线框：设计工况点（T_sea=35°C，Δp=0%，P=100%）
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>三维相图（工程分析用，非实时显示）：
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>  在主相图基础上增加第三维：内循环液入口温度T_in
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>  形成三维曲面P = f(T_sea, Δp_ext, T_in)
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>  用途：台架标定、仿真验证、边界案例分析
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>  工具：MATLAB surf函数 或 Python matplotlib 3D
+</code></pre></div>
+<h3 id="1013">10.1.3 相图分区边界的物理推导<a class="headerlink" href="#1013" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>分区边界线的推导（以绿区/黄区边界为例）：
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  绿区/黄区边界 = P_available = 80% 额定功率的等值线
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  条件：在该边界上，绕组温度恰好达到T_warn = 130°C（一级报警）
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        即：热平衡方程在T_winding = 130°C时成立
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>  热平衡方程：
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    Q_loss(P) = Q_removed(T_sea, Δp_ext, T_in)
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    其中：
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    Q_loss(P) = P_rated × η_loss × (P/P_rated)^α
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>      η_loss ≈ 4~8%（损耗率，依电机效率）
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>      α ≈ 1.5~2（铜耗主导时α=2，铁耗+铜耗混合时α&lt;2）
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    Q_removed = m_dot_cool × Cp × (T_out - T_in)
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>              = ε × C_min × (T_sea - T_in)  ← ε-NTU法
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>    其中换热效能ε随Δp_ext下降（污堵→换热恶化）：
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>    ε(Δp_ext) = ε_0 × (1 - k_foul × Δp_ext / 100)
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>      ε_0 = 初始换热效能（清洁状态，典型0.85~0.90）
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>      k_foul = 污堵敏感系数（经验值0.3~0.5，需台架标定）
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>  联立以上方程，在T_winding = 130°C约束下，
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>  可解出每个(T_sea, Δp_ext)对应的P_boundary
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>  → 扫描T_sea × Δp_ext的网格 → 得到边界曲线
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>  边界曲线特征（定性）：
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>    T_sea低时：边界线Δp_ext值高（温度低，可承受更大污堵）
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>    T_sea高时：边界线Δp_ext值低（温度高，污堵裕度小）
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>    → 边界线从左下到右上单调递减（负斜率）
+</code></pre></div>
+<hr>
+<h2 id="102">10.2 降额律参数化公式（完整推导版）<a class="headerlink" href="#102" title="Permanent link">¶</a></h2>
+<h3 id="1021">10.2.1 多因子降额模型<a class="headerlink" href="#1021" title="Permanent link">¶</a></h3>
+<div class="arithmatex">\[P_{\text{derate}}(T_{\text{sea}}, \Delta p, T_{\text{in}}) = P_{\text{rated}} \times K_1(T_{\text{sea}}) \times K_2(\Delta p) \times K_3(T_{\text{in}})\]</div>
+<p><strong>三个降额因子的物理含义与推导：</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>K₁(T_sea)——海水温度因子：
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  物理含义：外部热汇温度升高，换热温差减小，冷却能力下降
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  推导：换热器移热量 Q = ε × C_min × (T_sea - T_in)
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        T_sea升高 → (T_sea - T_in)减小（若T_in由T_sea决定，差值缩小）
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        → 冷却能力下降 → 允许热耗（即允许功率）下降
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>  分段公式：
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    K₁ = 1.0                        当 T_sea ≤ 25°C（北温带，冷却充裕）
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    K₁ = 1 - 0.012×(T_sea - 25)    当 25°C &lt; T_sea ≤ 35°C（线性降额）
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    K₁ = 0.88                       当 T_sea &gt; 35°C（超出设计范围，固定限额）
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>  关键数值：
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    T_sea = 30°C：K₁ = 0.94（降额6%）
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>    T_sea = 35°C：K₁ = 0.88（降额12%，标准设计基准点）
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    T_sea = 40°C：K₁ = 0.88（触发K₃进一步限制）
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>  注：K₁系数斜率0.012为工程估算，实际斜率须通过台架试验
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>      在不同T_sea条件下测量热平衡功率后回归确定
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>─────────────────────────────────────────────────
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>K₂(Δp)——外回路污堵因子：
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>  物理含义：换热器/滤器污堵 → 外回路压降增加 → 
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>            ① 换热效率下降（污堵层热阻增加）
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>            ② 外循环泵工作点偏移（流量减少）
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>            → 双重冷却能力退化
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>  分段公式：
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>    K₂ = 1.0                        当 Δp ≤ 20%（轻度污堵，可忽略）
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>    K₂ = 1 - 0.008×(Δp - 20)      当 20% &lt; Δp ≤ 50%（中度污堵，线性降额）
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>    K₂ = 0.76                       当 Δp &gt; 50%（重度污堵，固定限额+强制清洗提醒）
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>  关键数值：
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>    Δp = 30%：K₂ = 0.92（降额8%）
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>    Δp = 50%：K₂ = 0.76（降额24%，触发维护提醒）
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>    Δp &gt; 50%：保持0.76并向驾驶台发送"换热器清洗必要"报警
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>  实施注意：
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>    Δp_baseline需在每次清洗后重新标定
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>    控制器维护菜单提供"压损基准值重置"功能（操作员确认后执行）
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>─────────────────────────────────────────────────
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>
+<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>K₃(T_in)——绕组温度实时反馈因子：
+<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>  物理含义：K₁×K₂是前馈（基于环境参数预测），
+<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>            K₃是反馈（基于绕组实测温度修正）
+<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>            当前馈估算误差较大（如热模型偏差）时，K₃兜底保护
+<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a>
+<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a>  公式：
+<a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a>    K₃ = 1.0                                    当 T_in ≤ 45°C（冷却液正常）
+<a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a>
+<a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a>    K₃ = (T_shutdown - T_winding,max) /         当 T_in &gt; 45°C 且
+<a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a>         (T_shutdown - T_derate)                     T_winding &gt; T_derate
+<a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a>
+<a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a>    其中：
+<a id="__codelineno-3-57" name="__codelineno-3-57" href="#__codelineno-3-57"></a>      T_shutdown = 175°C（H级绝缘停机阈值）
+<a id="__codelineno-3-58" name="__codelineno-3-58" href="#__codelineno-3-58"></a>      T_derate   = 155°C（降额启动阈值）
+<a id="__codelineno-3-59" name="__codelineno-3-59" href="#__codelineno-3-59"></a>      T_winding,max = 三路PT100投票取中间值（见ICD-DC-002）
+<a id="__codelineno-3-60" name="__codelineno-3-60" href="#__codelineno-3-60"></a>
+<a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a>  实际效果：
+<a id="__codelineno-3-62" name="__codelineno-3-62" href="#__codelineno-3-62"></a>    T_winding = 155°C：K₃ = (175-155)/(175-155) = 1.0（刚触发降额，不额外限制）
+<a id="__codelineno-3-63" name="__codelineno-3-63" href="#__codelineno-3-63"></a>    T_winding = 165°C：K₃ = (175-165)/(175-155) = 0.5（降额至50%）
+<a id="__codelineno-3-64" name="__codelineno-3-64" href="#__codelineno-3-64"></a>    T_winding = 175°C：K₃ = 0 → 触发停机（由独立停机逻辑处理，不经过K₃）
+</code></pre></div>
+<h3 id="1022">10.2.2 降额律的工程实现<a class="headerlink" href="#1022" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>控制器实现（伪代码）：
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>  函数 compute_derating():
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    // 读取传感器
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    T_sea   = read_sensor(SEA_WATER_TEMP)        // PT100，外循环入口
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    delta_p = compute_pressure_increase()         // (p_now - p_baseline) / p_baseline
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    T_wind  = median(T_wind_1, T_wind_2, T_wind_3) // 三路投票取中间值
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    // 计算三个降额因子
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    K1 = calc_K1(T_sea)
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    K2 = calc_K2(delta_p)
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    K3 = calc_K3(T_wind)
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    // 综合降额功率
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>    P_available = P_rated × K1 × K2 × K3
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>    // 平滑处理（防止降额指令突变冲击轴系）
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>    P_available_smoothed = rate_limiter(P_available, 
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>                                         ramp_down = 10%/s,  // 降额速率限制
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>                                         ramp_up   = 2%/s)   // 恢复速率更慢（防振荡）
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>    // 最小功率保护（防止降额至0导致船失去推力）
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>    P_output = max(P_available_smoothed, P_minimum)
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>    // P_minimum = 15%额定（维持最低航速，安全进港）
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>    // 向驾驶台报告
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>    report_to_bridge(P_available, K1, K2, K3, derating_reason_code)
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>    return P_output
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>计算周期：100ms（Level 2控制器，足够响应热时间常数&gt;&gt;1s）
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>执行位置：Level 2推进控制器（PDS Controller，见6.1节）
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>输入信号：通过ICD-DC-001/ICD-CS-002接口获取
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>输出信号：P_available（百分比）→ 通过ICD-CD-002下发给变频器
+</code></pre></div>
+<h3 id="1023">10.2.3 降额因子标定流程<a class="headerlink" href="#1023" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>台架标定试验（必须执行，不可跳过）：
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>  原则：K₁/K₂系数为理论估算，实际系数须通过台架试验标定
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>  标定误差目标：P_available计算值 vs 实测热平衡功率偏差 ≤ ±5%
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>  K₁标定试验：
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    前提：换热器处于清洁状态（Δp = 0，K₂ = 1）
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    方法：
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>      通过冷却水箱控制T_sea分别在20/25/30/35°C四个工况
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>      每个工况：逐步升高电机功率，直至绕组温度达到130°C（稳态）
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>      记录此时的功率值 = P_available_measured
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    标定：
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>      K₁_actual(T_sea) = P_available_measured / P_rated
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>      与公式值K₁_formula对比，若偏差&gt;5%则修正公式斜率
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>  K₂标定试验：
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>    前提：T_sea固定在设计值35°C
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>    方法：
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>      在外循环管路上串联节流阀，手动增加压降模拟污堵
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>      分别在Δp = 0/20%/35%/50%四个工况
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>      每个工况：升功率至绕组130°C，记录P_available
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>    标定：
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>      K₂_actual(Δp) = P_available_measured / (P_rated × K₁(35°C))
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>      与公式值对比，修正k_foul系数
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>  K₃验证试验（HIL注入）：
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>    方法：在实物台架上通过HIL注入偏置温度信号
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>          模拟T_winding = 155/160/165/170°C的降额过程
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>    验证：控制器按公式正确执行K₃降额，功率响应曲线符合预期
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>    无需修改公式（K₃基于实测温度反馈，无需标定）
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>  标定结果归档：
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>    标定报告编号：CAL-DERATE-001
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>    在VCRM中登记（REQ-CTRL-007降额精度需求的验证证据）
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>    标定后的K₁/K₂参数存入控制器EEPROM（掉电不丢失）
+</code></pre></div>
+<hr>
+<h2 id="103">10.3 降级走廊——完整设计<a class="headerlink" href="#103" title="Permanent link">¶</a></h2>
+<h3 id="1031">10.3.1 降级走廊的概念<a class="headerlink" href="#1031" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>"走廊"的比喻：
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  想象系统运行状态是一个人在相图中行走
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>  绿区 = 宽阔大厅（自由行走）
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>  黄区 = 走廊（受约束，但有出口）
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>  橙区 = 紧急通道（限制通行，尽快撤离）
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>  红区 = 禁止区域（触发硬件保护，立即停机）
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>  "降级走廊"的设计目标：
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    当系统从绿区向红区漂移时，
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>    控制系统主动引导系统沿走廊向安全方向移动，
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    而不是被动等待碰到红区边界后紧急停机
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>    主动降级 vs 被动停机：
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>    ┌──────────────┬────────────────┬────────────────┐
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>    │ 对比项       │ 主动降级（走廊）│ 被动停机       │
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>    ├──────────────┼────────────────┼────────────────┤
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>    │ 推力保留     │ 保留15~70%推力  │ 推力完全丧失   │
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>    │ 恢复时间     │ 可快速恢复      │ 需手动复位     │
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>    │ 船员体验     │ 平稳，可提前告知│ 突然，可能慌乱 │
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>    │ 轴系冲击     │ 斜坡降额，无冲击│ 急停，冲击大   │
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>    │ 乘客感受     │ 轻微减速        │ 突然停推       │
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>    └──────────────┴────────────────┴────────────────┘
+</code></pre></div>
+<h3 id="1032">10.3.2 降级走廊关键阈值表（完整版）<a class="headerlink" href="#1032" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>┌──────────────────┬───────────┬──────────────────┬────────────────────┬──────────┬──────────────────────┐
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>│ 触发条件         │ 触发阈值   │ 恢复阈值（含迟滞）│ 系统动作           │ 响应时间 │ 报警级别             │
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>├──────────────────┼───────────┼──────────────────┼────────────────────┼──────────┼──────────────────────┤
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>│ 绕组温度高（L1） │ &gt; 130°C   │ &lt; 125°C × 60s   │ 冷却泵升至100%     │ ≤ 2s    │ 黄色（机舱注意）     │
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>│                  │           │                  │ 不降额，记录报警   │          │                      │
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>├──────────────────┼───────────┼──────────────────┼────────────────────┼──────────┼──────────────────────┤
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>│ 绕组温度高高（L2）│ &gt; 155°C  │ &lt; 145°C × 120s  │ 线性降额           │ ≤ 5s    │ 橙色（驾驶台报警）   │
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>│                  │           │                  │ P = K₃ × P_rated  │          │                      │
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>├──────────────────┼───────────┼──────────────────┼────────────────────┼──────────┼──────────────────────┤
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>│ 绕组温度高高高   │ &gt; 175°C   │ 手动复位         │ 立即停机           │ ≤ 0.5s  │ 红色（驾驶台紧急）   │
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>│ （L3停机）       │           │ 须检查冷却系统   │ 保留冷却泵运行     │          │ 声光报警+硬接点输出  │
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>├──────────────────┼───────────┼──────────────────┼────────────────────┼──────────┼──────────────────────┤
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>│ 冷却液流量低     │ &lt; 60%额定 │ &gt; 70%额定 × 30s │ 功率降额至70%      │ ≤ 10s   │ 橙色（驾驶台报警）   │
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>│                  │           │                  │ 启动备泵自检       │          │                      │
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>├──────────────────┼───────────┼──────────────────┼────────────────────┼──────────┼──────────────────────┤
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>│ 冷却液流量极低   │ &lt; 30%额定 │ —               │ 立即停机           │ ≤ 2s    │ 红色（紧急）         │
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>│                  │           │                  │ 保留冷却泵运行     │          │                      │
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>├──────────────────┼───────────┼──────────────────┼────────────────────┼──────────┼──────────────────────┤
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>│ 膨胀箱液位低     │ 低液位开关│ 手动补液确认     │ 报警+限制重启      │ ≤ 2s    │ 黄色（机舱）         │
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>├──────────────────┼───────────┼──────────────────┼────────────────────┼──────────┼──────────────────────┤
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>│ 膨胀箱液位极低   │ 极低液位  │ 手动确认         │ 停机（失去补偿）   │ ≤ 2s    │ 红色（紧急）         │
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>├──────────────────┼───────────┼──────────────────┼────────────────────┼──────────┼──────────────────────┤
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>│ 外回路压损升高   │ &gt; 150%基准│ &lt; 130% × 300s   │ 报警+降额至80%     │ ≤ 30s   │ 黄色（机舱）         │
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>│                  │           │                  │ 发出换热器清洗提醒 │          │                      │
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>├──────────────────┼───────────┼──────────────────┼────────────────────┼──────────┼──────────────────────┤
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>│ 外回路压损极高   │ &gt; 200%基准│ 清洗后重置基准   │ 降额至70%          │ ≤ 10s   │ 橙色（驾驶台）       │
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>│                  │           │                  │ 强制清洗告警       │          │                      │
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>├──────────────────┼───────────┼──────────────────┼────────────────────┼──────────┼──────────────────────┤
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>│ 海水温度超设计值 │ &gt; 37°C    │ &lt; 35°C × 600s   │ K₁降额自动生效     │ ≤ 10s   │ 黄色（信息提示）     │
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>│                  │           │                  │ 提示运维关注       │          │                      │
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>├──────────────────┼───────────┼──────────────────┼────────────────────┼──────────┼──────────────────────┤
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a>│ 多重因素叠加     │ P_avail   │ 各因子分别满足   │ 取所有K因子乘积    │ ≤ 5s    │ 取最高等级报警       │
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a>│                  │ &lt; 40%额定 │ 恢复条件         │ 最小值保护15%额定  │          │                      │
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>└──────────────────┴───────────┴──────────────────┴────────────────────┴──────────┴──────────────────────┘
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>迟滞设计原则（防止在阈值附近反复触发）：
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>  恢复阈值 = 触发阈值 - ΔT_hyst（迟滞死区）
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a>    L1温度：ΔT_hyst = 5°C，时间迟滞60s
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a>    L2温度：ΔT_hyst = 10°C，时间迟滞120s
+<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a>    流量：ΔQ_hyst = 10%额定，时间迟滞30s
+<a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a>    压损：Δp_hyst = 20%基准值，时间迟滞300s
+<a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a>
+<a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a>  时间迟滞的必要性：
+<a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a>    若无时间迟滞：温度在阈值附近±1°C波动 → 降额/恢复反复切换
+<a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a>                  → 功率输出震荡 → 轴系扭矩冲击 → 乘客不适
+<a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a>    有时间迟滞：温度必须稳定低于恢复阈值持续60/120s才解除降额
+<a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a>                → 确认冷却系统已真正稳定，而非瞬时波动
+</code></pre></div>
+<h3 id="1033">10.3.3 降级走廊状态机<a class="headerlink" href="#1033" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>状态转移条件详表（完整版）：
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>  S0 → S1：收到推进指令
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>            AND 系统自检通过（冷却流量正常 + 无未复位故障）
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>            AND P_available ≥ 40%额定（当前环境条件允许）
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>  S1 → S2：任一 L1 条件触发：
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>            绕组温度 &gt; 130°C
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>            OR 冷却液流量 &lt; 60%额定
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>            OR 外回路压损 &gt; 150%基准值
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>  S2 → S1：所有 L1 条件同时满足恢复阈值
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>            （温度 &lt; 125°C 持续 60s，流量 &gt; 70% 持续 30s，
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>             压损 &lt; 130% 持续 300s）
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>  S2 → S3：任一 L2 条件触发：
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>            绕组温度 &gt; 155°C（启动 K₃ 线性降额）
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>            OR 冷却液流量 &lt; 60%额定持续超过 30s（未自愈）
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>            OR P_available 计算值 &lt; 80%额定
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>  S3 → S2：所有降额因子恢复（K₁×K₂×K₃ ≥ 0.95）
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>            且绕组温度 &lt; 145°C 持续 120s（迟滞保护）
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>  S3 → S4：P_available 计算值 &lt; 40%额定
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>            （多重不利因素叠加：高温 + 污堵 + 绕组温度高）
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>  S4 → S5：任一停机条件触发：
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>            绕组温度 &gt; 175°C（L3 停机）
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>            OR 冷却液流量 &lt; 30%额定（极低流量）
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>            OR 膨胀箱极低液位信号触发
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>
+<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a>  S5 → S6：停机完成（推进转速归零，驱动关断确认）
+<a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>            冷却泵保持运行（散热）
+<a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a>
+<a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a>  S6 → S0：手动复位确认
+<a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a>            AND 系统自检通过（所有传感器正常，无硬件故障）
+<a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a>            AND 冷却系统恢复正常（流量 + 温度均在正常范围）
+<a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a>
+<a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a>─────────────────────────────────────────────────
+<a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a>
+<a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a>状态机实现注意事项：
+<a id="__codelineno-8-42" name="__codelineno-8-42" href="#__codelineno-8-42"></a>
+<a id="__codelineno-8-43" name="__codelineno-8-43" href="#__codelineno-8-43"></a>  ① 状态机运行于 Level 2 控制器（推进控制器）
+<a id="__codelineno-8-44" name="__codelineno-8-44" href="#__codelineno-8-44"></a>     与 Level 1（变频器）通过 CANopen 状态字同步（见 ICD-CD-002）
+<a id="__codelineno-8-45" name="__codelineno-8-45" href="#__codelineno-8-45"></a>
+<a id="__codelineno-8-46" name="__codelineno-8-46" href="#__codelineno-8-46"></a>  ② 状态切换时，输出至驾驶台 HMI 的状态码必须在 1s 内更新
+<a id="__codelineno-8-47" name="__codelineno-8-47" href="#__codelineno-8-47"></a>     状态码定义：
+<a id="__codelineno-8-48" name="__codelineno-8-48" href="#__codelineno-8-48"></a>       0x00 = S0 待机
+<a id="__codelineno-8-49" name="__codelineno-8-49" href="#__codelineno-8-49"></a>       0x01 = S1 正常运行
+<a id="__codelineno-8-50" name="__codelineno-8-50" href="#__codelineno-8-50"></a>       0x02 = S2 热预警
+<a id="__codelineno-8-51" name="__codelineno-8-51" href="#__codelineno-8-51"></a>       0x03 = S3 降额运行
+<a id="__codelineno-8-52" name="__codelineno-8-52" href="#__codelineno-8-52"></a>       0x04 = S4 严重降额
+<a id="__codelineno-8-53" name="__codelineno-8-53" href="#__codelineno-8-53"></a>       0x05 = S5 保护性停机
+<a id="__codelineno-8-54" name="__codelineno-8-54" href="#__codelineno-8-54"></a>       0x06 = S6 故障等待
+<a id="__codelineno-8-55" name="__codelineno-8-55" href="#__codelineno-8-55"></a>
+<a id="__codelineno-8-56" name="__codelineno-8-56" href="#__codelineno-8-56"></a>  ③ 状态历史记录：
+<a id="__codelineno-8-57" name="__codelineno-8-57" href="#__codelineno-8-57"></a>     所有状态转移事件写入不可擦除日志（Flash，≥1万条）
+<a id="__codelineno-8-58" name="__codelineno-8-58" href="#__codelineno-8-58"></a>     记录内容：时间戳 + 触发条件 + 当时传感器读数
+<a id="__codelineno-8-59" name="__codelineno-8-59" href="#__codelineno-8-59"></a>     供事后故障分析使用
+</code></pre></div>
+<h3 id="1034-hmi">10.3.4 驾驶台 HMI 显示规范<a class="headerlink" href="#1034-hmi" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>驾驶台相图显示要求（按 ICD-CS-002 实现）：
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>  主显示区（建议 800×600 像素以上触摸屏）：
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>  ┌─────────────────────────────────────────────────┐
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>  │  海水温度 T_sea           外回路压损 Δp           │
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>  │  ██ 28.5 °C  [正常]      ██ 18.3 %  [正常]      │
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>  │                                                  │
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>  │         [  稳定运行相图  ]                        │
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>  │                                                  │
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>  │   40°C │·····红区·····················           │
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>  │        │··橙区·····╲·················           │
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>  │   35°C │·黄区·······╲════════════════           │
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>  │        │·绿区···      ╲  ← 当前点 ●             │
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>  │   25°C │·············  ╲                         │
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>  │        └──────────────────────────────── Δp      │
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>  │           0%      50%     100%                   │
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>  │                                                  │
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>  │  当前可用功率：P_avail = 94%  [绿区正常]          │
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>  │  降额因子：K1=0.94  K2=1.00  K3=1.00             │
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>  │  系统状态：S1-正常运行  ▶ 推进允许               │
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>  └─────────────────────────────────────────────────┘
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>  报警显示规则（按报警级别）：
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>    L1 黄色报警：相图当前点变为黄色闪烁，文字提示推进系统降级
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>    L2 橙色报警：声光报警（间歇蜂鸣），当前点变橙色，显示降额百分比
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>    L3 红色报警：持续蜂鸣 + 红色闪烁 + 要求操作员确认停机原因
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>  信息刷新率要求：
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>    相图当前点位置：1Hz（每秒更新）
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>    P_avail 数值显示：2Hz
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>    状态码：事件触发（状态变化时立即推送，&lt; 1s 延迟）
+<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>    传感器数值（T_sea / Δp）：0.5Hz（30s内稳定值，过滤噪声）
+</code></pre></div>
+<hr>
+<h2 id="104">10.4 典型工况相图轨迹分析<a class="headerlink" href="#104" title="Permanent link">¶</a></h2>
+<h3 id="1041">10.4.1 正常夏季航行工况<a class="headerlink" href="#1041" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>场景描述：
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>  船舶从长江下游出发，夏季（7月），
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>  海水温度从 28°C 逐渐升至 33°C（进入南海），
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>  换热器已运行 3 个月未清洗（Δp = 35%）
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>相图轨迹：
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>  起点 A：(Δp=35%, T_sea=28°C) → P_avail = 100% × 0.964 × 0.88 × 1.0 = 84.8%（黄区）
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>  中间 B：(Δp=35%, T_sea=31°C) → P_avail = 100% × 0.928 × 0.88 × 1.0 = 81.7%（黄区）
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>  终点 C：(Δp=35%, T_sea=33°C) → P_avail = 100% × 0.904 × 0.88 × 1.0 = 79.6%（橙区边界）
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>工程判断：
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>  ① 轨迹从 A 到 C 均在黄区/橙区边界，未触发 L2 降额
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>  ② 但 P_avail &lt; 80% 时应向船员提示
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>  ③ 建议在抵港后安排换热器清洗，
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>     清洗后 Δp 归零 → P_avail 恢复至 100%
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>  ④ 若换热器未清洗继续运行至 Δp=50%，
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>     则 T_sea=33°C 时 P_avail = 100% × 0.904 × 0.76 = 68.7%（橙区）
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>     → 触发 L2 降额报警，影响航速
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>K₁/K₂ 计算验证（T_sea=28°C，Δp=35%）：
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>  K₁ = 1 - 0.012×(28-25) = 1 - 0.036 = 0.964
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>  K₂ = 1 - 0.008×(35-20) = 1 - 0.12 = 0.88
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>  K₃ = 1.0（绕组温度正常，&lt; 45°C 供液温度）
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>  P_avail = P_rated × 0.964 × 0.88 × 1.0 = 84.8%额定
+</code></pre></div>
+<h3 id="1042">10.4.2 降额律验证方法与台架标定<a class="headerlink" href="#1042" title="Permanent link">¶</a></h3>
+<h4 id="10421">10.4.2.1 为什么需要验证降额律?<a class="headerlink" href="#10421" title="Permanent link">¶</a></h4>
+<p>设计阶段建立的降额律公式(K₁×K₂×K₃)是基于：
+  · 理论估算(换热比例关系)
+  · 仿真计算(热网络模型)
+  · 供应商数据(电机/泵参数)</p>
+<p>但实际系统的行为会与估算有偏差，原因：
+  · 污堵系数估算偏差(实际污堵率与假设不符)
+  · 环境温度与标准条件差异
+  · 元器件参数分散(电机铁芯损耗公差)</p>
+<p><strong>因此必须在台架试验中验证和标定降额律。</strong></p>
+<h4 id="10422">10.4.2.2 验证方法的四个阶段<a class="headerlink" href="#10422" title="Permanent link">¶</a></h4>
+<p><strong>阶段1：仿真验证(D60前)</strong></p>
+<p>目标：确认降额律公式的理论正确性</p>
+<p>方法：
+  □ Simulink+AMESim联合仿真
+  □ 构造完整工况矩阵(≥12个点，覆盖K₁/K₂全范围)
+  □ 运行仿真至稳态，记录T_winding vs P_avail的关系
+  □ 绘制相图(与公式预测的相图叠加对比)</p>
+<p>判据：
+  ✓ 仿真相图与公式相图的关键点(临界温度)偏差 ≤ ±5°C
+  ✓ 绿区/黄区/橙区边界位置偏差 ≤ ±2°C
+  ✓ 状态机S0~S6的转移条件都被仿真验证</p>
+<p>输出：仿真验证报告(附相图对比图)</p>
+<p><strong>阶段2：台架初步验证(D70~D80)</strong></p>
+<p>目标：在实际硬件上验证降额律的基本趋势</p>
+<p>方法：
+  □ 台架测试12个工况点(参考表10.4-1)
+  □ 每个工况：设定T_sea和Δp，运行至热平衡，记录P_avail
+  □ 绘制实测相图，与仿真相图对比
+  □ 计算偏差</p>
+<p>判据：
+  ✓ 实测P_avail vs 仿真P_avail偏差 ≤ ±5%
+  ✓ 临界温度T_warn偏差 ≤ ±3°C
+  ✓ 无意外的降额"死点"或迟滞</p>
+<p>如果偏差&gt;5%：调整仿真模型参数(如污堵系数K₂)，重新标定</p>
+<p>输出：台架标定报告(CAL-DERATE-001)</p>
+<p><strong>阶段3：SIT验证(D85~D90)</strong></p>
+<p>目标：在两两集成环节验证状态机逻辑的正确性</p>
+<p>方法：
+  □ 运行SIT-03(热平衡集成试验，见第11章)
+  □ 监测降额状态S0~S6的转移
+  □ 验证驾驶台HMI显示与实际状态同步
+  □ 触发人工阈值测试(如：加热至T_warn，观察HMI告警)</p>
+<p>判据：
+  ✓ 状态转移与设计逻辑一致
+  ✓ 转移延迟≤5s(允许迟滞，但不能超期)
+  ✓ HMI显示准确(绿/黄/橙/红颜色对应正确状态)</p>
+<p>输出：SIT-03报告(含状态转移测试记录)</p>
+<p><strong>阶段4：SAT最终验证(D100~D180)</strong></p>
+<p>目标：在实船工况中验证降额律的长期有效性</p>
+<p>方法：
+  □ 在多个工况点进行海试(沿海巡航、内河巡航等)
+  □ 记录T_sea、转速、功率、温度的实时数据
+  □ 绘制实船相图，与设计相图叠加
+  □ 监测是否出现异常状态转移或边界漂移</p>
+<p>判据：
+  ✓ SAT相图与设计相图重合(边界偏差≤±2°C)
+  ✓ 12个月内相图边界位置无明显漂移(污堵恶化评估)
+  ✓ 无意外的停机事件</p>
+<p>输出：年度相图验证报告(附实测vs设计对比)</p>
+<h4 id="10423">10.4.2.3 降额律标定参数的更新规则<a class="headerlink" href="#10423" title="Permanent link">¶</a></h4>
+<p><strong>参数K₁(海水温度因子)</strong></p>
+<p>设计公式：K₁(T_sea) = 1.0 - 0.02×(T_sea - 25)  (T_sea ≥ 25°C)</p>
+<p>标定方法(D70~D80)：
+  □ 在固定Δp=0(无污堵)的条件下，改变T_sea(20~40°C)
+  □ 测量对应的P_avail
+  □ 拟合K₁的分段线性或分段二次函数
+  □ 若实测数据显示K₁不是线性关系，更新公式</p>
+<p>修正示例：
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>设计假设：K₁ = 1.0 - 0.02×(T_sea - 25)  [线性]
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>实测发现：高温段(T_sea&gt;35°C)偏差较大，应改为二次
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>修正公式：K₁ = 1.0 - 0.015×(T_sea - 25) - 0.001×(T_sea - 25)²
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>           (此时35°C时K₁ = 0.880，与实测一致)
+</code></pre></div><p></p>
+<p><strong>参数K₂(污堵因子)</strong></p>
+<p>设计公式：K₂(Δp) = 1.0 - 0.008×(Δp - 20)  (20% ≤ Δp ≤ 50%)</p>
+<p>标定方法(D70~D80)：
+  □ 固定T_sea(如35°C，最坏情况)
+  □ 改变节流阀开度，模拟Δp = 10%, 20%, 30%, 40%, 50%
+  □ 测量每个Δp对应的P_avail
+  □ 拟合K₂曲线</p>
+<p>修正示例：
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>设计假设：K₂ = 1.0 - 0.008×(Δp - 20)  [线性，斜率-0.008]
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>实测发现：在Δp &gt; 40%时，冷却效率下降更快(非线性)
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>修正曲线：采用分段函数
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>  20% ≤ Δp ≤ 40%: K₂ = 1.0 - 0.008×(Δp - 20)  [斜率-0.008]
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>  40% &lt; Δp ≤ 50%: K₂ = 0.84 - 0.010×(Δp - 40)   [斜率-0.010，更陡]
+</code></pre></div><p></p>
+<p><strong>参数K₃(反馈因子，基于绕组温度)</strong></p>
+<p>设计公式：K₃(T_winding) = MAX(0.3, (T_trip - T_winding)/(T_trip - T_normal))</p>
+<p>标定方法(D70~D80)：
+  □ 不改变K₃公式(反馈性强，精度通常较好)
+  □ 但需要验证T_trip和T_normal两个参数是否准确
+  □ 检查约束条件是否合理(如：K₃最小值0.3是否合适)</p>
+<p>验证：
+  □ 在接近T_trip的温度运行，确认P_avail下降到≤30%(K₃≈0.3对应)
+  □ 在T_normal(如130°C)运行，确认P_avail无限制(K₃≈1.0)</p>
+<h4 id="10424">10.4.2.4 标定试验矩阵与工时估算<a class="headerlink" href="#10424" title="Permanent link">¶</a></h4>
+<p><strong>表10.4-1: 降额律标定试验矩阵(最小集合)</strong></p>
+<table>
+<thead>
+<tr>
+<th>工况号</th>
+<th>T_sea(°C)</th>
+<th>Δp(%)</th>
+<th>预期K₁</th>
+<th>预期K₂</th>
+<th>预期P_avail</th>
+<th>试验时长</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>20</td>
+<td>0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>100%</td>
+<td>2h</td>
+</tr>
+<tr>
+<td>2</td>
+<td>25</td>
+<td>0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>100%</td>
+<td>2h</td>
+</tr>
+<tr>
+<td>3</td>
+<td>30</td>
+<td>0</td>
+<td>0.94</td>
+<td>1.0</td>
+<td>94%</td>
+<td>2h</td>
+</tr>
+<tr>
+<td>4</td>
+<td>35</td>
+<td>0</td>
+<td>0.88</td>
+<td>1.0</td>
+<td>88%</td>
+<td>2h</td>
+</tr>
+<tr>
+<td>5</td>
+<td>40</td>
+<td>0</td>
+<td>0.88(上限)</td>
+<td>1.0</td>
+<td>88%</td>
+<td>2h</td>
+</tr>
+<tr>
+<td>6</td>
+<td>35</td>
+<td>20</td>
+<td>0.88</td>
+<td>1.0</td>
+<td>88%</td>
+<td>2h</td>
+</tr>
+<tr>
+<td>7</td>
+<td>35</td>
+<td>35</td>
+<td>0.88</td>
+<td>0.88</td>
+<td>77%</td>
+<td>2h</td>
+</tr>
+<tr>
+<td>8</td>
+<td>35</td>
+<td>50</td>
+<td>0.88</td>
+<td>0.76</td>
+<td>67%</td>
+<td>2h</td>
+</tr>
+<tr>
+<td>9</td>
+<td>30</td>
+<td>35</td>
+<td>0.94</td>
+<td>0.88</td>
+<td>83%</td>
+<td>2h</td>
+</tr>
+<tr>
+<td>10</td>
+<td>25</td>
+<td>50</td>
+<td>1.0</td>
+<td>0.76</td>
+<td>76%</td>
+<td>2h</td>
+</tr>
+<tr>
+<td>11</td>
+<td>35</td>
+<td>35 + T_wind升高</td>
+<td>0.88</td>
+<td>0.88</td>
+<td>从77%→30%</td>
+<td>3h(长程)</td>
+</tr>
+<tr>
+<td>12</td>
+<td>35</td>
+<td>35 + 模拟转速变化</td>
+<td>0.88</td>
+<td>0.88</td>
+<td>检查无意外</td>
+<td>2h</td>
+</tr>
+</tbody>
+</table>
+<p><strong>总工时</strong>：12个工况 × 2h = 24h ≈ 3天
+<strong>实际排期</strong>：D70~D75(5个工作日内完成)
+<strong>资源需求</strong>：1名热工程师 + 1名自动化工程师</p>
+<h4 id="10425">10.4.2.5 标定结果的文档化<a class="headerlink" href="#10425" title="Permanent link">¶</a></h4>
+<p><strong>标定报告应包含</strong>：</p>
+<p>① 仿真模型基础信息
+   □ Simulink版本号 + 模型发布日期
+   □ AMESim版本号 + 环路模型拓扑图</p>
+<p>② 12个工况点的实测数据表
+   □ 时间/功率/转速/T_sea/T_in/T_out/Δp/K₁/K₂/K₃/P_avail计算值</p>
+<p>③ 修正前后的公式对比
+   □ 设计公式 vs 修正公式的并列
+   □ 关键点(T_sea=35°C, Δp=35%)的数值对比</p>
+<p>④ 误差分析
+   □ 实测 vs 计算的最大偏差
+   □ 系统误差(恒定偏差)和随机误差
+   □ 置信区间(95%置信度下的公式精度)</p>
+<p>⑤ EEPROM参数更新记录
+   □ 控制器中K₁/K₂系数更新记录
+   □ 新参数的生效日期和版本号</p>
+<p><strong>签字要求</strong>：
+  □ 热工程师确认计算无误
+  □ 控制工程师确认参数已更新至控制器
+  □ 项目经理确认此项标定完成</p>
+<h4 id="10426-m3">10.4.2.6 检查清单：M3前降额律标定应完成<a class="headerlink" href="#10426-m3" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>☐ D60前：Simulink+AMESim联仿完成，相图预测有效
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>☐ D75前：台架标定试验全部12个工况完成
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>☐ D80前：标定报告完成，K₁/K₂修正公式确定
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>☐ D85前：修正参数已写入控制器EEPROM
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>☐ D90前：SIT中验证状态机转移逻辑正确
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>☐ FAT前：相图与设计的关键点偏差确认≤±5%
+</code></pre></div>
+<h3 id="1043">10.4.3 换热器堵塞突发工况<a class="headerlink" href="#1043" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>场景描述：
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>  船舶在热带海域（T_sea=35°C）正常航行（Δp=20%），
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>  外循环滤器因大量藻类聚集，在 1h 内 Δp 从 20% 快速升至 65%
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>相图轨迹与控制响应：
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>  T=0min：(Δp=20%, T_sea=35°C) → P_avail=88%（黄区）
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>    K₁=0.88, K₂=1.0, K₃=1.0
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>  T=30min：(Δp=40%, T_sea=35°C) → P_avail=88%×0.84=73.9%（橙区）
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>    K₂=1-0.008×(40-20)=0.84
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>    → 触发 L1 报警（P_avail&lt;80%）
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>    → 驾驶台黄色提示"冷却系统污堵，建议清洗"
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>  T=50min：(Δp=55%, T_sea=35°C) → P_avail=88%×0.76=66.9%（橙区）
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>    K₂=0.76（超过50%上限，固定值）
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>    → 触发橙色报警"换热器污堵严重，已降额至67%，必须清洗"
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>    → 同时：绕组温度因散热不足开始升高
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>    → T_winding 从 120°C 缓慢升至 132°C（约 20min 后）
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>    → 触发 L1 温度报警（T&gt;130°C）→ 冷却泵升至 100%
+<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>
+<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>  T=60min：(Δp=65%, T_sea=35°C，T_winding=138°C)
+<a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>    K₂=0.76, K₃=1.0（尚未到 155°C 降额阈值）
+<a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>    P_avail = 88% × 0.76 = 66.9%（控制器已限制）
+<a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>    绕组温度上升趋势：若不处理，预计 15min 内达到 155°C（L2 降额）
+<a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a>
+<a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a>控制系统响应总结：
+<a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a>  ✓ 压损监测自动触发两级报警（无需人工干预）
+<a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a>  ✓ 功率自动限制（Δp&gt;50% 时固定 K₂=0.76）
+<a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a>  ✓ 温度趋势预警（上升速率 &gt; 0.5°C/min 时触发趋势告警）
+<a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a>  ✗ 无法自动清洗滤器（需人工操作旁通阀 + 滤芯更换）
+<a id="__codelineno-14-32" name="__codelineno-14-32" href="#__codelineno-14-32"></a>  → 建议：船员收到橙色报警后 30min 内完成外循环旁通操作
+</code></pre></div>
+<h3 id="1044">10.4.4 极端多重故障叠加工况<a class="headerlink" href="#1044" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>场景描述（压力测试工况，SAT 必须验证）：
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>  同时发生：
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    ① 海水温度突升至 38°C（极端热带海况）
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    ② 主冷却泵故障 → 备泵切换（流量降至 70%额定）
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    ③ 换热器已有 30% 污堵（Δp=30%）
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>计算：
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>  K₁(T_sea=38°C) = 0.88（已达上限，超出设计范围）
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>  K₂(Δp=30%) = 1 - 0.008×(30-20) = 0.92
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>  K₃ = 1.0（初始，绕组温度尚正常）
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>  P_avail_initial = 100% × 0.88 × 0.92 × 1.0 = 80.9%
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>  备泵切换后，流量 = 70%额定（&lt; 80%额定），
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>  但尚未触发"流量低"L1 阈值（&gt; 60%），流量降额因子不额外叠加。
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>  然而换热效率因流量减少而下降（流量 ↓ → ε ↓）：
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>    ε_actual ≈ ε_0 × (Q/Q_rated)^0.6（湍流传热相关性）
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>    ε_actual = 0.85 × (0.70)^0.6 ≈ 0.85 × 0.805 = 0.684
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>    → 冷却能力进一步下降 → 绕组温度缓慢上升
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>  约 20min 后：T_winding 升至 158°C → 触发 L2 降额（K₃ 介入）：
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>    K₃ = (170-158)/(170-130) = 12/40 = 0.30
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>    P_avail = 100% × 0.88 × 0.92 × 0.30 = 24.3%（红区边界！）
+<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a>
+<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a>控制系统最终响应：
+<a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a>  P_avail &lt; 40% → 进入 S4（严重降额）状态
+<a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a>  保留最低推力（15%额定）维持操纵性
+<a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a>  红色报警 + 要求立即靠港处置
+<a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a>  若 T_winding 继续上升至 175°C → S5 停机
+<a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a>
+<a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a>工程启示：
+<a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a>  多重故障叠加（即使每个单独故障均未停机）
+<a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a>  可在 20~30min 内将系统推入停机区
+<a id="__codelineno-15-34" name="__codelineno-15-34" href="#__codelineno-15-34"></a>  → 这是设计双泵冗余 + 监控系统"趋势告警"功能的核心依据
+<a id="__codelineno-15-35" name="__codelineno-15-35" href="#__codelineno-15-35"></a>  → FMEA 中此场景 RPN 最高，必须优先设计缓解措施
+</code></pre></div>
+<hr>
+<h2 id="105">10.5 相图标定与验证<a class="headerlink" href="#105" title="Permanent link">¶</a></h2>
+<h3 id="1051">10.5.1 台架标定流程<a class="headerlink" href="#1051" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>标定目标：
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>  验证降额律公式（K₁/K₂/K₃）的预测精度
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>  目标：P_avail 预测值 vs 实测热平衡功率偏差 ≤ ±5%
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>  若超出：调整公式系数，更新控制器参数
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>标定试验矩阵（最小集合，共 12 个工况点）：
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>  ┌──────┬──────────┬──────────┬────────────────────┬────────────┐
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>  │工况号│ T_sea(°C)│ Δp (%)  │ 预期 P_avail (%)   │ 实测目标   │
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>  ├──────┼──────────┼──────────┼────────────────────┼────────────┤
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>  │  1   │ 20       │  0       │ 100%（基准）         │ 验证基准点 │
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>  │  2   │ 25       │  0       │ 100%                │ K₁起始点   │
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>  │  3   │ 30       │  0       │ 94.0%               │ K₁线性段   │
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>  │  4   │ 35       │  0       │ 88.0%               │ K₁设计基准 │
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>  │  5   │ 38       │  0       │ 88.0%               │ K₁上限验证 │
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>  │  6   │ 35       │  20      │ 88.0%               │ K₂起始点   │
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>  │  7   │ 35       │  35      │ 76.2%               │ K₂线性段   │
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>  │  8   │ 35       │  50      │ 66.9%               │ K₂上限     │
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>  │  9   │ 35       │  60      │ 66.9%（K₂固定）     │ 超限验证   │
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>  │  10  │ 30       │  35      │ 71.1%               │ K₁×K₂ 交叉 │
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a>  │  11  │ 35       │  35      │ 66.9%               │ 设计恶劣点 │
+<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a>  │  12  │ 35       │  35      │ 注入 T_wind=158°C   │ K₃验证     │
+<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>  └──────┴──────────┴──────────┴────────────────────┴────────────┘
+<a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a>
+<a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a>每个工况点标定方法：
+<a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a>  ① 设定台架冷却水温（模拟 T_sea）
+<a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a>  ② 设定节流阀开度（模拟 Δp）
+<a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a>  ③ 逐步升高电机功率，至绕组温度达到 130°C（热平衡）
+<a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a>  ④ 记录此时的稳态功率 = P_avail_measured
+<a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a>  ⑤ 计算偏差：error = (P_avail_formula - P_avail_measured) / P_rated × 100%
+<a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a>  ⑥ 若 |error| &gt; 5%：调整对应 K 因子系数
+<a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a>
+<a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a>标定结果处理：
+<a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a>  输出：标定报告（CAL-DERATE-001）
+<a id="__codelineno-16-34" name="__codelineno-16-34" href="#__codelineno-16-34"></a>        修正后的 K₁/K₂ 分段公式系数
+<a id="__codelineno-16-35" name="__codelineno-16-35" href="#__codelineno-16-35"></a>        P_avail 预测误差统计（均值/标准差/最大值）
+<a id="__codelineno-16-36" name="__codelineno-16-36" href="#__codelineno-16-36"></a>  归档：VCRM 中 REQ-CTRL-007（降额精度）条目关闭证据
+<a id="__codelineno-16-37" name="__codelineno-16-37" href="#__codelineno-16-37"></a>  参数更新：修正系数写入控制器 EEPROM
+</code></pre></div>
+<h3 id="1052-sit">10.5.2 相图验证（SIT 阶段）<a class="headerlink" href="#1052-sit" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>全系统集成测试（SIT）中的相图验证项目（对应 SIT-03）：
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>  验证目标：在实际冷却系统（非模拟冷却水）条件下，
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>            验证相图分区边界与设计值一致
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>  试验方法：
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>    ① 固定 Δp=0%（换热器清洁），
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>       调整外循环水温从 25°C 升至 35°C（5°C/步）
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>       记录每个温度下的热平衡功率
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>    ② 固定 T_sea=35°C，
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>       逐步关小节流阀增大 Δp（0/20/35/50%）
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>       记录每个污堵程度下的热平衡功率
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>    ③ 绘制实测相图分区边界，与设计相图叠加比较
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>  验收准则：
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>    实测 P_avail 与设计相图预测值偏差 ≤ ±5%（所有 12 个工况点）
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>    实测绿区/黄区边界（P=80%等值线）位置
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a>    与设计相图偏差 ≤ ±2°C（温度方向）或 ±5%（压损方向）
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a>  输出：
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a>    SIT-03 试验报告（含实测相图 vs 设计相图对比图）
+<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a>    VCRM 中 REQ-PERF-005（降额性能）条目关闭
+</code></pre></div>
+<hr>
+<h2 id="106">10.6 相图在运维中的应用<a class="headerlink" href="#106" title="Permanent link">¶</a></h2>
+<h3 id="1061">10.6.1 预防性维护决策<a class="headerlink" href="#1061" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>基于相图的维护决策规则：
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>  规则1：换热器清洗触发条件
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>    当工况点在当前 T_sea 下，Δp &gt; 40%（即 K₂ &lt; 0.84）
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>    → 系统自动推送"换热器清洗建议"（不停机，仅提示）
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>    → 下次靠港（≤72h内）安排清洗
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>    当 Δp &gt; 50%（K₂ = 0.76）
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>    → 驾驶台橙色告警"换热器必须清洗"
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>    → 尽快靠港，不建议延误超过 24h
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>    清洗后操作：
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>    → 控制器维护菜单执行"压损基准值重置"
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>    → 系统记录清洗日期和 Δp 初始值（维护档案）
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>  规则2：滤器清洗触发条件
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>    外循环：Δp 升高速率 &gt; 5%/h（斜率告警）
+<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a>    → 提示"外循环滤器可能堵塞，检查并清洗"
+<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>
+<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a>    内循环：若流量异常（&lt; 90%额定 且 泵转速正常）
+<a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a>    → 提示"内循环滤器可能堵塞"
+<a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a>
+<a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a>  规则3：航线规划建议
+<a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a>    当预报前方海域 T_sea &gt; 35°C（&gt;3h 持续），
+<a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a>    且当前 Δp &gt; 30%（K₁ × K₂ &lt; 0.75）：
+<a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a>    → 系统建议：靠港清洗换热器后再通过热带海域
+<a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a>    → 或：提前以 80%额定功率航行（降低热负荷裕度消耗）
+<a id="__codelineno-18-28" name="__codelineno-18-28" href="#__codelineno-18-28"></a>
+<a id="__codelineno-18-29" name="__codelineno-18-29" href="#__codelineno-18-29"></a>  规则4：绩效退化趋势分析
+<a id="__codelineno-18-30" name="__codelineno-18-30" href="#__codelineno-18-30"></a>    每月统计相同工况点（相同 T_sea，相同功率）下的
+<a id="__codelineno-18-31" name="__codelineno-18-31" href="#__codelineno-18-31"></a>    实际绕组温度趋势：
+<a id="__codelineno-18-32" name="__codelineno-18-32" href="#__codelineno-18-32"></a>      若绕组温度持续升高（月均 +2°C）：
+<a id="__codelineno-18-33" name="__codelineno-18-33" href="#__codelineno-18-33"></a>      → 可能原因：换热器逐渐结垢（未完全清洗）
+<a id="__codelineno-18-34" name="__codelineno-18-34" href="#__codelineno-18-34"></a>                 绕组绝缘老化（绝缘电阻年检）
+<a id="__codelineno-18-35" name="__codelineno-18-35" href="#__codelineno-18-35"></a>                 轴承热阻增大（定期振动检查）
+<a id="__codelineno-18-36" name="__codelineno-18-36" href="#__codelineno-18-36"></a>    → 触发计划性大修评估
+</code></pre></div>
+<h3 id="1062">10.6.2 能效优化应用<a class="headerlink" href="#1062" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>基于相图的能效优化（超越"降额保护"的主动能效管理）：
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>  最优工作点选择：
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>    在满足推力需求的前提下，
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>    选择效率最高的（转速，转矩）组合点
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>    该最优点应在相图绿区深处（远离边界），
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>    且在电机效率 MAP（见第11章 FAT 试验）高效岛内
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>    示例：
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>      目标推力：60%额定推力
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>      可实现方式A：n=80%额定转速，T=75%额定转矩
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>                   → 效率 93%，T_winding=118°C（绿区）
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>      可实现方式B：n=90%额定转速，T=67%额定转矩
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>                   → 效率 91%，T_winding=110°C（绿区）
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>      → 选择方式A（效率更高，仍在绿区安全范围）
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>  冷却泵能耗优化：
+<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>    传统做法：冷却泵始终运行在 100%转速（简单可靠，但浪费）
+<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>    优化做法：根据相图当前位置动态调节泵转速
+<a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a>      绿区深处（P=100%，T_winding&lt;100°C）：泵转速降至 70%
+<a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a>      黄区（T_winding=100~130°C）：泵转速升至 85%
+<a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a>      橙区（L2 降额）：泵转速升至 100%
+<a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a>
+<a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a>      节能效果：
+<a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a>        泵功率 ∝ n³，转速从 100% 降至 70% → 功率降至 34%
+<a id="__codelineno-19-26" name="__codelineno-19-26" href="#__codelineno-19-26"></a>        若冷却泵额定功率 3kW，正常运行在 70% 转速 → 节省 ~2kW
+<a id="__codelineno-19-27" name="__codelineno-19-27" href="#__codelineno-19-27"></a>        年节电：2kW × 6000h（年运行）= 12000 kWh ≈ 节省 1.5 万元
+<a id="__codelineno-19-28" name="__codelineno-19-28" href="#__codelineno-19-28"></a>
+<a id="__codelineno-19-29" name="__codelineno-19-29" href="#__codelineno-19-29"></a>  余热利用接口（预留）：
+<a id="__codelineno-19-30" name="__codelineno-19-30" href="#__codelineno-19-30"></a>    相图橙区运行时（冷却液出口温度 &gt; 60°C），
+<a id="__codelineno-19-31" name="__codelineno-19-31" href="#__codelineno-19-31"></a>    冷却液高温段可通过板换为船舱采暖提供热源
+<a id="__codelineno-19-32" name="__codelineno-19-32" href="#__codelineno-19-32"></a>    → 降低电热采暖能耗（北方内河冬季航线有效）
+<a id="__codelineno-19-33" name="__codelineno-19-33" href="#__codelineno-19-33"></a>    → 接口预留在 ICD-CS-004（船总体–冷却系统接口）
+</code></pre></div>
+<hr>
+<h2 id="107">10.7 本章小结与关键输出物<a class="headerlink" href="#107" title="Permanent link">¶</a></h2>
+<h3 id="1071">10.7.1 核心要点回顾<a class="headerlink" href="#1071" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>本章核心要点（六条）：
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>  ① 相图是"系统能力地图"，不是"事后分析工具"
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>     实时显示于驾驶台，使船员在任意时刻都知道
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>     "当前系统还剩多少余量"，而非等到报警才响应
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>  ② 降额律三因子（K₁×K₂×K₃）分别应对三类退化：
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>     K₁：外部热汇温度升高（无法控制，只能降额）
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>     K₂：换热器污堵（可通过清洗恢复，属于可逆退化）
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>     K₃：绕组温度实测反馈（前馈失效时的最后兜底）
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>  ③ 降级走廊的核心价值是"主动降级 vs 被动停机"
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>     7级状态机（S0~S6）确保系统在任意工况下
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>     都有有序的退出路径，永远保留最低推力（15%额定）
+<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>     使船只维持最低操纵性，安全靠港
+<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>
+<a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>  ④ 迟滞设计是防止控制振荡的关键
+<a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a>     恢复阈值 ≠ 触发阈值，差值为 5~10°C + 时间延迟 30~300s
+<a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a>     防止温度在阈值附近波动时反复触发降额/恢复切换
+<a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a>
+<a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a>  ⑤ 标定是相图可信度的保证
+<a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a>     K₁/K₂ 系数必须通过台架试验（12个工况点）标定
+<a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a>     未标定的理论公式预测误差可达 ±15%，远超 ±5% 要求
+<a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a>     标定结果写入控制器 EEPROM，随系统全寿命保存
+<a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a>
+<a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a>  ⑥ 相图不仅用于保护，更用于运维决策和能效优化
+<a id="__codelineno-20-27" name="__codelineno-20-27" href="#__codelineno-20-27"></a>     换热器清洗时机、航线规划、冷却泵节能调速，
+<a id="__codelineno-20-28" name="__codelineno-20-28" href="#__codelineno-20-28"></a>     均可基于相图当前位置和趋势做出主动决策
+<a id="__codelineno-20-29" name="__codelineno-20-29" href="#__codelineno-20-29"></a>     从"被动保护"进化为"主动能效管理"
+</code></pre></div>
+<h3 id="1072">10.7.2 关键输出物清单<a class="headerlink" href="#1072" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>本章应产出的关键工程文件（按里程碑排序）：
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>  里程碑一：系统设计冻结前
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>  □ 输出物1：稳定运行相图设计文件
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>    内容：相图坐标系定义、分区边界推导计算书
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>          K₁/K₂/K₃ 公式（含参数来源说明）
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>          12个工况点预计算结果表
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>    格式：Word + Excel（计算表），≥15页
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>    验收：系统架构评审（CDR）前完成，与热设计报告一致
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>  □ 输出物2：降级走廊设计文件
+<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>    内容：7级状态机定义（状态图 + 转移条件表）
+<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>          完整阈值表（触发/恢复/迟滞/响应时间）
+<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a>          控制器实现伪代码（compute_derating 函数）
+<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>    格式：Word + Visio（状态图），≥10页
+<a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>    验收：与 ICD-CD-001（冷却液接口）和 ICD-CS-002（通信接口）一致
+<a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a>
+<a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a>  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a>  里程碑二：台架标定完成
+<a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a>  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a>  □ 输出物3：降额律标定报告（CAL-DERATE-001）
+<a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a>    内容：12个工况点标定数据表
+<a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a>          实测 vs 公式预测对比曲线（误差分析）
+<a id="__codelineno-21-26" name="__codelineno-21-26" href="#__codelineno-21-26"></a>          修正后的 K₁/K₂ 公式系数（含置信区间）
+<a id="__codelineno-21-27" name="__codelineno-21-27" href="#__codelineno-21-27"></a>          EEPROM 参数更新确认记录
+<a id="__codelineno-21-28" name="__codelineno-21-28" href="#__codelineno-21-28"></a>    验收准则：所有工况点偏差 ≤ ±5%，
+<a id="__codelineno-21-29" name="__codelineno-21-29" href="#__codelineno-21-29"></a>              VCRM 中 REQ-CTRL-007 关闭
+<a id="__codelineno-21-30" name="__codelineno-21-30" href="#__codelineno-21-30"></a>
+<a id="__codelineno-21-31" name="__codelineno-21-31" href="#__codelineno-21-31"></a>  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-21-32" name="__codelineno-21-32" href="#__codelineno-21-32"></a>  里程碑三：SIT 完成
+<a id="__codelineno-21-33" name="__codelineno-21-33" href="#__codelineno-21-33"></a>  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-21-34" name="__codelineno-21-34" href="#__codelineno-21-34"></a>  □ 输出物4：SIT 相图验证报告（SIT-03）
+<a id="__codelineno-21-35" name="__codelineno-21-35" href="#__codelineno-21-35"></a>    内容：实测相图（12工况点绘制）vs 设计相图叠加图
+<a id="__codelineno-21-36" name="__codelineno-21-36" href="#__codelineno-21-36"></a>          绿区/黄区/橙区边界实测位置
+<a id="__codelineno-21-37" name="__codelineno-21-37" href="#__codelineno-21-37"></a>          状态机 S0~S6 各状态转移试验记录
+<a id="__codelineno-21-38" name="__codelineno-21-38" href="#__codelineno-21-38"></a>          驾驶台 HMI 显示验证截图
+<a id="__codelineno-21-39" name="__codelineno-21-39" href="#__codelineno-21-39"></a>    验收准则：边界偏差 ≤ ±2°C 或 ±5% Δp，
+<a id="__codelineno-21-40" name="__codelineno-21-40" href="#__codelineno-21-40"></a>              VCRM 中 REQ-PERF-005 关闭
+<a id="__codelineno-21-41" name="__codelineno-21-41" href="#__codelineno-21-41"></a>
+<a id="__codelineno-21-42" name="__codelineno-21-42" href="#__codelineno-21-42"></a>  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-21-43" name="__codelineno-21-43" href="#__codelineno-21-43"></a>  里程碑四：整船交付后（运维文件）
+<a id="__codelineno-21-44" name="__codelineno-21-44" href="#__codelineno-21-44"></a>  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-21-45" name="__codelineno-21-45" href="#__codelineno-21-45"></a>  □ 输出物5：相图运维手册（船员版）
+<a id="__codelineno-21-46" name="__codelineno-21-46" href="#__codelineno-21-46"></a>    内容：相图颜色含义说明（非技术语言，船员可理解）
+<a id="__codelineno-21-47" name="__codelineno-21-47" href="#__codelineno-21-47"></a>          各级报警的含义和建议操作（简明一页纸版本）
+<a id="__codelineno-21-48" name="__codelineno-21-48" href="#__codelineno-21-48"></a>          维护触发阈值（换热器清洗 / 滤器检查 / 备泵切换）
+<a id="__codelineno-21-49" name="__codelineno-21-49" href="#__codelineno-21-49"></a>          紧急处置流程（进入橙区/红区时的操作步骤）
+<a id="__codelineno-21-50" name="__codelineno-21-50" href="#__codelineno-21-50"></a>    格式：A4 彩色印刷，张贴于驾驶台操作面板旁
+</code></pre></div>
+<h3 id="1073">10.7.3 与其他章节的关联索引<a class="headerlink" href="#1073" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>本章与手册其他章节的输入/输出关系：
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>  从以下章节获取输入：
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>  ┌──────────────────────┬──────────────────────────────────────┐
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>  │ 输入章节             │ 获取内容                              │
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>  ├──────────────────────┼──────────────────────────────────────┤
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>  │ 第9章 系统需求分析   │ 热管理需求（绕组温升限值、连续功率）  │
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>  │ 第6章 冷却系统设计   │ ε-NTU 换热效能、污堵裕度系数         │
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>  │ 第5章 控制系统设计   │ 热保护三级逻辑（6.3节）→ 阈值继承    │
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>  │ 第10章 HIL 仿真平台   │ HIL 场景验证（状态机覆盖性验证）      │
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>  │ 第12章 L3 系统仿真    │ 热模型参数（K₁/K₂ 理论估算来源）     │
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>  │ 第11章 接口管理       │ ICD-CD-001（冷却液接口）              │
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>  │                      │ ICD-CS-002（驾驶台通信）              │
+<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>  └──────────────────────┴──────────────────────────────────────┘
+<a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>
+<a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a>  向以下章节提供输出：
+<a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a>  ┌──────────────────────┬──────────────────────────────────────┐
+<a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a>  │ 输出章节             │ 提供内容                              │
+<a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a>  ├──────────────────────┼──────────────────────────────────────┤
+<a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a>  │ 第17章 规范与合规    │ 降额机制作为船级社安全要求的符合性证据 │
+<a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a>  │ 第18章 内河/海船差异 │ 相图参数差异（内河 T_sea 范围不同）   │
+<a id="__codelineno-22-22" name="__codelineno-22-22" href="#__codelineno-22-22"></a>  │ 第20章 V&amp;V 验证体系  │ 标定报告 + SIT 验证报告 → VCRM 关闭  │
+<a id="__codelineno-22-23" name="__codelineno-22-23" href="#__codelineno-22-23"></a>  │ 第24章 90天路线图    │ 相图标定在 60~90 天阶段的关键里程碑  │
+<a id="__codelineno-22-24" name="__codelineno-22-24" href="#__codelineno-22-24"></a>  └──────────────────────┴──────────────────────────────────────┘
+</code></pre></div>
+<hr>
+<blockquote>
+<p><strong>第21章完</strong></p>
+<p>本章从相图构建原理出发，完整推导了降额律三因子（K₁×K₂×K₃），
+设计了七级降级走廊状态机，给出了台架标定流程、典型工况轨迹分析
+和运维决策规则，构成了船用电推系统热安全管理的完整闭环。</p>
+<p><strong>核心记忆点</strong>：
+- 相图 = 实时能力地图（驾驶台可见，船员可理解）
+- K₁×K₂×K₃ = 前馈（环境）× 前馈（污堵）× 反馈（温度）三重保护
+- 主动降级（走廊）&gt;&gt; 被动停机（传统单变量保护）
+- 标定是可信度保证：±5% 精度目标，12个工况点台架验证</p>
+<p><em>下一章：第17章 船舶规范与合规映射</em></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.action.view"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/calc-common.js"></script>
+      
+        <script src="https://cdn.staticfile.org/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

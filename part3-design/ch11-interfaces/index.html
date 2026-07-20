@@ -1,0 +1,5591 @@
+<!DOCTYPE html><html lang="zh" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="从基础认知到工程落地的完整知识手册">
+      
+      
+      
+      
+        <link rel="prev" href="../ch10-simulation/">
+      
+      
+        <link rel="next" href="../ch12-rams/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>第11章 接口管理 - 船舶新能源动力系统工程手册</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Noto Sans SC";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#11" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="船舶新能源动力系统工程手册" class="md-header__button md-logo" aria-label="船舶新能源动力系统工程手册" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            船舶新能源动力系统工程手册
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第11章 接口管理
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange" aria-label="切换到深色模式" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="deep-orange" aria-label="切换到浅色模式" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard="" data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../how-to-use/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  使用指南
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../part1-basics/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第一部分 基础认知
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../part2-subsystems/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第二部分 核心子系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第三部分 系统设计方法
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../part4-compliance/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第四部分 规范与合规
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../part5-validation/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第五部分 验证与落地
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../part6-advanced/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第六部分 专项深化
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../part7-resources/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第七部分 工具与资源
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="船舶新能源动力系统工程手册" class="md-nav__button md-logo" aria-label="船舶新能源动力系统工程手册" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    船舶新能源动力系统工程手册
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    使用指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一部分 基础认知
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第一部分 基础认知
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part1-basics/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一部分导读：基础认知
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part1-basics/ch01-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第1章 概述与发展
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part1-basics/ch02-classification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第2章 分类与选型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二部分 核心子系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第二部分 核心子系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二部分导读：核心子系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2">
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第3章 船用电池系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第3章 船用电池系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch03-battery-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.1 电池技术基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch03-battery-selection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.2 电池选型与配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch03-battery-bms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.3 电池管理系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch03-battery-safety/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.4 电池安全与防护
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3">
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第4章 电推进系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第4章 电推进系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch04-propulsion-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.1 电推进概述
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch04-thrusters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.2 推进器选型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch04-motors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.3 推进电机匹配
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch04-transmission/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.4 传动系统设计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch04-transmission-detail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.5 传动专项准则
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第5章 能量管理与控制
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第5章 能量管理与控制
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch05-ems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.1 能量管理系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch05-range/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.2 续航里程估算
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch05-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.3 能耗优化策略
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch05-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.4 控制专项准则
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch06-cooling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第6章 冷却与热管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三部分 系统设计方法
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第三部分 系统设计方法
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三部分导读：系统设计方法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch07-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第7章 总体研发框架
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch08-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第8章 需求工程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch09-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第9章 架构设计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch10-simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第10章 协同仿真
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第11章 接口管理
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第11章 接口管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 接口管理概述
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.1 接口管理概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#911" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1.1 为什么接口管理是系统集成的核心
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#912" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1.2 接口分类体系
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#92-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 N² 接口矩阵（完整版）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.2 N² 接口矩阵（完整版）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#921-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2.1 N² 矩阵构建方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#922-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2.2 完整 N² 矩阵
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#923-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2.3 N² 矩阵接口优先级评定
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93-icd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 接口控制文件（ICD）完整模板
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.3 接口控制文件（ICD）完整模板">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#931-icd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3.1 ICD 文件结构规范
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#932-icd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3.2 六份核心 ICD 完整示例
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.3.2 六份核心 ICD 完整示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#icd-cd-001" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ICD-CD-001：内循环冷却液接口（冷却系统 → 传动系统）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#icd-dc-002" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ICD-DC-002：编码器与温度信号接口（传动系统 → 控制系统）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#943" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4.3 第二阶段：两两集成测试
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#992-excel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.9.2 接口数据库最小实现（Excel模板说明）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#993" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.9.3 数字化接口管理进阶实践
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#910" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.10 本章小结与关键输出物清单
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.10 本章小结与关键输出物清单">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#9101" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.10.1 本章核心要点回顾
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9102" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.10.2 关键输出物清单
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9103" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.10.3 与其他章节的关联索引
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch12-rams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第12章 RAMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch13-functional-safety/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第13章 功能安全
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第四部分 规范与合规
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第四部分 规范与合规
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第四部分导读：规范与合规
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/ch15-ccs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第14章 CCS规范
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/ch16-dnv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第15章 DNV规范
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/ch17-iec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第16章 IEC标准
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/ch18-compliance-mapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第17章 合规映射
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/ch19-inland-vs-sea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第18章 内河vs海船
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/ch20-special-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第19章 特有问题
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7">
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第五部分 验证与落地
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第五部分 验证与落地
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part5-validation/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第五部分导读：验证与落地
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part5-validation/ch21-vv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第20章 V&amp;V体系
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part5-validation/ch22-stability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第21章 稳定运行
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part5-validation/ch23-diagnosis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第22章 故障诊断
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part5-validation/ch24-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第23章 测试体系
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part5-validation/ch25-90day/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第24章 90天路线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8">
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第六部分 专项深化
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第六部分 专项深化
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part6-advanced/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第六部分导读：专项深化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part6-advanced/ch26-hybrid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第25章 混合动力
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part6-advanced/ch27-commercialization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第26章 商业化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part6-advanced/ch28-innovation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第27章 技术创新
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part6-advanced/ch29-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第28章 技术路线图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part6-advanced/ch30-conclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第29章 总结建议
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9">
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第七部分 工具与资源
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第七部分 工具与资源
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第七部分导读：工具与资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_2">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../part7-resources/calculators/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录A 计算工具
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    附录A 计算工具
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/calculators/battery-capacity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    电池容量
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/calculators/propulsion-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    推进功率
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/calculators/range-calc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    续航里程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/calculators/efficiency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    效率分析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/calculators/cooling-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    冷却系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/appendix-toolchain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录B 工具链
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_4">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../part7-resources/cases/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录C 案例库
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9_4" id="__nav_9_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    附录C 案例库
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/cases/inland-passenger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    内河电动客船
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/cases/harbor-vessel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    港口工作船
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/cases/hybrid-ocean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    远洋混合动力
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_5">
+        
+          
+          <label class="md-nav__link" for="__nav_9_5" id="__nav_9_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录D 参考资料
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    附录D 参考资料
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/references/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    术语表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/references/standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    规范清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/references/books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    参考书目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/references/links/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    常用链接
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/appendix-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录E 规范笔记
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 接口管理概述
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.1 接口管理概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#911" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1.1 为什么接口管理是系统集成的核心
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#912" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1.2 接口分类体系
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#92-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 N² 接口矩阵（完整版）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.2 N² 接口矩阵（完整版）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#921-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2.1 N² 矩阵构建方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#922-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2.2 完整 N² 矩阵
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#923-n2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2.3 N² 矩阵接口优先级评定
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93-icd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 接口控制文件（ICD）完整模板
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.3 接口控制文件（ICD）完整模板">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#931-icd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3.1 ICD 文件结构规范
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#932-icd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3.2 六份核心 ICD 完整示例
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.3.2 六份核心 ICD 完整示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#icd-cd-001" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ICD-CD-001：内循环冷却液接口（冷却系统 → 传动系统）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#icd-dc-002" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ICD-DC-002：编码器与温度信号接口（传动系统 → 控制系统）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#943" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4.3 第二阶段：两两集成测试
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#992-excel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.9.2 接口数据库最小实现（Excel模板说明）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#993" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.9.3 数字化接口管理进阶实践
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#910" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.10 本章小结与关键输出物清单
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.10 本章小结与关键输出物清单">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#9101" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.10.1 本章核心要点回顾
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9102" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.10.2 关键输出物清单
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9103" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.10.3 与其他章节的关联索引
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="11">第11章 接口管理与集成工程<a class="headerlink" href="#11" title="Permanent link">¶</a></h1>
+<blockquote>
+<p><strong>本章导读</strong>
+接口是系统集成失败的重灾区——超过60%的系统级问题源于接口定义模糊或集成测试不充分。本章从N²矩阵、ICD文件体系、集成测试策略三条主线展开，提供可直接落地的工程模板与检查单。</p>
+<p><strong>适用范围</strong>：冷却–传动–控制三子系统耦合平台，兼顾内河船与海船场景。
+<strong>核心输出物</strong>：完整N²矩阵 · ICD文件模板（6份）· 集成测试规程 · FAT/SAT检查单</p>
+</blockquote>
+<hr>
+<h2 id="91">9.1 接口管理概述<a class="headerlink" href="#91" title="Permanent link">¶</a></h2>
+<h3 id="911">9.1.1 为什么接口管理是系统集成的核心<a class="headerlink" href="#911" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>接口管理的本质：
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  在多个子系统/供应商/团队协同开发时，
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  通过结构化文件将各方的"边界责任"明确化，
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  消除灰色地带，防止"我以为你负责"的集成故障。
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>典型接口问题案例（船用电推系统）：
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  案例1：冷却–传动接口未对齐
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    现象：台架联调时，电机在额定功率下温升超标15°C
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    根因：传动供应商提供的散热功率数据（基于50Hz损耗），
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>          但冷却系统按低频（30Hz）损耗设计，
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>          接口文件中"额定损耗"未注明转速工况
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    代价：冷却泵重新选型，延误交付6周
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>  案例2：控制–传动信号电平不匹配
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    现象：控制器发出的编码器5V电源，与编码器要求的24V不符
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    根因：ICD中仅写"编码器供电"，未注明电压等级
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>          两家供应商各自理解不同
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    代价：现场增加DC/DC模块，EMC重新评估
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>  案例3：机械安装接口尺寸冲突
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    现象：整船安装时，冷却管路法兰位置与电机吊装路径冲突
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    根因：2D图纸接口定义，安装顺序未在ICD中规定
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>    代价：现场割管改管，工期延误3天
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>  教训：接口定义越早冻结，代价越小。
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>        设计阶段发现接口问题 → 修改文件（1人·天）
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>        台架阶段发现 → 返工设计+重新采购（10~50人·天）
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>        整船阶段发现 → 现场改造+工期损失（100人·天以上）
+</code></pre></div>
+<h3 id="912">9.1.2 接口分类体系<a class="headerlink" href="#912" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>接口分类（五大类）：
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>① 机械接口（Mechanical Interface）
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>   定义：两个子系统之间的物理连接和空间关系
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>   内容：
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>     安装法兰/螺栓孔尺寸、位置公差
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>     管路接口（管径、压力等级、密封形式）
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>     重量/重心（对船体结构影响）
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>     安装顺序（先装哪个、后装哪个）
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>     维修拆卸空间（最小操作空间要求）
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>   示例：冷却管路DN25 PN16法兰 → 电机冷却套入口
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>② 流体接口（Fluid Interface）
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>   定义：流体介质在子系统间的流量、温度、压力参数
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>   内容：
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>     设计流量范围（最小/额定/最大）
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>     温度范围（正常/报警/停机阈值）
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>     压力范围（工作压力/最大允许压力）
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>     介质规格（乙二醇浓度/清洁度等级）
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>     接口方向（进/出、供/回）
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>   示例：内循环冷却液 15~40 L/min，入口≤45°C
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>③ 电气接口（Electrical Interface）
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>   定义：电力和信号在子系统间的电气参数
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>   子分类：
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>     动力接口：电压等级、电流容量、接线方式
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>     信号接口：信号类型（模拟/数字/总线）、电平、阻抗
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>     供电接口：控制电源电压/电流、隔离要求
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>     接地接口：接地方式、接地阻抗要求
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>   示例：编码器信号 RS422差分，5VDC供电，终端电阻120Ω
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>④ 控制/通信接口（Control/Communication Interface）
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>   定义：子系统之间的控制指令和状态信息交换
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>   内容：
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>     通信协议（Modbus/CANopen/PROFINET/NMEA2000）
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>     报文格式（帧结构、数据类型、字节序）
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>     更新周期（控制信号 vs 状态信号不同要求）
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>     超时处理（通信中断时各方动作）
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>     握手与同步机制
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>   示例：控制器→变频器，速度指令，CANopen PDO，1ms周期
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>⑤ 环境接口（Environmental Interface）
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>   定义：子系统对所在环境的要求，以及对环境的影响
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>   内容：
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>     温度范围（工作/存储）
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>     湿度/盐雾/振动/冲击要求
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>     噪声/振动输出（对相邻系统的影响）
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>     热量散发（对机舱通风的需求）
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>     EMC辐射发射（对相邻电子设备的影响）
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>   示例：变频器辐射发射，IEC 60533 Class A，10m处&lt;30dBμV/m
+</code></pre></div>
+<hr>
+<h2 id="92-n2">9.2 N² 接口矩阵（完整版）<a class="headerlink" href="#92-n2" title="Permanent link">¶</a></h2>
+<h3 id="921-n2">9.2.1 N² 矩阵构建方法<a class="headerlink" href="#921-n2" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>N²矩阵（N-squared Diagram）构建步骤：
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Step 1：确定系统元素（N个）
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  本手册体系中的6个元素：
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    ① 冷却子系统（COOL）
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    ② 传动子系统（DRIVE）
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    ③ 控制子系统（CTRL）
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    ④ 船舶总体（SHIP）
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    ⑤ 储能/供电系统（POWER）
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    ⑥ 船岸接口/外部系统（EXT）
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>Step 2：填写矩阵
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>  矩阵[行i，列j]：元素i 输出到 元素j 的接口内容
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>  对角线：元素自身（不填）
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>  矩阵[i,j] ≠ 矩阵[j,i]（接口是有方向的）
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>Step 3：为每个非空格分配ICD编号
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>  命名规则：ICD-[发送方]-[接收方]-[序号]
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>  示例：ICD-COOL-DRIVE-001（冷却→传动，第1号接口）
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>Step 4：评估接口成熟度
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>  L0：接口未识别（红色警报）
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>  L1：接口已识别，但未量化（需要完成）
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>  L2：接口已量化，文件草稿
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>  L3：接口已冻结，双方确认
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>  L4：接口已验证（试验确认）
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>Step 5：定期评审（接口成熟度门控）
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>  设计冻结前：所有接口达到L3
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>  FAT前：所有接口达到L3，关键接口达到L4
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>  SAT前：所有接口达到L4
+</code></pre></div>
+<h3 id="922-n2">9.2.2 完整 N² 矩阵<a class="headerlink" href="#922-n2" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>行=发送方（输出），列=接收方（输入）
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: left;"><strong>COOL 冷却</strong></th>
+<th style="text-align: left;"><strong>DRIVE 传动</strong></th>
+<th style="text-align: left;"><strong>CTRL 控制</strong></th>
+<th style="text-align: left;"><strong>SHIP 总体</strong></th>
+<th style="text-align: left;"><strong>POWER 供电</strong></th>
+<th style="text-align: left;"><strong>EXT 外部</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>COOL 冷却</strong></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><strong>ICD-CD-001</strong><br>冷却液供给<br>流量15~40L/min<br>入口温度≤45°C<br>压降≤30kPa@40L/min<br>法兰DN25 PN16</td>
+<td style="text-align: left;"><strong>ICD-CC-001</strong><br>泵状态反馈<br>流量/温度/压力<br>液位信号输出<br>故障报警位</td>
+<td style="text-align: left;"><strong>ICD-CS-001</strong><br>海水进出口<br>机械安装接口<br>排热量需求<br>安装重量</td>
+<td style="text-align: left;"><strong>ICD-CP-001</strong><br>冷却泵电源<br>3×380V 50Hz<br>控制电源24VDC</td>
+<td style="text-align: left;"><strong>ICD-CE-001</strong><br>充注口/排放口<br>（靠岸维护接口）</td>
+</tr>
+<tr>
+<td><strong>DRIVE 传动</strong></td>
+<td style="text-align: left;"><strong>ICD-DC-001</strong><br>散热功率需求<br>Q_loss(P,n)曲线<br>最高允许入口温度<br>冷却套压降特性</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><strong>ICD-DC-002</strong><br>编码器信号<br>绕组温度PT100<br>振动IEPE信号<br>轴承温度信号</td>
+<td style="text-align: left;"><strong>ICD-DS-001</strong><br>推力输出<br>轴系排列图<br>基座载荷<br>振动发射限值<br>噪声发射限值</td>
+<td style="text-align: left;"><strong>ICD-DP-001</strong><br>三相动力电缆<br>电压/电流等级<br>电缆截面/长度<br>屏蔽接地要求</td>
+<td style="text-align: left;"><strong>ICD-DE-001</strong><br>螺旋桨与船体<br>水下接口<br>（船厂提供）</td>
+</tr>
+<tr>
+<td><strong>CTRL 控制</strong></td>
+<td style="text-align: left;"><strong>ICD-CC-002</strong><br>泵变频控制指令<br>泵启停/转速设定<br>阀门开度指令<br>冷却系统联锁</td>
+<td style="text-align: left;"><strong>ICD-CD-002</strong><br>速度/转矩指令<br>FOC电流指令<br>保护动作输出<br>禁速区指令</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><strong>ICD-CS-002</strong><br>船舶网络接口<br>NMEA2000/Modbus<br>驾驶室指令输入<br>报警显示输出<br>黑匣子数据</td>
+<td style="text-align: left;"><strong>ICD-CP-002</strong><br>直流母线电压采集<br>充放电功率指令<br>SOC信息读取<br>BMS通信</td>
+<td style="text-align: left;"><strong>ICD-CE-002</strong><br>岸基远程监控<br>4G/卫星通信<br>固件升级接口</td>
+</tr>
+<tr>
+<td><strong>SHIP 总体</strong></td>
+<td style="text-align: left;"><strong>ICD-SC-001</strong><br>海水供给参数<br>T_sea范围/流量<br>机舱通风条件<br>安装空间边界</td>
+<td style="text-align: left;"><strong>ICD-SD-001</strong><br>推力接收块<br>轴系孔位尺寸<br>基座刚度要求<br>船体变形数据</td>
+<td style="text-align: left;"><strong>ICD-SC-002</strong><br>供电质量<br>IEC 60092电源<br>机柜安装空间<br>EMC环境条件<br>接地网络</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><strong>ICD-SP-001</strong><br>储能舱位置<br>通风散热<br>消防接口<br>应急断电</td>
+<td style="text-align: left;"><strong>ICD-SE-001</strong><br>岸电接口<br>充电桩接口<br>船检文件接口</td>
+</tr>
+<tr>
+<td><strong>POWER 供电</strong></td>
+<td style="text-align: left;"><strong>ICD-PC-001</strong><br>泵驱动器供电<br>电能质量参数<br>谐波限值要求</td>
+<td style="text-align: left;"><strong>ICD-PD-001</strong><br>变频器直流母线<br>电压范围<br>最大功率<br>充放电曲线</td>
+<td style="text-align: left;"><strong>ICD-PC-002</strong><br>控制器供电<br>24VDC/5VDC<br>UPS备电要求<br>电源隔离等级</td>
+<td style="text-align: left;"><strong>ICD-PS-001</strong><br>储能重量重心<br>安装固定要求<br>散热需求<br>安全隔离距离</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><strong>ICD-PE-001</strong><br>充电接口<br>GB/T 27930<br>（直流充电桩）</td>
+</tr>
+<tr>
+<td><strong>EXT 外部</strong></td>
+<td style="text-align: left;">维护用<br>补液/排液</td>
+<td style="text-align: left;">螺旋桨<br>水动力数据<br>（船模试验提供）</td>
+<td style="text-align: left;">驾驶员<br>操纵指令<br>航行计划数据</td>
+<td style="text-align: left;">船东/船级社<br>审图文件<br>验收准则</td>
+<td style="text-align: left;">岸电/充电设施<br>供电参数</td>
+<td style="text-align: left;">—</td>
+</tr>
+</tbody>
+</table>
+<h3 id="923-n2">9.2.3 N² 矩阵接口优先级评定<a class="headerlink" href="#923-n2" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>优先级评定准则（影响度 × 成熟度风险）：
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>P1（最高优先级，设计阶段必须冻结）：
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>  ① ICD-CD-001（冷却→传动：冷却液供给）
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>     原因：热设计的核心约束，影响电机选型和冷却系统设计
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>  ② ICD-DC-001（传动→冷却：散热功率需求）
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>     原因：冷却系统容量设计的输入，两个方向强耦合
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>  ③ ICD-DC-002（传动→控制：编码器+温度信号）
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>     原因：FOC控制的核心感知信号，信号失真直接影响控制稳定性
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>  ④ ICD-CD-002（控制→传动：速度/转矩指令）
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>     原因：推进性能的直接控制通道
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>  ⑤ ICD-DP-001（供电→传动：动力电缆）
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>     原因：电压等级、电缆截面影响变频器选型和电气设计
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>P2（重要接口，子系统设计完成前冻结）：
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>  ICD-CC-001/002（冷却与控制的双向接口）
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>  ICD-CS-001/002（冷却/控制与船舶总体的接口）
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>  ICD-CP-001/002（冷却/控制的供电接口）
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>P3（可在详细设计阶段冻结）：
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>  所有与EXT外部系统的接口
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>  SHIP总体内部的非关键接口
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>接口成熟度跟踪表（示例）：
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>  ┌────────────────┬──────┬──────┬────────────┬──────┐
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>  │ ICD编号        │ 优先级│ 当前L │ 目标日期   │ 负责人│
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>  ├────────────────┼──────┼──────┼────────────┼──────┤
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>  │ ICD-CD-001    │ P1   │ L3   │ 2024-03-01 │ 张工  │
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>  │ ICD-DC-001    │ P1   │ L3   │ 2024-03-01 │ 李工  │
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>  │ ICD-DC-002    │ P1   │ L2   │ 2024-03-15 │ 王工  │
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>  │ ICD-CD-002    │ P1   │ L2   │ 2024-03-15 │ 王工  │
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>  │ ICD-DP-001    │ P1   │ L3   │ 2024-03-01 │ 陈工  │
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>  │ ICD-CC-001    │ P2   │ L1   │ 2024-04-01 │ 张工  │
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>  │ ...           │ ...  │ ...  │ ...        │ ...  │
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>  └────────────────┴──────┴──────┴────────────┴──────┘
+</code></pre></div>
+<hr>
+<h2 id="93-icd">9.3 接口控制文件（ICD）完整模板<a class="headerlink" href="#93-icd" title="Permanent link">¶</a></h2>
+<h3 id="931-icd">9.3.1 ICD 文件结构规范<a class="headerlink" href="#931-icd" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ICD 文件必须包含的九个要素：
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>  要素1：文件标识
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    ICD编号、版本、状态、日期、作者、审批人
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>  要素2：接口描述
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    接口名称、接口类型（机械/流体/电气/控制/环境）
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    发送方子系统、接收方子系统
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    接口功能描述（一句话说清楚这个接口"传什么"）
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>  要素3：物理接口规格
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    连接器/法兰/接线端子型号
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    安装尺寸、公差
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    材质、防护等级
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>  要素4：功能参数（量化）
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>    正常工作范围（最小~最大）
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>    设计点（额定值）
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>    报警阈值
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>    停机/保护阈值
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>    精度/分辨率要求
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>  要素5：控制与时序
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>    信号更新周期
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>    握手协议
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>    超时处理
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>    上电/断电时序
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>  要素6：故障模式与响应
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>    接口失效模式（列举）
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>    失效时各方的响应动作
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>    故障检测机制
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>  要素7：验证方法
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>    每个参数的验证方式（分析/仿真/检查/试验）
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>    验收准则（Pass/Fail标准）
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>    验证责任方
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>  要素8：变更控制
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>    变更历史记录
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>    变更影响分析（哪些相关ICD需要同步变更）
+<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a>
+<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a>  要素9：双方确认签字
+<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a>    发送方负责人签字
+<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a>    接收方负责人签字
+<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a>    系统集成负责人签字
+</code></pre></div>
+<h3 id="932-icd">9.3.2 六份核心 ICD 完整示例<a class="headerlink" href="#932-icd" title="Permanent link">¶</a></h3>
+<h4 id="icd-cd-001">ICD-CD-001：内循环冷却液接口（冷却系统 → 传动系统）<a class="headerlink" href="#icd-cd-001" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>ICD 编号：ICD-CD-001          版本：Rev.B
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>接口名称：内循环冷却液供给接口
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>接口类型：流体接口 + 机械接口
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>发送方：冷却子系统（出口）    接收方：传动子系统电机（入口）
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>状态：冻结（Frozen）          冻结日期：2024-03-01
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>1. 接口功能描述
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>   冷却子系统向传动子系统电机冷却套提供受控流量的
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>   乙二醇水溶液，带走电机运行损耗产生的热量。
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>   本接口为双向流体接口（供液 + 回液）。
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>2. 物理接口规格
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>   ┌──────────────────┬────────────────────────────┐
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>   │ 参数             │ 规格                        │
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>   ├──────────────────┼────────────────────────────┤
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>   │ 接口法兰型号     │ GB/T 9119，DN25 PN16        │
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>   │ 连接螺栓         │ M12×4，强度等级8.8          │
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>   │ 密封形式         │ O型圈，EPDM，AS568-119      │
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>   │ 供液管接口位置   │ 电机冷却套入口，轴线右侧下方  │
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>   │                  │ 坐标：见电机总图DWG-MOT-001  │
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>   │ 回液管接口位置   │ 电机冷却套出口，轴线右侧上方  │
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>   │ 材质（法兰）     │ 316L不锈钢                  │
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>   │ 表面处理         │ 酸洗钝化                    │
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>   │ 安装力矩         │ 25 N·m（M12螺栓）           │
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>   └──────────────────┴────────────────────────────┘
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>   安装顺序要求：
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>   ① 电机安装固定到基座（激光对中完成）
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>   ② 连接冷却供液管（先供液，后回液）
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>   ③ 安装完成后，充液并检查密封
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>
+<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>3. 功能参数（量化）
+<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>   ┌──────────────────┬──────────┬──────────┬──────────┬──────────┐
+<a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a>   │ 参数             │ 最小值   │ 额定值   │ 最大值   │ 单位     │
+<a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a>   ├──────────────────┼──────────┼──────────┼──────────┼──────────┤
+<a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a>   │ 工作流量         │ 15       │ 25       │ 40       │ L/min    │
+<a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a>   │ 供液温度（入口） │ 5        │ 35       │ 45       │ °C       │
+<a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a>   │ 回液温度（出口） │ —        │ 55       │ 65       │ °C       │
+<a id="__codelineno-6-41" name="__codelineno-6-41" href="#__codelineno-6-41"></a>   │ 工作压力（入口） │ 0.05     │ 0.10     │ 0.15     │ MPa(表压)│
+<a id="__codelineno-6-42" name="__codelineno-6-42" href="#__codelineno-6-42"></a>   │ 压降（电机侧）   │ —        │ 20       │ 30       │ kPa      │
+<a id="__codelineno-6-43" name="__codelineno-6-43" href="#__codelineno-6-43"></a>   │ 乙二醇浓度       │ 45%      │ 50%      │ 55%      │ vol%     │
+<a id="__codelineno-6-44" name="__codelineno-6-44" href="#__codelineno-6-44"></a>   │ 介质清洁度       │ ISO 4406 │ 17/15/12 │ —        │ —        │
+<a id="__codelineno-6-45" name="__codelineno-6-45" href="#__codelineno-6-45"></a>   └──────────────────┴──────────┴──────────┴──────────┴──────────┘
+<a id="__codelineno-6-46" name="__codelineno-6-46" href="#__codelineno-6-46"></a>
+<a id="__codelineno-6-47" name="__codelineno-6-47" href="#__codelineno-6-47"></a>   报警与保护阈值（由冷却系统监测，控制系统执行）：
+<a id="__codelineno-6-48" name="__codelineno-6-48" href="#__codelineno-6-48"></a>   ┌──────────────────┬──────────┬─────────────────────────┐
+<a id="__codelineno-6-49" name="__codelineno-6-49" href="#__codelineno-6-49"></a>   │ 参数             │ 阈值     │ 触发动作                │
+<a id="__codelineno-6-50" name="__codelineno-6-50" href="#__codelineno-6-50"></a>   ├──────────────────┼──────────┼─────────────────────────┤
+<a id="__codelineno-6-51" name="__codelineno-6-51" href="#__codelineno-6-51"></a>   │ 流量低报警       │ &lt; 20L/min│ 冷却系统报警，持续60s降额│
+<a id="__codelineno-6-52" name="__codelineno-6-52" href="#__codelineno-6-52"></a>   │ 流量低低停机     │ &lt; 10L/min│ 立即触发推进降额至停机   │
+<a id="__codelineno-6-53" name="__codelineno-6-53" href="#__codelineno-6-53"></a>   │ 供液温度高报警   │ &gt; 50°C   │ 报警，提示检查海水温度   │
+<a id="__codelineno-6-54" name="__codelineno-6-54" href="#__codelineno-6-54"></a>   │ 供液温度高高停机 │ &gt; 55°C   │ 推进降额保护            │
+<a id="__codelineno-6-55" name="__codelineno-6-55" href="#__codelineno-6-55"></a>   │ 回液温度高报警   │ &gt; 70°C   │ 推进降额20%             │
+<a id="__codelineno-6-56" name="__codelineno-6-56" href="#__codelineno-6-56"></a>   │ 回液温度高高停机 │ &gt; 75°C   │ 推进停机保护            │
+<a id="__codelineno-6-57" name="__codelineno-6-57" href="#__codelineno-6-57"></a>   └──────────────────┴──────────┴─────────────────────────┘
+<a id="__codelineno-6-58" name="__codelineno-6-58" href="#__codelineno-6-58"></a>
+<a id="__codelineno-6-59" name="__codelineno-6-59" href="#__codelineno-6-59"></a>4. 接口验证方法
+<a id="__codelineno-6-60" name="__codelineno-6-60" href="#__codelineno-6-60"></a>   ┌────────────────────────────┬────────┬───────────────────┐
+<a id="__codelineno-6-61" name="__codelineno-6-61" href="#__codelineno-6-61"></a>   │ 验证项目                   │ 方法   │ 验收准则          │
+<a id="__codelineno-6-62" name="__codelineno-6-62" href="#__codelineno-6-62"></a>   ├────────────────────────────┼────────┼───────────────────┤
+<a id="__codelineno-6-63" name="__codelineno-6-63" href="#__codelineno-6-63"></a>   │ 法兰尺寸与位置             │ 检查   │ 符合图纸DWG-MOT-001│
+<a id="__codelineno-6-64" name="__codelineno-6-64" href="#__codelineno-6-64"></a>   │ 密封性（1.5×工作压力）     │ 试验   │ 保压5min无泄漏    │
+<a id="__codelineno-6-65" name="__codelineno-6-65" href="#__codelineno-6-65"></a>   │ 压降特性（各流量点）       │ 试验   │ ≤30kPa@40L/min    │
+<a id="__codelineno-6-66" name="__codelineno-6-66" href="#__codelineno-6-66"></a>   │ 额定工况冷却能力           │ 试验   │ 回液温度≤65°C     │
+<a id="__codelineno-6-67" name="__codelineno-6-67" href="#__codelineno-6-67"></a>   │ 报警/停机阈值响应          │ 试验   │ 响应时间≤2s       │
+<a id="__codelineno-6-68" name="__codelineno-6-68" href="#__codelineno-6-68"></a>   └────────────────────────────┴────────┴───────────────────┘
+<a id="__codelineno-6-69" name="__codelineno-6-69" href="#__codelineno-6-69"></a>
+<a id="__codelineno-6-70" name="__codelineno-6-70" href="#__codelineno-6-70"></a>5. 变更历史
+<a id="__codelineno-6-71" name="__codelineno-6-71" href="#__codelineno-6-71"></a>   Rev.A（2024-01-15）：初版，额定流量20L/min
+<a id="__codelineno-6-72" name="__codelineno-6-72" href="#__codelineno-6-72"></a>   Rev.B（2024-03-01）：根据热仿真结果，额定流量更新为25L/min，
+<a id="__codelineno-6-73" name="__codelineno-6-73" href="#__codelineno-6-73"></a>                        同步更新了压降要求，冻结
+<a id="__codelineno-6-74" name="__codelineno-6-74" href="#__codelineno-6-74"></a>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+</code></pre></div>
+<h4 id="icd-dc-002">ICD-DC-002：编码器与温度信号接口（传动系统 → 控制系统）<a class="headerlink" href="#icd-dc-002" title="Permanent link">¶</a></h4>
+<p></p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>ICD 编号：ICD-DC-002          版本：Rev.A
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>接口名称：电机传感器信号接口（编码器+温度+振动）
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>接口类型：电气接口 + 控制接口
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>发送方：传动子系统（电机）    接收方：控制子系统（控制器）
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>状态：草稿（Draft）           日期：2024-03-10
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>1. 接口功能描述
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>   传动子系统向控制子系统提供电机转子位置（编码器）、
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>   绕组温度、轴承温度和振动信号，用于FOC控制计算、
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>   热保护判断和健康状态监测。
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>2. 编码器接口
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>   2.1 主编码器（旋转变压器/Resolver）
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>   ┌──────────────────┬────────────────────────────┐
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>   │ 参数             │ 规格                        │
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>   ├──────────────────┼────────────────────────────┤
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>   │ 类型             │ 多极旋转变压器（14极对）    │
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>   │ 精度             │ ≤ ±0.1°电气角（等效1024线）│
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>   │ 激励信号         │ 7V_rms，10kHz正弦           │
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>   │ 输出信号         │ SIN/COS差分，幅值比1:1      │
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>   │ 电缆             │ 双绞屏蔽，4芯，截面0.5mm²  │
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>   │ 电缆最大长度     │ ≤ 20m（超过需放大器）       │
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>   │ 防护等级         │ IP67（电机端）              │
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>   │ 连接器           │ M12×8芯，A编码，锁紧螺母   │
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>   └──────────────────┴────────────────────────────┘
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>   2.2 备用编码器（增量式光电编码器，用于主编码器故障时切换）
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>   ┌──────────────────┬────────────────────────────┐
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a>   │ 参数             │ 规格                        │
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a>   ├──────────────────┼────────────────────────────┤
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>   │ 类型             │ 增量式光电，推挽输出         │
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>   │ 分辨率           │ 2048 PPR                    │
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>   │ 供电电压         │ 24VDC ± 10%，电流≤ 80mA    │
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>   │ 输出信号         │ A/B/Z，差分RS422            │
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a>   │ 最高频率         │ 300kHz（对应最高转速）      │
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a>   │ 连接器           │ M12×8芯，B编码              │
+<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a>   └──────────────────┴────────────────────────────┘
+<a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a>
+<a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a>   编码器切换逻辑（控制器执行）：
+<a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a>   主编码器正常 → 使用主编码器（优先，精度高）
+<a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a>   主编码器故障（信号丢失/幅值异常）→ 
+<a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a>     ① 自动切换到备用编码器（&lt; 50ms）
+<a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a>     ② 同时激活无传感器MRAS估算（双重备份）
+<a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a>     ③ 报警：主编码器故障，进入降级模式
+<a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a>   备用编码器也故障 → 仅使用MRAS估算，限速至50%额定
+<a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a>
+<a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a>
+<a id="__codelineno-7-51" name="__codelineno-7-51" href="#__codelineno-7-51"></a>
+<a id="__codelineno-7-52" name="__codelineno-7-52" href="#__codelineno-7-52"></a>#### ICD-DC-002：编码器与温度信号接口（续）
+</code></pre></div>
+3. 绕组温度接口
+   ┌──────────────────┬────────────────────────────┐
+   │ 参数             │ 规格                        │
+   ├──────────────────┼────────────────────────────┤
+   │ 传感器类型       │ PT100 铂电阻，B级精度        │
+   │ 数量             │ 3支（三相绕组各1支，投票用） │
+   │ 测量范围         │ -50 ~ +200°C               │
+   │ 精度             │ ±1°C（0~100°C范围）         │
+   │ 响应时间         │ ≤ 10s（T63，静止空气中）     │
+   │ 连接方式         │ 四线制（消除引线电阻误差）   │
+   │ 连接器           │ M12×4芯，A编码             │
+   │ 电缆             │ 屏蔽双绞，截面0.5mm²        │
+   │ 控制器侧输入阻抗 │ ≥ 10kΩ（防分流误差）        │
+   └──────────────────┴────────────────────────────┘<p></p>
+<p>三路温度投票逻辑（控制器执行）：
+     正常：三路均有效 → 取中间值（抗单点漂移）
+     一路故障（超范围/断路/短路）→ 取另两路均值 + 报警
+     两路故障 → 取剩余一路 + 降额至50% + 高级报警
+     三路全部故障 → 立即停机（失去热保护能力）</p>
+<ol>
+<li>振动信号接口（轴承健康监测）
+   ┌──────────────────┬────────────────────────────┐
+   │ 参数             │ 规格                        │
+   ├──────────────────┼────────────────────────────┤
+   │ 传感器类型       │ IEPE加速度传感器（压电式）   │
+   │ 数量             │ 2支（驱动端+非驱动端轴承座） │
+   │ 灵敏度           │ 100 mV/g ± 5%              │
+   │ 频率范围         │ 2 Hz ~ 10 kHz（±3dB）      │
+   │ 量程             │ ± 50g 峰值                  │
+   │ 供电             │ 恒流源 2~10mA，18~30VDC     │
+   │ 输出             │ 单端，阻抗100Ω              │
+   │ 连接器           │ M12×2芯（信号+供电）        │
+   │ 电缆             │ 同轴屏蔽，截面0.75mm²       │
+   └──────────────────┴────────────────────────────┘</li>
+</ol>
+<p>振动数据采集要求（控制器/边缘计算模块）：
+     采样率：≥ 25.6 kSps（满足奈奎斯特：覆盖10kHz）
+     采集周期：连续采集（航行中），每10min存储1次完整波形
+     实时计算：RMS振动速度（ISO 10816评估，1~1000Hz）
+     CBM功能：FFT频谱分析，提取轴承特征频率（BPFI/BPFO/BSF）</p>
+<ol>
+<li>
+<p>故障模式与接口响应
+   ┌──────────────────────┬──────────────────────────────┐
+   │ 接口故障模式         │ 控制器响应动作               │
+   ├──────────────────────┼──────────────────────────────┤
+   │ 主编码器信号丢失     │ 切换备用编码器，报警，限速50% │
+   │ 备用编码器也故障     │ 启用MRAS无速度估算，限速30%  │
+   │ 编码器供电欠压       │ 报警，检查24VDC供电回路      │
+   │ 所有编码器故障       │ 紧急停机，故障码输出         │
+   │ PT100单路断路        │ 报警，切换投票逻辑           │
+   │ PT100全部故障        │ 立即停机（失去热保护）        │
+   │ 振动传感器故障       │ 报警，CBM降级为定期检查模式  │
+   └──────────────────────┴──────────────────────────────┘</p>
+</li>
+<li>
+<p>验证方法
+   ┌────────────────────────────────┬────────┬──────────────────────┐
+   │ 验证项目                       │ 方法   │ 验收准则             │
+   ├────────────────────────────────┼────────┼──────────────────────┤
+   │ 编码器精度（与光栅尺对比）     │ 试验   │ 误差 ≤ ±0.1°电气角  │
+   │ 编码器切换响应时间             │ 试验   │ ≤ 50ms              │
+   │ PT100精度校准                  │ 试验   │ ±1°C（冰点+沸点验证）│
+   │ 三路投票逻辑（注入单路故障）   │ HIL    │ 正确切换，不误停机   │
+   │ 振动传感器频率响应             │ 试验   │ 2Hz~10kHz ± 3dB     │
+   │ 电缆屏蔽效果（EMC注入测试）    │ 试验   │ 信号噪声SNR ≥ 40dB  │
+   └────────────────────────────────┴────────┴──────────────────────┘
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>#### ICD-CD-002：推进控制指令接口（控制系统 → 传动系统）
+</code></pre></div>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ICD 编号：ICD-CD-002          版本：Rev.A
+接口名称：推进控制指令接口（速度/转矩指令 + 保护输出）
+接口类型：控制/通信接口
+发送方：控制子系统（控制器）  接收方：传动子系统（变频器/驱动器）
+状态：草稿（Draft）           日期：2024-03-10
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<p></p>
+</li>
+<li>
+<p>接口功能描述
+   控制子系统向传动子系统变频器发送推进控制指令，
+   包括：转速/转矩给定、运行/停机命令、保护动作触发、
+   禁速区设定、降额限制等，是推进性能控制的核心通道。</p>
+</li>
+<li>
+<p>通信接口规格
+   ┌──────────────────┬────────────────────────────┐
+   │ 参数             │ 规格                        │
+   ├──────────────────┼────────────────────────────┤
+   │ 通信协议         │ CANopen DS402（运动控制）    │
+   │ 物理层           │ CAN 2.0B，ISO 11898         │
+   │ 波特率           │ 1Mbps（≤40m电缆长度）       │
+   │ 节点地址         │ 控制器：Node 1；变频器：Node 2│
+   │ 终端电阻         │ 两端各120Ω（由双方提供）     │
+   │ 电缆             │ CAN专用双绞屏蔽，120Ω特征阻抗│
+   │ 最大电缆长度     │ 40m（1Mbps时）              │
+   │ 隔离要求         │ 光电隔离，耐压 ≥ 500VAC     │
+   └──────────────────┴────────────────────────────┘</p>
+</li>
+<li>
+<p>控制指令报文（PDO定义）</p>
+</li>
+</ol>
+<p>3.1 控制字（Controlword，对象0x6040）
+   ┌──────┬──────────────────────────────────────────┐
+   │ Bit  │ 含义                                      │
+   ├──────┼──────────────────────────────────────────┤
+   │ 0    │ Switch On（上电使能）                     │
+   │ 1    │ Enable Voltage（直流母线充电允许）         │
+   │ 2    │ Quick Stop（快速停机，低=触发）            │
+   │ 3    │ Enable Operation（允许运行）               │
+   │ 4-6  │ 模式相关位（速度模式/转矩模式）            │
+   │ 7    │ Fault Reset（故障复位，上升沿触发）        │
+   │ 8    │ Halt（暂停，保持当前位置）                 │
+   │ 15   │ 自定义：推进方向（0=前进，1=倒车）         │
+   └──────┴──────────────────────────────────────────┘</p>
+<p>3.2 目标速度（Target Velocity，对象0x60FF）
+     数据类型：INT32，单位：RPM × 16（0.0625 RPM/LSB）
+     范围：-最大转速 ~ +最大转速（负值=倒车）
+     更新周期：1ms（速度模式，高优先级PDO）
+     斜坡限制：在控制器内实施（加速度限幅），变频器侧不重复</p>
+<p>3.3 转矩限制（Torque Limit，对象0x60E0/0x60E1）
+     正向转矩限制（对象0x60E0）：0~额定转矩的200%
+     负向转矩限制（对象0x60E1）：0~额定转矩的200%
+     单位：额定转矩的0.1%/LSB（0x2710 = 100.00%额定）
+     更新周期：10ms（低优先级PDO）
+     用途：降额控制（冷却不足时，通过降低转矩限制实现降额）</p>
+<p>3.4 降额指令（自定义对象0x2001，制造商特定）
+     Byte 0：允许功率百分比（0~100，单位1%）
+     Byte 1：降额原因码（0=正常，1=过温，2=冷却不足，3=外部指令）
+     Byte 2：禁速区下限（RPM，高字节）
+     Byte 3：禁速区下限（RPM，低字节）
+     Byte 4：禁速区上限（RPM，高字节）
+     Byte 5：禁速区上限（RPM，低字节）
+     更新周期：100ms</p>
+<ol>
+<li>状态反馈报文（变频器→控制器，SDO/PDO）</li>
+</ol>
+<p>状态字（Statusword，对象0x6041）：
+     Bit 0-3：状态机状态（Not Ready/Ready/Switched On/Operation Enabled/Fault）
+     Bit 5：Quick Stop 状态
+     Bit 7：故障位
+     Bit 10：目标速度达到（速度模式）
+     Bit 12-15：制造商自定义（过温/过流/通信故障等）</p>
+<p>实际速度（Velocity Actual Value，对象0x606C）：
+     数据类型：INT32，单位：RPM × 16
+     更新周期：1ms</p>
+<p>实际转矩（Torque Actual Value，对象0x6077）：
+     单位：额定转矩的0.1%/LSB
+     更新周期：1ms</p>
+<ol>
+<li>
+<p>通信超时处理（关键安全机制）
+   ┌──────────────────────────┬────────────────────────────┐
+   │ 超时场景                 │ 变频器响应动作              │
+   ├──────────────────────────┼────────────────────────────┤
+   │ 控制指令超时（&gt; 100ms）  │ 报警，保持当前速度30s       │
+   │ 控制指令超时（&gt; 3s）     │ 安全停机（斜坡减速至零）    │
+   │ 心跳报文超时（&gt; 500ms）  │ 与上同，立即触发安全停机    │
+   │ 控制器复位（指令跳变）   │ 忽略单次异常，连续3次→停机 │
+   └──────────────────────────┴────────────────────────────┘</p>
+</li>
+<li>
+<p>验证方法
+   ┌──────────────────────────────┬────────┬──────────────────────┐
+   │ 验证项目                     │ 方法   │ 验收准则             │
+   ├──────────────────────────────┼────────┼──────────────────────┤
+   │ 报文格式与协议一致性         │ 检查   │ 符合DS402规范        │
+   │ 速度指令跟踪精度             │ 试验   │ 稳态误差 ≤ ±2RPM    │
+   │ 通信延迟                     │ 试验   │ 端到端延迟 ≤ 2ms    │
+   │ 超时安全停机功能             │ HIL    │ 3s内斜坡停机完成     │
+   │ 降额指令生效时间             │ 试验   │ ≤ 500ms             │
+   │ EMC注入下通信可靠性          │ 试验   │ 误码率 &lt; 10⁻⁶       │
+   └──────────────────────────────┴────────┴──────────────────────┘
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>#### ICD-CS-002：船舶网络接口（控制系统 ↔ 船舶总体/驾驶台）
+</code></pre></div>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ICD 编号：ICD-CS-002          版本：Rev.A
+接口名称：船舶网络与驾驶台接口
+接口类型：通信接口
+发送方：双向（控制子系统 ↔ 船舶总体网络）
+状态：草稿（Draft）           日期：2024-03-12
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━<p></p>
+</li>
+<li>
+<p>接口功能描述
+   推进控制系统与船舶综合管理网络（驾驶台/机舱监控/
+   数据记录系统）之间的双向信息交换：
+   → 驾驶台向控制器发送推进指令（航速、方向、紧急停车）
+   ← 控制器向驾驶台/机舱发送系统状态、故障报警、性能数据</p>
+</li>
+<li>
+<p>协议与物理层
+   ┌──────────────────┬────────────────────────────────────┐
+   │ 接口类型         │ 协议规格                            │
+   ├──────────────────┼────────────────────────────────────┤
+   │ 主通信协议       │ Modbus TCP/IP（IEC 61162-450）      │
+   │ 备用协议         │ Modbus RTU（RS485，备份链路）       │
+   │ 导航数据接收     │ NMEA 0183（来自GPS/罗经，只读）     │
+   │ 物理层（主）     │ 100BASE-TX 以太网，RJ45，双绞屏蔽  │
+   │ 物理层（备）     │ RS485，双绞屏蔽，最大1200m         │
+   │ 网络隔离         │ 工业以太网交换机，VLAN隔离          │
+   │ 控制器IP地址     │ 192.168.10.10/24（静态，出厂设定）  │
+   │ 驾驶台HMI IP    │ 192.168.10.1/24（静态）             │
+   │ 网络安全         │ 白名单IP访问控制，关闭未用端口       │
+   └──────────────────┴────────────────────────────────────┘</p>
+</li>
+<li>
+<p>驾驶台→控制器指令（Modbus 保持寄存器，写入）
+   ┌───────────┬──────────────┬────────────────────────────┐
+   │ 寄存器地址│ 参数名称     │ 说明                        │
+   ├───────────┼──────────────┼────────────────────────────┤
+   │ 40001     │ 推进指令     │ 0=停止，1=运行，2=紧急停车  │
+   │ 40002     │ 目标航速     │ 0~100（百分比），0.1%/LSB   │
+   │ 40003     │ 推进方向     │ 0=前进，1=倒车              │
+   │ 40004     │ 推进模式     │ 0=速度，1=转矩，2=功率      │
+   │ 40005     │ 功率限制     │ 0~100%（PMS下发）           │
+   │ 40006     │ 故障复位指令 │ 写1复位，自动清零           │
+   │ 40010     │ 心跳寄存器   │ 每500ms递增（超时检测用）   │
+   └───────────┴──────────────┴────────────────────────────┘</p>
+</li>
+<li>
+<p>控制器→驾驶台状态（Modbus 输入寄存器，只读）
+   ┌───────────┬──────────────────┬──────────────────────────┐
+   │ 寄存器地址│ 参数名称         │ 说明                      │
+   ├───────────┼──────────────────┼──────────────────────────┤
+   │ 30001     │ 系统状态字       │ Bit定义见下表             │
+   │ 30002     │ 实际转速         │ RPM，INT16，有符号        │
+   │ 30003     │ 实际推力         │ kN × 10，INT16           │
+   │ 30004     │ 实际功率         │ kW，UINT16               │
+   │ 30005     │ 电机绕组温度     │ °C × 10，INT16           │
+   │ 30006     │ 冷却液出口温度   │ °C × 10，INT16           │
+   │ 30007     │ 冷却液流量       │ L/min × 10，UINT16       │
+   │ 30008     │ 当前降额比例     │ 0~100%，UINT8            │
+   │ 30009     │ 当前降额原因码   │ 见原因码定义              │
+   │ 30010     │ 活跃故障码       │ 最近1条故障，UINT16      │
+   │ 30011     │ 故障码历史（1）  │ FIFO最近8条故障           │
+   │ ~30018    │ 故障码历史（8）  │                           │
+   │ 30020     │ 系统已运行小时数 │ 小时，UINT32（双寄存器）  │
+   │ 30022     │ 当前效率         │ %×10，UINT16             │
+   └───────────┴──────────────────┴──────────────────────────┘</p>
+</li>
+</ol>
+<p>系统状态字 Bit 定义（寄存器30001）：
+   ┌──────┬───────────────────────────────────────────┐
+   │ Bit  │ 含义（1=有效/激活）                        │
+   ├──────┼───────────────────────────────────────────┤
+   │ 0    │ 系统就绪（Ready，可接受推进指令）           │
+   │ 1    │ 推进运行中（Running）                      │
+   │ 2    │ 降额运行中（Derated）                      │
+   │ 3    │ 故障停机（Fault，需复位）                  │
+   │ 4    │ 紧急停车激活（Emergency Stop）             │
+   │ 5    │ 冷却系统报警                               │
+   │ 6    │ 传动系统报警                               │
+   │ 7    │ 主编码器故障（已切换备用）                  │
+   │ 8    │ 通信链路主备切换（当前使用备用RS485）       │
+   │ 9    │ CBM维护建议激活（需计划维护）               │
+   │ 10-15│ 预留                                       │
+   └──────┴───────────────────────────────────────────┘</p>
+<ol>
+<li>报警输出规范
+   报警等级分类（向驾驶台/机舱报警系统输出）：
+   ┌──────────┬────────────────────────────┬──────────────┐
+   │ 等级     │ 定义                        │ 要求响应     │
+   ├──────────┼────────────────────────────┼──────────────┤
+   │ 紧急报警 │ 需立即操作，推进受影响       │ 声光报警     │
+   │（红色）  │ 例：绕组温度&gt;155°C，停机    │ 驾驶台+机舱  │
+   │ 重要报警 │ 需尽快处理，可继续运行       │ 声光报警     │
+   │（橙色）  │ 例：冷却液流量低、降额运行  │ 机舱为主     │
+   │ 一般报警 │ 需注意，暂不影响运行        │ 指示灯+日志  │
+   │（黄色）  │ 例：传感器单路故障、CBM提醒 │ 机舱日志     │
+   └──────────┴────────────────────────────┴──────────────┘</li>
+</ol>
+<p>报警通信方式：
+     方式1：Modbus寄存器轮询（驾驶台HMI每500ms读取30001~30018）
+     方式2：硬接线干接点输出（紧急报警，独立于网络，可靠性最高）
+             输出：2路干接点（常开），额定：24VDC/1A
+             接线：直接接驾驶台报警面板，不经任何中间节点
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>---
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>## 9.4 集成测试规程（详细版）
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>### 9.4.1 集成测试总体策略
+</code></pre></div>
+集成测试原则：
+  渐增式集成（Incremental Integration）：
+    不做"大爆炸式"集成（一次性全部组装）
+    按接口优先级顺序，逐步增加被集成的子系统
+    每增加一个接口，立即验证该接口的所有ICD条目
+    发现问题时，修改范围明确（只涉及最新集成的接口）<p></p>
+<p>接口优先级驱动（按P1→P2→P3顺序）：
+    第1步：传动+控制集成（P1接口：ICD-DC-002, ICD-CD-002）
+    第2步：冷却+传动集成（P1接口：ICD-CD-001, ICD-DC-001）
+    第3步：冷却+控制集成（P2接口：ICD-CC-001, ICD-CC-002）
+    第4步：全系统集成（P1+P2接口全部覆盖）
+    第5步：与船舶总体接口（P2/P3接口，整船试验前）</p>
+<p>集成测试环境要求：
+  台架配置：
+    负载模拟：水力测功机（可模拟螺旋桨负载特性Q∝n²）
+    冷却供给：独立冷却塔（可控制冷却液温度和流量）
+    仪器仪表：
+      功率分析仪（三相，精度0.1级）
+      温度记录仪（16通道，0.1°C精度）
+      振动分析仪（4通道IEPE，带FFT分析）
+      示波器（4通道，500MHz，用于信号时序分析）
+      CAN总线分析仪（CANalyzer或等效）</p>
+<p>安全措施：
+    急停按钮：台架旁和操作台各1个（硬件急停，不经软件）
+    防护围栏：旋转轴系区域封闭
+    消防器材：CO₂灭火器（电气火灾适用）
+    监控录像：全程录像，便于事后分析
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>### 9.4.2 第一阶段：子系统 FAT（工厂验收试验）
+</code></pre></div>
+冷却子系统 FAT（在冷却供应商工厂完成）：<p></p>
+<p>试验1：泵性能曲线测量
+    目的：验证泵Q-H、Q-η曲线符合选型计算值
+    方法：改变管路阀门开度，在5个流量点测量扬程和效率
+    测量点：20%/40%/60%/80%/100%额定流量
+    验收准则：
+      额定流量点扬程偏差 ≤ ±5%
+      额定流量点效率偏差 ≤ -3%（不得低于选型效率太多）</p>
+<p>试验2：换热器性能验证
+    目的：验证换热效率ε和压降符合ICD-CD-001要求
+    方法：
+      搭建换热器试验回路
+      固定海水侧流量和入口温度（T_sea=35°C，额定流量）
+      改变内循环侧流量（3个流量点），测量出口温度和压降
+    验收准则：
+      ε ≥ 0.85（额定流量点）
+      压降 ≤ 30kPa@40L/min（内循环侧）</p>
+<p>试验3：控制逻辑验证（与控制器模拟器对接）
+    目的：验证泵启停、流量调节、报警/联锁逻辑
+    方法：用信号发生器模拟控制器指令，验证冷却系统响应
+    关键场景：
+      主泵故障切换备泵（切换时间≤5s）
+      流量低报警触发（阈值±5%）
+      液位极低停机联锁</p>
+<p>─────────────────────────────────────────────────</p>
+<p>传动子系统 FAT（在电机/变频器供应商工厂完成）：</p>
+<p>试验1：电机温升试验（额定工况）
+    目的：验证电机绕组温升满足绝缘等级要求
+    方法：
+      额定电流、额定转速负载运行
+      运行至热平衡（连续4h以上，温升变化&lt;2K/h）
+      记录所有PT100温度读数
+    验收准则：
+      三相绕组温升均值 ≤ 105K（H级，环境温度40°C基准）
+      最热绕组温度 ≤ 185°C（含40°C基准温度）</p>
+<p>试验2：扭振模态测试（锤击法）
+    目的：测量实际轴系固有频率，与仿真模型对比，
+          验证禁速区设置合理性
+    方法：
+      锤击激励：力锤敲击联轴器或电机轴端（施加宽带冲击激励）
+      响应采集：加速度传感器贴于电机机座/轴承座/联轴器护罩
+      分析工具：FFT分析仪，频率分辨率 ≤ 0.5Hz
+      重复次数：每个测量点至少5次锤击，取平均FRF（频响函数）</p>
+<div class="highlight"><pre><span></span><code>数据处理：
+  相干函数 γ² &gt; 0.8（判断激励–响应相关性可信）
+  识别各阶固有频率（幅值峰值）和阻尼比（半功率点法）
+
+验收准则：
+  ① 实测固有频率与仿真值误差 ≤ ±15%（可接受范围）
+  ② 误差 &gt; 15%：返回仿真模型更新参数（多为联轴器刚度偏差）
+  ③ 实测固有频率落在禁速区之外 ≥ ±10%（确认安全裕度）
+
+输出文件：
+  扭振模态测试报告（FRF曲线 + 固有频率汇总表）
+  禁速区设置确认函（签字后送控制系统实施）
+</code></pre></div>
+<p>试验3：电机效率MAP测试
+    目的：建立全转速–转矩范围内的效率分布图（效率MAP）
+          为系统仿真模型标定和最优运行点选取提供数据
+    方法：
+      转矩/转速网格：
+        转速：20%/40%/60%/80%/100%额定转速（5点）
+        转矩：20%/40%/60%/80%/100%额定转矩（5点）
+        共25个工作点（去除物理上不可达点）
+      测量：输入电功率（功率分析仪）、输出机械功率（测功机）
+      计算：η = P_out / P_in × 100%</p>
+<div class="highlight"><pre><span></span><code>验收准则：
+  额定工作点效率 ≥ ICD-DC-001规定值（典型 ≥ 94%，高效电机 ≥ 96%）
+  效率MAP曲线与供应商承诺曲线偏差 ≤ ±1.5%（任意点）
+
+输出：效率MAP数据表（CSV格式）→ 导入L3仿真模型
+</code></pre></div>
+<p>试验4：振动与噪声测试
+    目的：验证传动子系统振动/噪声满足ICD-DS-001要求（不超标排放）
+    方法（依据ISO 10816-3）：
+      在电机四角机座处布置振动传感器（速度型，垂直/水平/轴向）
+      在额定转速下运行至热平衡后，测量振动速度有效值（Vrms）
+      额外测量：噪声（1m处，各方向，dB(A)）</p>
+<div class="highlight"><pre><span></span><code>验收准则（ISO 10816-3，II类机器，弹性安装）：
+  振动速度Vrms ≤ 2.8 mm/s（正常运行区，绿区）
+  振动速度Vrms ≤ 4.5 mm/s（报警区，黄区，可继续运行）
+  振动速度Vrms &gt; 4.5 mm/s → 不合格，查明原因
+</code></pre></div>
+<p>─────────────────────────────────────────────────</p>
+<p>控制子系统 FAT（在控制器供应商或研发实验室完成）：</p>
+<p>试验1：HIL全工况功能验证
+    目的：在不连接真实硬件的条件下，验证控制逻辑覆盖全部工况
+    HIL配置：见第7.4节（最小系统配置）</p>
+<div class="highlight"><pre><span></span><code>必须通过的场景（最小集合，共10项）：
+  场景1：启动–加速–额定–减速–停机（标准运行循环）
+         判据：转速跟踪误差 ≤ ±10RPM，无超调 &gt; 5%
+  场景2：阶跃负载（50%→100%额定，1s内）
+         判据：转速跌落 ≤ 3%，恢复时间 ≤ 2s
+  场景3：绕组过温降额（注入温度信号至155°C）
+         判据：降额按公式执行，5s内稳定，无振荡
+  场景4：主泵故障→备泵切换
+         判据：切换时间 ≤ 5s，切换期间不触发温度报警
+  场景5：主编码器丢失→切换备用编码器
+         判据：切换时间 ≤ 50ms，转速波动 ≤ ±30RPM
+  场景6：通信超时安全停机（CANopen心跳中断3s）
+         判据：3s内开始斜坡停机，10s内完全停机
+  场景7：螺旋桨堵转（转速骤降至0）
+         判据：过流保护在 ≤ 100ms内动作，电流限制有效
+  场景8：电源瞬断100ms后恢复
+         判据：自动重启，30s内恢复正常推进
+  场景9：禁速区穿越（加速通过禁速区）
+         判据：穿越时间 ≤ 设定值（典型10s），无共振激励
+  场景10：极端海水温度（T_sea=40°C，模拟热带异常海况）
+         判据：系统触发正确降额，不误停机
+
+验收准则：10/10通过，有1项不通过则FAT不合格
+</code></pre></div>
+<p>试验2：控制参数整定验证
+    目的：验证FOC参数（电流环PI + 速度环PI）整定正确
+    测量项：
+      电流环阶跃响应：d轴/q轴电流阶跃（10%额定），测量带宽
+      速度环阶跃响应：转速阶跃（10%额定转速），测量超调和调节时间</p>
+<div class="highlight"><pre><span></span><code>验收准则：
+  电流环带宽 ≥ 200Hz（或满足 f_current ≥ 10×f_torsion）
+  速度环超调量 ≤ 5%（阶跃10%额定转速）
+  速度环调节时间 ≤ 500ms（至±2%稳态误差带）
+</code></pre></div>
+<p>试验3：保护功能测试（硬件注入）
+    目的：验证保护电路的动作阈值和响应时间（非仿真，真实硬件触发）
+    方法：
+      短路保护：用电阻箱模拟低阻负载（注：在隔离变压器后进行）
+      过压保护：调整供电电压超过整定值（注入法）
+      欠压保护：降低供电电压低于整定值</p>
+<div class="highlight"><pre><span></span><code>验收准则：
+  保护动作阈值误差 ≤ ±5%整定值
+  保护响应时间符合ICD-CD-002中的规定（过流 ≤ 100ms）
+</code></pre></div>
+<p>```
+</p>
+<h3 id="943">9.4.3 第二阶段：两两集成测试<a class="headerlink" href="#943" title="Permanent link">¶</a></h3>
+<p>```
+两两集成原则：
+  每次只新增一个接口，出现问题立刻定位
+  新增接口验证通过前，不进入下一阶段
+  所有两两集成完成后，方可进入全系统集成</p>
+<p>─────────────────────────────────────────────────
+集成1：传动 + 控制（TC集成）</p>
+<p>目标：验证ICD-DC-002（编码器/温度→控制器）
+                + ICD-CD-002（控制指令→变频器）</p>
+<p>台架配置：
+    电机接水力测功机（模拟螺旋桨负载：T∝n²）
+    控制器与变频器通过CANopen连接
+    冷却液由外部水箱（温度可调）提供（非完整冷却系统）</p>
+<p>试验项目：</p>
+<p>TC-001：FOC电流环整定（实物）
+    方法：阶跃d轴电流给定，示波器观察d轴/q轴实际电流响应
+    判据：
+      上升时间 ≤ 2ms（200Hz带宽等效）
+      超调量 ≤ 10%
+      d-q轴解耦效果：q轴扰动 ≤ 5%（d轴阶跃时）</p>
+<p>TC-002：速度环整定与扭振验证
+    方法：
+      ① 阶跃转速（10%额定），测量转速响应和轴系振动
+      ② 正弦速度扫描（0.1~20Hz），观察是否激励轴系扭振
+    判据：
+      速度阶跃：超调 ≤ 5%，调节时间 ≤ 500ms
+      扭振检查：在 f_torsion ± 20% 范围内振动加速度无明显峰值（增益 &lt; 2倍背景）</p>
+<p>TC-003：全转速范围运行（禁速区验证）
+    方法：从零缓慢升速至最大转速，连续记录振动信号
+    判据：
+      禁速区内累计停留时间 = 0（控制器自动快速穿越）
+      穿越时间符合整定值
+      禁速区外振动水平 ≤ ISO 10816-3 绿区</p>
+<p>TC-004：热保护联动（实物注入）
+    方法：加热冷却液至45°C（接近报警阈值），同时以额定功率运行
+    判据：
+      绕组温度上升过程中，降额逻辑按预期执行
+      降额期间CANopen报文正常（无通信中断）
+      驾驶台HMI正确显示降额状态</p>
+<p>TC-005：编码器切换实物验证
+    方法：在额定转速运行时，人工拔出主编码器连接器
+    判据：
+      切换时间 ≤ 50ms
+      转速波动恢复时间 ≤ 500ms
+      备用编码器接管后运行稳定（持续运行5min无故障）
+      驾驶台HMI正确报警"主编码器故障"</p>
+<p>─────────────────────────────────────────────────
+集成2：冷却 + 控制（CC集成）</p>
+<p>目标：验证ICD-CC-001（泵状态→控制器）
+                + ICD-CC-002（控制器→冷却执行机构）</p>
+<p>台架配置：
+    完整冷却系统（主备泵、换热器、膨胀水箱、管路）
+    热负载模拟器（电加热棒，模拟电机散热）
+    控制器通过Modbus TCP控制冷却泵变频器</p>
+<p>试验项目：</p>
+<p>CC-001：泵变频控制闭环验证
+    方法：
+      控制器按ICD-CS-002寄存器格式下发泵转速指令
+      测量实际流量跟踪精度
+    判据：
+      稳态流量误差 ≤ ±5%给定值
+      流量响应时间（从指令到稳定）≤ 10s</p>
+<p>CC-002：热管理闭环验证（PID温度控制）
+    方法：
+      以电加热棒模拟额定热负载（持续加热至温升平衡）
+      控制器通过调节泵转速维持目标出口温度（65°C）
+    判据：
+      稳态出口温度偏差 ≤ ±3°C
+      温度超调（加热初始阶段）≤ 10°C
+      过渡过程时间（从启动至稳定）≤ 15min</p>
+<p>CC-003：备泵切换联动验证
+    方法：在正常运行时，手动触发主泵故障信号
+    判据：
+      控制器收到主泵故障信号后，≤ 2s内发出备泵启动指令
+      备泵达到目标转速（稳定运行）≤ 5s
+      切换全过程流量最低值 ≥ 50%额定（防温升突变）</p>
+<p>CC-004：液位报警联锁验证
+    方法：手动模拟膨胀水箱极低液位信号
+    判据：
+      控制器接收信号后，≤ 2s触发降额指令（至70%）
+      驾驶台报警"冷却液液位极低"
+      液位信号恢复后，不自动解除降额（需手动确认）
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>### 9.4.4 第三阶段：全系统集成测试（SIT）
+</code></pre></div>
+全系统集成测试（System Integration Test，SIT）：<p></p>
+<p>目标：三子系统（冷却+传动+控制）联合运行，
+        验证全系统在所有任务剖面工况下满足性能指标，
+        完成所有ICD接口的L4级验证（试验确认）</p>
+<p>台架配置（完整SIT台架）：
+    负载模拟：水力测功机（Q∝n²螺旋桨特性曲线编程）
+    冷却供给：完整双回路冷却系统（含模拟海水温度控制）
+    电源：三相隔离变压器（模拟船舶电网，含谐波发生器）
+    监测仪器：
+      功率分析仪（全程记录输入/输出功率）
+      温度记录仪（覆盖所有PT100 + 红外热像仪）
+      振动分析仪（轴系 + 机座）
+      CAN总线分析仪（全程记录通信报文）
+      高速示波器（保护动作时序捕捉）</p>
+<p>SIT 测试矩阵（最小测试集）：</p>
+<p>┌─────┬──────────────────────────┬────────────┬──────────────────────────┐
+  │编号  │ 测试项目                  │ 关联ICD    │ 验收准则                 │
+  ├─────┼──────────────────────────┼────────────┼──────────────────────────┤
+  │SIT-01│ 额定工况热平衡试验（4h）  │ ICD-CD-001 │ 绕组温升≤105K（H级）     │
+  │      │                          │ ICD-DC-001 │ 出口温度≤65°C            │
+  ├─────┼──────────────────────────┼────────────┼──────────────────────────┤
+  │SIT-02│ 功率阶跃响应（50%→100%） │ ICD-CD-002 │ 转速跌落≤3%，恢复≤2s    │
+  │      │                          │ ICD-DC-002 │ 无通信中断               │
+  ├─────┼──────────────────────────┼────────────┼──────────────────────────┤
+  │SIT-03│ 降额联动（海水温升至40°C）│ ICD-CD-001 │ 降额按公式执行           │
+  │      │                          │ ICD-CS-002 │ 驾驶台正确显示降额状态   │
+  ├─────┼──────────────────────────┼────────────┼──────────────────────────┤
+  │SIT-04│ 主泵故障全系统响应        │ ICD-CC-001 │ 切换时间≤5s              │
+  │      │                          │ ICD-CC-002 │ 全过程无温度保护触发      │
+  ├─────┼──────────────────────────┼────────────┼──────────────────────────┤
+  │SIT-05│ 倒车工况（100%倒车推力）  │ ICD-CD-002 │ 转矩方向翻转无冲击       │
+  │      │                          │ ICD-DC-001 │ 冷却系统正常响应         │
+  ├─────┼──────────────────────────┼────────────┼──────────────────────────┤
+  │SIT-06│ 紧急停车→最快重启        │ ICD-CD-002 │ 停机≤5s，重启≤30s       │
+  │      │                          │ ICD-CS-002 │ 驾驶台状态实时更新       │
+  ├─────┼──────────────────────────┼────────────┼──────────────────────────┤
+  │SIT-07│ 72h连续运行耐久试验       │ 全部ICD    │ 无故障停机，无报警触发   │
+  │      │ （任务剖面循环：         │            │ 温升稳定，通信帧误码=0   │
+  │      │  5%+35%+35%+25%功率）    │            │                          │
+  ├─────┼──────────────────────────┼────────────┼──────────────────────────┤
+  │SIT-08│ EMC兼容性验证             │ ICD-DC-002 │ 传导发射≤IEC 60533 A类  │
+  │      │（大功率运行时信号质量）   │ ICD-CS-002 │ CAN通信无误码（全程）    │
+  ├─────┼──────────────────────────┼────────────┼──────────────────────────┤
+  │SIT-09│ 仿真–试验相关性确认       │ 热模型标定 │ 仿真温升误差≤5°C（所有点）│
+  ├─────┼──────────────────────────┼────────────┼──────────────────────────┤
+  │SIT-10│ VCRM全条目关闭确认        │ 所有需求   │ 所有VCRM条目状态=Closed  │
+  └─────┴──────────────────────────┴────────────┴──────────────────────────┘</p>
+<p>SIT 问题分类处理规则：
+  A类问题（Critical）：导致测试项不通过，或超出ICD参数范围
+    → 必须修改设计/整定，重新执行该测试项，SIT报告标红</p>
+<p>B类问题（Major）：测试通过但性能裕度不足（&lt; 10%），
+                    或发现ICD描述歧义
+    → 记录偏差报告（DR），整船试验前必须关闭</p>
+<p>C类问题（Minor）：操作便利性问题、界面显示改进等
+    → 记录改进建议（IR），后续版本迭代解决
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>---
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>## 9.5 FAT/SAT 检查单（完整版）
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>### 9.5.1 工厂验收试验（FAT）检查单
+</code></pre></div>
+FAT通用检查单（适用于冷却/传动/控制各子系统）<p></p>
+<p>═══════════════════════════════════════════════════
+文件检查（先于试验进行）
+═══════════════════════════════════════════════════
+□ 产品规格书与采购规范（ICD）逐条对比，无偏差
+□ 材质/元器件证书（BOM清单对应）
+□ 设计计算书（关键参数：热设计/强度/扭振）已审核
+□ 质量计划（ITP，Inspection and Test Plan）已批准
+□ 校准证书（所有测量仪器在有效期内）
+□ 试验规程（Test Procedure）已审核批准
+□ 见证人员名单（供应商QC + 采购方 + 船级社检验员，如适用）</p>
+<p>═══════════════════════════════════════════════════
+外观与机械检查
+═══════════════════════════════════════════════════
+□ 铭牌：序列号、额定参数与订货单一致
+□ 防护等级：IP等级标识，密封件无损伤
+□ 安装接口：法兰/螺栓孔尺寸符合ICD，用量规验证
+□ 焊缝检查：外观无裂纹/气孔/夹渣（如适用）
+□ 表面处理：涂漆/防腐处理完好，无划伤
+□ 装箱清单：随机附件（密封件/备件/手册/合格证）齐全</p>
+<p>═══════════════════════════════════════════════════
+电气检查（传动/控制子系统）
+═══════════════════════════════════════════════════
+□ 绝缘电阻：电机绕组对地 ≥ 100MΩ（500VDC摇表）
+□ 直流电阻：三相平衡度 ≤ ±2%（排除连接头误差）
+□ 接地连续性：所有接地点阻抗 ≤ 0.1Ω
+□ 电缆连接：按图纸核对，无错接/虚接
+□ 连接器：型号/针脚/锁紧方式符合ICD
+□ 端子排：标识清晰，端子紧固力矩符合规范</p>
+<p>═══════════════════════════════════════════════════
+功能试验（按各子系统试验规程执行）
+═══════════════════════════════════════════════════
+冷却子系统：
+□ 泵空载运行（5min）：无异常振动/噪声/泄漏
+□ 额定流量点压降：[ ] kPa（要求：≤30kPa@40L/min）     □通过/□不通过
+□ 最小流量点压降：[ ] kPa                                □通过/□不通过
+□ 换热效率ε：[ ]（要求：≥0.85@额定流量）               □通过/□不通过
+□ 密封性试验：1.5×工作压力，保压5min：□无泄漏/□有泄漏
+□ 备泵切换：切换时间[ ]s（要求：≤5s）                   □通过/□不通过
+□ 液位联锁：极低液位→停泵联锁：□正确/□不正确</p>
+<p>传动子系统：
+□ 空载运行（额定转速，30min）：振动[ ]mm/s（要求：≤2.8mm/s）  □通过/□不通过
+□ 额定温升（4h热平衡）：最高绕组温度[ ]°C（要求：≤185°C）     □通过/□不通过
+□ 额定工况效率：[ ]%（要求：≥合同值-1.5%）                     □通过/□不通过
+□ 扭振模态：一阶固有频率[ ]Hz（与仿真值偏差[ ]%，要求≤±15%）  □通过/□不通过
+□ 噪声：1m处[ ]dB(A)（要求：≤合同值+3dB(A)）                   □通过/□不通过</p>
+<p>控制子系统：
+□ HIL 10场景全部通过：□是/□否（若否，列明未通过场景）
+□ 电流环带宽：[ ]Hz（要求：≥200Hz）                    □通过/□不通过
+□ 速度环超调量：[ ]%（要求：≤5%）                      □通过/□不通过
+□ 过流保护动作时间：[ ]ms（要求：≤100ms）              □通过/□不通过
+□ 通信延迟（CANopen）：[ ]ms（要求：≤2ms）             □通过/□不通过</p>
+<p>═══════════════════════════════════════════════════
+FAT 结论
+═══════════════════════════════════════════════════
+□ 无条件通过（所有项目通过，无偏差记录）
+□ 有条件通过（偏差已记录，整改方案已批准，可发货，整改在SAT前关闭）
+□ 未通过（存在A类不合格项，需整改后重新FAT）</p>
+<p>供应商代表签字：<strong><em>_</em></strong><strong><em>_  日期：</em></strong><strong><em>_</em></strong><em>
+采购方代表签字：<strong><em>_</em></strong><strong><em>_  日期：</em></strong><strong><em>_</em></strong></em>
+船级社检验员签字（如适用）：<strong><em>_</em></strong>____
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>### 9.5.2 整船验收试验（SAT）检查单
+</code></pre></div>
+SAT整船验收试验检查单
+适用阶段：整船系泊试验 + 航行试验<p></p>
+<p>═══════════════════════════════════════════════════
+系泊试验（Mooring Test）——船未离码头
+（验证系统安装正确性和基本功能）
+═══════════════════════════════════════════════════</p>
+<p>安装质量检查：
+□ 激光对中报告：径向偏差≤0.05mm/100mm，角向≤0.05mm/100mm
+□ 冷却管路：无泄漏（充液后目视检查30min）
+□ 电缆走向：按图纸，动力线与信号线隔离≥200mm
+□ 接地网络：主机座→船体接地电阻≤0.1Ω
+□ 机柜固定：船级社要求的防振固定（弹性减振座）</p>
+<p>系统上电检查：
+□ 上电顺序：控制电源→主电源（按规程）
+□ 驾驶台HMI正常显示（所有仪表有读数，无通信故障报警）
+□ 机舱监控系统正常（报警历史清空，无初始故障）
+□ 冷却系统自动启动（随推进指令联动）</p>
+<p>系泊功能试验：
+□ 低速推进（10%额定）：正车/倒车各运行5min
+   推力方向正确：□是/□否
+   异常振动：□无/□有（描述：___）
+□ 中速推进（50%额定）：正车/倒车各运行10min
+   绕组温度：[ ]°C（要求：稳态≤设计值）   □通过/□不通过
+   冷却液出口温度：[ ]°C                   □通过/□不通过
+□ 报警测试（逐项确认驾驶台接收）：
+   冷却液流量低报警：□收到/□未收到
+   绕组温度高报警：□收到/□未收到
+   通信故障报警：□收到/□未收到
+□ 紧急停车（驾驶台E-STOP按钮）：
+   停车时间：[ ]s（要求：≤10s）            □通过/□不通过
+   推力归零确认：□是/□否</p>
+<p>═══════════════════════════════════════════════════
+航行试验（Sea Trial）——正式出港航行
+（验证系统在真实工况下的完整性能）
+═══════════════════════════════════════════════════</p>
+<p>航速–功率试验：
+□ 测速区域：选择无流/微流、水深≥5倍吃水的海域
+□ 试验方法：各航速点往返双向测量，取平均值（消除流速影响）
+□ 测量点：设计航速的60%/80%/100%（至少3点）</p>
+<p>┌──────────────┬──────────┬──────────┬──────────┬──────────┐
+   │ 参数         │ 设计值   │ 实测值   │ 偏差     │ 判定     │
+   ├──────────────┼──────────┼──────────┼──────────┼──────────┤
+   │ 60%设计航速  │ XX kn    │ [ ] kn   │ [ ]%     │ □通/□否  │
+   │ 对应轴功率   │ XX kW    │ [ ] kW   │ [ ]%     │ □通/□否  │
+   ├──────────────┼──────────┼──────────┼──────────┼──────────┤
+   │ 80%设计航速  │ XX kn    │ [ ] kn   │ [ ]%     │ □通/□否  │
+   │ 对应轴功率   │ XX kW    │ [ ] kW   │ [ ]%     │ □通/□否  │
+   ├──────────────┼──────────┼──────────┼──────────┼──────────┤
+   │ 100%设计航速 │ XX kn    │ [ ] kn   │ [ ]%     │ □通/□否  │
+   │ 对应轴功率   │ XX kW    │ [ ] kW   │ [ ]%     │ □通/□否  │
+   └──────────────┴──────────┴──────────┴──────────┴──────────┘</p>
+<p>验收准则：
+     航速偏差 ≤ -3%（不允许低于设计航速3%以上）
+     轴功率偏差 ≤ +5%（实测不允许超出设计功率5%以上）
+     若不通过：分析原因（船底污底？螺旋桨损伤？电机效率偏低？）</p>
+<p>热平衡验证试验（额定工况，持续1h）：
+   □ 试验海域：海水温度[ ]°C（记录值，越接近设计最高温越有效）
+   □ 运行工况：100%额定功率，稳定运行1h
+   □ 绕组温度稳态值：[ ]°C（要求：≤设计值，H级≤185°C）       □通/□否
+   □ 冷却液出口温度：[ ]°C（要求：≤65°C）                     □通/□否
+   □ 冷却液流量：[ ]L/min（要求：在额定范围内）                □通/□否
+   □ 轴承温度：驱动端[ ]°C，非驱动端[ ]°C（要求：≤80°C）      □通/□否
+   □ 1h内无任何报警触发：□是/□否（若否，记录报警内容）</p>
+<p>振动与噪声试验（航行工况）：
+   □ 振动测点：机座四角（垂直/水平/轴向）
+   □ 额定转速振动速度有效值：[ ] mm/s（要求：≤2.8mm/s）        □通/□否
+   □ 机舱噪声（1m距离）：[ ] dB(A)（要求：≤85dB(A)）           □通/□否
+   □ 驾驶室噪声：[ ] dB(A)（若有乘客船要求：≤65dB(A)）         □通/□否
+   □ 全转速扫描（禁速区验证）：在禁速区未停留：□是/□否</p>
+<p>推进响应试验：
+   □ 加速响应（0→100%额定功率）：时间[ ]s（要求：≤合同规定值） □通/□否
+   □ 倒车响应（前进→全倒车）：时间[ ]s（要求：≤合同规定值）     □通/□否
+   □ 紧急停车（驾驶台E-STOP）：停止时间[ ]s（要求：≤10s）       □通/□否</p>
+<p>续航能力试验（纯电船必做项目）：
+   □ 试验方法：以经济航速匀速航行，记录能耗直至SOC=20%
+   □ 实测续航里程：[ ] km（要求：≥合同值）                      □通/□否
+   □ 实测能耗：[ ] kWh/km（要求：≤合同值）                      □通/□否
+   □ BMS全程无故障告警：□是/□否</p>
+<p>船级社见证项目（以CCS为例）：
+   □ 船级社检验员见证热平衡试验：□已见证/□未见证
+   □ 船级社检验员见证紧急停车试验：□已见证/□未见证
+   □ 船级社签发临时航行证书：□已签发/□待签发</p>
+<p>═══════════════════════════════════════════════════
+SAT 结论
+═══════════════════════════════════════════════════
+□ 无条件通过（所有项目通过，船级社签证完成）
+□ 有条件通过（偏差已记录，整改方案批准，限制条件下交船，
+              整改在质保期内关闭）
+□ 未通过（存在A类不合格项，需整改后重新航行试验）</p>
+<p>船东代表签字：<strong><em>_</em></strong><strong><em>_  日期：</em></strong><strong><em>_</em></strong><em>
+船厂代表签字：<strong><em>_</em></strong><strong><em>_  日期：</em></strong><strong><em>_</em></strong></em>
+供应商代表签字：<strong><em>_</em></strong><strong><em>_
+船级社检验员签字：</em></strong><strong><em>_</em></strong>_
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>---
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>## 9.6 接口变更控制
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>### 9.6.1 接口变更的危害与管控原则
+</code></pre></div>
+接口变更的危害分析：<p></p>
+<p>接口变更是最危险的设计变更类型，原因：
+    ① 接口连接两个（或多个）子系统，
+       一个接口变更必然同时影响发送方和接收方
+    ② 接口变更往往被低估——
+       修改一个法兰尺寸看似简单，
+       实际可能触发：管路重新布置 → 安装顺序改变
+                    → 电机安装位置微调 → 对中重新验证
+                    → 震动分析重新校核
+    ③ 接口冻结后变更，每延后一个阶段，代价指数增长</p>
+<p>典型变更代价估算（经验数据）：
+    设计阶段（L1/L2，接口未冻结）：修改成本基准 = 1×
+    设计冻结后（L3）：5~10×（图纸返工+协调+审批）
+    FAT后（L4）：20~50×（硬件返工+重新试验+工期损失）
+    整船安装后（SAT阶段）：100~500×（现场改造+误期赔偿）</p>
+<p>管控原则（接口变更控制流程）：</p>
+<p>① 接口冻结（L3）后，任何变更必须触发正式ECR
+     ECR = Engineering Change Request（工程更改申请）</p>
+<p>② ECR必须包含：
+     - 变更描述（What Changed）
+     - 变更原因（Why Changed）
+     - 影响分析（Impact Analysis）：
+         受影响的ICD编号列表
+         受影响的子系统/供应商列表
+         受影响的验证活动（需要重新执行的试验）
+         工期影响评估
+         成本影响评估
+     - 替代方案分析（有无其他代价更小的方案）</p>
+<p>③ ECR审批权限（按影响等级）：
+     P1接口变更：系统集成负责人 + 项目经理 + 双方供应商负责人联合审批
+     P2接口变更：系统集成负责人 + 相关供应商负责人审批
+     P3接口变更：系统集成负责人审批</p>
+<p>④ 变更后：
+     受影响的ICD文件立即更新（版本号升级）
+     受影响的试验计划更新（新增重测项目）
+     VCRM更新（受影响条目回退至未验证状态）
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>### 9.6.2 接口冻结门控审查
+</code></pre></div>
+接口成熟度门控评审（Interface Maturity Gate Review）：<p></p>
+<p>门控一：概念设计完成（CDR前）
+    要求：所有P1接口达到L2（已量化，草稿文件）
+    审查内容：
+      ① 接口参数与需求一致性（L1→L2可追溯）
+      ② 接口参数可实现性（供应商初步确认）
+      ③ 关键接口耦合分析（N²矩阵完整性）
+    通过判据：P1接口L2率 = 100%，P2接口L1率 = 100%
+    不通过后果：CDR评审挂起，直至接口文件补全</p>
+<p>门控二：设计冻结（IFR—Interface Freeze Review）
+    要求：所有P1、P2接口达到L3（冻结，双方签字确认）
+    审查内容：
+      ① ICD文件完整性（九要素逐项检查）
+      ② 各供应商确认函（书面签字）
+      ③ 关键接口参数裕度分析（有无过于紧张的裕度）
+      ④ 变更影响分析（有无未解决的ECR）
+    通过判据：P1+P2接口L3率 = 100%，无悬挂ECR
+    不通过后果：禁止进入采购/制造阶段</p>
+<p>门控三：FAT前接口确认
+    要求：所有接口L3已维持（无未批准变更）
+    要求：试验规程中每个ICD条目均有对应试验验证项
+    通过判据：试验覆盖率 = 100%（每个ICD参数至少有1个试验项目）</p>
+<p>门控四：SIT前接口验证完成确认
+    要求：所有P1接口达到L4（试验验证完成）
+          所有P2接口达到L3以上（至少草稿验证）
+    通过判据：P1接口L4率 = 100%，无A类悬挂问题
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>---
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>## 9.7 典型接口问题案例分析
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>### 9.7.1 案例一：联轴器刚度接口定义缺失导致扭振超标
+</code></pre></div>
+项目背景：
+  某内河电推船，电机额定功率500kW，2024年台架联调阶段<p></p>
+<p>问题描述：
+  台架联调时，转速在1200RPM附近出现明显振动和噪声，
+  振动加速度达到12m/s²（ISO 10816红区），
+  被迫将该转速设为禁速区，但禁速区范围（±15%）已覆盖
+  常用经济航速对应转速，严重影响使用。</p>
+<p>根因分析：
+  ① 扭振分析报告（设计阶段）使用了供应商手册中的联轴器标称刚度
+     k_coupling = 850 N·m/rad（手册名义值）
+  ② 实物联轴器为橡胶弹性联轴器，
+     实际刚度随预紧力、温度、使用历史变化显著
+     实测刚度：k_coupling_actual = 620 N·m/rad（比手册低27%）
+  ③ 刚度偏低 → 一阶扭振固有频率从设计值22Hz降至18Hz
+     对应禁速区从1320RPM移至1080RPM（正好在经济航速区）</p>
+<p>ICD问题根源：
+    ICD-DS-001（传动→总体）中联轴器接口定义：
+      原文："提供弹性联轴器，刚度等级中等"
+      ↑ 未量化！未规定刚度范围，未规定测量验证方法</p>
+<p>代价：
+  重新选型联轴器（高刚度型，k = 1200 N·m/rad）
+  重新进行扭振分析
+  重新采购联轴器（交期8周）
+  台架停工等待：延误6周
+  总损失：约18万元 + 6周工期</p>
+<p>经验教训与改进措施：
+  ① ICD中联轴器刚度必须量化：
+     正确写法：
+       "联轴器扭转刚度：额定值 1100 ± 10% N·m/rad
+        测量工况：预紧至额定扭矩的50%，温度25°C
+        验证方法：供应商出厂测量报告（每批次附测量数据）"</p>
+<p>② FAT中增加联轴器刚度验证项目：
+     抽样比例：每批次≥1件实测
+     测量方法：静态扭转试验（施加扭矩，测量角位移）
+     判据：实测值与标称值偏差 ≤ ±10%</p>
+<p>③ 扭振分析中使用刚度范围（最大/最小值）进行敏感度分析：
+     若刚度偏差±20%导致固有频率变化进入经济航速区，
+     则必须在设计阶段更换联轴器型号，而非等到台架发现
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>### 9.7.2 案例二：通信协议版本不匹配导致集成失败
+</code></pre></div>
+项目背景：
+  某海船电推系统，控制器与变频器来自不同供应商，
+  2023年两两集成阶段（TC集成）<p></p>
+<p>问题描述：
+  控制器与变频器通过CANopen连接，
+  控制器发送速度指令后，变频器无响应，
+  CANopen总线分析仪显示：控制器发出的PDO报文，
+  变频器返回"不支持的对象（Object not supported）"错误码</p>
+<p>根因分析：
+  ① ICD-CD-002中规定："CANopen DS402协议"
+     但DS402历经多版本演进：DS402 v1（2002年）/v2（2011年）/v3（2021年）
+     各版本在对象字典和状态机上有差异</p>
+<p>② 控制器供应商实现：DS402 v3（最新版）
+     变频器供应商实现：DS402 v1（较早版本）</p>
+<p>③ 关键差异：
+     状态机迁移命令（Controlword Bit组合）在v1和v3中有不同解释
+     对象0x6060（Modes of Operation）在v3中新增了部分子模式</p>
+<p>ICD问题根源：
+    "CANopen DS402协议"未注明版本号
+    未规定哪一方负责兼容适配</p>
+<p>代价：
+  变频器固件升级（供应商修改DS402实现，兼容v3）：4周
+  控制器增加兼容层（增加v1/v3协议适配代码）：2周
+  两两集成延误：4周
+  总损失：约8万元（两供应商各承担部分）+ 4周工期</p>
+<p>经验教训与改进措施：
+  ① ICD通信协议必须精确到版本号：
+     正确写法：
+       "CANopen DS402 v3（CiA 402-2 Ed. 3.0.0, 2021-03）
+        状态机：依据标准图4（Fig.4）实现
+        必须支持的对象：0x6040/0x6041/0x6060/0x6061/
+                       0x606C/0x60FF/0x60E0/0x60E1"</p>
+<p>② 在项目启动时（需求阶段）发出"接口协议确认表"：
+     要求各供应商书面确认其实现的协议版本
+     有差异时在设计阶段协商解决（代价最小）</p>
+<p>③ 两两集成前，先进行"协议一致性预检"：
+     方法：用CANopen协议分析仪（CANalyzer/PCAN-Explorer）
+           扫描各节点的对象字典，对比是否一致
+     时间：1~2天，代价极低，可提前发现版本冲突
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>### 9.7.3 案例三：热接口参数边界不明导致降额频繁触发
+</code></pre></div>
+项目背景：
+  某内河电动客船，冷却系统与传动系统分属两家供应商，
+  2024年航行试验阶段<p></p>
+<p>问题描述：
+  夏季（长江水温约32°C）航行试验时，
+  在80%额定功率下频繁触发降额保护（降至70%额定功率），
+  导致航速达不到设计值，船东不满意</p>
+<p>根因分析（热接口链路追溯）：</p>
+<p>ICD-CD-001（冷却→传动）中规定：
+    "冷却液供液温度 ≤ 45°C（额定工况）"</p>
+<p>设计分析：
+    冷却供应商设计时：
+      换热器按T_sea = 30°C设计（手册取值，非实际最高温）
+      在T_sea = 30°C时：供液温度 = 32°C（远低于45°C，裕度充足）</p>
+<div class="highlight"><pre><span></span><code>实际运行时：
+  T_sea = 32°C（长江夏季实际水温，比手册高2°C）
+  换热器实际供液温度 = 38°C（仍 &lt; 45°C，符合ICD）
+
+传动供应商设计时：
+  电机热设计基准：T_coolant_in = 45°C（取ICD上限）
+  绕组热设计：T_winding_max = 185°C - (185-45)/1 = 符合
+
+但实际问题在于：
+  供应商提供的"额定散热功率Q_loss"是基于T_winding = 130°C计算的
+  即：冷却液只需带走130°C绕组时的损耗
+
+  然而在T_sea=32°C、T_coolant_in=38°C时，
+  传热温差ΔT = T_winding - T_coolant_out变小，
+  换热效率降低，实际绕组温度升至145°C
+  → 触发降额
+</code></pre></div>
+<p>ICD根本缺陷：
+    散热功率Q_loss的提供基准工况未定义清楚
+    正确应写明：
+      "额定散热功率 Q_loss = XX kW
+       基准工况：P_motor = 100%额定，n = 额定转速，
+                 T_coolant_in = 45°C（最高供液温度）
+                 T_coolant_out ≤ 65°C"</p>
+<div class="highlight"><pre><span></span><code>即：Q_loss必须在最恶劣冷却条件下（T_in=45°C）仍可满足
+</code></pre></div>
+<p>代价：
+  冷却系统改造：换热器更换为更大面积型号（+30%面积）
+  冷却系统延迟交付：6周
+  航行试验返工：2次
+  总损失：约12万元 + 6周工期</p>
+<p>经验教训：
+  ① 热接口参数必须在最恶劣工况下定义：
+     T_coolant_in = T_max（取上限），而非额定值</p>
+<p>② 冷却供应商和传动供应商必须共同参与热接口评审：
+     让传动供应商用冷却供应商提供的最坏供液温度，
+     验算绕组温升余量（裕度 ≥ 10°C）</p>
+<p>③ L3系统仿真模型标定时：
+     专门增加"夏季最高海水温度工况"仿真场景
+     确保在T_sea_max时，绕组温度 ≤ 155°C（降额触发阈值）
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>---
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>## 9.8 内河船与海船接口差异
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>### 9.8.1 内河船接口特殊性
+</code></pre></div>
+内河船接口管理与海船的主要差异：<p></p>
+<p>① 海水温度接口（ICD-CS-001）：
+   内河船：
+     水温变化范围：-5°C（北方冬季）~ 35°C（南方夏季）
+     水质：淡水，泥沙含量高（黄河含沙量可达&gt;1kg/m³）
+     外循环侧过滤要求更严：滤器网孔≤0.5mm，且需自清洗设计
+     换热器材质：淡水侧腐蚀较轻，316L足够（无需钛合金）</p>
+<p>海船：
+     水温：0°C（北极）~ 35°C（南海/波斯湾）
+     水质：咸水，氯离子高（~19,000 ppm）
+     换热器材质：海水侧必须钛合金或高镍合金</p>
+<p>② 靠泊充电接口（ICD-PE-001）：
+   内河船：
+     充电频率极高（内河渡轮：每次靠泊均充电，日均20次以上）
+     充电接口连接次数：全寿命&gt;50,000次（普通连接器不适用）
+     要求：大电流自动对接充电系统（船岸自动对接，无需人工插拔）
+     或：换电系统（电池包整体更换，适合短途内河船）
+     充电接口标准：GB/T 27930（直流快充）</p>
+<p>海船：
+     靠泊次数少（远洋船：月均数次），对接次数要求低得多
+     岸电接口：IEC/ISO/IEEE 80005-1（高压岸电）</p>
+<p>③ 驾驶台接口（ICD-CS-002）：
+   内河船：
+     操纵频率高：频繁靠离港、避让他船（长江繁忙段）
+     推进指令变化率高：需要快速响应（加减速频繁）
+     操纵手柄分辨率要求高：特别是进出港低速段（微速操纵）</p>
+<p>海船DP船：
+     DP控制器接口：需提供推进功率预留信息给DP系统
+     接口协议：NMEA 2000 + 自定义扩展（DP功率状态报文）</p>
+<p>④ 振动与噪声接口（ICD-DS-001）：
+   内河客船：
+     乘客舱室振动：ISO 6954限值（舒适性）
+     驾驶室噪声：≤65dB(A)（乘客能听到对话）</p>
+<p>海船：
+     适用DNV SILENT CLASS（噪声等级标注）
+     机舱噪声：≤110dB(A)（长期在内工作需佩戴耳保护）
+     居住舱室：≤55dB(A)
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>### 9.8.2 接口管理难点对比
+</code></pre></div>
+内河船接口管理难点：
+  ① 供应链分散：内河船供应商多为中小企业，
+                 接口文件规范化意识薄弱，
+                 ICD可能需要研发方主导编制（而非供应商配合）<p></p>
+<p>② 交货周期短：内河船项目周期短（6~12个月），
+                 留给接口管理的时间压缩，
+                 需要优先确保P1接口（最少4个）在3个月内冻结</p>
+<p>③ 定制化程度高：内河船船型多样，接口往往无法复用，
+                   每个项目都需要重新梳理N²矩阵</p>
+<p>海船接口管理难点：
+  ① 多国供应商协调：海船组件来自全球（欧洲变频器、
+                     亚洲电机、美国控制器），
+                     ICD语言统一（中文+英文双语版本）</p>
+<p>② 规范合规要求高：每个接口参数都需能追溯至
+                     船级社规范条款（ICD中注明规范出处）</p>
+<p>③ 接口冻结周期长：海船设计周期2~3年，
+                     接口早期冻结与设计迭代的矛盾突出，
+                     需要区分"参数冻结"（量级确定）
+                     和"精确值冻结"（详细设计完成后）</p>
+<p>共同难点（内河/海船均有）：
+  ★ 机械-电气-控制三专业接口评审：
+    通常各专业各自负责本专业接口，
+    跨专业接口（例：电气接口影响机械散热）容易遗漏
+    → 解决方案：接口评审必须三专业负责人同时参加</p>
+<p>★ 供应商接口变更的及时通报：
+    供应商为节省成本，悄悄更换零件型号（法兰/连接器），
+    未通知研发方更新ICD
+    → 解决方案：合同中明确要求供应商任何接口相关变更
+                必须在5个工作日内提交ECR申请
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>---
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>## 9.9 接口管理工具与数字化实践
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>### 9.9.1 接口管理工具选型
+</code></pre></div>
+工具选型矩阵（按规模和预算）：<p></p>
+<p>小型项目（&lt;5个子系统，团队&lt;10人）：
+  推荐工具：
+    Excel + SharePoint（在线协作）
+      优点：无需培训，成本为零
+      缺点：版本管理混乱，无法自动追踪变更影响</p>
+<div class="highlight"><pre><span></span><code>推荐做法：
+  Excel主表（N²矩阵 + ICD清单）存放在SharePoint
+  每次修改通过版本号管理（Rev.A/B/C）
+  变更通知：邮件抄送所有相关方
+</code></pre></div>
+<p>中型项目（5~15个子系统，团队10~50人）：
+  推荐工具：
+    IBM DOORS（需求管理）+ ICD专用数据库
+      优点：需求-接口全链路追踪，变更影响自动分析
+      缺点：授权费贵，学习曲线陡</p>
+<div class="highlight"><pre><span></span><code>替代方案：
+  Jira（需求追踪）+ Confluence（ICD文档库）
+  优点：互联网公司友好，成本低，API集成能力强
+  缺点：专业性不如DOORS，需要自定义工作流
+</code></pre></div>
+<p>大型项目（海船复杂系统，&gt;15个子系统）：
+  推荐工具：
+    Teamcenter / Windchill（PLM系统）+ SysML接口建模
+      优点：与CAD/BOM完全集成，接口变更触发自动通知
+            支持Model-Based ICD（接口以模型形式定义）
+      缺点：实施周期长（6~12个月），成本高</p>
+<div class="highlight"><pre><span></span><code>SysML接口建模工具：
+  Cameo Systems Modeler（MagicDraw）
+  Enterprise Architect
+  → IBD（内部块图）直接定义接口，与N²矩阵关联
+</code></pre></div>
+<p>```
+</p>
+<h3 id="992-excel">9.9.2 接口数据库最小实现（Excel模板说明）<a class="headerlink" href="#992-excel" title="Permanent link">¶</a></h3>
+<p>Sheet 2：ICD清单主表（续）
+
+  列定义（共16列）：
+  ┌────┬──────────────┬────────────────────────────────────────┐
+  │列号│ 列名         │ 填写说明                                │
+  ├────┼──────────────┼────────────────────────────────────────┤
+  │ A  │ ICD编号      │ ICD-[发送方]-[接收方]-[序号]            │
+  │ B  │ 接口名称     │ 简短描述，≤20字                        │
+  │ C  │ 接口类型     │ 机械/流体/电气/控制/环境（下拉菜单）   │
+  │ D  │ 发送方       │ 子系统缩写（COOL/DRIVE/CTRL/SHIP/POWER）│
+  │ E  │ 接收方       │ 同上                                    │
+  │ F  │ 优先级       │ P1/P2/P3（下拉菜单）                   │
+  │ G  │ 成熟度等级   │ L0/L1/L2/L3/L4（下拉菜单，颜色自动填充）│
+  │    │              │ L0/L1=红；L2=黄；L3=绿；L4=蓝         │
+  │ H  │ 当前版本     │ Rev.A / Rev.B …                        │
+  │ I  │ 文件路径     │ 超链接至ICD详细文件（Word/PDF）         │
+  │ J  │ 冻结日期     │ L3达成日期（YYYY-MM-DD）               │
+  │ K  │ 验证完成日期 │ L4达成日期（YYYY-MM-DD）               │
+  │ L  │ 发送方负责人 │ 姓名                                    │
+  │ M  │ 接收方负责人 │ 姓名                                    │
+  │ N  │ 关联需求编号 │ VCRM中对应需求ID（可多个，逗号分隔）   │
+  │ O  │ 悬挂ECR编号  │ 若有未关闭变更申请，填ECR编号          │
+  │ P  │ 备注         │ 特殊说明、风险提示等                    │
+  └────┴──────────────┴────────────────────────────────────────┘
+
+  Sheet 2 自动统计（在首行上方冻结行显示）：
+    总ICD数：=COUNTA(A:A)-1
+    L3以上比例：=COUNTIF(G:G,"L3")+COUNTIF(G:G,"L4") / 总数 × 100%
+    P1未冻结数：=COUNTIFS(F:F,"P1",G:G,"<l3") →="" 若="">0标红预警
+    悬挂ECR数：=COUNTA(O:O)-1（非空格数）
+
+──────────────────────────────────────────────────────────
+
+Sheet 3：接口变更记录表（ECR台账）
+
+  列定义（共12列）：
+  ┌────┬──────────────┬────────────────────────────────────────┐
+  │列号│ 列名         │ 填写说明                                │
+  ├────┼──────────────┼────────────────────────────────────────┤
+  │ A  │ ECR编号      │ ECR-[年份]-[序号]，如ECR-2024-003      │
+  │ B  │ 关联ICD编号  │ 受影响的ICD（可多个）                  │
+  │ C  │ 变更描述     │ 简述变更内容（≤50字）                  │
+  │ D  │ 变更原因     │ 设计优化/供应商变更/试验发现/客户要求  │
+  │ E  │ 影响等级     │ A类（Critical）/B类（Major）/C类（Minor）│
+  │ F  │ 受影响子系统 │ 列出所有受影响方（逗号分隔）           │
+  │ G  │ 需重新验证项 │ 列出需重新执行的试验项目编号           │
+  │ H  │ 工期影响     │ 估算延误天数（0=无影响）               │
+  │ I  │ 提交日期     │ ECR提交日期                            │
+  │ J  │ 审批人       │ 按P1/P2/P3权限（见9.6.1节）           │
+  │ K  │ 审批日期     │ 批准/拒绝日期                          │
+  │ L  │ 状态         │ 待审批/已批准/已关闭/已拒绝（下拉菜单）│
+  └────┴──────────────┴────────────────────────────────────────┘
+
+  使用规则：
+    ① 每次ICD变更必须先在Sheet 3创建ECR条目，
+       获得审批后才能修改Sheet 2和对应ICD详细文件
+    ② 状态"已关闭"=变更已实施，相关ICD文件已更新，
+       相关VCRM条目已回退并重新验证
+    ③ 每月项目例会统计Sheet 3中"待审批"条目数量，
+       超过3条未审批ECR即触发接口评审会议
+
+──────────────────────────────────────────────────────────
+
+Sheet 4：VCRM接口关联表（需求–接口–验证追踪矩阵）
+
+  说明：
+    VCRM = Verification Cross-Reference Matrix（验证交叉参考矩阵）
+    本表专用于接口需求的可追溯性管理
+    与系统级VCRM（第21章）互为补充，专注接口验证维度
+
+  列定义（共10列）：
+  ┌────┬────────────────┬──────────────────────────────────────┐
+  │列号│ 列名           │ 填写说明                              │
+  ├────┼────────────────┼──────────────────────────────────────┤
+  │ A  │ 需求编号       │ 如REQ-THERM-003（来自第9章需求文件） │
+  │ B  │ 需求描述       │ 原始需求文本（简化版，≤30字）        │
+  │ C  │ 关联ICD编号    │ 实现该需求的接口文件编号             │
+  │ D  │ ICD参数条目    │ 具体参数名称（如：冷却液入口温度≤45°C）│
+  │ E  │ 验证方法       │ 分析(A)/仿真(S)/检查(I)/试验(T)      │
+  │ F  │ 验证阶段       │ FAT/TC集成/CC集成/SIT/SAT           │
+  │ G  │ 验证文件编号   │ 试验报告/分析报告编号               │
+  │ H  │ 验证结果       │ Pass/Fail/Partial/待验证（下拉）     │
+  │    │                │ Pass=蓝色；Fail=红色；待验证=灰色   │
+  │ I  │ 验证完成日期   │ YYYY-MM-DD                          │
+  │ J  │ 备注/偏差说明  │ Fail或Partial时必填偏差内容         │
+  └────┴────────────────┴──────────────────────────────────────┘
+
+  VCRM状态看板（Sheet 4首行统计）：
+    接口需求总条目数：XX
+    Pass率：XX%（目标：SAT前100%）
+    Fail条目数：XX（必须为0方可交船）
+    待验证条目数：XX（倒计时跟踪）
+```</l3")></p>
+<h3 id="993">9.9.3 数字化接口管理进阶实践<a class="headerlink" href="#993" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>面向未来的数字化接口管理（Model-Based ICD）：
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>① SysML接口建模替代Word文档：
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>   传统做法：Word文档描述接口参数
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>   数字化做法：在SysML模型（IBD内部块图）中直接定义接口
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>   优势：
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>     接口参数与系统模型强绑定（修改参数自动影响所有引用）
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>     自动生成接口矩阵（从模型中提取，消除人工整理误差）
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>     与仿真模型直接集成（接口参数直接驱动Simulink/Modelica模型）
+<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>
+<a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>   工具链示例：
+<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a>     Cameo Systems Modeler（SysML建模）
+<a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a>     → 自动导出ICD参数表（Excel/HTML）
+<a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a>     → 驱动Simulink仿真模型参数化配置
+<a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a>     → 与DOORS需求双向追踪
+<a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a>
+<a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a>② 接口数字孪生：
+<a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a>   将ICD中的关键接口参数（温度/流量/电压）
+<a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a>   与台架/整船实时测量数据对接，
+<a id="__codelineno-25-21" name="__codelineno-25-21" href="#__codelineno-25-21"></a>   在数字孪生平台上实时显示"接口参数实测值 vs ICD规定值"
+<a id="__codelineno-25-22" name="__codelineno-25-22" href="#__codelineno-25-22"></a>
+<a id="__codelineno-25-23" name="__codelineno-25-23" href="#__codelineno-25-23"></a>   实现效果：
+<a id="__codelineno-25-24" name="__codelineno-25-24" href="#__codelineno-25-24"></a>     试验期间自动判断接口是否超出ICD规定范围
+<a id="__codelineno-25-25" name="__codelineno-25-25" href="#__codelineno-25-25"></a>     自动生成接口验证报告（减少人工整理报告工作量80%）
+<a id="__codelineno-25-26" name="__codelineno-25-26" href="#__codelineno-25-26"></a>     历史数据可追溯（任意时间点的接口状态快照）
+<a id="__codelineno-25-27" name="__codelineno-25-27" href="#__codelineno-25-27"></a>
+<a id="__codelineno-25-28" name="__codelineno-25-28" href="#__codelineno-25-28"></a>③ 接口变更影响分析自动化：
+<a id="__codelineno-25-29" name="__codelineno-25-29" href="#__codelineno-25-29"></a>   基于接口依赖图（从N²矩阵提取），
+<a id="__codelineno-25-30" name="__codelineno-25-30" href="#__codelineno-25-30"></a>   当一个ICD发生变更时，
+<a id="__codelineno-25-31" name="__codelineno-25-31" href="#__codelineno-25-31"></a>   系统自动分析并列出"必须同步更新的相关ICD"
+<a id="__codelineno-25-32" name="__codelineno-25-32" href="#__codelineno-25-32"></a>
+<a id="__codelineno-25-33" name="__codelineno-25-33" href="#__codelineno-25-33"></a>   示例：
+<a id="__codelineno-25-34" name="__codelineno-25-34" href="#__codelineno-25-34"></a>     ICD-CD-001（冷却液入口温度上限45°C → 修改为50°C）
+<a id="__codelineno-25-35" name="__codelineno-25-35" href="#__codelineno-25-35"></a>     自动触发关联分析：
+<a id="__codelineno-25-36" name="__codelineno-25-36" href="#__codelineno-25-36"></a>       → ICD-DC-001（传动散热需求，基准温度需重新核算）
+<a id="__codelineno-25-37" name="__codelineno-25-37" href="#__codelineno-25-37"></a>       → ICD-CC-002（控制系统热保护阈值，需同步调整）
+<a id="__codelineno-25-38" name="__codelineno-25-38" href="#__codelineno-25-38"></a>       → SIT-03验证项（热平衡工况，需重新执行）
+<a id="__codelineno-25-39" name="__codelineno-25-39" href="#__codelineno-25-39"></a>   确保不遗漏任何受影响项目
+</code></pre></div>
+<hr>
+<h2 id="910">9.10 本章小结与关键输出物清单<a class="headerlink" href="#910" title="Permanent link">¶</a></h2>
+<h3 id="9101">9.10.1 本章核心要点回顾<a class="headerlink" href="#9101" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>本章核心要点（七条）：
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>  ① 接口管理的本质是"边界责任明确化"
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>     模糊的接口定义是集成失败的头号原因
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>     越早冻结接口，代价越小（设计阶段1× vs 整船阶段100~500×）
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>  ② N²矩阵是接口识别的核心工具
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>     6×6矩阵覆盖本手册三子系统全部接口
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>     优先级评定（P1/P2/P3）决定接口冻结的时间顺序
+<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>     P1接口（5个）必须在设计冻结前达到L3
+<a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a>
+<a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>  ③ ICD文件是接口的法律文件
+<a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a>     九要素缺一不可（标识/描述/物理规格/功能参数/
+<a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a>     时序/故障响应/验证方法/变更控制/双方签字）
+<a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a>     参数必须量化（范围值+报警阈值+停机阈值）
+<a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a>     版本管理严格执行，冻结后变更必须经ECR流程
+<a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a>
+<a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a>  ④ 集成测试采用渐增式策略
+<a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a>     子系统FAT → 两两集成（TC/CC） → 全系统SIT → 整船SAT
+<a id="__codelineno-26-20" name="__codelineno-26-20" href="#__codelineno-26-20"></a>     每增加一个接口立即验证，出现问题立刻定位
+<a id="__codelineno-26-21" name="__codelineno-26-21" href="#__codelineno-26-21"></a>     禁止"大爆炸式"集成（一次性全部组装）
+<a id="__codelineno-26-22" name="__codelineno-26-22" href="#__codelineno-26-22"></a>
+<a id="__codelineno-26-23" name="__codelineno-26-23" href="#__codelineno-26-23"></a>  ⑤ 热接口是船用电推系统最高风险接口
+<a id="__codelineno-26-24" name="__codelineno-26-24" href="#__codelineno-26-24"></a>     散热功率Q_loss必须在最恶劣冷却条件（T_in最高）下定义
+<a id="__codelineno-26-25" name="__codelineno-26-25" href="#__codelineno-26-25"></a>     冷却供应商和传动供应商必须共同参与热接口评审
+<a id="__codelineno-26-26" name="__codelineno-26-26" href="#__codelineno-26-26"></a>     L3仿真必须覆盖夏季最高海水温度工况
+<a id="__codelineno-26-27" name="__codelineno-26-27" href="#__codelineno-26-27"></a>
+<a id="__codelineno-26-28" name="__codelineno-26-28" href="#__codelineno-26-28"></a>  ⑥ 通信接口必须精确到协议版本号
+<a id="__codelineno-26-29" name="__codelineno-26-29" href="#__codelineno-26-29"></a>     "CANopen DS402"不够——必须写明版本（如Ed.3.0.0）
+<a id="__codelineno-26-30" name="__codelineno-26-30" href="#__codelineno-26-30"></a>     集成前先做"协议一致性预检"（1~2天，代价极低）
+<a id="__codelineno-26-31" name="__codelineno-26-31" href="#__codelineno-26-31"></a>     超时安全停机机制是通信接口的强制安全要求
+<a id="__codelineno-26-32" name="__codelineno-26-32" href="#__codelineno-26-32"></a>
+<a id="__codelineno-26-33" name="__codelineno-26-33" href="#__codelineno-26-33"></a>  ⑦ 接口变更控制是项目管理的红线
+<a id="__codelineno-26-34" name="__codelineno-26-34" href="#__codelineno-26-34"></a>     L3冻结后任何变更必须提交ECR，经审批后方可修改
+<a id="__codelineno-26-35" name="__codelineno-26-35" href="#__codelineno-26-35"></a>     P1接口变更须系统集成负责人+项目经理联合审批
+<a id="__codelineno-26-36" name="__codelineno-26-36" href="#__codelineno-26-36"></a>     变更后VCRM受影响条目必须回退并重新验证
+</code></pre></div>
+<h3 id="9102">9.10.2 关键输出物清单<a class="headerlink" href="#9102" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>本章应产出的关键工程文件（按里程碑排序）：
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>  里程碑一：概念设计完成（CDR前）
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>  □ 输出物1：N²接口矩阵（初版）
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>    内容：6×6矩阵，所有非空格填写ICD编号
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a>          P1接口参数草稿（L2级）
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>    格式：Excel（本章9.9.2模板）
+<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>    验收准则：P1接口L2率=100%
+<a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a>
+<a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a>  □ 输出物2：接口识别报告
+<a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a>    内容：接口分类汇总（机械/流体/电气/控制/环境）
+<a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a>          各接口优先级评定依据
+<a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a>          关键接口风险识别（裕度不足/供应商能力存疑）
+<a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a>    格式：Word/PDF，≥10页
+<a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a>
+<a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a>  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a>  里程碑二：设计冻结（IFR—接口冻结评审）
+<a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a>  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-27-21" name="__codelineno-27-21" href="#__codelineno-27-21"></a>  □ 输出物3：ICD文件包（P1+P2接口，共≥8份）
+<a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a>    必含：ICD-CD-001（冷却液供给）
+<a id="__codelineno-27-23" name="__codelineno-27-23" href="#__codelineno-27-23"></a>          ICD-DC-001（散热功率需求）
+<a id="__codelineno-27-24" name="__codelineno-27-24" href="#__codelineno-27-24"></a>          ICD-DC-002（编码器/温度信号）
+<a id="__codelineno-27-25" name="__codelineno-27-25" href="#__codelineno-27-25"></a>          ICD-CD-002（推进控制指令）
+<a id="__codelineno-27-26" name="__codelineno-27-26" href="#__codelineno-27-26"></a>          ICD-DP-001（动力电缆）
+<a id="__codelineno-27-27" name="__codelineno-27-27" href="#__codelineno-27-27"></a>          ICD-CS-002（船舶网络）
+<a id="__codelineno-27-28" name="__codelineno-27-28" href="#__codelineno-27-28"></a>          ICD-CC-001/002（冷却–控制双向）
+<a id="__codelineno-27-29" name="__codelineno-27-29" href="#__codelineno-27-29"></a>    每份文件：满足九要素，双方负责人签字确认
+<a id="__codelineno-27-30" name="__codelineno-27-30" href="#__codelineno-27-30"></a>    格式：Word（受控版本），纳入文件管理系统
+<a id="__codelineno-27-31" name="__codelineno-27-31" href="#__codelineno-27-31"></a>
+<a id="__codelineno-27-32" name="__codelineno-27-32" href="#__codelineno-27-32"></a>  □ 输出物4：N²矩阵冻结版
+<a id="__codelineno-27-33" name="__codelineno-27-33" href="#__codelineno-27-33"></a>    内容：P1/P2接口全部标注L3（绿色）
+<a id="__codelineno-27-34" name="__codelineno-27-34" href="#__codelineno-27-34"></a>          接口成熟度看板（统计图）
+<a id="__codelineno-27-35" name="__codelineno-27-35" href="#__codelineno-27-35"></a>    验收准则：P1+P2接口L3率=100%，无悬挂ECR
+<a id="__codelineno-27-36" name="__codelineno-27-36" href="#__codelineno-27-36"></a>
+<a id="__codelineno-27-37" name="__codelineno-27-37" href="#__codelineno-27-37"></a>  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-27-38" name="__codelineno-27-38" href="#__codelineno-27-38"></a>  里程碑三：FAT完成
+<a id="__codelineno-27-39" name="__codelineno-27-39" href="#__codelineno-27-39"></a>  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-27-40" name="__codelineno-27-40" href="#__codelineno-27-40"></a>  □ 输出物5：各子系统FAT试验报告（3份）
+<a id="__codelineno-27-41" name="__codelineno-27-41" href="#__codelineno-27-41"></a>    必含：冷却系统FAT报告
+<a id="__codelineno-27-42" name="__codelineno-27-42" href="#__codelineno-27-42"></a>          传动系统FAT报告（含效率MAP + 扭振模态）
+<a id="__codelineno-27-43" name="__codelineno-27-43" href="#__codelineno-27-43"></a>          控制系统FAT报告（含HIL 10场景通过记录）
+<a id="__codelineno-27-44" name="__codelineno-27-44" href="#__codelineno-27-44"></a>    每份报告：试验数据表 + Pass/Fail判定 + 见证签字
+<a id="__codelineno-27-45" name="__codelineno-27-45" href="#__codelineno-27-45"></a>
+<a id="__codelineno-27-46" name="__codelineno-27-46" href="#__codelineno-27-46"></a>  □ 输出物6：FAT偏差报告台账（DR台账）
+<a id="__codelineno-27-47" name="__codelineno-27-47" href="#__codelineno-27-47"></a>    内容：所有B/C类偏差记录，整改计划，关闭状态
+<a id="__codelineno-27-48" name="__codelineno-27-48" href="#__codelineno-27-48"></a>    验收准则：A类偏差=0（FAT通过条件）
+<a id="__codelineno-27-49" name="__codelineno-27-49" href="#__codelineno-27-49"></a>
+<a id="__codelineno-27-50" name="__codelineno-27-50" href="#__codelineno-27-50"></a>  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-27-51" name="__codelineno-27-51" href="#__codelineno-27-51"></a>  里程碑四：SIT完成
+<a id="__codelineno-27-52" name="__codelineno-27-52" href="#__codelineno-27-52"></a>  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-27-53" name="__codelineno-27-53" href="#__codelineno-27-53"></a>  □ 输出物7：两两集成试验报告（2份）
+<a id="__codelineno-27-54" name="__codelineno-27-54" href="#__codelineno-27-54"></a>    必含：TC集成报告（传动+控制，TC-001~005）
+<a id="__codelineno-27-55" name="__codelineno-27-55" href="#__codelineno-27-55"></a>          CC集成报告（冷却+控制，CC-001~004）
+<a id="__codelineno-27-56" name="__codelineno-27-56" href="#__codelineno-27-56"></a>
+<a id="__codelineno-27-57" name="__codelineno-27-57" href="#__codelineno-27-57"></a>  □ 输出物8：全系统SIT报告
+<a id="__codelineno-27-58" name="__codelineno-27-58" href="#__codelineno-27-58"></a>    内容：SIT-01~10全部试验项结果
+<a id="__codelineno-27-59" name="__codelineno-27-59" href="#__codelineno-27-59"></a>          72h耐久试验数据曲线
+<a id="__codelineno-27-60" name="__codelineno-27-60" href="#__codelineno-27-60"></a>          仿真–试验相关性分析（热模型标定）
+<a id="__codelineno-27-61" name="__codelineno-27-61" href="#__codelineno-27-61"></a>    验收准则：A类问题=0，B类问题均有关闭计划
+<a id="__codelineno-27-62" name="__codelineno-27-62" href="#__codelineno-27-62"></a>
+<a id="__codelineno-27-63" name="__codelineno-27-63" href="#__codelineno-27-63"></a>  □ 输出物9：VCRM接口关联表（更新版）
+<a id="__codelineno-27-64" name="__codelineno-27-64" href="#__codelineno-27-64"></a>    内容：P1接口所有参数条目状态=L4（已验证）
+<a id="__codelineno-27-65" name="__codelineno-27-65" href="#__codelineno-27-65"></a>    格式：Sheet 4（本章9.9.2模板），Pass率=100%（P1接口）
+<a id="__codelineno-27-66" name="__codelineno-27-66" href="#__codelineno-27-66"></a>
+<a id="__codelineno-27-67" name="__codelineno-27-67" href="#__codelineno-27-67"></a>  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-27-68" name="__codelineno-27-68" href="#__codelineno-27-68"></a>  里程碑五：SAT完成（整船交付）
+<a id="__codelineno-27-69" name="__codelineno-27-69" href="#__codelineno-27-69"></a>  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-27-70" name="__codelineno-27-70" href="#__codelineno-27-70"></a>  □ 输出物10：SAT试验报告
+<a id="__codelineno-27-71" name="__codelineno-27-71" href="#__codelineno-27-71"></a>    必含：系泊试验记录（本章9.5.2检查单填写版）
+<a id="__codelineno-27-72" name="__codelineno-27-72" href="#__codelineno-27-72"></a>          航行试验记录（航速–功率表 + 热平衡数据）
+<a id="__codelineno-27-73" name="__codelineno-27-73" href="#__codelineno-27-73"></a>          船级社见证签字页
+<a id="__codelineno-27-74" name="__codelineno-27-74" href="#__codelineno-27-74"></a>    验收准则：所有SAT项目Pass，船级社签发证书
+<a id="__codelineno-27-75" name="__codelineno-27-75" href="#__codelineno-27-75"></a>
+<a id="__codelineno-27-76" name="__codelineno-27-76" href="#__codelineno-27-76"></a>  □ 输出物11：接口管理总结报告（项目完成后）
+<a id="__codelineno-27-77" name="__codelineno-27-77" href="#__codelineno-27-77"></a>    内容：N²矩阵最终版（全部L4，蓝色）
+<a id="__codelineno-27-78" name="__codelineno-27-78" href="#__codelineno-27-78"></a>          ECR台账完整记录（所有变更均已关闭）
+<a id="__codelineno-27-79" name="__codelineno-27-79" href="#__codelineno-27-79"></a>          接口问题汇总与经验教训（输入下一项目）
+<a id="__codelineno-27-80" name="__codelineno-27-80" href="#__codelineno-27-80"></a>          工时统计：接口管理实际投入 vs 节省的集成返工工时
+</code></pre></div>
+<h3 id="9103">9.10.3 与其他章节的关联索引<a class="headerlink" href="#9103" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>本章与手册其他章节的输入/输出关系：
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>  从以下章节获取输入：
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>  ┌──────────────────────┬──────────────────────────────────┐
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>  │ 输入章节             │ 获取内容                          │
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>  ├──────────────────────┼──────────────────────────────────┤
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>  │ 第9章 系统需求分析   │ 性能需求→接口参数量化的源头依据  │
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>  │ 第6章 热管理系统     │ 散热功率Q_loss数据（ICD-DC-001） │
+<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>  │ 第4章 传动系统设计   │ 扭振固有频率（禁速区设定依据）   │
+<a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a>  │ 第5章 控制系统设计   │ 信号类型/通信协议选型依据        │
+<a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a>  │ 第10章 HIL仿真平台    │ HIL场景列表（FAT控制器试验输入） │
+<a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a>  │ 第12章 L3系统仿真     │ 热模型参数（ICD热接口标定基础）  │
+<a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a>  └──────────────────────┴──────────────────────────────────┘
+<a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a>
+<a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a>  向以下章节提供输出：
+<a id="__codelineno-28-16" name="__codelineno-28-16" href="#__codelineno-28-16"></a>  ┌──────────────────────┬──────────────────────────────────┐
+<a id="__codelineno-28-17" name="__codelineno-28-17" href="#__codelineno-28-17"></a>  │ 输出章节             │ 提供内容                          │
+<a id="__codelineno-28-18" name="__codelineno-28-18" href="#__codelineno-28-18"></a>  ├──────────────────────┼──────────────────────────────────┤
+<a id="__codelineno-28-19" name="__codelineno-28-19" href="#__codelineno-28-19"></a>  │ 第21章 VCRM验证矩阵  │ 接口验证结果（L4状态，试验报告）  │
+<a id="__codelineno-28-20" name="__codelineno-28-20" href="#__codelineno-28-20"></a>  │ 第17章 故障模式分析  │ 接口故障模式（来自ICD第6要素）   │
+<a id="__codelineno-28-21" name="__codelineno-28-21" href="#__codelineno-28-21"></a>  │ 第18章 项目管理      │ 接口里程碑计划（门控评审时间节点）│
+<a id="__codelineno-28-22" name="__codelineno-28-22" href="#__codelineno-28-22"></a>  └──────────────────────┴──────────────────────────────────┘
+</code></pre></div>
+<hr>
+<blockquote>
+<p><strong>第11章完</strong></p>
+<p>本章从 N² 接口矩阵识别、ICD 文件编制、渐增式集成测试、FAT/SAT 检查单、
+变更控制流程到工具数字化实践，构成了船用电推系统接口管理的完整闭环。</p>
+<p><strong>核心记忆点</strong>：
+- N² 矩阵 → 识别所有接口，一个不漏
+- ICD 九要素 → 每个接口量化定义，边界清晰
+- 渐增式集成 → FAT → TC/CC → SIT → SAT，逐步验证
+- 接口冻结越早，代价越小（1× vs 100~500×）</p>
+<p><em>下一章：第21章 验证与确认（V&amp;V）矩阵管理</em></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.action.view"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/calc-common.js"></script>
+      
+        <script src="https://cdn.staticfile.org/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

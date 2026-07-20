@@ -1,0 +1,4638 @@
+<!DOCTYPE html><html lang="zh" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="从基础认知到工程落地的完整知识手册">
+      
+      
+      
+      
+        <link rel="prev" href="../ch28-innovation/">
+      
+      
+        <link rel="next" href="../ch30-conclusion/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>第28章 技术路线图 - 船舶新能源动力系统工程手册</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Noto Sans SC";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#28" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="船舶新能源动力系统工程手册" class="md-header__button md-logo" aria-label="船舶新能源动力系统工程手册" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            船舶新能源动力系统工程手册
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第28章 技术路线图
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange" aria-label="切换到深色模式" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="deep-orange" aria-label="切换到浅色模式" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard="" data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../how-to-use/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  使用指南
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../part1-basics/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第一部分 基础认知
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../part2-subsystems/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第二部分 核心子系统
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../part3-design/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第三部分 系统设计方法
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../part4-compliance/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第四部分 规范与合规
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../part5-validation/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第五部分 验证与落地
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第六部分 专项深化
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../part7-resources/intro/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  第七部分 工具与资源
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="船舶新能源动力系统工程手册" class="md-nav__button md-logo" aria-label="船舶新能源动力系统工程手册" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    船舶新能源动力系统工程手册
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    使用指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一部分 基础认知
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第一部分 基础认知
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part1-basics/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一部分导读：基础认知
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part1-basics/ch01-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第1章 概述与发展
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part1-basics/ch02-classification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第2章 分类与选型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二部分 核心子系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第二部分 核心子系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二部分导读：核心子系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2">
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第3章 船用电池系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第3章 船用电池系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch03-battery-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.1 电池技术基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch03-battery-selection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.2 电池选型与配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch03-battery-bms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.3 电池管理系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch03-battery-safety/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.4 电池安全与防护
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3">
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第4章 电推进系统
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第4章 电推进系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch04-propulsion-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.1 电推进概述
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch04-thrusters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.2 推进器选型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch04-motors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.3 推进电机匹配
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch04-transmission/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.4 传动系统设计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch04-transmission-detail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.5 传动专项准则
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第5章 能量管理与控制
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第5章 能量管理与控制
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch05-ems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.1 能量管理系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch05-range/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.2 续航里程估算
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch05-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.3 能耗优化策略
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch05-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.4 控制专项准则
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part2-subsystems/ch06-cooling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第6章 冷却与热管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三部分 系统设计方法
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第三部分 系统设计方法
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part3-design/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三部分导读：系统设计方法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part3-design/ch07-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第7章 总体研发框架
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part3-design/ch08-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第8章 需求工程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part3-design/ch09-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第9章 架构设计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part3-design/ch10-simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第10章 协同仿真
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part3-design/ch11-interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第11章 接口管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part3-design/ch12-rams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第12章 RAMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part3-design/ch13-functional-safety/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第13章 功能安全
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第四部分 规范与合规
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第四部分 规范与合规
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第四部分导读：规范与合规
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/ch15-ccs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第14章 CCS规范
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/ch16-dnv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第15章 DNV规范
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/ch17-iec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第16章 IEC标准
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/ch18-compliance-mapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第17章 合规映射
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/ch19-inland-vs-sea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第18章 内河vs海船
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/ch20-special-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第19章 特有问题
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7">
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第五部分 验证与落地
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第五部分 验证与落地
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part5-validation/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第五部分导读：验证与落地
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part5-validation/ch21-vv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第20章 V&amp;V体系
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part5-validation/ch22-stability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第21章 稳定运行
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part5-validation/ch23-diagnosis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第22章 故障诊断
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part5-validation/ch24-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第23章 测试体系
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part5-validation/ch25-90day/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第24章 90天路线
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第六部分 专项深化
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第六部分 专项深化
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第六部分导读：专项深化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch26-hybrid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第25章 混合动力
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch27-commercialization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第26章 商业化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch28-innovation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第27章 技术创新
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第28章 技术路线图
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第28章 技术路线图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#2024-2035" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2024-2035年新能源电推产业展望
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#221" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.1 电池技术发展趋势
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.1 电池技术发展趋势">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2024-2035_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2024-2035年电池技术演进路线
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        战略建议
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#222" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.2 绿氢与燃料电池的机遇窗口
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.2 绿氢与燃料电池的机遇窗口">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        氢气成本演进与商业化时间表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        燃料电池船舶的现实时间表
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#223" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.3 政策与市场格局演变
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.3 政策与市场格局演变">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        碳税、排放标准与补贴政策
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        产业格局与玩家分析
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#224-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.4 企业战略选择与3年行动计划
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.4 企业战略选择与3年行动计划">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        企业类型与推荐策略
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#okr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        年度OKR(目标与关键成果)示例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#225" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.5 研发投资与人才队伍规划
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.5 研发投资与人才队伍规划">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5年研发投入规划
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        人才队伍建设(3年计划)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#226-20303" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.6 2030年愿景与3年行动计划
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.6 2030年愿景与3年行动计划">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2030vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        企业2030年远景(Vision)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32025-2027" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3年(2025-2027年)行动计划
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch30-conclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第29章 总结建议
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9">
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第七部分 工具与资源
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    第七部分 工具与资源
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第七部分导读：工具与资源
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_2">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../part7-resources/calculators/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录A 计算工具
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    附录A 计算工具
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/calculators/battery-capacity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    电池容量
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/calculators/propulsion-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    推进功率
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/calculators/range-calc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    续航里程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/calculators/efficiency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    效率分析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/calculators/cooling-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    冷却系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/appendix-toolchain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录B 工具链
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_4">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../part7-resources/cases/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录C 案例库
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9_4" id="__nav_9_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    附录C 案例库
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/cases/inland-passenger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    内河电动客船
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/cases/harbor-vessel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    港口工作船
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/cases/hybrid-ocean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    远洋混合动力
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_5">
+        
+          
+          <label class="md-nav__link" for="__nav_9_5" id="__nav_9_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录D 参考资料
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    附录D 参考资料
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/references/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    术语表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/references/standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    规范清单
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/references/books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    参考书目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part7-resources/references/links/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    常用链接
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../part4-compliance/appendix-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录E 规范笔记
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#2024-2035" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2024-2035年新能源电推产业展望
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#221" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.1 电池技术发展趋势
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.1 电池技术发展趋势">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2024-2035_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2024-2035年电池技术演进路线
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        战略建议
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#222" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.2 绿氢与燃料电池的机遇窗口
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.2 绿氢与燃料电池的机遇窗口">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        氢气成本演进与商业化时间表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        燃料电池船舶的现实时间表
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#223" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.3 政策与市场格局演变
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.3 政策与市场格局演变">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        碳税、排放标准与补贴政策
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        产业格局与玩家分析
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#224-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.4 企业战略选择与3年行动计划
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.4 企业战略选择与3年行动计划">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        企业类型与推荐策略
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#okr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        年度OKR(目标与关键成果)示例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#225" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.5 研发投资与人才队伍规划
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.5 研发投资与人才队伍规划">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5年研发投入规划
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        人才队伍建设(3年计划)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#226-20303" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.6 2030年愿景与3年行动计划
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.6 2030年愿景与3年行动计划">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2030vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        企业2030年远景(Vision)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32025-2027" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3年(2025-2027年)行动计划
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="28">第28章 技术路线图与前沿趋势<a class="headerlink" href="#28" title="Permanent link">¶</a></h1>
+<h2 id="2024-2035">2024-2035年新能源电推产业展望<a class="headerlink" href="#2024-2035" title="Permanent link">¶</a></h2>
+<blockquote>
+<p><strong>本章导读</strong></p>
+<p>技术不是静止的。本章回顾：
+- <strong>过去10年(2014-2024)</strong>：电池成本↓70%，电机效率↑15%
+- <strong>当前(2024)</strong>：纯电短程、混合中程、燃料电池概念期
+- <strong>未来10年(2025-2035)</strong>：产业格局重塑期</p>
+<p>关键变量包括：
+- <strong>电池技术迭代</strong>：LFP vs 钠离子 vs 固态电池
+- <strong>能源结构</strong>：绿氢、绿电、合成燃料的比例
+- <strong>政策推动</strong>：碳税、排放标准、补贴政策
+- <strong>竞争格局</strong>：新玩家入场(互联网造车、能源公司)</p>
+<p><strong>本章关键输出物</strong>：
+- 技术成熟度曲线(Gartner Hype Cycle)
+- 产业竞争格局与机会分析
+- 企业战略选择与风险规避
+- 研发投资与人才队伍建设计划
+- 2030年愿景与3年行动计划</p>
+</blockquote>
+<hr>
+<h2 id="221">22.1 电池技术发展趋势<a class="headerlink" href="#221" title="Permanent link">¶</a></h2>
+<h3 id="2024-2035_1">2024-2035年电池技术演进路线<a class="headerlink" href="#2024-2035_1" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>能量密度演进：
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>           400 Wh/kg ┤
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>                     │         固态电池
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>           350 Wh/kg ┤        /
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>                     │      /
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>           300 Wh/kg ┤    /  ← 当前三元电池极限
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>                     │  /        (单层280 Wh/kg)
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>           250 Wh/kg ┤/   
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>                     │  \
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>           200 Wh/kg ┤   \  ← 当前LFP水平
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>                     │    \  (单层160 Wh/kg)
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>           150 Wh/kg ┤     \
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>                     │      \  LFP改进
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>           100 Wh/kg ┤───────\────钠离子(新兴)
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>                     │         \
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>              50 Wh/kg ┤─────────\──铅酸(淘汰)
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>                     │           
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>                  2024  2027  2030  2033  2035
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>                   年份 ───────────────→ 
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>技术路线对标：
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>技术        当前      2027年目标   2030年目标   2035年目标   适用场景
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>LFP(成熟)   160      180         200         220        内河/短程
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>           Wh/kg   Wh/kg       Wh/kg       Wh/kg      (主力方案)
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>三元(高端)  250     280         300         320        高端应用
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>           Wh/kg   Wh/kg       Wh/kg       Wh/kg      (成本降低)
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>钠离子      120     150         180         200        低成本敏感
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>(新兴)     Wh/kg   Wh/kg       Wh/kg       Wh/kg      (2027年量产)
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>固态电池    -       250         350         400        航空/远程
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>(研发中)           Wh/kg       Wh/kg       Wh/kg      (2030年左右)
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>成本下降趋势：
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>           1.0元/Wh ┤  
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>                    │    LFP价格目标:
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>           0.8元/Wh ┤    2024 0.7元/Wh
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>                    │    2027 0.5元/Wh
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>           0.6元/Wh ┤    2030 0.3元/Wh
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>                    │
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>           0.4元/Wh ┤     三元难降至0.3
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>                    │    (原料贵)
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>           0.2元/Wh ┤
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>                    │    钠离子:
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>           0.1元/Wh ┤    2030 0.25元/Wh
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>                    │
+<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>              2024  2027  2030  2035
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>                   年份 ───────────→
+<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>
+<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>结论：
+<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>  ✓ LFP成本持续下降，到2030年成为最廉价选项
+<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>  ✓ 钠离子作为新兴竞争者，2027年起冲击LFP市场
+<a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>  ✓ 固态电池仍需10年才能成熟应用
+<a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>  ✗ 三元电池在船舶应用上失去竞争力(成本难降)
+</code></pre></div>
+<h3 id="_1">战略建议<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>对于企业的电池技术选择：
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>2024-2026 (近期)：
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  建议：坚定选择LFP，不要观望或在三元/LFP间摇摆
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  理由：
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    ✓ LFP技术最成熟(产能充足)
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    ✓ 成本最低(利润空间大)
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    ✓ 安全性最优(不燃烧)
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    ✗ 三元成本无优势，为何不选LFP?
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>  行动：
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    □ 与CATL/BYD签订3年供货协议
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    □ 参与LFP改进项目(高低温性能)
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    □ 专利申请：LFP电池管理系统优化
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>2026-2030 (中期)：
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>  建议：评估并测试钠离子电池
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>  理由：
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    ① 2027年钠离子量产，成本目标0.5元/Wh
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    ② 性能指标接近LFP，但成本便宜20%
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    ③ 新玩家会用钠离子降价竞争
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>  行动：
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>    □ 与宁德时代等参与钠离子联合开发(提前布局)
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>    □ 准备钠离子的BMS算法适配
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>    □ 建立混合供应商体系(LFP+钠离子)
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>2030+ (长期)：
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>  建议：固态电池作为差异化卖点，不是主流
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>  理由：
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>    ① 固态电池成本仍高(0.5元/Wh以上)
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>    ② 应用场景有限(超长航程/特种)
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>    ③ 多数客户无此需求
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>  行动：
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>    □ 与大学/科研机构合作研发固态电池
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>    □ 建立技术储备，为未来做准备
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>    □ 关键词：关注而不追风，有备无患
+</code></pre></div>
+<hr>
+<h2 id="222">22.2 绿氢与燃料电池的机遇窗口<a class="headerlink" href="#222" title="Permanent link">¶</a></h2>
+<h3 id="_2">氢气成本演进与商业化时间表<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>氢气价格预测(Per kg，含生产+存储+运输)：
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>现状(2024)：
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  ├─ 灰氢(煤制):   20-30元/kg (排放高)
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  ├─ 蓝氢(天然气+碳捕获): 40-60元/kg (成本高)
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  └─ 绿氢(电解):   100-150元/kg (太贵!)
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>目标(2030)：
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>  ├─ 灰氢:  10-15元/kg (进一步廉价化)
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>  ├─ 蓝氢:  30-40元/kg (碳捕获成本↓)
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>  └─ 绿氢:  40-60元/kg (电解成本↓50%)
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>目标(2035)：
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>  ├─ 灰氢:  5-10元/kg (成熟产业链)
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>  ├─ 蓝氢:  20-30元/kg (主流选项，低碳)
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>  └─ 绿氢:  20-30元/kg (与蓝氢持平，完全清洁!)
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>成本下降动力：
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>  1. 电解槽成本↓：当前500-1000元/kW → 目标100元/kW (2030)
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>  2. 电价下降：当前0.5元/kWh → 目标0.2-0.3元/kWh(绿电驱动)
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>  3. 规模效应：加氢站网络扩大，流通成本↓
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>  4. 技术进步：电解效率从65% → 80% (2030)
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>计算示例(绿氢2030年成本)：
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>  电解反应：H2O + 电能 → H2 + O2
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>  每kg H2需要电能：
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>    理论值：39.4 kWh/kg (最低热值)
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>    实际值：48-50 kWh/kg (含各项损失)
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>  成本组成：
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>    ├─ 绿电成本：50kWh × 0.3元/kWh = 15元/kg
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>    ├─ 电解槽折旧：12元/kg (设备20年寿命分摊)
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>    ├─ 运维成本：3元/kg
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>    └─ 储存/运输：5元/kg
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>    总成本(2030)：≈ 35-40元/kg ✓
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>    对标灰氢(10元/kg)，仍贵3倍
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>    但考虑碳税(若200元/吨CO2)：
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>      灰氢隐性成本：8kg灰氢排放3kg CO2 × 200元 = 600元/kg氢
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>      (环境成本太高，政策会推动绿氢)
+</code></pre></div>
+<h3 id="_3">燃料电池船舶的现实时间表<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>技术成熟度(TRL - Technology Readiness Level)评估：
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>当前(2024)：TRL 6-7
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  └─ 已有小规模示范项目(欧洲港口几个原型船)
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>2027年：TRL 8
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>  目标：小批量生产(5-10艘/年)
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>  条件：
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    ✓ PEM燃料电池成本降至1-1.5万元/kW(从现在3万)
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    ✓ 加氢站网络初步建立(欧盟30+座，中国&lt;10座)
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    ✓ 法规框架明确(IMO FCH规范发布)
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>  应用场景：港口内/近海高价值航线
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>2030年：TRL 9 (商业化)
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>  目标：量产阶段(50-100艘/年)
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>  条件：
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>    ✓ 燃料电池成本降至0.5-0.8万元/kW
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>    ✓ 加氢站覆盖主要港口(&gt;50座)
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>    ✓ 氢气价格30-40元/kg(可接受)
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>    ✓ 法规完整，保险体系成熟
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>  应用范围：扩展至沿海短程(500-1000nm)
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>2035年：大规模应用
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>  预期：成为远洋运输新标准
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>  条件：
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>    ✓ 燃料电池成本≈内燃机水平(0.3-0.5万元/kW)
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>    ✓ 绿氢供应充足，价格20-30元/kg
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>    ✓ 全球加氢站网络成熟
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>  市场占有率：远洋新船&gt;50%为FCH或其他清洁能源
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>企业对策：
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>立场1：激进(All-in燃料电池)
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>  风险等级：⚠️⚠️⚠️ 高
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>  适合对象：有资金+政府支持的大企业
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>  2024-2027：投入R&amp;D，与高校/研究所合作
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>  2027-2030：小批量示范(5-10艘)
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>  2030+：商业化转向(若技术成熟)
+<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>
+<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>  风险：若技术延期/市场不成熟，投入打水漂
+<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>
+<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>立场2：平衡(混合策略)
+<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a>  风险等级：⚠️ 中等
+<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a>  适合对象：中等规模企业(推荐)
+<a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a>
+<a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a>  2024-2027：主推BEV+HEV(成熟路线)
+<a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a>  2027-2030：并行测试燃料电池样船(1-2艘)
+<a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a>  2030+：根据市场反应，选择投入
+<a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a>
+<a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a>  优势：规避主技术风险，保持灵活性
+<a id="__codelineno-3-57" name="__codelineno-3-57" href="#__codelineno-3-57"></a>
+<a id="__codelineno-3-58" name="__codelineno-3-58" href="#__codelineno-3-58"></a>立场3：保守(观望)
+<a id="__codelineno-3-59" name="__codelineno-3-59" href="#__codelineno-3-59"></a>  风险等级：⚠️⚠️ 中等
+<a id="__codelineno-3-60" name="__codelineno-3-60" href="#__codelineno-3-60"></a>  适合对象：小型企业或资金紧张者
+<a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a>
+<a id="__codelineno-3-62" name="__codelineno-3-62" href="#__codelineno-3-62"></a>  2024-2027：专注当前主流(BEV)
+<a id="__codelineno-3-63" name="__codelineno-3-63" href="#__codelineno-3-63"></a>  2027-2030：评估市场，准备加入
+<a id="__codelineno-3-64" name="__codelineno-3-64" href="#__codelineno-3-64"></a>  2030+：若燃料电池成熟才转向
+<a id="__codelineno-3-65" name="__codelineno-3-65" href="#__codelineno-3-65"></a>
+<a id="__codelineno-3-66" name="__codelineno-3-66" href="#__codelineno-3-66"></a>  风险：可能错过早期市场机会，但资金风险最小
+<a id="__codelineno-3-67" name="__codelineno-3-67" href="#__codelineno-3-67"></a>
+<a id="__codelineno-3-68" name="__codelineno-3-68" href="#__codelineno-3-68"></a>建议：采用"平衡策略"
+<a id="__codelineno-3-69" name="__codelineno-3-69" href="#__codelineno-3-69"></a>  即：80%投入BEV/HEV，20%投入燃料电池研发
+</code></pre></div>
+<hr>
+<h2 id="223">22.3 政策与市场格局演变<a class="headerlink" href="#223" title="Permanent link">¶</a></h2>
+<h3 id="_4">碳税、排放标准与补贴政策<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>政策驱动因素分析：
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>1. 国际海事组织(IMO)碳排放规则
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>   当前(2024)：
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>     ├─ CII(船舶碳强度指数)要求达成-26%  
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>     ├─ 有罚款机制(未达成需补偿)
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>     └─ 仅适用于大型商业船舶(&gt;5000吨)
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>   2030年：
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>     └─ 目标进一步严格至-70%(相对2008年水平)
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>   2050年：
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>     └─ 目标：到2050年实现零碳(IMO2050目标)
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>   影响：
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>     ✓ 迫使船舶运营商采用清洁能源
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>     ✓ 燃油船运营成本↑(罚款)
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>     ✓ 新能源船相对竞争力↑
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>2. 欧盟 ETS(排放交易系统)扩展至海运
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>   2024年扩展至海运(试点)：
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>     └─ 船舶燃油碳价：约200元/吨CO2
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>   2025年正式纳入：
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>     └─ 逐步提高覆盖比例(2024 40% → 2025 70% → 2026 100%)
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>   成本影响(以往返欧洲为例)：
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>     单程排放CO2：500吨 × 200元/吨 = 10万元
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>     航程成本因此增加：10万 ÷ 200万 ≈ 5% uplift
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>     (这足以使燃油船不具竞争力)
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>3. 中国补贴政策(待明确)
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>   当前(2024)：
+<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a>     ├─ 新能源船舶补贴：补助电池成本20-30%
+<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a>     ├─ 2024Q1政策暂停(等待新规)
+<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a>     └─ 业内呼吁：恢复补贴+税收优惠
+<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a>
+<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a>   预期2025年政策：
+<a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a>     ├─ 电池补贴：按容量(元/kWh) 
+<a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a>     ├─ 燃料电池补贴：按功率(元/kW)
+<a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a>     ├─ 税收优惠：新能源船免增值税
+<a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a>     └─ 融资优惠：政策性银行低息贷款
+<a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a>
+<a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a>政策综合影响评估(2030年)：
+<a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a>
+<a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a>  船舶类型        燃油船        新能源船(BEV/HEV)   燃料电池船
+<a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a>  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-4-51" name="__codelineno-4-51" href="#__codelineno-4-51"></a>  基础运行成本    1.0           0.8                1.0
+<a id="__codelineno-4-52" name="__codelineno-4-52" href="#__codelineno-4-52"></a>  (相对值)       (基准)         (电便宜)           (氢与油相当)
+<a id="__codelineno-4-53" name="__codelineno-4-53" href="#__codelineno-4-53"></a>
+<a id="__codelineno-4-54" name="__codelineno-4-54" href="#__codelineno-4-54"></a>  碳税/罚款      +0.3           0                  0
+<a id="__codelineno-4-55" name="__codelineno-4-55" href="#__codelineno-4-55"></a>  (IMO+ETS)
+<a id="__codelineno-4-56" name="__codelineno-4-56" href="#__codelineno-4-56"></a>
+<a id="__codelineno-4-57" name="__codelineno-4-57" href="#__codelineno-4-57"></a>  政府补贴        0             -0.15              -0.2
+<a id="__codelineno-4-58" name="__codelineno-4-58" href="#__codelineno-4-58"></a>  (按成本比例)
+<a id="__codelineno-4-59" name="__codelineno-4-59" href="#__codelineno-4-59"></a>
+<a id="__codelineno-4-60" name="__codelineno-4-60" href="#__codelineno-4-60"></a>  总体成本        1.3           0.65               0.8
+<a id="__codelineno-4-61" name="__codelineno-4-61" href="#__codelineno-4-61"></a>  竞争力评估      ✗ 最差        ✓ 最优            △ 中等
+<a id="__codelineno-4-62" name="__codelineno-4-62" href="#__codelineno-4-62"></a>
+<a id="__codelineno-4-63" name="__codelineno-4-63" href="#__codelineno-4-63"></a>  结论：到2030年，燃油船在欧洲航线完全无竞争力
+<a id="__codelineno-4-64" name="__codelineno-4-64" href="#__codelineno-4-64"></a>        新能源电推成为唯一选项
+</code></pre></div>
+<h3 id="_5">产业格局与玩家分析<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>新能源电推船产业图景(2024年)：
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>传统造船厂(25%)         新能源技术公司(40%)      互联网造车(20%)    其他(15%)
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>├─ 中国：招商轮船      ├─ 欧洲：MTU/Siemens   ├─ 蔚来/小鹏     └─ 大学/
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>├─ 欧洲：Meyer/Fincantieri ├─ 美国：Corvus    ├─ 零跑             研究所
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>├─ 日本：三菱/大宇      ├─ 中国：宇通/比亚迪  └─ 理想/阿维塔
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>└─ 韩国：现代/大船      └─ 初创：10+新公司
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>竞争格局分析：
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>维度           传统造船           新能源技术           互联网造车
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>技术积累       ⭐⭐⭐⭐⭐        ⭐⭐⭐              ⭐⭐
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>              (船舶浮性)         (电池/电机)         (互联网)
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>制造成本       ⭐⭐⭐            ⭐⭐⭐⭐            ⭐⭐
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>              (规模生产)         (不需海工)          (代工模式)
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>品牌信誉       ⭐⭐⭐⭐⭐         ⭐⭐⭐              ⭐
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>              (历史悠久)         (新兴品牌)         (陌生)
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>资金实力       ⭐⭐⭐⭐          ⭐⭐⭐              ⭐⭐⭐
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>              (国企/大集团)      (风投/融资)        (融资充足)
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>垂直整合度     ⭐⭐              ⭐⭐⭐⭐⭐          ⭐⭐⭐
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>              (分工细致)         (自主开发)         (代工协作)
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>竞争预测(2030年)：
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>赢家(Market Leader)：
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>  ├─ 欧洲大船企：Meyer/Fincantieri + 高端新能源技术
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>  └─ 中国民企：宇通/比亚迪等整合进造船产业链
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>挑战者(Fast Follower)：
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>  ├─ 互联网造车: 通过代工进入(成本优势)
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>  └─ 小型技术创新企业(专注细分市场)
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>
+<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a>衰落者：
+<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a>  ├─ 传统重工企业不转型
+<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a>  ├─ 仍依赖柴油技术的组件供应商
+<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a>  └─ 小型造船厂(规模太小)
+</code></pre></div>
+<hr>
+<h2 id="224-3">22.4 企业战略选择与3年行动计划<a class="headerlink" href="#224-3" title="Permanent link">¶</a></h2>
+<h3 id="_6">企业类型与推荐策略<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>【企业类型1：大型传统造船企业】
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  特征：资金充足、技术底蕴深、组织庞大、决策慢
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>  例如：中国国企、韩国大船企
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>  战略定位：
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    短期(2024-2026)：防守 + 学习
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>      行动：
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>        □ 组建新能源研发部门(从内部或并购)
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>        □ 与能源技术公司合作(电池/电机供应商)
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>        □ 启动2-3艘样船项目(BEV/HEV)
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>        □ 建立内部培训体系(员工转岗)
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>      投资：5000-10000万元(研发+购置设备)
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>      预期收益：获得技术能力，为后续奠基
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>    中期(2027-2029)：追赶 + 创新
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>      行动：
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>        □ 建立独立的新能源事业部
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>        □ 签订大单(政府/大企业支持)
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>        □ 优化设计，降低成本15-20%
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>        □ 形成品牌认可度(2-3年内交付50+艘)
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>      投资：20000-30000万元(产线升级/人员扩充)
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>      预期收益：新能源板块收入占比10%+
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>    长期(2030+)：领导 + 扩张
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>      行动：
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>        □ 新能源业务超过传统业务占比
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>        □ 国际竞争(参加国际船舶展览)
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>        □ 垂直整合(自主电池/电机设计)
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>  风险与机遇：
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>    机遇：品牌信誉高，客户基础大，资金充足
+<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>    风险：组织转变慢，决策周期长
+<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>
+<a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a>  建议：尽快启动，不要等待完美时机
+<a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a>
+<a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a>【企业类型2：中型新兴技术公司】
+<a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a>  特征：专注电池/电机/控制系统，无造船经验
+<a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a>  例如：宇通客车、比亚迪、蔚来等进入新领域
+<a id="__codelineno-6-41" name="__codelineno-6-41" href="#__codelineno-6-41"></a>
+<a id="__codelineno-6-42" name="__codelineno-6-42" href="#__codelineno-6-42"></a>  战略定位：
+<a id="__codelineno-6-43" name="__codelineno-6-43" href="#__codelineno-6-43"></a>    快速切入，与造船厂合作
+<a id="__codelineno-6-44" name="__codelineno-6-44" href="#__codelineno-6-44"></a>
+<a id="__codelineno-6-45" name="__codelineno-6-45" href="#__codelineno-6-45"></a>    2024-2026：技术先行
+<a id="__codelineno-6-46" name="__codelineno-6-46" href="#__codelineno-6-46"></a>      行动：
+<a id="__codelineno-6-47" name="__codelineno-6-47" href="#__codelineno-6-47"></a>        □ 完成电推系统的陆地台架验证
+<a id="__codelineno-6-48" name="__codelineno-6-48" href="#__codelineno-6-48"></a>        □ 完成2-3艘海试(与一级造船厂合作)
+<a id="__codelineno-6-49" name="__codelineno-6-49" href="#__codelineno-6-49"></a>        □ 获得CCS/NK船级社认证
+<a id="__codelineno-6-50" name="__codelineno-6-50" href="#__codelineno-6-50"></a>        □ 成本目标：200万以内(与传统竞争)
+<a id="__codelineno-6-51" name="__codelineno-6-51" href="#__codelineno-6-51"></a>
+<a id="__codelineno-6-52" name="__codelineno-6-52" href="#__codelineno-6-52"></a>      投资：3000-5000万元(研发+小批量生产)
+<a id="__codelineno-6-53" name="__codelineno-6-53" href="#__codelineno-6-53"></a>      预期收益：建立技术壁垒，获得品牌认可
+<a id="__codelineno-6-54" name="__codelineno-6-54" href="#__codelineno-6-54"></a>
+<a id="__codelineno-6-55" name="__codelineno-6-55" href="#__codelineno-6-55"></a>    2027-2029：商业化扩张
+<a id="__codelineno-6-56" name="__codelineno-6-56" href="#__codelineno-6-56"></a>      行动：
+<a id="__codelineno-6-57" name="__codelineno-6-57" href="#__codelineno-6-57"></a>        □ 与大型造船厂签订代工协议
+<a id="__codelineno-6-58" name="__codelineno-6-58" href="#__codelineno-6-58"></a>        □ 实现批量生产(50-100套/年)
+<a id="__codelineno-6-59" name="__codelineno-6-59" href="#__codelineno-6-59"></a>        □ 成本继续下降至180万
+<a id="__codelineno-6-60" name="__codelineno-6-60" href="#__codelineno-6-60"></a>        □ 开拓国际市场(东南亚、欧洲)
+<a id="__codelineno-6-61" name="__codelineno-6-61" href="#__codelineno-6-61"></a>
+<a id="__codelineno-6-62" name="__codelineno-6-62" href="#__codelineno-6-62"></a>      投资：10000-15000万元(产能扩张)
+<a id="__codelineno-6-63" name="__codelineno-6-63" href="#__codelineno-6-63"></a>      预期收益：年销售收入10-20亿元
+<a id="__codelineno-6-64" name="__codelineno-6-64" href="#__codelineno-6-64"></a>
+<a id="__codelineno-6-65" name="__codelineno-6-65" href="#__codelineno-6-65"></a>  风险与机遇：
+<a id="__codelineno-6-66" name="__codelineno-6-66" href="#__codelineno-6-66"></a>    机遇：技术前沿，成本低，决策快
+<a id="__codelineno-6-67" name="__codelineno-6-67" href="#__codelineno-6-67"></a>    风险：无造船积累，可靠性未验证
+<a id="__codelineno-6-68" name="__codelineno-6-68" href="#__codelineno-6-68"></a>
+<a id="__codelineno-6-69" name="__codelineno-6-69" href="#__codelineno-6-69"></a>  建议：早期与大型造船厂建立长期合作伙伴关系
+<a id="__codelineno-6-70" name="__codelineno-6-70" href="#__codelineno-6-70"></a>
+<a id="__codelineno-6-71" name="__codelineno-6-71" href="#__codelineno-6-71"></a>【企业类型3：小型创业公司】
+<a id="__codelineno-6-72" name="__codelineno-6-72" href="#__codelineno-6-72"></a>  特征：融资能力强、技术创新、执行快、资金有限
+<a id="__codelineno-6-73" name="__codelineno-6-73" href="#__codelineno-6-73"></a>  例如：初创电推技术公司
+<a id="__codelineno-6-74" name="__codelineno-6-74" href="#__codelineno-6-74"></a>
+<a id="__codelineno-6-75" name="__codelineno-6-75" href="#__codelineno-6-75"></a>  战略定位：
+<a id="__codelineno-6-76" name="__codelineno-6-76" href="#__codelineno-6-76"></a>    差异化 + 细分市场
+<a id="__codelineno-6-77" name="__codelineno-6-77" href="#__codelineno-6-77"></a>
+<a id="__codelineno-6-78" name="__codelineno-6-78" href="#__codelineno-6-78"></a>    2024-2026：聚焦细分
+<a id="__codelineno-6-79" name="__codelineno-6-79" href="#__codelineno-6-79"></a>      行动：
+<a id="__codelineno-6-80" name="__codelineno-6-80" href="#__codelineno-6-80"></a>        □ 选择一个细分市场(港口作业 OR 内河短途)
+<a id="__codelineno-6-81" name="__codelineno-6-81" href="#__codelineno-6-81"></a>        □ 深度优化该领域(低成本 OR 高可靠性)
+<a id="__codelineno-6-82" name="__codelineno-6-82" href="#__codelineno-6-82"></a>        □ 完成10+艘样船
+<a id="__codelineno-6-83" name="__codelineno-6-83" href="#__codelineno-6-83"></a>        □ 建立行业口碑
+<a id="__codelineno-6-84" name="__codelineno-6-84" href="#__codelineno-6-84"></a>
+<a id="__codelineno-6-85" name="__codelineno-6-85" href="#__codelineno-6-85"></a>      投资：1000-2000万元
+<a id="__codelineno-6-86" name="__codelineno-6-86" href="#__codelineno-6-86"></a>      预期收益：成为该细分领域TOP 3品牌
+<a id="__codelineno-6-87" name="__codelineno-6-87" href="#__codelineno-6-87"></a>
+<a id="__codelineno-6-88" name="__codelineno-6-88" href="#__codelineno-6-88"></a>    2027-2029：扩大规模
+<a id="__codelineno-6-89" name="__codelineno-6-89" href="#__codelineno-6-89"></a>      行动：
+<a id="__codelineno-6-90" name="__codelineno-6-90" href="#__codelineno-6-90"></a>        □ 获得A轮/B轮融资(3-5亿)
+<a id="__codelineno-6-91" name="__codelineno-6-91" href="#__codelineno-6-91"></a>        □ 扩展到相邻市场
+<a id="__codelineno-6-92" name="__codelineno-6-92" href="#__codelineno-6-92"></a>        □ 建立自有代工厂或长期代工协议
+<a id="__codelineno-6-93" name="__codelineno-6-93" href="#__codelineno-6-93"></a>        □ 准备上市(IPO/并购)
+<a id="__codelineno-6-94" name="__codelineno-6-94" href="#__codelineno-6-94"></a>
+<a id="__codelineno-6-95" name="__codelineno-6-95" href="#__codelineno-6-95"></a>      投资：5000-10000万元(产能+营销)
+<a id="__codelineno-6-96" name="__codelineno-6-96" href="#__codelineno-6-96"></a>      预期收益：3-5年退出(IPO或被并购)
+<a id="__codelineno-6-97" name="__codelineno-6-97" href="#__codelineno-6-97"></a>
+<a id="__codelineno-6-98" name="__codelineno-6-98" href="#__codelineno-6-98"></a>  风险与机遇：
+<a id="__codelineno-6-99" name="__codelineno-6-99" href="#__codelineno-6-99"></a>    机遇：灵活快速，可获得高估值
+<a id="__codelineno-6-100" name="__codelineno-6-100" href="#__codelineno-6-100"></a>    风险：资金压力大，技术验证周期长
+<a id="__codelineno-6-101" name="__codelineno-6-101" href="#__codelineno-6-101"></a>
+<a id="__codelineno-6-102" name="__codelineno-6-102" href="#__codelineno-6-102"></a>  建议：充分利用资本优势，但不要盲目扩张
+<a id="__codelineno-6-103" name="__codelineno-6-103" href="#__codelineno-6-103"></a>
+<a id="__codelineno-6-104" name="__codelineno-6-104" href="#__codelineno-6-104"></a>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+</code></pre></div>
+<h3 id="okr">年度OKR(目标与关键成果)示例<a class="headerlink" href="#okr" title="Permanent link">¶</a></h3>
+<p><strong>示例：新兴技术公司，2025年OKR</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>企业目标(Objective)：
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  "成为国内新能源电推系统的TOP 3品牌，建立技术领先地位"
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>关键成果(Key Results)：
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>KR1: 产品性能达成
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>  目标：完成FAT/SAT验证，获得CCS认证
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>  衡量指标：
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    □ FAT通过率 100% (无重大不符合项)
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    □ SAT能耗指标 ≤设计值±5%
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>    □ MTBF &gt; 1500h (初期目标)
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>    □ CCS证书下证
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>  所有者：产品部 / 验证部
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>  完成时间：2025年6月
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>  难度：⭐⭐⭐⭐ (高)
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>KR2: 可靠性与服务
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>  目标：建立完善的售后支持体系
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>  衡量指标：
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>    □ 故障响应时间 ≤24小时
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>    □ 故障解决率(一周内) ≥90%
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>    □ 客户满意度 ≥9.0/10
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>    □ 0个重大安全事故
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>  所有者：技术支持部 / 运维部
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>  完成时间：全年持续
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>  难度：⭐⭐⭐
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>KR3: 市场突破
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>  目标：实现首笔商用订单转化，扩大市场覆盖
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>  衡量指标：
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>    □ 签订合同 ≥3艘新订单
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a>    □ 合同金额 ≥750万元
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a>    □ 行业知名度提升(杂志/论文发表 ≥3篇)
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>    □ 参展展会 ≥2场(国际/国内各1)
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>  所有者：销售部 / 市场部
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>  完成时间：2025年12月
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>  难度：⭐⭐⭐⭐
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a>
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a>KR4: 成本优化
+<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a>  目标：降低产品成本，提升毛利
+<a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a>  衡量指标：
+<a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a>    □ BOM成本降低 ≥8% (180万 → 165万)
+<a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a>    □ 制造成本降低 ≥10% (通过工艺改进)
+<a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a>    □ 毛利率达成 ≥15% (从现在0%)
+<a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a>    □ 供应商数量标准化 (A级≤5家，确保稳定)
+<a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a>  所有者：供应链部 / 工程部
+<a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a>  完成时间：2025年12月
+<a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a>  难度：⭐⭐⭐⭐⭐ (最高)
+<a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a>
+<a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a>KR5: 人才与文化
+<a id="__codelineno-7-51" name="__codelineno-7-51" href="#__codelineno-7-51"></a>  目标：建立高效的研发与运维团队
+<a id="__codelineno-7-52" name="__codelineno-7-52" href="#__codelineno-7-52"></a>  衡量指标：
+<a id="__codelineno-7-53" name="__codelineno-7-53" href="#__codelineno-7-53"></a>    □ 核心人才流失率 &lt;5%
+<a id="__codelineno-7-54" name="__codelineno-7-54" href="#__codelineno-7-54"></a>    □ 工程师数量增加 (从20→30人)
+<a id="__codelineno-7-55" name="__codelineno-7-55" href="#__codelineno-7-55"></a>    □ 内部培训完成率 &gt;90% (新能源知识)
+<a id="__codelineno-7-56" name="__codelineno-7-56" href="#__codelineno-7-56"></a>    □ 员工NPS(净推荐值) &gt;7/10
+<a id="__codelineno-7-57" name="__codelineno-7-57" href="#__codelineno-7-57"></a>  所有者：HR / 研发部
+<a id="__codelineno-7-58" name="__codelineno-7-58" href="#__codelineno-7-58"></a>  完成时间：全年持续
+<a id="__codelineno-7-59" name="__codelineno-7-59" href="#__codelineno-7-59"></a>  难度：⭐⭐⭐
+<a id="__codelineno-7-60" name="__codelineno-7-60" href="#__codelineno-7-60"></a>
+<a id="__codelineno-7-61" name="__codelineno-7-61" href="#__codelineno-7-61"></a>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-7-62" name="__codelineno-7-62" href="#__codelineno-7-62"></a>
+<a id="__codelineno-7-63" name="__codelineno-7-63" href="#__codelineno-7-63"></a>进度跟踪机制：
+<a id="__codelineno-7-64" name="__codelineno-7-64" href="#__codelineno-7-64"></a>  □ 月度评审(每月最后一周，部门负责人汇报)
+<a id="__codelineno-7-65" name="__codelineno-7-65" href="#__codelineno-7-65"></a>  □ 季度评估(Q1/Q2/Q3/Q4，CEO主持)
+<a id="__codelineno-7-66" name="__codelineno-7-66" href="#__codelineno-7-66"></a>  □ 实时dashboard(每周更新进度百分比)
+<a id="__codelineno-7-67" name="__codelineno-7-67" href="#__codelineno-7-67"></a>  □ 年度总结(评分与改进建议)
+</code></pre></div>
+<hr>
+<h2 id="225">22.5 研发投资与人才队伍规划<a class="headerlink" href="#225" title="Permanent link">¶</a></h2>
+<h3 id="5">5年研发投入规划<a class="headerlink" href="#5" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>研发总投资(占年收入比例)：
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Year  年收入    研发投入    比例    主要投资方向
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>2024  3000万   600万      20%     ├─ 新能源基础研究
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>                                  ├─ 台架测试能力
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>                                  └─ 人才引进
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>2025  8000万   1600万     20%     ├─ 系统集成验证
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>                                  ├─ 海试平台建设
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>                                  └─ 控制算法开发
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>2026  18000万  3600万     20%     ├─ 燃料电池预研
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>                                  ├─ 云端监控系统
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>                                  └─ 第二代产品
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>2027  35000万  5250万     15%     ├─ 产品迭代
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>                                  ├─ 国际认证
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>                                  └─ 产线自动化
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>2028  60000万  6000万     10%     └─ 成本竞争力优化
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>总计(5年)      18450万元
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>关键节点投资决策：
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>  2024年：初期投入 → 验证技术可行性
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>  2025年：加大投入 → 获得商业第一单
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>  2026年：保持投入 → 扩大产能与市场
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>  2027年：收缩投入 → 企业进入盈利期
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>  2028年：优化投入 → 竞争力提升
+</code></pre></div>
+<h3 id="3">人才队伍建设(3年计划)<a class="headerlink" href="#3" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>组织结构演进：
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>2024年(创业期)：20-30人
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>  研发 (40%)          制造 (20%)         运维 (20%)        管理 (20%)
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>  ├─ 电机工程师×2    ├─ 工艺工程师     ├─ 技术支持×2    ├─ CEO
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>  ├─ 电池系统×1      ├─ 品质工程师     ├─ 售后服务×1    ├─ CFO
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>  ├─ 控制算法×2      ├─ 制造工人×2     └─ 数据采集×1    └─ HR
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>  ├─ 测试工程师×2    └─ 采购专员                         
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>  └─ 硬件设计×1
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>2026年(成长期)：50-60人(+50%)
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>  研发 (45%)          制造 (25%)         运维 (15%)        管理 (15%)
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>  ├─ 电机工程师×3    ├─ 工艺工程师×2  ├─ 技术支持×3    ├─ CEO
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>  ├─ 电池系统×2      ├─ 品质工程师×2  ├─ 售后服务×2    ├─ COO/CTO
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>  ├─ 控制算法×3      ├─ 制造工人×5     ├─ 云端工程师×1  ├─ CFO
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>  ├─ 测试工程师×3    ├─ 采购×2         └─ 数据分析×1    ├─ HR×2
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>  ├─ 硬件设计×2      └─ 供应链经理                       └─ 销售总监
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>  └─ 仿真工程师×2
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>2028年(稳定期)：80-100人(+30%)
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>  研发 (40%)          制造 (30%)         运维 (15%)        管理 (15%)
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>  ├─ 电机团队×4      ├─ 工艺工程师×3  ├─ 技术支持×5    ├─ CEO
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>  ├─ 电池团队×3      ├─ 品质工程师×3  ├─ 售后服务×2    ├─ COO/CTO
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>  ├─ 控制团队×4      ├─ 制造主管×2     ├─ 云端工程师×2  ├─ CFO
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>  ├─ 测试团队×3      ├─ 工人×8         ├─ 数据分析×2    ├─ HR×2
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>  ├─ 硬件团队×3      ├─ 采购×3         └─ 质保部长×1    ├─ 销售总监
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>  ├─ 仿真团队×2      └─ 供应链主管                       ├─ 市场部长
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>  └─ 系统工程师×2                                        └─ 项目经理×2
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>╔════════════════════════════════════════════════════════╗
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>║                  关键岗位招聘标准                       ║
+<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>╠════════════════════════════════════════════════════════╣
+<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>║                                                        ║
+<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>║ 1. 技术研发负责人(副总经理/CTO)                       ║
+<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a>║    招聘时间：2025年Q1                                 ║
+<a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>║    要求：                                             ║
+<a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a>║      ✓ 10年+新能源/电机领域经验                      ║
+<a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a>║      ✓ 曾主导过量产产品落地                          ║
+<a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a>║      ✓ 学历：本科+硕士(电气/机械)                    ║
+<a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a>║      ✓ 英文能力：流利(国际技术交流)                  ║
+<a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a>║      ✓ 薪资：100-150万/年                            ║
+<a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a>║                                                        ║
+<a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a>║ 2. 海洋工程背景的系统工程师                            ║
+<a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a>║    招聘时间：2025年Q2                                 ║
+<a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a>║    要求：                                             ║
+<a id="__codelineno-9-46" name="__codelineno-9-46" href="#__codelineno-9-46"></a>║      ✓ 5年+船舶系统集成经验                          ║
+<a id="__codelineno-9-47" name="__codelineno-9-47" href="#__codelineno-9-47"></a>║      ✓ 了解船舶规范(CCS/NK/GL)                       ║
+<a id="__codelineno-9-48" name="__codelineno-9-48" href="#__codelineno-9-48"></a>║      ✓ 学历：本科+海洋/船舶工程                      ║
+<a id="__codelineno-9-49" name="__codelineno-9-49" href="#__codelineno-9-49"></a>║      ✓ 团队管理经验(带过5人+团队)                    ║
+<a id="__codelineno-9-50" name="__codelineno-9-50" href="#__codelineno-9-50"></a>║      ✓ 薪资：80-100万/年                             ║
+<a id="__codelineno-9-51" name="__codelineno-9-51" href="#__codelineno-9-51"></a>║                                                        ║
+<a id="__codelineno-9-52" name="__codelineno-9-52" href="#__codelineno-9-52"></a>║ 3. 控制系统算法工程师                                  ║
+<a id="__codelineno-9-53" name="__codelineno-9-53" href="#__codelineno-9-53"></a>║    招聘时间：2024年Q4                                 ║
+<a id="__codelineno-9-54" name="__codelineno-9-54" href="#__codelineno-9-54"></a>║    要求：                                             ║
+<a id="__codelineno-9-55" name="__codelineno-9-55" href="#__codelineno-9-55"></a>║      ✓ 3年+嵌入式控制系统经验                        ║
+<a id="__codelineno-9-56" name="__codelineno-9-56" href="#__codelineno-9-56"></a>║      ✓ 熟悉Simulink/MATLAB/C                         ║
+<a id="__codelineno-9-57" name="__codelineno-9-57" href="#__codelineno-9-57"></a>║      ✓ 学位：硕士(自动化/电气)                       ║
+<a id="__codelineno-9-58" name="__codelineno-9-58" href="#__codelineno-9-58"></a>║      ✓ 发表过论文或申请过专利(加分)                  ║
+<a id="__codelineno-9-59" name="__codelineno-9-59" href="#__codelineno-9-59"></a>║      ✓ 薪资：40-60万/年                              ║
+<a id="__codelineno-9-60" name="__codelineno-9-60" href="#__codelineno-9-60"></a>║                                                        ║
+<a id="__codelineno-9-61" name="__codelineno-9-61" href="#__codelineno-9-61"></a>║ 4. 海试工程师(技术与试验的桥梁)                       ║
+<a id="__codelineno-9-62" name="__codelineno-9-62" href="#__codelineno-9-62"></a>║    招聘时间：2024年Q3                                 ║
+<a id="__codelineno-9-63" name="__codelineno-9-63" href="#__codelineno-9-63"></a>║    要求：                                             ║
+<a id="__codelineno-9-64" name="__codelineno-9-64" href="#__codelineno-9-64"></a>║      ✓ 2年+海试工作经验                              ║
+<a id="__codelineno-9-65" name="__codelineno-9-65" href="#__codelineno-9-65"></a>║      ✓ 会基本故障排查与调试                          ║
+<a id="__codelineno-9-66" name="__codelineno-9-66" href="#__codelineno-9-66"></a>║      ✓ 适应出海(能接受50%出差率)                     ║
+<a id="__codelineno-9-67" name="__codelineno-9-67" href="#__codelineno-9-67"></a>║      ✓ 学历：大专+专业培训(不一定本科)               ║
+<a id="__codelineno-9-68" name="__codelineno-9-68" href="#__codelineno-9-68"></a>║      ✓ 薪资：30-50万/年                              ║
+<a id="__codelineno-9-69" name="__codelineno-9-69" href="#__codelineno-9-69"></a>║                                                        ║
+<a id="__codelineno-9-70" name="__codelineno-9-70" href="#__codelineno-9-70"></a>╚════════════════════════════════════════════════════════╝
+<a id="__codelineno-9-71" name="__codelineno-9-71" href="#__codelineno-9-71"></a>
+<a id="__codelineno-9-72" name="__codelineno-9-72" href="#__codelineno-9-72"></a>人才培养与激励：
+<a id="__codelineno-9-73" name="__codelineno-9-73" href="#__codelineno-9-73"></a>
+<a id="__codelineno-9-74" name="__codelineno-9-74" href="#__codelineno-9-74"></a>培训计划(年)：
+<a id="__codelineno-9-75" name="__codelineno-9-75" href="#__codelineno-9-75"></a>  □ 新能源技术培训(每季度1次，3天/次)
+<a id="__codelineno-9-76" name="__codelineno-9-76" href="#__codelineno-9-76"></a>  □ 船舶规范与认证培训(每半年1次)
+<a id="__codelineno-9-77" name="__codelineno-9-77" href="#__codelineno-9-77"></a>  □ 领导力发展(管理层，每季度)
+<a id="__codelineno-9-78" name="__codelineno-9-78" href="#__codelineno-9-78"></a>  □ 学位进修支持(本科/MBA，100%学费报销)
+<a id="__codelineno-9-79" name="__codelineno-9-79" href="#__codelineno-9-79"></a>  □ 国际会议出差(每年1次，分配给表现突出者)
+<a id="__codelineno-9-80" name="__codelineno-9-80" href="#__codelineno-9-80"></a>
+<a id="__codelineno-9-81" name="__codelineno-9-81" href="#__codelineno-9-81"></a>激励机制：
+<a id="__codelineno-9-82" name="__codelineno-9-82" href="#__codelineno-9-82"></a>  □ 绩效奖金(年度30%salary)
+<a id="__codelineno-9-83" name="__codelineno-9-83" href="#__codelineno-9-83"></a>  □ 股权激励(核心员工10-50万股期权)
+<a id="__codelineno-9-84" name="__codelineno-9-84" href="#__codelineno-9-84"></a>  □ 专利奖励(首次授权奖1000元，续期500元/年)
+<a id="__codelineno-9-85" name="__codelineno-9-85" href="#__codelineno-9-85"></a>  □ 晋升通道(工程师→高工→专家，3-5年)
+<a id="__codelineno-9-86" name="__codelineno-9-86" href="#__codelineno-9-86"></a>  □ 年度海外学习交流(表现优秀者)
+</code></pre></div>
+<hr>
+<h2 id="226-20303">22.6 2030年愿景与3年行动计划<a class="headerlink" href="#226-20303" title="Permanent link">¶</a></h2>
+<h3 id="2030vision">企业2030年远景(Vision)<a class="headerlink" href="#2030vision" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>【企业使命】
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>建设全球领先的新能源船舶推进系统，助力全球航运业碳中和
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>【企业2030年定位】
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>成为中国新能源电推的TOP品牌，国际竞争力与欧洲一流水平相当
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>【核心指标目标】
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>指标                2024年      2030年目标    增长倍数
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>市场占有率          &lt;1%         &gt;10%         &gt;10倍
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>年销售收入          3000万      60亿元        200倍
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>累计交付套数        &lt;10套       500+套       50倍
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>员工数量            25人        100人        4倍
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>年研发投入          600万       6000万       10倍
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>毛利率              0%          18-20%       -
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>股东权益            1000万      50亿元(IPO)   50倍
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>品牌知名度          0           "全球认知"    -
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>核心竞争力描述(2030)：
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>  ✓ 技术领先：能耗效率业界最优(±3%)
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>  ✓ 成本竞争力：价格比竞争对手低15-20%
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>  ✓ 可靠性优异：MTBF &gt; 5000h
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>  ✓ 服务体系完善：全球24h技术支持，零件库存充足
+<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>  ✓ 数据驱动：云端大数据分析，预测维护成功率&gt;90%
+</code></pre></div>
+<h3 id="32025-2027">3年(2025-2027年)行动计划<a class="headerlink" href="#32025-2027" title="Permanent link">¶</a></h3>
+<p>```
+三年行动计划的5个战略支柱(5-Pillar Strategy)：</p>
+<p>【支柱1：产品卓越(Product Excellence)】
+目标：建立3代产品线，覆盖50kW-500kW功率范围</p>
+<p>2025年Q1-Q4：第1代优化 + 第2代研发
+  里程碑：
+    ├─ 2025Q1：第1代BEV系统获CCS认证
+    ├─ 2025Q2：启动第2代混合动力开发
+    ├─ 2025Q3：完成第2代FAT验证
+    ├─ 2025Q4：第2代海试开始</p>
+<p>投资：2000万元</p>
+<p>2026年Q1-Q4：第2代商业化 + 第3代预研
+  里程碑：
+    ├─ 2026Q1：第2代产品投产，成本-12%
+    ├─ 2026Q2：推出小功率版本(75kW)
+    ├─ 2026Q3：启动大功率版本(500kW)研发
+    ├─ 2026Q4：超级快充版本预研(FCH方向)</p>
+<p>投资：3000万元</p>
+<p>2027年Q1-Q4：第3代落地 + 国际竞争
+  里程碑：
+    ├─ 2027Q1：第3代产品设计冻结
+    ├─ 2027Q2：获得DNV/BV等国际认证
+    ├─ 2027Q3：第3代样船交付
+    ├─ 2027Q4：国际订单突破(欧洲/东南亚)</p>
+<p>投资：3500万元</p>
+<p>【支柱2：供应链与成本(Supply Chain Excellence)】
+目标：确保成本持续下降，2027年BOM成本-30%</p>
+<p>2025年：重点供应商谈判 + 国产替代
+  行动：
+    □ 与CATL/BYD谈3年LFP供货合同(volume discount)
+    □ 与ABB谈电机价格(target: -15%)
+    □ 试用国产电机替代品(成本评估)
+    □ 本地化零部件采购(减少进口比例)</p>
+<p>成本目标：BOM从180万 → 165万(-8%)</p>
+<p>2026年：产量规模化 + 工艺改进
+  行动：
+    □ 产量达成50-80套，获得volume discount
+    □ 引入自动化焊接/测试(投资1000万)
+    □ 与代工厂协商产能费用(-10%)
+    □ 零部件标准化(共用度提升50%)</p>
+<p>成本目标：BOM从165万 → 150万(-9%)</p>
+<p>2027年：全球采购 + 垂直整合
+  行动：
+    □ 尝试东欧/东南亚供应商(成本-5%)
+    □ 自主设计BMS/控制器(减少buy-out)
+    □ 与大型工业集团协商集采(集团打包供货)
+    □ 产量达成100-150套</p>
+<p>成本目标：BOM从150万 → 125万(-17%)</p>
+<p>三年累计成本下降：180万 → 125万(-30%)</p>
+<p>【支柱3：市场拓展(Market Expansion)】
+目标：从0到500+套订单，建立市场领先地位</p>
+<p>2025年：样船转订单 + 区域扩展
+  目标客户：
+    ├─ 内河船队(江苏、湖北、长沙等)
+    ├─ 港口作业公司(主要港口5-10家)
+    └─ 政府部门(水利、应急、环保)</p>
+<p>销售目标：3-5艘订单，合同金额&gt;1000万
+  营销活动：
+    □ 参加2场展会(China Maritime/内河航运展)
+    □ 发表5篇技术论文/案例
+    □ 组织10+场现场展示会
+    □ 建立客户参考库(样船回访)</p>
+<p>2026年：规模增长 + 国际试水
+  目标客户：
+    ├─ 东南亚市场(越南、泰国、缅甸)
+    ├─ 中国二三线港口
+    └─ 民营大船队(100+艘)</p>
+<p>销售目标：30-50艘订单，年收入1.5-2亿
+  营销活动：
+    □ 建立销售渠道(地区总代)
+    □ 开设2-3个国际办事处(东南亚)
+    □ 客户案例宣传(10+个成功案例)
+    □ 与船舶融资公司合作(降低客户门槛)</p>
+<p>2027年：市场领导 + 品牌定位
+  目标客户：
+    ├─ 国际大客户(欧洲/美国进口商)
+    ├─ 全国主要内河航道覆盖
+    └─ 特种船型(消防/工程/旅游)</p>
+<p>销售目标：80-150艘订单，年收入4-6亿
+  营销活动：
+    □ 启动全球品牌宣传(国际期刊广告)
+    □ 加入国际组织(IMCA/IIMS)
+    □ 建立全球服务网络(3-5个国家)
+    □ 获得国际大奖(提升品牌价值)</p>
+<p>【支柱4：技术创新(Innovation Pipeline)】
+目标：建立持续的技术创新能力，发表专利30+项</p>
+<p>2025年：核心专利申请 + 基础技术储备
+  行动：
+    □ 提交4项发明专利(混合动力/BMS/冷却/诊断)
+    □ 发表5篇技术论文
+    □ 建立算法库(仿真模型等)
+    □ 参加国际学术会议(IEEE/ASME)</p>
+<p>投资：600万元</p>
+<p>2026年：产业协作 + 前沿探索
+  行动：
+    □ 与大学建立联合实验室(燃料电池/固态电池)
+    □ 参与国家重点研发计划(申请经费)
+    □ 发表10篇论文，获得授权专利8项
+    □ 建立开放创新平台(众包研发)</p>
+<p>投资：1200万元</p>
+<p>2027年：生态构建 + 标准引领
+  行动：
+    □ 主导制定行业标准1-2项
+    □ 成立技术委员会(与高校/企业)
+    □ 完成燃料电池样船预研
+    □ 发表15篇论文，获得授权专利10项</p>
+<p>投资：1500万元</p>
+<p>【支柱5：人才与组织(Talent &amp; Organization)】
+目标：建立高效的研发与运维团队，员工NPS&gt;8/10</p>
+<p>2025年：核心人才招聘 + 文化建设
+  行动：
+    □ 招聘CTO/副总(1名)
+    □ 扩充研发团队(25→40人)
+    □ 建立员工培训体系
+    □ 实施OKR管理制度
+    □ 发起"创新月"等文化活动</p>
+<p>投资：1000万元(招聘+培训)</p>
+<p>2026年：团队优化 + 国际视野
+  行动：
+    □ 扩充研发至50人
+    □ 招聘国际工程师(2-3名)
+    □ 建立国际技术交流机制
+    □ 推行股权激励(核心员工)
+    □ 建立"技术委员会"</p>
+<p>投资：1500万元</p>
+<p>2027年：组织变革 + 领导梯队
+  行动：
+    □ 组织结构优化(事业部制)
+    □ 建立领导力培养项目(中层梯队)
+    □ 国际招聘扩大(5-10名)
+    □ 开设全球研发中心(亚洲/欧洲</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.action.view"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/calc-common.js"></script>
+      
+        <script src="https://cdn.staticfile.org/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
