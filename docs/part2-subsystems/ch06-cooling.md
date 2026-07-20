@@ -12,11 +12,64 @@
 
 *乙二醇闭式回路（串联热源）：换热器冷侧出口 → 乙二醇泵 → 变频控制器 → 推进电机 → 齿轮箱 → 换热器热侧入口；海水开式冷却：海水进口 → 海水泵 → 换热器海水侧 → 海水出口*
 
+```mermaid
+flowchart LR
+    subgraph 内循环[乙二醇闭式回路]
+        A1[换热器冷侧出口] --> A2[乙二醇泵]
+        A2 --> A3[变频控制器]
+        A3 --> A4[推进电机]
+        A4 --> A5[齿轮箱]
+        A5 --> A6[换热器热侧入口]
+    end
+    
+    subgraph 外循环[海水开式冷却]
+        B1[海水进口] --> B2[海水泵]
+        B2 --> B3[换热器海水侧]
+        B3 --> B4[海水出口]
+    end
+    
+    A6 -.->|热交换| B3
+    
+    style A1 fill:#E3F2FD
+    style A2 fill:#2196F3,color:#fff
+    style A3 fill:#FF9800,color:#fff
+    style A4 fill:#F44336,color:#fff
+    style A5 fill:#795548,color:#fff
+    style A6 fill:#E3F2FD
+    style B1 fill:#00BCD4,color:#fff
+    style B2 fill:#0097A7,color:#fff
+    style B3 fill:#4CAF50,color:#fff
+    style B4 fill:#00BCD4,color:#fff
+```
+
 📌 串联顺序要点：温升最小的控制器放最前，温度最高的齿轮箱放最后，让所有部件在尽可能低的冷却液温度下工作。
 
 ---
 
 ## 4.1 热设计链路（完整五步流程）
+
+<div class="step-indicator">
+  <div class="step completed">
+    <div class="step-number">1</div>
+    <div class="step-title">损耗计算</div>
+  </div>
+  <div class="step completed">
+    <div class="step-number">2</div>
+    <div class="step-title">换热系统设计</div>
+  </div>
+  <div class="step active">
+    <div class="step-number">3</div>
+    <div class="step-title">管网水力计算</div>
+  </div>
+  <div class="step">
+    <div class="step-number">4</div>
+    <div class="step-title">NPSH校核</div>
+  </div>
+  <div class="step">
+    <div class="step-number">5</div>
+    <div class="step-title">膨胀水箱计算</div>
+  </div>
+</div>
 
 ### Step 1：损耗计算（热源识别）
 
@@ -212,39 +265,59 @@ NPSH_a（有效汽蚀余量）计算：
 
 ### 内循环泵冗余切换完整逻辑
 
+```mermaid
+sequenceDiagram
+    participant S as 传感器
+    participant C as 控制器
+    participant M as 主泵
+    participant B as 备泵
+    participant H as HMI
+    
+    Note over S,H: 正常运行
+    S->>C: 压力/流量正常
+    C->>M: 运行指令
+    M->>S: 状态反馈
+    
+    Note over S,H: 故障检测 (t=0s)
+    S->>C: 压力<70%或流量<60%
+    C->>C: 故障判定 (OR逻辑)
+    
+    Note over S,H: 切换过程 (t=0.5-5s)
+    C->>H: t=0.5s 黄色告警
+    C->>B: t=1.0s 启动指令
+    B->>B: t=3.0s 达到额定转速
+    B->>S: t=4.0s 压力确认
+    C->>M: t=5.0s 隔离阀关闭
+    C->>H: t=5.0s 记录事件
+    
+    Note over S,H: 降级运行
+    C->>C: 单泵70%流量<br/>降额至80%功率
+    C->>H: 显示降级运行
 ```
-硬件配置：
-  主泵（变频调速）：正常运行
-  备泵（变频调速）：热备（通电待机，0转速）
-  管路配置：主泵+备泵并联，各带单向止回阀（防倒流）
 
-自动切换触发条件（满足任一即切换，逻辑OR）：
-  条件1：主泵出口压力 < 设定值下限（持续5s）
-         设定值 = 正常工作点压力 × 70%
-  条件2：主泵驱动器故障信号
-  条件3：主泵电机电流 > 1.2×额定电流（持续3s，可能叶轮卡塞）
-  条件4：流量传感器读数 < 60%额定流量（持续5s）
+**硬件配置：**
+- 主泵（变频调速）：正常运行
+- 备泵（变频调速）：热备（通电待机，0转速）
+- 管路配置：主泵+备泵并联，各带单向止回阀（防倒流）
 
-切换时序（目标：切换时间≤5s）：
-  t=0.0s：故障触发判定（任一条件满足）
-  t=0.5s：HMI发出黄色告警"主泵故障，切换备泵"
-  t=1.0s：备泵启动指令发出（变频器斜坡升速）
-  t=3.0s：备泵达到额定转速（变频升速完成）
-  t=4.0s：确认备泵出口压力正常
-  t=5.0s：主泵隔离阀关闭（电动阀，防主泵反转）
-  t=5.0s：控制器记录"备泵运行"事件，上报船舶管理系统
+**自动切换触发条件（满足任一即切换，逻辑OR）：**
+1. 主泵出口压力 < 设定值下限（持续5s）
+2. 主泵驱动器故障信号
+3. 主泵电机电流 > 1.2×额定电流（持续3s）
+4. 流量传感器读数 < 60%额定流量（持续5s）
 
-降级运行能力（单泵运行）：
-  单泵最大流量 = 额定双泵流量的70%（泵并联特性）
-  → 控制器自动降额至80%额定推进功率（防过热）
-  → HMI 显示"冷却降级运行，推进功率限制80%"
+**切换时序（目标：切换时间≤5s）：**
+- t=0.0s：故障触发判定
+- t=0.5s：HMI发出黄色告警
+- t=1.0s：备泵启动指令
+- t=3.0s：备泵达到额定转速
+- t=4.0s：确认备泵出口压力正常
+- t=5.0s：主泵隔离阀关闭
 
-⚠️ 典型事故案例（来自手册v3.0）：
-   某电推船未安装备泵，主泵轴封泄漏→冷却液渗入舱底。
-   电机温度上升→保护停机→在长江主航道失去动力漂流。
-   事后分析：增加约2万元备泵，可完全避免此次事故。
-   结论：内河客船必须配备备泵，货船强烈建议配备。
-```
+**降级运行能力（单泵运行）：**
+- 单泵最大流量 = 额定双泵流量的70%
+- 控制器自动降额至80%额定推进功率
+- HMI 显示"冷却降级运行，推进功率限制80%"
 
 ### 外循环泵冗余策略
 

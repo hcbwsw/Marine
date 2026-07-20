@@ -4,8 +4,16 @@
 
 ### 1.1 纯电池动力
 
-```
-电池组 → 逆变器 → 推进电机 → 螺旋桨
+```mermaid
+flowchart LR
+    A[🔋 电池组] --> B[⚡ 逆变器]
+    B --> C[🔌 推进电机]
+    C --> D[🌀 螺旋桨]
+    
+    style A fill:#4CAF50,color:#fff
+    style B fill:#FF9800,color:#fff
+    style C fill:#2196F3,color:#fff
+    style D fill:#9C27B0,color:#fff
 ```
 
 | 特点 | 说明 |
@@ -20,10 +28,18 @@
 
 ### 1.2 混合动力
 
-```
-电池组 ──┐
-          ├→ PMS → 推进电机 → 螺旋桨
-柴油发电机──┘
+```mermaid
+flowchart TB
+    A[🔋 电池组] --> C[⚡ 功率管理系统<br/>PMS]
+    B[🛢️ 柴油发电机] --> C
+    C --> D[🔌 推进电机]
+    D --> E[🌀 螺旋桨]
+    
+    style A fill:#4CAF50,color:#fff
+    style B fill:#795548,color:#fff
+    style C fill:#FF9800,color:#fff
+    style D fill:#2196F3,color:#fff
+    style E fill:#9C27B0,color:#fff
 ```
 
 | 特点 | 说明 |
@@ -37,8 +53,19 @@
 
 ### 1.3 燃料电池动力
 
-```
-氢气储罐 → 燃料电池 → DC/DC → 电池(缓冲) → 电机 → 螺旋桨
+```mermaid
+flowchart LR
+    A[🎈 氢气储罐] --> B[⚡ 燃料电池]
+    B --> C[🔌 DC/DC]
+    C --> D[🔋 电池<br/>缓冲]
+    D --> E[🔌 电机]
+    E --> F[🌀 螺旋桨]
+    
+    style A fill:#00BCD4,color:#fff
+    style B fill:#FF9800,color:#fff
+    style D fill:#4CAF50,color:#fff
+    style E fill:#2196F3,color:#fff
+    style F fill:#9C27B0,color:#fff
 ```
 
 | 特点 | 说明 |
@@ -65,8 +92,13 @@
 
 ### 2.1 直接传动
 
-```
-电机 → 轴系 → 螺旋桨
+```mermaid
+flowchart LR
+    A[🔌 电机] --> B[⚙️ 轴系]
+    B --> C[🌀 螺旋桨]
+    
+    style A fill:#2196F3,color:#fff
+    style C fill:#9C27B0,color:#fff
 ```
 
 - 电机直接驱动螺旋桨，无减速装置
@@ -76,8 +108,15 @@
 
 ### 2.2 齿轮箱减速传动
 
-```
-电机 → 齿轮箱 → 轴系 → 螺旋桨
+```mermaid
+flowchart LR
+    A[🔌 电机] --> B[⚙️ 齿轮箱]
+    B --> C[⚙️ 轴系]
+    C --> D[🌀 螺旋桨]
+    
+    style A fill:#2196F3,color:#fff
+    style B fill:#FF9800,color:#fff
+    style D fill:#9C27B0,color:#fff
 ```
 
 - 电机高转速，经齿轮箱减速到螺旋桨转速
@@ -87,8 +126,14 @@
 
 ### 2.3 舵桨推进
 
-```
-电机 → 舵桨一体机 → 螺旋桨（可360°旋转）
+```mermaid
+flowchart LR
+    A[🔌 电机] --> B[⚙️ 舵桨一体机]
+    B --> C[🌀 螺旋桨<br/>360°旋转]
+    
+    style A fill:#2196F3,color:#fff
+    style B fill:#FF9800,color:#fff
+    style C fill:#9C27B0,color:#fff
 ```
 
 - 推进+转向一体，操纵性极好
@@ -98,8 +143,15 @@
 
 ### 2.4 喷水推进
 
-```
-电机 → 水泵 → 喷口 → 反作用力推进
+```mermaid
+flowchart LR
+    A[🔌 电机] --> B[💧 水泵]
+    B --> C[💨 喷口]
+    C --> D[🚀 反作用力推进]
+    
+    style A fill:#2196F3,color:#fff
+    style B fill:#00BCD4,color:#fff
+    style D fill:#9C27B0,color:#fff
 ```
 
 - 无外露运动部件，浅水适应性好
@@ -111,9 +163,17 @@
 
 ### 3.1 直流组网
 
-```
-电池组 → 直流母线 → 逆变器 → 电机
-柴油发电机 → 整流器 ──┘
+```mermaid
+flowchart TB
+    A[🔋 电池组] --> B[⚡ 直流母线]
+    C[🛢️ 柴油发电机] --> D[🔌 整流器]
+    D --> B
+    B --> E[⚡ 逆变器]
+    E --> F[🔌 电机]
+    
+    style A fill:#4CAF50,color:#fff
+    style B fill:#FF9800,color:#fff
+    style F fill:#2196F3,color:#fff
 ```
 
 - 电池直接挂直流母线
@@ -122,9 +182,18 @@
 
 ### 3.2 交流组网
 
-```
-电池组 ↔ DC/DC → 直流母线 → 逆变器 → 电机
-柴油发电机 → 整流器 ──┘
+```mermaid
+flowchart TB
+    A[🔋 电池组] --> B[🔌 DC/DC]
+    B --> C[⚡ 直流母线]
+    D[🛢️ 柴油发电机] --> E[🔌 整流器]
+    E --> C
+    C --> F[⚡ 逆变器]
+    F --> G[🔌 电机]
+    
+    style A fill:#4CAF50,color:#fff
+    style C fill:#FF9800,color:#fff
+    style G fill:#2196F3,color:#fff
 ```
 
 - 多源汇流，电压稳定
@@ -133,12 +202,44 @@
 
 ## 4. 选型决策参考
 
-| 船型 | 推荐动力 | 推荐推进 | 理由 |
-|------|----------|----------|------|
-| 内河渡轮 | 纯电池 | 全回转舵桨 | 短途固定航线，操纵要求高 |
-| 内河客船 | 纯电池/混合 | 全回转舵桨 | 中短途，环保要求高 |
-| 港口拖轮 | 纯电池 | 全回转舵桨 | 频繁启停，零排放 |
-| 沿海货船 | 混合动力 | 常规桨+舵 | 续航要求高 |
-| 远洋货船 | 柴油/LNG | 常规桨+舵 | 超长续航，大功率 |
-| 豪华游船 | 纯电池 | POD | 低噪音，舒适性 |
-| 高速客船 | 柴油/混合 | 喷水推进 | 高速效率 |
+=== "🚢 内河船舶"
+    | 船型 | 推荐动力 | 推荐推进 | 理由 |
+    |------|----------|----------|------|
+    | 内河渡轮 | 纯电池 | 全回转舵桨 | 短途固定航线，操纵要求高 |
+    | 内河客船 | 纯电池/混合 | 全回转舵桨 | 中短途，环保要求高 |
+    | 港口拖轮 | 纯电池 | 全回转舵桨 | 频繁启停，零排放 |
+
+=== "🌊 沿海船舶"
+    | 船型 | 推荐动力 | 推荐推进 | 理由 |
+    |------|----------|----------|------|
+    | 沿海货船 | 混合动力 | 常规桨+舵 | 续航要求高 |
+    | 豪华游船 | 纯电池 | POD | 低噪音，舒适性 |
+
+=== "🌍 远洋船舶"
+    | 船型 | 推荐动力 | 推荐推进 | 理由 |
+    |------|----------|----------|------|
+    | 远洋货船 | 柴油/LNG | 常规桨+舵 | 超长续航，大功率 |
+    | 高速客船 | 柴油/混合 | 喷水推进 | 高速效率 |
+
+???+ tip "💡 选型决策流程"
+    ```mermaid
+    flowchart TD
+        A[开始选型] --> B{航线类型?}
+        B -->|内河短途| C[纯电池 + 舵桨]
+        B -->|内河中长途| D[混合动力 + 舵桨]
+        B -->|沿海| E[混合动力 + 常规桨]
+        B -->|远洋| F[柴油/LNG + 常规桨]
+        
+        C --> G{预算充足?}
+        D --> G
+        E --> G
+        F --> G
+        
+        G -->|是| H[推荐方案]
+        G -->|否| I[降配方案<br/>或等待补贴]
+        
+        style C fill:#4CAF50,color:#fff
+        style D fill:#8BC34A,color:#fff
+        style E fill:#FF9800,color:#fff
+        style F fill:#795548,color:#fff
+    ```
